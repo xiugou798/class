@@ -1,0 +1,584 @@
+@bg: rgb(240, 244, 247);
+@header: rgba(255, 255, 255, 0.8);
+
+@cardBg: rgba(255, 255, 255, 0.5);
+
+@card: rgba(255, 255, 255, 1);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    background-image:
+        radial-gradient(closest-side, rgb(201, 253, 255), rgba(127, 140, 255, 0)),
+        radial-gradient(closest-side, rgb(207, 226, 255), rgba(127, 140, 255, 0)),
+        radial-gradient(closest-side, rgb(209, 211, 255), rgba(127, 140, 255, 0)),
+        radial-gradient(closest-side, rgb(213, 199, 255), rgba(127, 140, 255, 0)),
+        radial-gradient(closest-side, rgb(250, 195, 255), rgba(113, 255, 105, 0));
+    background-position:
+        130vmax 130vmax,
+        20vmax 20vmax,
+        -60vmax -60vmax,
+        40vmax 40vmax,
+        70vmax 70vmax;
+    background-size:
+        10vmax 10vmax,
+        130vmax 130vmax,
+        -90vmax -90vmax,
+        70vmax 70vmax,
+        -80vmax -80vmax;
+    animation: 50s bg linear infinite;
+}
+
+@keyframes bg {
+
+    0%,
+    100% {
+        background-image:
+            radial-gradient(closest-side, rgb(201, 253, 255), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(207, 226, 255), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(209, 211, 255), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(213, 199, 255), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(250, 195, 255), rgba(113, 255, 105, 0));
+        background-position:
+            10vmax 10vmax,
+            130vmax 130vmax,
+            -90vmax -90vmax,
+            70vmax 70vmax,
+            -80vmax -80vmax;
+        background-size:
+            130vmax 130vmax,
+            20vmax 20vmax,
+            -60vmax -60vmax,
+            40vmax 40vmax,
+            70vmax 70vmax;
+    }
+
+    25% {
+        background-image:
+            radial-gradient(closest-side, rgb(241, 201, 255), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(255, 207, 228), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(255, 209, 209), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(255, 249, 199), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(206, 255, 195), rgba(113, 255, 105, 0));
+        background-position:
+            10vmax 10vmax,
+            130vmax 130vmax,
+            60vmax 60vmax,
+            -70vmax -70vmax,
+            80vmax 80vmax;
+        background-size:
+            130vmax 130vmax,
+            20vmax 20vmax,
+            -20vmax -20vmax,
+            90vmax 90vmax,
+            70vmax 70vmax;
+    }
+
+    50% {
+        background-image:
+            radial-gradient(closest-side, rgb(255, 201, 201), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(255, 251, 207), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(215, 255, 209), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(199, 248, 255), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(195, 226, 255), rgba(113, 255, 105, 0));
+        background-position:
+            10vmax 10vmax,
+            130vmax 130vmax,
+            -20vmax -20vmax,
+            70vmax 70vmax,
+            130vmax 130vmax;
+        background-size:
+            130vmax 130vmax,
+            20vmax 20vmax,
+            70vmax 70vmax,
+            -90vmax -90vmax,
+            70vmax 70vmax;
+    }
+
+    75% {
+        background-image:
+            radial-gradient(closest-side, rgb(201, 212, 255), rgba(210, 127, 255, 0)),
+            radial-gradient(closest-side, rgb(255, 207, 231), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(255, 209, 209), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(255, 232, 199), rgba(127, 140, 255, 0)),
+            radial-gradient(closest-side, rgb(229, 255, 195), rgba(113, 255, 105, 0));
+        background-position:
+            130vmax 130vmax,
+            20vmax 20vmax,
+            -60vmax -60vmax,
+            40vmax 40vmax,
+            70vmax 70vmax;
+        background-size:
+            130vmax 130vmax,
+            50vmax 50vmax,
+            60vmax 60vmax,
+            -40vmax -40vmax,
+            70vmax 70vmax;
+    }
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    background: @header;
+    position: fixed;
+    font-size: 2.5em;
+    line-height: 70px;
+    text-align: center;
+    color: rgb(76, 164, 240);
+    z-index: 999;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 170px);
+    top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .left,
+    .right {
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            width: 100%;
+            height: 100%;
+            background: @cardBg;
+            border-radius: 5%;
+        }
+    }
+
+    .left {
+        width: 30%;
+
+        .card {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            p {
+                font-size: 2.5em;
+
+                &::after {
+                    content: '11';
+                    font-size: 0.5em;
+                    position: relative;
+                    color: rgba(0, 0, 0, 0.6);
+                    top: -30px;
+                }
+            }
+
+            .say {
+                width: 80%;
+                font-size: 1em;
+                height: 40px;
+            }
+        }
+    }
+
+    .right {
+        width: 60%;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .works {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+
+                .work {
+                    background: @card;
+                    width: 180px;
+                    height: 230px;
+                    border-radius: 5%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    cursor: pointer;
+
+                    &:hover::before {
+                        content: '>';
+                        width: 180px;
+                        font-size: 5em;
+                        top: 0;
+                        left: 0;
+                        text-align: center;
+                        color: rgba(0, 0, 0, 0.8);
+                        line-height: 230px;
+                        border-radius: 5%;
+                        height: 230px;
+                        position: absolute;
+                        background: rgba(255, 255, 255, 0.8);
+                        filter: blur(0);
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 5%;
+                    }
+
+                    p {
+                        text-align: center;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+
+        .prizes {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+
+            .prize {
+                height: 50px;
+                margin-left: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                p {
+                    font-size: 1.5em;
+                }
+
+                span {
+                    margin-left: 10px;
+                    width: 100px;
+                    // background: red;
+                    text-align: center;
+                    border-radius: 5%;
+                    border: 1px solid black;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+.tab {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+
+    .left,
+    .right {
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 60px;
+            height: 60px;
+            opacity: 0.5;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &:hover img {
+            opacity: 1;
+        }
+    }
+
+    .left {
+        left: 0;
+        float: left;
+        transform: translateY(-4px) translateX(21px) rotate(180deg);
+
+    }
+
+    .right {
+        right: 0;
+        transform: translateY(-4px) translateX(-19px);
+        float: right;
+    }
+
+    .mask {
+        width: 80%;
+        height: 100%;
+        float: left;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        cursor: grab;
+
+        .cards {
+            width: 10000px;
+            height: 100%;
+            overflow: visible;
+            margin-top: 10px;
+
+            &:active {
+                cursor: grabbing;
+            }
+
+            .card {
+                float: left;
+                width: 60px;
+                height: 60px;
+                margin: 5px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgb(255, 255, 255);
+                border-radius: 10%;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1) translateY(-6px);
+                }
+
+            }
+        }
+    }
+
+
+
+}
+
+@media (max-width:900px) {
+
+    #app {
+        // height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .main {
+        margin-left: 5%;
+        display: block;
+        height: 100%;
+
+        .left,
+        .right {
+            width: 90%;
+        }
+
+        .left {
+            height: 30%;
+            border-radius: 5%;
+
+            .card {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+
+                img {
+                    margin: 10px;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                }
+
+                p {
+                    font-size: 2.5em;
+                    margin: 20px;
+                }
+
+                .say {
+                    width: 200px;
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .right {
+            height: 40%;
+
+            .card {
+                .works {
+                    .work {
+                        width: 140px;
+                        height: 190px;
+
+                        &:hover::before {
+                            width: 140px;
+                            font-size: 4em;
+                            line-height: 190px;
+                            border-radius: 5%;
+                            height: 190px;
+                            filter: blur(0);
+                        }
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                        }
+
+                        p {
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+
+            .prizes {
+
+                .prize {
+                    height: 40px;
+                    margin-left: 60px;
+
+                    p {
+                        font-size: 1.2em;
+                    }
+
+                    span {
+                        width: 90px;
+                        border-radius: 5%;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .tab {
+
+        .left,
+        .right {
+            display: none;
+
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .header {
+        height: 50px;
+        width: 100%;
+        font-size: 1.5em;
+        line-height: 50px;
+    }
+
+    .main {
+        margin-left: 5%;
+        display: block;
+        height: 100%;
+
+        .left,
+        .right {
+            width: 90%;
+        }
+
+        .left {
+            height: 25%;
+            border-radius: 5%;
+
+            .card {
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                width: 100%;
+
+                img {
+                    margin: 30px;
+                    width: 100px;
+                    height: 100px;
+                }
+
+                p {
+                    font-size: 2em;
+                    margin: 10px 0 0 0;
+
+                    &::after {
+                        top: -25px;
+                    }
+                }
+
+                .say {
+                    width: 140px;
+                    font-size: 0.8em;
+                    margin: 10px 0 0 0;
+                }
+            }
+        }
+
+        .right {
+            height: 45%;
+            margin-top: 20px;
+
+            .card {
+                .works {
+                    .work {
+                        width: 100px;
+                        height: 150px;
+
+                        &:hover::before {
+                            width: 100px;
+                            font-size: 4em;
+                            line-height: 150px;
+                            border-radius: 5%;
+                            height: 150px;
+                            filter: blur(0);
+                        }
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        p {
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+
+            .prizes {
+                width: 60%;
+
+                .prize {
+                    height: 40px;
+                    margin-left: 25px;
+
+                    p {
+                        font-size: 1em;
+                    }
+
+                    span {
+                        width: 90px;
+                        border-radius: 5%;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

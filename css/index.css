@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(closest-side, #c9fdff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #cfe2ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #d1d3ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #d5c7ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #fac3ff, rgba(113, 255, 105, 0));
+    background-position: 130vmax 130vmax, 20vmax 20vmax, -60vmax -60vmax, 40vmax 40vmax, 70vmax 70vmax;
+    background-size: 10vmax 10vmax, 130vmax 130vmax, -90vmax -90vmax, 70vmax 70vmax, -80vmax -80vmax;
+    animation: 50s bg linear infinite;
+}
+
+@keyframes bg {
+    0%,
+    100% {
+        background-image: radial-gradient(closest-side, #c9fdff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #cfe2ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #d1d3ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #d5c7ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #fac3ff, rgba(113, 255, 105, 0));
+        background-position: 10vmax 10vmax, 130vmax 130vmax, -90vmax -90vmax, 70vmax 70vmax, -80vmax -80vmax;
+        background-size: 130vmax 130vmax, 20vmax 20vmax, -60vmax -60vmax, 40vmax 40vmax, 70vmax 70vmax;
+    }
+    25% {
+        background-image: radial-gradient(closest-side, #f1c9ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #ffcfe4, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #ffd1d1, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #fff9c7, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #ceffc3, rgba(113, 255, 105, 0));
+        background-position: 10vmax 10vmax, 130vmax 130vmax, 60vmax 60vmax, -70vmax -70vmax, 80vmax 80vmax;
+        background-size: 130vmax 130vmax, 20vmax 20vmax, -20vmax -20vmax, 90vmax 90vmax, 70vmax 70vmax;
+    }
+    50% {
+        background-image: radial-gradient(closest-side, #ffc9c9, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #fffbcf, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #d7ffd1, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #c7f8ff, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #c3e2ff, rgba(113, 255, 105, 0));
+        background-position: 10vmax 10vmax, 130vmax 130vmax, -20vmax -20vmax, 70vmax 70vmax, 130vmax 130vmax;
+        background-size: 130vmax 130vmax, 20vmax 20vmax, 70vmax 70vmax, -90vmax -90vmax, 70vmax 70vmax;
+    }
+    75% {
+        background-image: radial-gradient(closest-side, #c9d4ff, rgba(210, 127, 255, 0)), radial-gradient(closest-side, #ffcfe7, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #ffd1d1, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #ffe8c7, rgba(127, 140, 255, 0)), radial-gradient(closest-side, #e5ffc3, rgba(113, 255, 105, 0));
+        background-position: 130vmax 130vmax, 20vmax 20vmax, -60vmax -60vmax, 40vmax 40vmax, 70vmax 70vmax;
+        background-size: 130vmax 130vmax, 50vmax 50vmax, 60vmax 60vmax, -40vmax -40vmax, 70vmax 70vmax;
+    }
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    font-size: 2.5em;
+    line-height: 70px;
+    text-align: center;
+    color: #4ca4f0;
+    z-index: 999;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 170px);
+    top: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main .left,
+.main .right {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .left .card,
+.main .right .card {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5%;
+}
+
+.main .left {
+    width: 30%;
+}
+
+.main .left .card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main .left .card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.main .left .card p {
+    font-size: 2.5em;
+}
+
+.main .left .card p::after {
+    content: '11';
+    font-size: 0.5em;
+    position: relative;
+    color: rgba(0, 0, 0, 0.6);
+    top: -30px;
+}
+
+.main .left .card .say {
+    width: 80%;
+    font-size: 1em;
+    height: 40px;
+}
+
+.main .right {
+    width: 60%;
+}
+
+.main .right .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main .right .card .works {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main .right .card .works .work {
+    background: #ffffff;
+    width: 180px;
+    height: 230px;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.main .right .card .works .work:hover::before {
+    content: '>';
+    width: 180px;
+    font-size: 5em;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 230px;
+    border-radius: 5%;
+    height: 230px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    filter: blur(0);
+}
+
+.main .right .card .works .work img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5%;
+}
+
+.main .right .card .works .work p {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.main .right .prizes {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .right .prizes .prize {
+    height: 50px;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .right .prizes .prize p {
+    font-size: 1.5em;
+}
+
+.main .right .prizes .prize span {
+    margin-left: 10px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5%;
+    border: 1px solid black;
+    font-size: 1.5em;
+}
+
+.tab {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+}
+
+.tab .left,
+.tab .right {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab .left img,
+.tab .right img {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+}
+
+.tab .left:hover img,
+.tab .right:hover img {
+    opacity: 1;
+}
+
+.tab .left {
+    left: 0;
+    float: left;
+    transform: translateY(-4px) translateX(21px) rotate(180deg);
+}
+
+.tab .right {
+    right: 0;
+    transform: translateY(-4px) translateX(-19px);
+    float: right;
+}
+
+.tab .mask {
+    width: 80%;
+    height: 100%;
+    float: left;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    cursor: grab;
+}
+
+.tab .mask .cards {
+    width: 10000px;
+    height: 100%;
+    overflow: visible;
+    margin-top: 10px;
+}
+
+.tab .mask .cards:active {
+    cursor: grabbing;
+}
+
+.tab .mask .cards .card {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10%;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab .mask .cards .card:hover {
+    transform: scale(1.1) translateY(-6px);
+}
+
+@media (max-width: 900px) {
+    #app {
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .main {
+        margin-left: 5%;
+        display: block;
+        height: 100%;
+    }
+    .main .left,
+    .main .right {
+        width: 90%;
+    }
+    .main .left {
+        height: 30%;
+        border-radius: 5%;
+    }
+    .main .left .card {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+    }
+    .main .left .card img {
+        margin: 10px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    .main .left .card p {
+        font-size: 2.5em;
+        margin: 20px;
+    }
+    .main .left .card .say {
+        width: 200px;
+        font-size: 1em;
+    }
+    .main .right {
+        height: 40%;
+    }
+    .main .right .card .works .work {
+        width: 140px;
+        height: 190px;
+    }
+    .main .right .card .works .work:hover::before {
+        width: 140px;
+        font-size: 4em;
+        line-height: 190px;
+        border-radius: 5%;
+        height: 190px;
+        filter: blur(0);
+    }
+    .main .right .card .works .work img {
+        width: 80px;
+        height: 80px;
+    }
+    .main .right .card .works .work p {
+        font-size: 1em;
+    }
+    .main .right .prizes .prize {
+        height: 40px;
+        margin-left: 60px;
+    }
+    .main .right .prizes .prize p {
+        font-size: 1.2em;
+    }
+    .main .right .prizes .prize span {
+        width: 90px;
+        border-radius: 5%;
+        font-size: 1.2em;
+    }
+    .tab .left,
+    .tab .right {
+        display: none;
+    }
+    .tab .mask {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        height: 50px;
+        width: 100%;
+        font-size: 1.5em;
+        line-height: 50px;
+    }
+    .main {
+        margin-left: 5%;
+        display: block;
+        height: 100%;
+    }
+    .main .left,
+    .main .right {
+        width: 90%;
+    }
+    .main .left {
+        height: 25%;
+        border-radius: 5%;
+    }
+    .main .left .card {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .main .left .card img {
+        margin: 30px;
+        width: 100px;
+        height: 100px;
+    }
+    .main .left .card p {
+        font-size: 2em;
+        margin: 10px 0 0 0;
+    }
+    .main .left .card p::after {
+        top: -25px;
+    }
+    .main .left .card .say {
+        width: 140px;
+        font-size: 0.8em;
+        margin: 10px 0 0 0;
+    }
+    .main .right {
+        height: 45%;
+        margin-top: 20px;
+    }
+    .main .right .card .works .work {
+        width: 100px;
+        height: 150px;
+    }
+    .main .right .card .works .work:hover::before {
+        width: 100px;
+        font-size: 4em;
+        line-height: 150px;
+        border-radius: 5%;
+        height: 150px;
+        filter: blur(0);
+    }
+    .main .right .card .works .work img {
+        width: 60px;
+        height: 60px;
+    }
+    .main .right .card .works .work p {
+        font-size: 0.8em;
+    }
+    .main .right .prizes {
+        width: 60%;
+    }
+    .main .right .prizes .prize {
+        height: 40px;
+        margin-left: 25px;
+    }
+    .main .right .prizes .prize p {
+        font-size: 1em;
+    }
+    .main .right .prizes .prize span {
+        width: 90px;
+        border-radius: 5%;
+        font-size: 1em;
+    }
+}
