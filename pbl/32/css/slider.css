@@ -1,0 +1,57 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main-slider {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.slider-div {
+    width: 600px;
+    border: 2px solid black;
+    overflow: hidden;
+    margin-left: 400px;
+}
+
+#slider-ul {
+    width: 3000px;
+
+}
+
+#slider-ul img {
+    width: 600px;
+    float: left;
+}
+
+.slider-left,
+.slider-right {
+    font-size: 60px;
+    position: relative;
+    height: 450px;
+    line-height: 450px;
+
+}
+
+.slider-left {
+    left: -800px;
+}
+
+.slider-right {
+    left: 140px;
+}
+
+.slider-font {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    left: -670px;
+    height: 100px;
+    top: 330px;
+}

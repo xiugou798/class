@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/bds.js"></script>
+    <style type="text/css">
+        body{
+            background-color: rgb(234, 234, 234);
+        }
+        .wai{
+            width: 250px;
+            height: 430px;
+            background-color: white;
+        }
+        .tou{
+            display: flex;
+        }
+        .tou input{
+            width: 245px;
+            height: 40px;
+            font-size: 20px;
+        }
+        .anjian{
+            display: flex;
+            height: 90%;
+            flex-direction: column;
+        }
+        table{
+            text-align: center;
+            height: 100%;
+            width: 100%;
+        }
+        td{
+            border: 1px solid black;
+            width: 20%;
+        }
+    </style>
+</head>
+<script>
+    let ans=""
+    $(document).ready(function(){
+        $(".ys").click(function(){
+            var tianjia=$(this).text()
+            ans=ans+tianjia
+            $(".wenben").val(`${ans}`)
+        })
+        $(".sc").click(function(){
+            var tihuan=ans.slice(0,ans.length-1)
+            ans=tihuan
+            $(".wenben").val(`${ans}`)
+        })
+        $(".qc").click(function(){
+            ans=""
+            $(".wenben").val(`${ans}`)
+        })
+        $("td").mousedown(function(){
+            $(this).css("background","darkgray")
+        })
+        $("td").mouseup(function(){
+            $(this).css("background","white")
+        })
+        var hzbds=[]
+        var jshzbds=[]
+        var shunxu={'*':2, '/':2, '+':1, '-':1, '(':0}
+        var flag=0
+        var op
+        $(".jg").click(function(){
+            var hzbds=[]
+            var zhan=[]
+            var shunxu={'*':2, '/':2, '+':1, '-':1, '(':0}
+            var flag=0
+            for (i in ans){
+                var a=ans.charAt(i)
+                if ("0"<a && flag==1){
+                    hzbds[hzbds.length-1]=hzbds[hzbds.length-1]+a
+                }
+                else if ("0"<a){
+                    hzbds.push(a)
+                    flag=1
+                }
+                else if (a=="("){
+                    zhan.push(a)
+                    flag=0
+                }
+                else if (a==")"){
+                    op=zhan.pop()
+                    while (op!='('){
+                        hzbds.push(op)
+                        op=zhan.pop()
+                    flag=0
+                    }
+                }
+                else{
+                    while(zhan.length!=0 && shunxu[zhan[zhan.length-1]]>=shunxu[a]){
+                        hzbds.push(zhan.pop())
+                    }
+                    zhan.push(a)
+                    flag=0
+                }
+            }    
+            while(zhan.length!=0){
+                op=zhan.pop()
+                hzbds.push(op)
+            }
+            console.log(hzbds)
+            ans= hzbdsjs(hzbds)
+            $(".wenben").val(`${ans}`)
+        })
+    })
+</script>
+<body>
+    <div class="wai">
+        <div class="tou">
+            <input type="text" class="wenben" readonly="readonly">
+        </div>
+        <div class="anjian">
+            <table cecellspacing="2" class="t2">
+                <tr>
+                    <td class="qc">C</td>
+                    <td class="ys">/</td>
+                    <td class="ys">*</td>
+                    <td class="sc">删</td>
+                </tr>
+                <tr>
+                    <td class="ys">7</td>
+                    <td class="ys">8</td>
+                    <td class="ys">9</td>
+                    <td class="ys">-</td>
+                </tr>
+                <tr>
+                    <td class="ys">4</td>
+                    <td class="ys">5</td>
+                    <td class="ys">6</td>
+                    <td class="ys">+</td>
+                </tr>
+                <tr>
+                    <td class="ys">1</td>
+                    <td class="ys">2</td>
+                    <td class="ys">3</td>
+                    <td class="ys">0</td>
+                </tr>
+                <tr>
+                    <td class="ys">.</td>
+                    <td class="ys">(</td>
+                    <td class="ys">)</td>
+                    <td class="jg">=</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

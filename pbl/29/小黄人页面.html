@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body {
+				margin: 0;
+			}
+			
+			.wujiao{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				clip-path: polygon(50% 0, 72% 38%, 100% 38%, 74% 76%, 86% 100%, 50% 88%, 14% 100%, 26% 76%,0 38%, 38% 38%);
+			}
+	/* 		.sanjiao{
+				width: 0px;
+				height: 0px;
+				border-width: 50px;
+				border: ;
+				
+			}
+			 */
+			
+	/* 		.tf1,.tf2,.tf3{
+				width: 4px;
+				height: 100px;
+				background-color: black;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				z-index: 10; 
+				border-radius: 50% 50% 20% 20%;
+				
+			}
+			.tf2{
+				border: 1px solid aqua;
+				border-radius: 0 70% 0 0;
+				left: 50px;
+				border-left: white;
+				
+				
+				
+			}
+			
+			.tf3{
+				border: 1px solid aquamarine;
+				left: 100px;
+	 		}*/
+			
+
+			.bg {
+				width: 800px;
+				height: 740px;
+				border: 1px solid;
+				position: absolute;
+			}
+
+			.one,
+			.two,
+			.three {
+				width: 250px;
+				height: 100%;
+				position: absolute;
+				/* 绝对定位 脱离文本流 */
+				background-color: white;
+				border: 1px solid black;
+				border-top-width: 0px;
+				border-bottom-width: 0px;
+				overflow: hidden;
+			}
+
+			.two {
+				left: 275px;
+			}
+
+			.three {
+				right: 0px;
+			}
+
+			.one_body {
+				position: absolute;
+				width: 250px;
+				height: 500px;
+				background-color: rgb(254, 224, 90);
+				bottom: 0px;
+
+				overflow: hidden;
+				/* 隐藏 */
+			}
+
+			.one_body_1 {
+				position: absolute;
+				top: 55px;
+				width: 310px;
+				height: 310px;
+				background-color: rgb(254, 224, 90);
+				border-radius: 50% 45% 0 0;
+
+			}
+
+			.xhr_body {
+				width: 250px;
+				height: 690px;
+				background-color: rgb(254, 224, 90);
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/30px 30px 0 0;
+				/*    ???   */
+				overflow: hidden;
+				/* 隐藏 */
+
+			}
+
+			.three_body {
+				position: absolute;
+				width: 250px;
+				height: 690px;
+				background-color: rgb(254, 224, 90);
+				bottom: 0;
+				border-radius: 50% 50% 0 0/30px 30px 0 0;
+				overflow: hidden;
+			}
+
+			/* 第一个 */
+
+			.one_yj_waikuang01 {
+				top: 100px;
+				height: 165px;
+				width: 165px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				/* 负数就是左 */
+
+
+
+			}
+
+			.one_yj_waikuang02 {
+				top: 100px;
+				height: 165px;
+				width: 165px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: 125px;
+				/* 负数就是左 */
+
+
+			}
+
+			.one_yj_li01 {
+				position: absolute;
+				background-color: rgb(254, 224, 90);
+				top: 20px;
+				left: 12px;
+				height: 125px;
+				width: 125px;
+				border-radius: 50%;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+
+			.one_yj_bai01 {
+				top: 55px;
+				height: 125px;
+				width: 125px;
+				background-color: white;
+				position: absolute;
+				border-radius: 0;
+				overflow: hidden;
+
+			}
+
+			.one_yj_hei01 {
+				width: 67px;
+				height: 67px;
+				background-color: rgb(129, 56, 56);
+				border-radius: 50%;
+				border: 1px solid black;
+				position: absolute;
+				left: 25px;
+				top: -37px;
+			}
+
+			.one_gl01 {
+				width: 7px;
+				height: 7px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: 10px 0px 0 10px #000;
+				position: absolute;
+				top: 38px;
+				left: 19px;
+
+			}
+
+			.one_yj_li02 {
+				position: absolute;
+				background-color: rgb(254, 224, 90);
+				top: 20px;
+				right: 20px;
+				height: 125px;
+				width: 125px;
+				border-radius: 50%;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+
+			.one_yj_bai02 {
+				top: 55px;
+				height: 125px;
+				width: 125px;
+				background-color: white;
+				position: absolute;
+				border-radius: 0;
+				overflow: hidden;
+
+			}
+
+			.one_yj_hei02 {
+				width: 67px;
+				height: 67px;
+				background-color: rgb(129, 56, 56);
+				border-radius: 50%;
+				border: 1px solid black;
+				position: absolute;
+				left: 25px;
+				top: -36px;
+			}
+
+			.one_gl02 {
+				width: 7px;
+				height: 7px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: 10px 0px 0 10px #000;
+				position: absolute;
+				top: 36px;
+				left: 20px;
+			}
+
+			/* 第二个 */
+			.yj_wk {
+				top: 30px;
+				height: 280px;
+				width: 280px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				/* 负数就是左 */
+				border: 1px solid #000;
+			}
+
+			.yj_li {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				height: 220px;
+				width: 220px;
+				border-radius: 50%;
+				background-color: rgb(254, 224, 90);
+				border: 1px solid black;
+			}
+
+			.yj_bai {
+				height: 160px;
+				width: 220px;
+				background-color: white;
+				position: absolute;
+				border-radius: 50%;
+				top: 30px;
+
+
+			}
+
+			.yj_hei {
+				width: 90px;
+				height: 90px;
+				background-color: rgb(129, 56, 56);
+				border-radius: 50%;
+				border: 1px solid black;
+				position: absolute;
+				left: 65px;
+				top: 35px;
+
+			}
+
+
+			.gl {
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: 18px 20px 0 20px #000;
+				position: absolute;
+				top: 16px;
+				left: 17px;
+
+
+				/* 第三个 */
+			}
+
+			.three_yj_waikuang01 {
+				top: 100px;
+				height: 165px;
+				width: 165px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				/* 负数就是左 */
+
+
+
+			}
+
+			.three_yj_waikuang02 {
+				top: 100px;
+				height: 165px;
+				width: 165px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: 125px;
+				/* 负数就是左 */
+
+
+			}
+
+			.three_yj_li01 {
+				position: absolute;
+				background-color: rgb(254, 224, 90);
+				top: 20px;
+				left: 12px;
+				height: 125px;
+				width: 125px;
+				border-radius: 50%;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+
+			.three_yj_bai01 {
+
+				top: 15px;
+				left: 2px;
+				height: 55px;
+				width: 125px;
+				background-color: white;
+				position: absolute;
+				border-radius: 50% 50% 0 0;
+				overflow: hidden;
+
+			}
+
+			.three_yj_hei01 {
+				width: 50px;
+				height: 50px;
+				background-color: rgb(129, 56, 56);
+				border-radius: 50%;
+				border: 1px solid black;
+				position: absolute;
+				left: -8px;
+				top: 10px;
+			}
+
+			.three_gl01 {
+				width: 13px;
+				height: 13px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: -10px 6px 0 13px #000;
+				position: absolute;
+				top: 14px;
+				left: 24px;
+
+			}
+
+			.three_yj_li02 {
+				position: absolute;
+				background-color: rgb(254, 224, 90);
+				top: 120px;
+				right: -15px;
+				height: 125px;
+				width: 125px;
+				border-radius: 50%;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+
+			.three_yj_bai02 {
+				top: 15px;
+				left: 0px;
+				height: 55px;
+				width: 120px;
+				background-color: white;
+				position: absolute;
+				border-radius: 50% 50% 0 0;
+				overflow: hidden;
+
+			}
+
+			.three_yj_hei02 {
+				width: 50px;
+				height: 50px;
+				background-color: rgb(129, 56, 56);
+				border-radius: 50%;
+				border: 1px solid black;
+				position: absolute;
+				left: -7px;
+				top: 10px;
+			}
+
+			.three_gl02 {
+				width: 13px;
+				height: 13px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: -10px 6px 0 13px #000;
+				position: absolute;
+				top: 15px;
+				left: 22px;
+
+			}
+
+
+
+			/* 嘴第一个 */
+			.one_zuiba,
+			.one_zuiba_ {
+				width: 150px;
+				height: 120px;
+				border-radius: 50%;
+				background-color: rgb(254, 224, 90);
+				position: absolute;
+				bottom: 200px;
+				left: 50px;
+				border: 5px solid black;
+			}
+
+			.one_zuiba_ {
+				background-color: rgb(254, 224, 90);
+				bottom: 200px;
+				left: 30px;
+				width: 200px;
+				height: 119px;
+				border: none;
+			}
+
+
+
+
+			/* 第二个 */
+			.zuiba,
+			.zuiba_ {
+				width: 160px;
+				height: 80px;
+				border-radius: 50%;
+				background-color: #000;
+				position: absolute;
+				bottom: 220px;
+				left: 40px;
+
+				overflow: hidden;
+			}
+
+			.zuiba_ {
+				background-color: rgb(254, 224, 90);
+				bottom: 200px;
+				left: 35px;
+				width: 170px;
+				height: 70px;
+			}
+
+			.yachi01 {
+				width: 50px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				left: 30px;
+				top: -35px;
+				border-radius: 15px;
+			}
+
+			.yachi02 {
+				width: 50px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				left: 80px;
+				top: -35px;
+				border-radius: 15px;
+				;
+			}
+
+			.shetou02 {
+				position: absolute;
+				width: 70px;
+				height: 60px;
+				background-color: rgb(129, 56, 56);
+				left: 60px;
+				bottom: -2px;
+				border-radius: 50%;
+
+			}
+
+			.shetou01 {
+				position: absolute;
+				width: 70px;
+				height: 60px;
+				background-color: rgb(129, 56, 56);
+				left: 20px;
+				bottom: -2px;
+				border-radius: 50%;
+			}
+
+			.yachi03 {
+				width: 40px;
+				height: 36px;
+				background-color: white;
+				position: absolute;
+				left: 115px;
+				top: 32px;
+				border-radius: 15px;
+				;
+			}
+
+			.yachi04 {
+				width: 36px;
+				height: 36px;
+				background-color: white;
+				position: absolute;
+				left: 0px;
+				top: 32px;
+				border-radius: 15px;
+			}
+
+			/* three */
+			.three_zuiba,
+			.three_zuiba_ {
+				width: 145px;
+				height: 120px;
+				border-radius: 50%;
+				background-color: #000;
+				position: absolute;
+				bottom: 245px;
+				left: 94px;
+				overflow: hidden;
+			}
+
+			.three_zuiba_ {
+				background-color: rgb(254, 224, 90);
+				bottom: 280px;
+				left: 70px;
+				width: 170px;
+				height: 120px;
+
+			}
+
+			.three_yachi01 {
+				width: 70px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 40px;
+				top: 48px;
+				border-radius: 15px;
+
+			}
+
+			.three_yachi02 {
+				width: 49px;
+				height: 62px;
+				background-color: white;
+				position: absolute;
+				left: 108px;
+				top: 36px;
+				border-radius: 0 0 0 40%;
+			}
+
+			.three_yachi03 {
+				width: 49px;
+				height: 62px;
+				background-color: white;
+				position: absolute;
+				left: -8px;
+				top: 36px;
+				border-radius: 40%;
+			}
+
+			.three_yachi04 {
+				width: 49px;
+				height: 62px;
+				background-color: white;
+				position: absolute;
+				left: 5px;
+				top: 95px;
+				border-radius: 50%;
+			}
+
+			.three_yachi05 {
+				width: 65px;
+				height: 62px;
+				background-color: white;
+				position: absolute;
+				left: 52px;
+				top: 95px;
+				border-radius: 30%;
+			}
+
+			.three_yachi06 {
+				width: 65px;
+				height: 62px;
+				background-color: white;
+				position: absolute;
+				left: 110px;
+				top: 95px;
+				border-radius: 30%;
+			}
+
+
+
+			.yifu {
+				position: absolute;
+				bottom: 0;
+				width: 0px;
+				height: 200px;
+				width: 250px;
+
+			}
+
+			.yifu div {
+				width: 250px;
+				height: 50px;
+				background-color: rgb(63, 61, 62);
+			}
+
+			.yifu div:nth-child(2n) {
+				background-color: rgb(233, 232, 228);
+			}
+
+			.koudai {
+				position: absolute;
+				width: 120px;
+				height: 92px;
+				border: 4px double #000000;
+				bottom: 60px;
+				right: 60px;
+				border-radius: 0 0 50% 50%;
+				background-color: aliceblue;
+				opacity: 0.4;
+				/*透明度*/
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="bg">
+			<div class="one">
+				
+				<div class="sanjiao"></div>
+				<div class="wujiao"></div>
+				
+				
+				<div class="tf1"></div>
+				<div class="tf2"></div>
+				<div class="tf3"></div>
+				
+				<div class="one_body">
+					
+
+
+					<div class="one_zuiba"> </div>
+					<div class="one_zuiba_"></div>
+					<div class="yifu">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+
+					</div>
+					<div class="koudai"></div>
+				</div>
+				<div class="one_body_1">
+					<div class="one_yj_waikuang01">
+						<div class="one_yj_li01">
+
+							<div class="one_yj_bai01">
+								<div class="one_yj_hei01">
+									<div class="one_gl01"></div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="one_yj_waikuang02">
+						<div class="one_yj_li02">
+
+							<div class="one_yj_bai02">
+								<div class="one_yj_hei02">
+									<div class="one_gl02"></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+
+
+				</div>
+			</div>
+
+			<div class="two">
+				<div class="xhr_body">
+
+					<div class="yj_wk">
+						<div class="yj_li">
+							<div class="yj_bai">
+								<div class="yj_hei">
+									<div class="gl"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="zuiba">
+						<div class="yachi01"></div>
+						<div class="yachi02"></div>
+
+						<div class="shetou01"></div>
+						<div class="shetou02"></div>
+
+						<div class="yachi03"></div>
+						<div class="yachi04"></div>
+					</div>
+
+					<div class="zuiba_">
+
+					</div>
+
+					<div class="yifu">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+
+					</div>
+					<div class="koudai"></div>
+				</div>
+
+			</div>
+			<div class="three">
+				<div class="three_body">
+					<div class="three_yj_waikuang01">
+						<div class="three_yj_li01">
+
+							<div class="three_yj_bai01">
+								<div class="three_yj_hei01">
+									<div class="three_gl01"></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="three_yj_waikuang02"></div>
+					<div class="three_yj_li02">
+						<div class="three_yj_bai02">
+							<div class="three_yj_hei02">
+								<div class="three_gl02"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="three_zuiba">
+					<div class="three_yachi01"></div>
+					<div class="three_yachi02"></div>
+					<div class="three_yachi03"></div>
+					<div class="three_yachi04"></div>
+					<div class="three_yachi05"></div>
+					<div class="three_yachi06"></div>
+				</div>
+
+
+				<div class="three_zuiba_"></div>
+
+				<div class="yifu">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+
+				</div>
+				<div class="koudai"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人页面</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./个人页面.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-box">
+            <ul>
+                <!-- <li class="item left-box-active">个人介绍</li>
+                <li class="item">算法难题</li>
+                <li class="item">计算器</li>
+                <li class="item">小黄人</li> -->
+            </ul>
+            <!-- 左下角个人中心 -->
+            <div class="user-info">
+                <img src="./imgs/mini头像.png" alt="">
+                <span>常育豪</span>
+                <i class="fa fa-cogs"></i>
+            </div>
+        </div>
+        <div class="right-box">
+            <div class="top">
+                <span class="current-tag"></span>
+                <span></span>
+            </div>
+            <div class="handler"></div>
+            <div id="right-main">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3" style="width: 100px;"><img src="./imgs/头像.jpg" style="width: 100px;"></td>
+                            <td>姓名：常育豪</td>
+                            <td>QQ：3600929646</td>
+                        </tr>
+                        <tr>
+                            <td>性别：男</td>
+                            <td>民族：汉族</td>
+                        </tr>
+                        <tr>
+                            <td>政治面貌：共青团员</td>
+                            <td>身高：180</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <span>座右铭：柳暗花明又一村</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="carousel-container">
+                                    <!-- 走马灯 -->
+                                    <div class="carousel-list">
+                                        <div class="carousel-item"><img src="./imgs/1.jpg"></a></div>
+                                        <div class="carousel-item" style="padding: 0 150px;"><img src="./imgs/2.jpg"></a></div>
+                                        <div class="carousel-item" style="padding: 0 calc((600px - 266.66px) / 2);"><img src="./imgs/3.jpg"></a></div>
+                                    </div>
+                                    <!-- 左箭头 -->
+                                    <div class="carousel-arrow carousel-arrow-left" onclick="leftNext()"></div>
+                                    <!-- 右箭头 -->
+                                    <div class="carousel-arrow carousel-arrow-right" onclick="rightNext()"></div>
+                                    <!-- 指示器 -->
+                                    <div class="indicator">
+                                        <span onclick="moveTo(0)" class="active"><a></a></span>
+                                        <span onclick="moveTo(1)"><a></a></span>
+                                        <span onclick="moveTo(2)"><a></a></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./个人页面.js"></script>
+</body>
+</html>

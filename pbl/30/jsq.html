@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			/* 			.top {
+				width: 492px;
+				height: 100px;
+				margin: auto;
+				background-color: aliceblue;
+				border: solid 4px lightblue;
+			}
+
+			.top div:first-child {
+				width: 486px;
+				height: 95px;
+				margin: auto;
+				background-color: white;
+				border: solid 4px blue;
+			} */
+
+			.pi {
+				width: 124px;
+				height: 100px;
+				border: solid gray 2px;
+				background: skyblue;
+				float: left;
+				font-size: 30px;
+				text-align: center;
+				line-height: 80px;
+				background-image: ;
+			}
+
+			.pi:hover {
+				background-color: blue;
+				font-size: 40px;
+			}
+
+			.box {
+				width: 496px;
+				height: 589px;
+				margin: auto;
+				border: solid royalblue 2px;
+				/*  border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px; */
+				/* 	border-radius: 5%; */
+				background-color: powderblue;
+			}
+
+			.with {
+				width: 496px;
+				height: 3px;
+				radius: 5%;
+				background-color: powderblue;
+			}
+
+			#srk {
+				width: 73.6%;
+				height: 75px;
+				font-size: 30px;
+				background-color: white;
+			}
+
+			#c {
+				margin-top: 36px;
+				font-size: xx-large;
+				width: 20%;
+				height: 75px;
+				background-color: white;
+			}
+
+			.fh {
+				width: 124px;
+				height: 100px;
+				border: solid gray 2px;
+				background: aliceblue;
+				float: left;
+				font-size: 30px;
+				text-align: center;
+				line-height: 80px;
+			}
+
+			.fh:hover {
+				background-color: lightblue;
+				font-size: 40px;
+			}
+
+			.clear {
+				left: 100%;
+				width: 20%;
+				height: 75px;
+				background-color: white;
+			}
+
+			.eq {
+				width: 248px;
+				height: 100px;
+				border: solid gray 2px;
+				background: aliceblue;
+				float: left;
+				font-size: 30px;
+				text-align: center;
+				line-height: 80px;
+			}
+
+			.del {
+				width: 23%;
+				height: 75px;
+				font-size: 30px;
+				background-color: deepskyblue;
+			}
+		</style>
+		<script>
+			function clearValue() {
+				document.getElementById("srk").value = "";
+			}
+
+			function get(value) {
+				document.getElementById("srk").value += value;
+			}
+
+			function ve() {
+				var ve = 0;
+				ve = document.getElementById("srk").value;
+				document.getElementById("srk").value = eval(ve);
+			}
+
+			// let s;
+			// let res;
+			//
+			// function insert(num) {
+			// 	document.form.srk.value = document.form.srk.value + num;
+			// 	s = document.form.srk.value;
+			// }
+			//
+			// function houzhuijs() {
+			// 	res = zhonzhui();
+			// 	let index = -1;
+			// 	let num = [];
+			// 	let daan;
+			// 	for (let i = 0; i < res.length; i++) {
+			// 		if (res[i] >= '0') {
+			// 			num[++index] = parseInt(res[i]);
+			// 		} else {
+			// 			let num2 = num[index--];
+			// 			let num1 = num[index--];
+			// 			if (res[i] == '-') {
+			// 				daan = num1 - num2;
+			// 				num[++index] = daan;
+			// 			} else if (res[i] == '+') {
+			// 				daan = num1 + num2;
+			// 				num[++index] = daan;
+			// 			} else if (res[i] == '*') {
+			// 				daan = num1 * num2;
+			// 				num[++index] = daan;
+			// 			} else if (res[i] == '/') {
+			// 				daan = num1 / num2;
+			// 				num[++index] = daan;
+			// 			}
+			// 		}
+			// 	}
+			// 	document.form.srk.value = daan;
+			// }
+			//
+			// function clean() {
+			// 	document.form.srk.value = "";
+			// }
+			//
+			// function back() {
+			// 	let exp = document.form.srk.value;
+			// 	document.form.srk.value = exp.substring(0, exp.length - 1);
+			// }
+			// const fh = ['+', '-', '*', '/'],
+			// 	opmap = {
+			// 		'(': 0,
+			// 		'+': 1,
+			// 		'-': 1,
+			// 		'*': 2,
+			// 		'/': 2
+			// 	};
+			//
+			// function zhonzhui() {
+			// 	let answer = [];
+			// 	let index1 = -1;
+			// 	let op = [];
+			// 	let index2 = -1;
+			// 	let isPrenum = false;
+			// 	let preGrade = 0;
+			// 	for (let i = 0; i < s.length; i++) {
+			// 		if (s[i] >= '0' && isPrenum) {
+			// 			answer[index1] = answer[index1] + s[i];
+			// 		} else if (s[i] >= '0') {
+			// 			isPrenum = true;
+			// 			answer[++index1] = s[i];
+			// 		} else {
+			// 			isPrenum = false;
+			// 			if (index2 == -1 || s[i] == '(') {
+			// 				op[++index2] = s[i];
+			// 			} else {
+			// 				if (s[i] == ')') {
+			// 					while (op[index2] != '(') {
+			// 						answer[++index1] = op[index2--];
+			// 					}
+			// 					--index2;
+			// 				} else {
+			// 					while (true) {
+			// 						let preGrade = opmap[op[index2]];
+			// 						let grade = opmap[s[i]];
+			// 						if (grade > preGrade) {
+			// 							op[++index2] = s[i];
+			// 							break;
+			// 						} else {
+			// 							answer[++index1] = op[index2--];
+			// 						}
+			// 					}
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// 	console.log(answer);
+			// 	while (index2 != -1) {
+			// 		answer[++index1] = op[index2--];
+			// 	}
+			// 	return answer;
+			// }
+		</script>
+
+	</head>
+	<body>
+		<!-- <div class="top"> -->
+		<!-- 	<div class="shangmian" id="wxl"> -->
+
+		</div>
+		</div>
+		<div class="boss">
+
+		</div>
+		<div class="box">
+			<div class="with"></div>
+			<input type="text" id="srk">
+			<input type="button" value="C" class="del" onclick="clearValue()">
+			<br />
+			<input type="button" value="1" class="pi" onclick="get(this.value)">
+			<input type="button" value="2" class="pi" onclick="get(this.value)">
+			<input type="button" value="3" class="pi" onclick="get(this.value)">
+			<input type="button" value="+" class="fh" onclick="get(this.value)">
+			<br />
+			<input type="button" value="4" class="pi" onclick="get(this.value)">
+			<input type="button" value="5" class="pi" onclick="get(this.value)">
+			<input type="button" value="6" class="pi" onclick="get(this.value)">
+			<input type="button" value="-" class="fh" onclick="get(this.value)">
+			<br />
+			<input type="button" value="7" class="pi" onclick="get(this.value)">
+			<input type="button" value="8" class="pi" onclick="get(this.value)">
+			<input type="button" value="9" class="pi" onclick="get(this.value)">
+			<input type="button" value="*" class="fh" onclick="get(this.value)">
+			<br />
+			<input type="button" value="0" class="pi" onclick="get(this.value)">
+			<input type="button" value="(" class="fh" onclick="get(this.value)">
+			<input type="button" value=")" class="fh" onclick="get(this.value)">
+			<input type="button" value="/" class="fh" onclick="get(this.value)">
+			<br />
+			<input type="button" value="00" class="pi" onclick="get(this.value)">
+			<input type="button" value="." class="fh" onclick="get(this.value)">
+			<input type="button" value="=" class="eq" onclick="ve()">
+			<br />
+		</div>
+	</body>
+</html>

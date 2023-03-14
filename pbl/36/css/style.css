@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+  }
+  
+  body {
+    background-color: #e9d5ca;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .select-menu {
+    width: 300px;
+    cursor: pointer;
+    position: relative;
+  }
+  .select {
+    background-color: #201e1e;
+    padding: 20px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .options-list {
+    position: absolute;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    margin-top: 6px;
+    padding: 0 20px;
+    max-height: 180px;
+    overflow-y: auto;
+    transition: 0.4s linear 0.2s;
+    height: 0;
+  }
+  .option{
+    padding: 8px 0;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+  }
+  .option:hover,
+  .option.selected{
+    color: #00a8ff;
+  }
+  .options-list::-webkit-scrollbar{
+    width: 4px;
+    background-color: #eee;
+  }
+  .options-list::-webkit-scrollbar-thumb{
+    background-color: #00a8ff;
+  }
+  .options-list.active{
+    height: 180px;
+  }
+
+
+
+/* 第二个下拉框 */
+.select-menu2 {
+    width: 300px;
+    cursor: pointer;
+    position: relative;
+    /* margin: 10%; */
+
+}
+
+.select2 {
+    background-color: black;
+    padding: 20px;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    /* 上下居中 */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options-list2 {
+    position: absolute;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    margin-top: 4px;
+    padding: 0 20px;
+    max-height: 180px;
+    /* 文字内容溢出后自动加一个滚动条 */
+    overflow-y: auto;
+    /* tr */
+    transition: 0.4s linear 0.2s;
+
+    /* 隐藏这个选项框 */
+    height: 0;
+}
+
+
+.option2 {
+    padding: 8px 0;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.option2:hover,
+option.selected {
+    color: #00a8ff;
+}
+
+.options-list2::-webkit-scrollbar {
+    width: 4px;
+    background-color: #eee;
+}
+
+.options-list2::-webkit-scrollbar-thumb {
+    background-color: #00a8ff;
+}
+
+/* 用户点击向下的按钮，就附上这个.active类名，就可以实现长度变长 */
+.options-list2.active {
+    height: 180px;
+}

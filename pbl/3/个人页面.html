@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的主页</title>
+    <link rel="stylesheet" href="./font/font_3770387_hcfilrt6e29/iconfont.css">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        .container{
+            height:100%;
+        }
+        .main-container {
+            width: 947px;
+            background-color: rgb(211, 211, 211);
+            /* height: 800px; */
+            position: absolute;
+            /* 相对父元素 */
+            top: 0px;
+            left: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            height:1500px;
+        }
+        .dance2 {
+            position: fixed;
+            top: 0px;
+            left: 1147px;
+            width: 202px;
+        }
+        .topbar {
+            height: 50px;
+            box-shadow: 0 0 10px rgba(95, 95, 95, 0.3);
+			background-color: rgb(9, 9, 9);
+        }
+        .my {
+            margin-left: 35px;
+            color: rgb(168, 165, 165);
+            font-size: 20px;
+            line-height: 50px;
+        }
+        .right{
+            position: absolute;
+            right:30px;
+            top:0px;
+        }
+        .right:hover .levelbar{
+            display:block;
+        }
+        .message{
+            line-height: 50px;
+            color: rgb(168, 165, 165);
+            font-size: 20px;
+        }
+        .levelbar{
+            position: absolute;
+            right:-25px;
+            width:170px;
+            height:90px;
+            color: rgb(168, 165, 165);
+            background-color: rgb(252, 239, 239);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            display: none;
+            z-index:99;
+        }
+        .levelbar span{
+            margin-left: 10px;
+            margin-bottom: 7px;
+            font-size: 15px;
+        }
+        .self-photo{
+            width:500px;
+			height:500px;
+            position: absolute;
+            left:30px;
+            top:70px;
+            background-color: rgb(252, 239, 239);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            
+        }
+        .photo1{
+            width:200px;
+            height:270px;
+            margin-left: 50px;
+            margin-top: 100px;
+        }
+        .little-bar span{
+            color: rgb(36, 35, 35);
+            margin-left: 50px;
+        }
+        .album{
+            width:300px;
+            background-color: rgb(252, 239, 239);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            position: absolute;
+            right:30px;
+            top:70px;
+        }
+        .album img{
+            width:200px;
+            margin-left: 50px;
+            margin-bottom: 10px;
+        }
+        .myalbum{
+            color: rgb(168, 165, 165);
+            font-size: 20px;
+            margin-left: 100px;
+        }
+        .acomplish{
+            width:500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            position: absolute;
+            top:660px;
+            left:30px;
+            background-color: rgb(252, 239, 239);
+            height:400px;
+          
+        }
+        .acomplishfont{
+            color: rgb(168, 165, 165);
+            font-size: 20px;
+            margin-left: 200px;
+        }
+        .acomplish img{
+            width:240px;
+            margin-left: 5px;
+        }
+        .dancelife{
+            height:300px;
+            background-color: rgb(252, 239, 239);
+            box-shadow: 0 0 10px rgba(124, 124, 124, 0.3);
+            position:absolute;
+            top:1130px;
+            left:30px;
+            width:95%;
+        }
+        .dancelife img{
+            width:240px;
+            float: left;
+            margin-left: 45px;
+            margin-top: 30px;
+        }
+        .dancefont{
+            margin-left: 400px;
+            margin-bottom: 10px;
+            color: rgb(168, 165, 165);
+            font-size: 20px;
+        }
+        .summary{
+            width:95%;
+            background-color: rgb(252, 239, 239);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            position:absolute;
+            top:1500px;
+            left:30px;
+            height:340px;
+        }
+        .mysummary{
+            margin-left: 400px;
+            margin-bottom: 10px;
+            color: rgb(168, 165, 165);
+            font-size: 20px;
+        }
+        .web{
+            width:300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            height: 300px;
+            background-color: rgb(252, 239, 239);
+            float: left;
+            margin-left: 50px;
+            margin-right: 200px;
+        }
+        .number{
+            width:300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            background-color: rgb(252, 239, 239);
+            height: 300px;
+            float: left;
+        }
+        .little-bar{
+            position: absolute;
+            top:25px;
+            left:250px;
+        }
+        .ac1{
+            float:left;
+        }
+        .ac2{
+            float:left;
+        }
+        .ac3{
+            position:absolute;
+            left:0px;
+            top:210px;
+        }
+        .ac4{
+            position:absolute;
+            top:210px;
+            left:245px;
+        }
+        .font1{
+            position: absolute;
+            top:250px;
+            left:65px;
+        }
+        .font2{
+            position: absolute;
+            top:250px;
+            left:380px; 
+        }
+        .font3{
+            position: absolute;
+            top:250px;
+            left:700px; 
+        }
+        .dancelife span{
+            color: rgb(168, 165, 165);
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="dance1 dance" src="./img/dance.jpg" alt="">
+        <div class="main-container">
+            <div class="topbar">
+                <span class="my">我的驿站</span>
+                <div class="right">
+                    <span class="message">个人信息</span>
+                    <div class="levelbar">
+                        <span>个人介绍</span> 
+                        <br>
+                        
+                        <span>我的小黄人</span>
+                        <br>
+                      
+                        <span>我的力扣难题</span>
+                        <br>
+                </div>
+            </div>
+            <div class="self-photo">
+                <img class="photo1" src="./img/主页照片.jpg">
+                <div class="little-bar">
+                    <span></span> 
+                        <br>
+                        <br>
+
+                        
+                        <span>性别：女 </span>
+                        <br>
+                        <br>
+                        
+                      
+                        <span>出生年月：2002.3.26</span>
+                        <br>
+                        <br>
+                     
+                        <span>星座：白羊座</span>
+                        <br>
+                        <br>
+                       
+                        <span>爱好：跳舞、素描、葫芦丝</span>
+                        <br>
+                        <br>
+                        
+                        <span>年龄：20 </span>
+						<br>
+						<br>
+						<span>身高：188</span>
+						<br>
+						<br>
+						<span>体重：40kg</span>
+						<br>
+						<br>
+						<span>我的微信：s13939123935</span>
+						<br>
+						<br>
+						
+
+                </div>
+            </div>
+			
+			</div>
+            <div class="album">
+                <div class="myalbum">我的相册</div>
+                <br>
+                <img src="./img/我的相册1.JPG">
+                <br>
+                <img src="./img/我的相册2.JPG">
+                <br>
+                <img src="./img/我的相册3.JPG">
+                <br>
+                <img src="./img/我的的相册4.JPG">
+                <br>
+                <!-- <img src="./img/我的相册5.JPG"> -->
+            </div>
+            <div class="acomplish">
+                <div class="acomplishfont">练舞日常</div>
+                <img class="ac1" src="./img/练舞日常2.JPG">
+                <img  class="ac2" src="./img/练舞日常3.JPG">
+                <img class="ac3" src="./img/练舞日常4.JPG">
+                <img class="ac4" src="./img/练舞日常6.JPG">
+                <br>
+                <!-- <img src="./img/优秀团员.JPG"> -->
+            </div>
+            <div class="dancelife">
+                <div class="dancefont">成果展示</div>
+                <img src="./img/全国舞蹈大赛.JPG">
+                <span class="font1">在全国舞蹈大赛获一等奖</span>
+                <img src="./img/普通话证书.JPG">
+                <span class="font2">全国普通话证书</span>
+                <img src="./img/最美笔记2.JPG">
+                <span class="font3">最美笔记</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

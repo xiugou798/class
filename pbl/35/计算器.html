@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>计算器</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.button {
+			width: 125px;
+			height: 125px;
+			text-align: center;
+			font-size: 30px;
+			cursor: pointer;
+		}
+
+		.nav {
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+			border-bottom-color: #738CAA;
+			width: 800px;
+			margin-right: auto;
+			margin-left: auto;
+			font-family: 隶书;
+		}
+
+		.jsq {
+			width: 500px;
+			height: 700px;
+			position: absolute;
+			left: 30%;
+			background-color: aqua;
+		}
+
+		.srk {
+			width: 497px;
+			height: 100px;
+			position: auto;
+			font-size: 30px;
+		}
+
+		.srjm {
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			float: left;
+		}
+
+		.zt {
+			width: 2000px;
+			height: 900px;
+		}
+	</style>
+	<script>
+		let s;
+		let res;
+
+		function insert(num) {
+			document.form.srk.value = document.form.srk.value + num;
+			s = document.form.srk.value;
+		}
+
+		function houzhuijs() {
+			res = zhonzhui();
+			let index = -1;
+			let num = [];
+			let daan;
+			for (let i = 0; i < res.length; i++) {
+				if (res[i] >= '0') {
+					num[++index] = parseInt(res[i]);
+				} else {
+					let num2 = num[index--];
+					let num1 = num[index--];
+					if (res[i] == '-') {
+						daan = num1 - num2;
+						num[++index] = daan;
+					} else if (res[i] == '+') {
+						daan = num1 + num2;
+						num[++index] = daan;
+					} else if (res[i] == '*') {
+						daan = num1 * num2;
+						num[++index] = daan;
+					} else if (res[i] == '/') {
+						daan = num1 / num2;
+						num[++index] = daan;
+					}
+				}
+			}
+			document.form.srk.value = daan;
+		}
+
+		function clean() {
+			document.form.srk.value = "";
+		}
+
+		function back() {
+			let exp = document.form.srk.value;
+			document.form.srk.value = exp.substring(0, exp.length - 1);
+		}
+		const opmap = {
+			'(': 0,
+			'+': 1,
+			'-': 1,
+			'*': 2,
+			'/': 2
+		};
+
+		function zhonzhui() {
+			let answer = [];
+			let index1 = -1;
+			let op = [];
+			let index2 = -1;
+			let isPrenum = false;
+			let preGrade = 0;
+			for (let i = 0; i < s.length; i++) {
+				if (s[i] >= '0' && isPrenum) {
+					answer[index1] = answer[index1] + s[i];
+				} else if (s[i] >= '0') {
+					isPrenum = true;
+					answer[++index1] = s[i];
+				} else {
+					isPrenum = false;
+					if (index2 == -1 || s[i] == '(') {
+						op[++index2] = s[i];
+					} else {
+						if (s[i] == ')') {
+							while (op[index2] != '(') {
+								answer[++index1] = op[index2--];
+							}
+							--index2;
+						} else {
+							while (true) {
+								let preGrade = opmap[op[index2]];
+								let grade = opmap[s[i]];
+								if (grade > preGrade) {
+									op[++index2] = s[i];
+									break;
+								} else {
+									answer[++index1] = op[index2--];
+								}
+							}
+						}
+					}
+				}
+			}
+			console.log(answer);
+			while (index2 != -1) {
+				answer[++index1] = op[index2--];
+			}
+			return answer;
+		}
+	</script>
+	<body>
+		<div class="dhl" style="background: url(./imgs/6.jpg);">
+			<table class="nav">
+				<tr>
+					<td><img src="./imgs/35.png" style="width: 70px; height:70px; border-radius:50%" /></td>
+					<td text-align="center" style="font-size: 30px; color:plum"><a href="./个人页面.html">主页</a></td>
+					<td text-align="center" style="font-size: 30px; color:red"><a href="./计算器.html">计算器</a></td>
+					<td text-align="center" style="font-size: 30px; color:magenta"><a href="./瀑布流.html">风景图片</a></td>
+					<td text-align="center" style="font-size: 30px; color:lawngreen"><a href="./力扣难题.html">力扣难题</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="zt" style="background: url(./imgs/13.jpg);">
+			<div class="jsq">
+				<form name="form">
+					<input class="srk" name="srk">
+				</form>
+				<div class="srjm">
+					<table>
+						<input type="button" value="lg" class="button" onclick="insert('lg')">
+						<input type="button" value="ln" class="button" onclick="insert('ln')">
+						<input type="button" value="(" class="button" onclick="insert('(')">
+						<input type="button" value=")" class="button" onclick="insert(')')">
+
+						<input type="button" value="C" class="button" onclick="back()">
+						<input type="button" value="AC" class="button" onclick="clean()">
+						<input type="button" value="%" class="button" onclick="insert('%')">
+						<input type="button" value="/" class="button" onclick="insert('/')">
+
+
+						<input type="button" value="7" class="button" onclick="insert('7')">
+						<input type="button" value="8" class="button" onclick="insert('8')">
+						<input type="button" value="9" class="button" onclick="insert('9')">
+						<input type="button" value="*" class="button" onclick="insert('*')">
+
+
+						<input type="button" value="4" class="button" onclick="insert('4')">
+						<input type="button" value="5" class="button" onclick="insert('5')">
+						<input type="button" value="6" class="button" onclick="insert('6')">
+						<input type="button" value="-" class="button" onclick="insert('-')">
+
+
+						<input type="button" value="1" class="button" onclick="insert('1')">
+						<input type="button" value="2" class="button" onclick="insert('2')">
+						<input type="button" value="3" class="button" onclick="insert('3')">
+						<input type="button" value="+" class="button" onclick="insert('+')">
+
+
+						<input type="button" value="e" class="button" onclick="insert('e')">
+						<input type="button" value="0" class="button" onclick="insert('0')">
+						<input type="button" value="." class="button" onclick="insert('.')">
+						<input type="button" value="=" class="button" onclick="houzhuijs()">
+
+
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

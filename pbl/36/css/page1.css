@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    min-height: 100vh;
+    /* flex-direction: column; */
+    background: #ffffff;
+
+}
+
+button{
+    position: relative;
+    display: inline-block;
+    margin: 10px 10px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    /* letter-spacing: 2px; */
+    border-radius: 40px;
+    width: 120px;
+    height: 43px;
+    overflow: hidden;
+    font-size: large;
+    border: 0;
+    font-weight: 400;
+    /* background: linear-gradient(90deg,#0162c8,#55e7fc); */
+    /* background-color: #409EFF; */
+    /* background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%); */
+
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+span{
+    position: absolute;
+    background: rgb(255, 255, 255);
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100%{
+        width: 500px;
+        height: 500px;
+        opacity: 0 ;
+    }
+}
+
+
+
+body{
+    border-radius: 14px;
+    background-color: white;
+}
+th,
+td {
+    /* border: 1px solid black; */
+    width: 160px;
+    height: 23px;
+    text-align: center;
+    /* font-size: 11px; */
+    
+
+}
+th{
+    border-bottom: 1px dashed #606266;
+}
+table{
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #606266;
+    line-height: 53px;
+    /* border-spacing: 2px; */
+    width: 100%;
+    height: 50%;
+    /* border-bottom: 1px dashed #606266; */
+    /* border-top: 1px dashed #606266; */
+    /* margin: 4%; */
+}
+table thead{
+    color: #909399;
+    font-weight: 500;
+    width: 70px;
+    height: 50px;
+    /* background-color: #00f2fe; */
+    /* border-bottom: 1px dashed #0b4fd7; */
+    
+}
+
+.select-menu {
+    width: auto;
+    cursor: pointer;
+    position: relative;
+    /* margin: 10%; */
+    
+  }
+  .select {
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    /* 上下居中 */
+    align-items: center;
+    justify-content: center;
+  }
+  .options-list {
+    position: absolute;
+    width: 40%;
+    margin-left: 34%;
+    background-color: white;
+    border-radius: 6px;
+    line-height: 34px;
+    margin-top: 4px;
+    box-shadow: 0px 0px 5px rgb(152, 150, 150);
+    /* padding: 0 20px; */
+    /* max-height: 180px; */
+    text-align: left;
+
+    /* 文字内容溢出后自动加一个滚动条 */
+    overflow-y: auto;
+    /* tr */
+    transition: 0.4s linear 0.2s;
+
+    /* 隐藏这个选项框 */
+    height: 0;
+  }
+  .option{
+    padding: 0px 5px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+  }
+  .option:hover,
+  .option.selected{
+    color: #00a8ff;
+  }
+  .options-list::-webkit-scrollbar{
+    width: 4px;
+    background-color: #eee;
+  }
+  .options-list::-webkit-scrollbar-thumb{
+    background-color: #00a8ff;
+  }
+  .options-list.active{
+    height: 100px;
+  }
+
+
+
+
+
+
+  /* 第二个下拉框 */
+.select-menu2 {
+    width: auto;
+    cursor: pointer;
+    position: relative;
+    /* margin: 10%; */
+
+}
+
+.select2 {
+    /* background-color: black; */
+    /* padding: 20px; */
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    /* 上下居中 */
+    align-items: center;
+    justify-content: center;
+}
+
+.options-list2 {
+    position: absolute;
+    width: 40%;
+    margin-left: 34%;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    line-height: 34px;
+    margin-top: 4px;
+    /* padding: 0 20px; */
+    box-shadow: 0px 0px 20px rgb(241, 240, 240);
+    /* max-height: 180px; */
+    text-align: left;
+    /* 文字内容溢出后自动加一个滚动条 */
+    overflow-y: auto;
+    /* tr */
+    transition: 0.4s linear 0.2s;
+
+    /* 隐藏这个选项框 */
+    height: 0;
+}
+
+
+.option2 {
+    /* padding: 8px 0; */
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    padding: 0px 5px;
+}
+
+.option2:hover,
+option.selected {
+    color: #00a8ff;
+}
+
+.options-list2::-webkit-scrollbar {
+    width: 4px;
+    background-color: #eee;
+}
+
+.options-list2::-webkit-scrollbar-thumb {
+    background-color: #00a8ff;
+}
+
+/* 用户点击向下的按钮，就附上这个.active类名，就可以实现长度变长 */
+.options-list2.active {
+    height: 100px;
+}
+

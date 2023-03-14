@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page1</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            width: 100%;
+            background-color: #e1e3e4;
+        }
+
+        .main {
+            margin: 5% 10%;
+            width: 80%;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .main-one {
+            margin-top: 5%;
+            width: 90%;
+        }
+
+        .main-one h1 {}
+
+        .main-one p {
+            font-size: 20px;
+            width: 90%;
+            margin: 0 5%;
+
+        }
+
+        .main-one p::after {
+            content: "";
+            position: relative;
+            display: block;
+            width: 4px;
+            height: 10px;
+            top: -20px;
+            left: -10px;
+            background-color: black;
+        }
+
+        .main-two {
+            margin: 5%;
+            background-color: #ecedf0;
+            width: 90%;
+
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .main-class {
+            height: 30px;
+            background-color: #d2d2d3;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-class div {
+            height: 20px;
+            border-radius: 50%;
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 4px;
+        }
+
+        .main-class div:nth-child(1) {
+            background-color: #ee6a60;
+        }
+
+        .main-class div:nth-child(2) {
+            background-color: #f8c652;
+        }
+
+        .main-class div:nth-child(3) {
+            background-color: #64ca56;
+        }
+
+        .main-work-describe-three {
+            text-align: center;
+            display: block;
+            font-size: 30px;
+            background-color: orange;
+            border-radius: 20px;
+            width: 200px;
+            height: 50px;
+            transition: 1s;
+            font-family: font1;
+            text-decoration: none;
+        }
+
+        .svg-text {
+            color: black;
+            position: relative;
+            top: -110%;
+            font-size: 30px;
+            left: -20px;
+            transition: 0.5s;
+        }
+
+        .svg-text-1 {
+            position: relative;
+            top: -43px;
+            left: 85px;
+            transition: 1s;
+        }
+
+        .main-work-describe-three:hover .svg-text-1 {
+            left: 240px;
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .outline {
+            fill: white;
+            stroke: black;
+            stroke-width: 8;
+            stroke-dasharray: 200 50;
+            stroke-dashoffset: 100;
+            transition: 1s;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .main-work-describe-three:hover .svg-text {
+            transform: scale(1.1);
+        }
+
+        .main-work-describe-three:hover .svg-text,
+        .main-work-describe-three:hover .outline {
+            stroke: deeppink;
+            color: deeppink;
+            transition: 1s;
+            stroke-dasharray: 100 50;
+            stroke-dashoffset: 200;
+        }
+
+        .col span:nth-child(1) {
+            width: 5%;
+            display: inline-block;
+            text-align: center;
+            border-right: 1px solid #cdcdd1;
+        }
+
+        .col span:nth-child(2) {
+            width: 90%;
+            display: inline-block;
+            margin-left: 30px;
+        }
+
+        .col div {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-one">
+            <h1>page1</h1>
+            <p>Because I don't know what to write, and no one sees the end,
+                make some eggs</p>
+
+        </div>
+        <div class="main-two">
+            <div class="main-class">
+                <div>x</div>
+                <div>-</div>
+                <div>=</div>
+            </div>
+            <div class="main-content">
+                <div class="col">
+                    <pre>
+                        <code>dsd</code>
+                        <code>dsd</code>
+                        <code>dsd</code>
+                        <code>dsd</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <a href="../My page.html" class="main-work-describe-three">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect class="outline" height="100%" width="100%" />
+            </svg>
+            <div class="svg-text">点我返回<div class="svg-text-1">>></div>
+            </div>
+        </a>
+    </div>
+</body>
+<script src="./js/1.js"></script>
+
+</html>

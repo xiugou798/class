@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				padding: 0;
+				margin: 0;
+			}
+
+			.jisuanqi {
+				position: absolute;
+				width: 500px;
+				height: 603px;
+				background-color: aqua;
+				left: 30%;
+
+
+			}
+
+
+			#xlf {
+				position: relative;
+				font-size: 48px;
+
+			}
+
+			.yuan {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: brown;
+			}
+
+			input {
+				width: 121px;
+				height: 100px;
+				border: 1px solid black;
+				font-size: 40px;
+			}
+
+			#fu div {
+				width: 120px;
+				height: 120px;
+				background-color: white;
+				border: 1px solid black;
+				font-size: 40px;
+				line-height: 120px;
+				/* 行间距 */
+				text-align: center;
+
+			}
+
+			#fu1 div {
+				width: 300px;
+				height: 120px;
+				background-color: white;
+				border: 1px solid black;
+				font-size: 40px;
+				line-height: 120px;
+				text-align: center;
+			}
+		</style>
+		<script>
+			// var wc="";
+			// var da=888;
+
+			// function changecolor() {
+			// 	var bluediv = document.getElementById("xlf");
+			// 	bluediv.style.backgroundColor = "red";
+			// }
+
+			// function changeclass() {
+			// 	var bluediv = document.getElementById("xlf");
+			// 	bluediv.style.borderRadius = "50%";
+
+			// }
+
+			// function changeclass2() {
+			// 	var bluediv = document.getElementById("xlf");
+			// 	bluediv.className = "yuan";
+			// }
+
+			// function divvalue(a, b, c) {
+			// 	//函数参数的传递
+			// 	//a=3
+			// 	//b='fdhjdhgj'
+			// 	//c=this
+			// 	var yellowdiv = document.getElementById("xlf");
+			// 	//yellowdiv.textContent=b;
+
+			// 	var txt = c.textContent ? c.textContent : c.value;
+
+			// 	console.log(txt);
+			// 	yellowdiv.textContent = txt;
+
+			// }
+
+			// function getzhi(a) {
+			// 	console.log(a);
+			// 	var yellowdiv = document.getElementById("xlf");
+			// 	var txt = a.innerText?a.innerText:a.value;
+
+			// 	if(txt=="="){
+			// 		//wc="";
+			// 		wc=da;
+			// 	}else{
+			// 		wc=wc+txt;
+			// 	}
+
+			// 	yellowdiv.innerText=wc;
+
+			// }
+			// function jiafa(a){
+			// 	console.log(a);
+			// 	var yellowdiv = document.getElementById("xlf");
+			// 	if(txt=="="){
+			// 		//wc="";
+
+			// 	}else{
+			// 		wc=wc+txt;
+			// 	}
+
+			// 	yellowdiv.innerText=wc;
+
+
+
+			// }
+			function qingkong() {
+				document.getElementById("srk").value = "";
+			}
+
+			function get(value) {
+				console.log(value)
+				document.getElementById("srk").value += value;
+
+
+			}
+
+			function daan() {
+				var daan = 0;
+				daan = document.getElementById("srk").value;
+				document.getElementById("srk").value = eval(daan); //运用公式直接套答案出来
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<div class="jisuanqi">
+				<input type="text" id=srk style="width: 73%;height: 100px;" />
+				<button onclick="qingkong()" style="width: 25%;height: 100px;float: right;font-size: 50px;">C</button>
+				<input type="button" value="1" onclick="get(this.value)">
+				<input type="button" value="2" onclick="get(this.value)">
+				<input type="button" value="3" onclick="get(this.value)">
+				<input type="button" value="+" onclick="get(this.value)">
+				<br />
+				<input type="button" value="4" onclick="get(this.value)">
+				<input type="button" value="5" onclick="get(this.value)">
+				<input type="button" value="6" onclick="get(this.value)">
+				<input type="button" value="-" onclick="get(this.value)">
+				<br />
+				<input type="button" value="7" onclick="get(this.value)">
+				<input type="button" value="8" onclick="get(this.value)">
+				<input type="button" value="9" onclick="get(this.value)">
+				<input type="button" value="*" onclick="get(this.value)">
+				<br />
+				<input type="button" value="0" onclick="get(this.value)">
+				<input type="button" value="(" onclick="get(this.value)">
+				<input type="button" value=")" onclick="get(this.value)">
+				<input type="button" value="/" onclick="get(this.value)">
+				<br />
+				<input type="button" value="00" onclick="get(this.value)">
+				<input type="button" value="." onclick="get(this.value)">
+				<input style="width: 246px;" type="button" value="=" onclick="daan()">
+
+
+			</div>
+
+		</div>
+
+
+
+
+
+	</body>
+</html>

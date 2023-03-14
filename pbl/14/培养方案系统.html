@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>系统培养方案</title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgb(242, 242, 242);
+
+			}
+
+			#wxl {
+				width: 100%;
+				height: 100%;
+
+				display: flex;
+				flex-direction: column;
+			}
+
+			.one,
+			.two {
+				margin: 1%;
+				font-family: "微软雅黑";
+				font-size: 15px;
+			}
+
+			canvas {
+				background-color: aqua;
+				margin: 10px;
+			}
+
+			.zuishang {
+				display: flex;
+				justify-content: space-between;
+				/* div横向排 */
+				padding: 0.5%;
+				align-items: center;
+				/*垂直交叉轴居中*/
+			}
+
+			.fzr {
+				width: 120px;
+				background-color: white;
+				border: 1px solid black;
+				border-radius: 20px;
+				/* 实现边框椭圆 */
+			}
+
+			th,
+			td {
+				background-color: rgb(191, 209, 251);
+			}
+		</style>
+		<link rel="stylesheet" href="css/one.css" />
+		<link rel="stylesheet" href="css/two.css" />
+		<script src="js/canvas.js"></script>
+	</head>
+	<body>
+		<div id="wxl">
+			<div>
+				<div class="zuishang">
+					<div class="fzr" align="center">系分院负责人</div> <!-- align="center"实现文本内容的居中 -->
+					<div>
+						<input type="button" value="退出登录"
+							style="border-radius:12px;background-color: skyblue;color: white;width: 80px;" />
+					</div>
+
+				</div>
+			</div>
+			<div class="one">
+
+				<div class="one_one">
+					<div class="zuishang">
+						<div style="font-size: 20px;color: rgb(133, 129, 250);"><ins>关注专业</ins></div>
+						<div style="margin-left: auto;">
+							<!-- margin-left:auto;表示在flex当中右对齐 -->
+							<select>
+								<option value="门类" selected>门类</option>
+								<option value="工学">工学</option>
+								<option value="理学">理学</option>
+							</select>
+
+
+							<select id="qy" onclick="selectonclick()"></select>
+							<!-- <button onmouseout="zxzy('工1')" style="width: 100px;"></button> -->
+						</div>
+					</div>
+
+					<div class="sjxx">
+						<table style="height: 100%;">
+							<tbody>
+								<!-- 定义表头的行 -->
+								<tr>
+									<!-- 表格当中的行 -->
+									<th>
+										<!-- 表格当中各个单元格 -->
+										门类
+									</th>
+									<th>
+										专业类
+									</th>
+									<th>
+										专业名称
+									</th>
+								</tr>
+
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										计算机科学与技术
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										软件工程
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										网络工程
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										信息安全
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										物联网工程
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										数字媒体技术
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										智能科学与技术
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										空间信息与数字技术
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										电子与计算机工程
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										计算机科学与技术
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: center;">
+										工类
+									</td>
+									<td style="text-align: center;">
+										计算机类
+									</td>
+									<td>
+										<div class="yuan"></div>
+										计算机科学与技术
+									</td>
+								</tr>
+
+
+							</tbody>
+						</table>
+
+					</div>
+
+				</div>
+				<div class="one_two">
+
+
+					<div class="zuishang">
+						<div style="font-size: 20px;color: rgb(133, 129, 250);"><ins>产业数据统计</ins></div>
+						<!-- <button onclick="canvas()">图行趋势</button> -->
+						<a href="canvas图.html"
+							style="border: 2px solid black;border-radius: 15%;background-color: aliceblue;">图形趋势</a>
+						<div>
+							<select style="background-color:rgb(191, 209, 251)">
+								<option>学校所在地</option>
+								<option>成都</option>
+								<option>北京</option>
+								<option>上海</option>
+								<option>深圳</option>
+								<option>长沙</option>
+							</select>
+						</div>
+					</div>
+					<div class="cysj">
+						<table>
+
+							<tr>
+								<th>专业名</th>
+								<th>企业</th>
+								<th>岗位</th>
+								<th>技能</th>
+								<th>任务</th>
+								<th>最低薪资</th>
+								<th>最高薪资</th>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td>300</td>
+								<td>5000</td>
+								<td>400</td>
+								<td>4500</td>
+								<td>2k</td>
+								<td>12k</td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td>300</td>
+								<td>5000</td>
+								<td>400</td>
+								<td>4500</td>
+								<td>2k</td>
+								<td>12k</td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td>300</td>
+								<td>5000</td>
+								<td>400</td>
+								<td>4500</td>
+								<td>2k</td>
+								<td>12k</td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td>300</td>
+								<td>5000</td>
+								<td>400</td>
+								<td>4500</td>
+								<td>2k</td>
+								<td>12k</td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td>300</td>
+								<td>5000</td>
+								<td>400</td>
+								<td>4500</td>
+								<td>2k</td>
+								<td>12k</td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td>300</td>
+								<td>5000</td>
+								<td>400</td>
+								<td>4500</td>
+								<td>2k</td>
+								<td>12k</td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td>300</td>
+								<td>5000</td>
+								<td>400</td>
+								<td>4500</td>
+								<td>2k</td>
+								<td>12k</td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>计算机科学与技术</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+
+
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="two">
+				<div class="two_one">
+					<div class="zuishang">
+						<div style="font-size: 20px;color: rgb(133, 129, 250);"><ins>本校专业现状</ins></div>
+						<div><input type="button" value="增加" id="add" onclick="adddata2()" />
+							<input type="button" value="查询" id="query" onclick="query()" />
+							<input type="text" placeholder="请输入专业名" id="search" />
+
+						</div>
+					</div>
+					<div>
+						<table id="two_one_td" class="zyxz">
+							<tbody id="two_one_one">
+								<tr>
+									<td>专业名</td>
+									<td>负责人</td>
+									<td>课程数量（点击查看详细）</td>
+									<td>学生数量</td>
+									<td>师生比</td>
+									<td>产教匹配度</td>
+									<td>操作按钮组合</td>
+								</tr>
+								<tr class="fz">
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td><input type="button" value="删除" onclick="delect(this)" />
+										<input type="button" value="修改" onclick="update(this)" />
+									</td>
+								</tr>
+								<tr class="fz">
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td>dd</td>
+									<td><input type="button" value="删除" onclick="delect(this)" />
+										<input type="button" value="修改" onclick="update(this)" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+
+
+				</div>
+				<div class="two_two">
+					<div style="font-size: 20px;color: rgb(133, 129, 250);"><ins>未开设专业信息</ins></div>
+
+					<div style="display:flex;text-align:center;">
+						<button class="wkszy" onclick="two_two_one(this)">数字媒体技术</button>
+						<button class="wkszy" onclick="two_two_one(this)">智能科学与技术</button>
+						<button class="wkszy" onclick="two_two_one(this)">空间信息与数字技术</button>
+						<button class="wkszy" onclick="two_two_one(this)">新媒体技术</button>
+					</div>
+					<div style="display:flex;text-align:center;">
+						<button class="wkszy" onclick="two_two_one(this)">电影制作</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="tcyc" id="tc">
+			<label>专业名：</label>
+			<input type="text" placeholder="专业名" id="zym" /><br /> <!-- br/表示换行 placeholer表示输入框中的提示语 -->
+			<label>负责人：</label>
+			<input type="text" id="fzr1" /><br />
+			<label>课程数量：</label>
+			<input type="text" id="kcsl" /><br />
+			<label>学生数量：</label>
+			<input type="text" id="xssl" /><br />
+			<label>师生比：</label>
+			<input type="text" id="ssb" /><br />
+			<label>产教匹配度：</label>
+			<input type="text" id="cjppd" /><br />
+			<input type="button" value="确定新增" id="tcqd" onclick="qdan()" />
+			<input type="button" value="确定修改" id="tcqd" onclick="qdxg(this)" />
+		</div>
+		<!-- 
+		<div class="txyc" id="tu">
+			<div>
+				<div>
+					<canvas id="zz"></canvas>
+					<div onclick="zzt()">柱状图</div>
+				</div>
+				<div>
+					<canvas id="sx"></canvas>
+					<div onclick="sxt()">扇形图</div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<canvas id="zx"></canvas>
+					<div>折线图</div>
+				</div>
+				<div>
+					<canvas id="sd"></canvas>
+					<div onclick="sdt()">散点图</div>
+				</div>
+			</div>
+
+			<button onclick="exit()">退出</button>
+		</div> -->
+		<div class="tcyc" id="ziyuan">
+			<button onclick="jybzl()"><ins>教育部资料></ins></button>
+			<button onclick="xgcyxx()"><ins>相关产业信息></ins></button>
+		</div>
+		<div id="xgcyxx_text" class="tcyc">
+			<table>
+				<tr>
+					<th>企业</th>
+					<th>岗位</th>
+					<th>技能</th>
+					<th>任务</th>
+					<th>最低薪酬</th>
+					<th>最高薪酬</th>
+				</tr>
+				<tr>
+					<td>300</td>
+					<td>5000</td>
+					<td>400</td>
+					<td>4500</td>
+					<td>2k</td>
+					<td>12k</td>
+
+				</tr>
+			</table>
+			<button onclick="two_exit()">退出</button>
+		</div>
+
+
+		<script src="js/two_one.js"></script>
+		<script src="js/one_one.js"></script>
+	</body>
+</html>

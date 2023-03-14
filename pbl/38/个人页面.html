@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=UTF-8">
+    <title>zjy</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+
+<body>
+	
+<div class="hero" id="home">
+    <nav>
+        <canvas
+                id="myCanvas"
+                width="50"
+                height="50"
+        >
+            您的浏览器不支持canvas标签。
+        </canvas>
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#techny">小黄人展示</a></li>
+            <li><a href="#service">力扣难题</a></li>
+        </ul>
+    </nav>
+
+    <div class="content" id="home">
+        <h1>欢迎来到景渝的主页</h1>
+        <h2>宁愿累死自己 也要卷死别人</h2>
+    </div>
+</div>
+
+<!----关于我分页 ---->
+<section class="about" id="about">
+    <div class="main">
+        <img src="images/main-img.jpg">
+        <div class="about-text">
+            <h2 >关于我</h2>
+            <h5>前端开发 & 视频剪辑</h5>
+            <p>TEL：13031382690</p>
+        </div>
+    </div>
+</section>
+
+
+<!-----小黄人展示分页 ---->
+<section class="service" id="techny">
+    <div class="box">
+		<h2 >小黄人展示</h2>
+		<iframe src="../homework3_xhr.html" style="width: 100%;height: 800px;"></iframe>
+		
+	</div>
+</section>
+
+
+<!-----下拉列表分页 ---->
+<div class="service" id="service">
+    <div class="title">
+        <h2>力扣难题</h2>
+		<div class="box1">
+			<a href="https://leetcode.cn/problems/climbing-stairs/">
+				<button class="yi">难题一</button>
+			</a>
+			<a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/">
+				<button class="er">难题二</button>
+			</a>
+			<a href="https://leetcode.cn/problems/range-sum-query-immutable/">
+				<button class="san">难题三</button>
+			</a>
+			<a href="https://leetcode.cn/problems/reverse-bits/description/">
+				<button class="si">难题四</button>
+			</a>
+		</div>
+
+<!---canvas js--->
+<script>
+    function heart() {
+        const c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+        //设置初始弧度
+        let radian = 0;
+        //设置弧度增量，每次增加1°
+        let radian_add = Math.PI / 180;
+        //开始绘图
+        ctx.beginPath();
+        // 重新映射画布上的 (0,0) 位置
+        ctx.translate(25, 23);
+        // 设置绘制起点
+        ctx.moveTo(getX(radian), getY(radian));
+        // 弧度小于等于360°
+        while (radian <= Math.PI * 2) {
+            //每增加一次弧度，绘制一条线
+            radian += radian_add;
+            X = getX(radian);
+            Y = getY(radian);
+            ctx.lineTo(X, Y);
+        }
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+    }
+
+    //获取心型线的X坐标，等比放大1.5倍
+    function getX(t) {
+        return 1.5 * (12 * Math.sin(t) - 4 * Math.sin(3 * t));
+    }
+
+    //获取心型线的Y坐标，放大1.5倍
+    function getY(t) {
+        return (
+            -1.5 *
+            (13 * Math.cos(t) -
+                5 * Math.cos(2 * t) -
+                2 * Math.cos(3 * t) -
+                Math.cos(4 * t))
+        );
+    }
+    heart();
+</script>
+</body>
+</html>

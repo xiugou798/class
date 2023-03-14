@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.total{
+				width: 100%;
+				height: 100%;
+				background-color: #ffa200;
+				display: flex;
+				flex-direction: column;
+				/* border: 1px solid red; */
+			}
+			.top{
+				height: 500px;
+				/* border: 1px solid; */
+				display: flex;
+				flex-direction: row;
+				/* flex-wrap: wrap; */
+				margin-top: 25px;
+				/* background-color: #ffa200; */
+				/* justify-content: space-around; */
+			}
+			.top_left{
+				width: 300px;
+				display: flex;
+				flex-direction: column;
+				border-radius: 7%;
+				/* border: 1px solid; */
+				margin-left: 3%;
+				background-color: #9d9d9d;
+			}
+			.icon{
+				width: 200px;
+				height: 200px;
+				/* border: 1px solid; */
+				border-radius: 50%;
+				overflow: hidden;
+				margin: 0 auto;
+				margin-top: 10px;
+			}
+			.icon img{
+				width: 250px;
+				height: 200px;
+				/* border-radius: 50%; */
+			}
+			.self{
+				width: 80%;
+				/* border: 1px solid; */
+				display: flex;
+				background-color: #ffffff;
+				margin-left: 20px;
+				border-radius: 7%;
+				/* margin: 0 auto; */
+				
+			}
+			.self ul{
+				/* border: 1px solid; */
+				list-style: none;
+				width: 450px;
+				margin-top: 70px;
+				margin-left: 50px;
+			}
+			.self ul li{
+				
+				font-size: 32px;
+				margin-top: 20px;
+			}
+			.selfin{
+				width: 580px;
+				margin-left: 25px;
+				margin-top: 85px;
+				/* background-color: #ffaa00; */
+			}
+			.self ul:first-child{
+				width: 260px;
+			}
+			.selfin p{
+				font-size: 28px;
+				text-indent: 2em;
+			}
+			.daohang{
+				width: 100%;
+				height: 285px;
+				/* border: 1px solid; */
+			}
+			.daohang ul{
+				list-style: none;
+				
+			}
+			.daohang ul li{
+				
+				text-align: center;
+				margin-top: 20px;
+				/* background-color: #0055ff; */
+			}
+			.daohang ul li a{
+				font-size: 30px;
+				text-decoration: none;
+				color: black;
+				
+			}
+			.down{
+				display: flex;
+				flex-direction: row;
+				/* background-color: #0000ff; */
+			}
+			
+			.down_right{
+				width: 83%;
+				/* border: 1px solid rebeccapurple; */
+				margin: 15px;
+				display: flex;
+			}
+			.down_right a{
+				width: 144px;
+				height: 45px;
+				border-radius: 9%;
+				font-size: 30px;
+				display: block;
+				margin-top: 20px;
+				margin-left: 30px;
+				background-color: #ff0000;
+			}
+			.down_right ul{
+				width: 342px;
+				display: block;
+				margin-left: 10px;
+				margin-top: 5%;
+			}
+			.down_right ul li{
+				font-size: 26px;
+				text-align: center;
+				margin-top: 15px;
+			}
+			.down_left{
+				height: 600px;
+				width: 300px;
+				/* border: 1px solid; */
+				margin: 15px;
+				/* position: absolute; */
+			}
+			.three_body {
+				width: 250px;
+				height: 580px;
+				background-color: #fed174;
+				position: absolute;
+				/* margin-top: 20px; */
+				border-radius: 70% 45% 0 0/70px 40px 0 0;
+				overflow: hidden;
+				animation-name: change;
+				animation-duration: 0.3s;
+				animation-iteration-count: infinite;
+			}
+			.three_eye {
+				width: 160px;
+				height: 160px;
+				background-color: #dadacf;
+				border-radius: 50%;
+				position: absolute;
+				left: -25px;
+				top: 75px;
+			}
+			
+			.three_eye2 {
+				width: 160px;
+				height: 160px;
+				background-color: #dadacf;
+				border-radius: 50%;
+				position: absolute;
+				left: 110px;
+				top: 75px;
+			}
+			
+			.three_eyen {
+				width: 105px;
+				height: 105px;
+				background-color: #ecc066;
+				border-radius: 50%;
+				position: absolute;
+				right: 30px;
+				top: 30px;
+			}
+			
+			.three_eyen2 {
+				width: 105px;
+				height: 105px;
+				background-color: #ecc066;
+				border-radius: 50%;
+				position: absolute;
+				right: 23px;
+				top: 30px;
+				overflow: hidden;
+			}
+			.three_white {
+				width: 104px;
+				height: 52px;
+				background-color: #ffffff;
+				border-radius: 52px 52px 0 0;
+				position: absolute;
+				right: 0px;
+				top: 7px;
+				overflow: hidden;
+				display: block;
+			}
+			
+			.three_white2 {
+				width: 104px;
+				height: 52px;
+				background-color: #ffffff;
+				border-radius: 52px 52px 0 0;
+				position: absolute;
+				right: 0px;
+				top: 7px;
+				overflow: hidden;
+				display: block;
+			}
+			
+			.three_borwn1 {
+				width: 32px;
+				height: 53px;
+				background-color: #814000;
+				border-radius: 50%;
+				position: absolute;
+				top: 15px;
+				left: 6px;
+			}
+			
+			.three_borwn2 {
+				width: 48px;
+				height: 64px;
+				background-color: #814000;
+				border-radius: 50%;
+				position: absolute;
+				top: 15px;
+				left: 4px;
+			}
+			.gl31 {
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: aliceblue;
+				position: absolute;
+				top: 18px;
+				left: 25px;
+				box-shadow: -12px 3px 9px 8px;
+			}
+			
+			.gl32 {
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background-color: aliceblue;
+				position: absolute;
+				top: 16px;
+				left: 20px;
+				box-shadow: -8px 12px 5px 10px;
+			}
+			.zui_3 {
+				width: 220px;
+				height: 75px;
+				border-radius: 50%;
+				background-color: #fed174;
+				position: absolute;
+				bottom: 260px;
+				right: 16px;
+				animation-name: change;
+				animation-duration: 0.3s;
+				animation-iteration-count: infinite;
+				/* overflow: hidden; */
+			}
+			
+			.zui_32 {
+				width: 135px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: black;
+				position: absolute;
+				bottom: 224px;
+				right: 30px;
+				overflow: hidden;
+			}
+			
+			.y_31 {
+				width: 50px;
+				height: 50px;
+				background-color: white;
+				border-radius: 0 0 20% 20%;
+				position: absolute;
+				top: 35px;
+				left: 0px;
+			}
+			
+			.y_32 {
+				width: 60px;
+				height: 60px;
+				background-color: white;
+				border-radius: 0 0 30% 24%;
+				position: absolute;
+				top: 24px;
+				left: 50px;
+			}
+			
+			.y_33 {
+				width: 60px;
+				height: 60px;
+				background-color: white;
+				border-radius: 0 0 30% 24%;
+				position: absolute;
+				top: 18px;
+				left: 108px;
+			}
+			
+			.y_34 {
+				width: 70px;
+				height: 70px;
+				background-color: white;
+				border-radius: 24% 24% 0 0;
+				position: absolute;
+				top: 88px;
+				left: 40px;
+			}
+			.clothes {
+				position: absolute;
+				width: 250px;
+				height: 200px;
+				background-color: black;
+				bottom: 0;
+			}
+			
+			.clothes div {
+				width: 250px;
+				height: 50px;
+			}
+			
+			.clothes div:nth-child(2n) {
+				background-color: #a1a29d;
+			}
+			
+			.kd {
+				width: 128px;
+				height: 92px;
+				background-color: white;
+				border: 4px double;
+				position: absolute;
+				bottom: 60px;
+				left: 55px;
+				border-radius: 0 0 50% 50%;
+				opacity: 0.2;
+			}
+			#you{
+				margin-top: 20px;
+				right: 0px;
+			}
+			.down_right ul{
+				list-style: none;
+			}
+			
+			@keyframes change{
+				0%{background-color: yellow;}
+				10%{background-color: #00ff95;}
+				20%  {background-color: #05ff05;}
+				30% {background-color: #05ffc1;}
+				40% {background-color: #06a0ff;}
+				50% {background-color: #0a0eff;}
+				60% {background-color: #8b06ff;}
+				70% {background-color: #ff03fb;}
+				85% {background-color: #ff0651;}
+				100% {background-color: #ff6600;}
+			}/* @keyframes change1{
+				from{background-color: #00ff95;}
+				to{background-color: #0000ff;}
+			}@keyframes change2{
+				from{background-color: #0000ff;}
+				to{background-color: #ffff00;}
+			}@keyframes change3{
+				from{background-color: #ffff00;}
+				to{background-color: #ff0000;}
+			}@keyframes change4{
+				from{background-color: #f30000;}
+				to{background-color: #aa55ff;}
+			} */
+			.jsj{
+				width: 475px;
+				height: 470px;
+				border: 2px solid;
+				background-color: #ffffff;
+				display: flex;
+				flex-wrap: wrap;
+				margin-left: 15%;
+				margin-top: 5%;
+			}
+			#w{
+				width: 100%;
+				height: 70px;
+				background-color: #bcbcbc;
+				font-size: 30px;
+			}
+			.jsj button{
+				width: 100px;
+				font-size: 28px;
+				text-align: center;
+			}
+			#double{
+				width: 200px;
+				text-align: center;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="total">
+			<div class="top">
+				<!-- <canvas id="canvas" width="150" height="150"></canvas> -->
+				<div class="top_left">
+					<div class="icon">
+						<img src="./img/11.jpg" alt="">
+					</div>
+					<div class="daohang">
+						<ul>
+							<li><a href="">首页</a></li>
+							<li><a href="">技能</a></li>
+							<li><a href="./定位综合.html">作品</a></li>
+							<li><a href="">经历</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="self">
+					<ul>
+						<li><a>姓名：王骊弘</a></li>
+						<li><a>性别：男</a></li>
+						<li><a>年龄：18</a></li>
+						<li><a>学历：本科</a></li>
+					</ul>
+					<ul>
+						<li><a>学校：电子科技大学成都学院</a></li>
+						<li><a>专业：软件工程</a></li>
+						<li><a>邮箱：1409853737@qq.com</a></li>
+						<li><a>手机：15965297796</a></li>
+					</ul>
+					<div class="selfin">
+						<p>本人性格开朗，乐观，做事积极主动，细致。虽是应届毕业生，但勇于尝试，热爱生活。在校期间不仅很好的学习了专业知识，还参加了很多社会实践。具有良好的学习能力，及时有效的沟通能力和组织能力，能很好完成上级分配的各项工作，具有团队精神，有创造性思维。</p>
+					</div>
+				</div>
+				
+			</div>
+			<div class="down">
+				<div class="down_left">
+					<button onclick="zha1()">zha</button>
+					<div class="three_body">
+						<div class="three_eye">
+							<div class="three_eyen">
+								<div class="three_white" id="zha1">
+									<div class="three_borwn1">
+										<div class="gl31">
+					
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="three_eye2">
+							<div class="three_eyen2">
+								<div class="three_white2" id="zha2">
+									<div class="three_borwn2">
+										<div class="gl32">
+					
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="zui_32">
+							<div class="y_31"></div>
+							<div class="y_32"></div>
+							<div class="y_33"></div>
+							<div class="y_34"></div>
+						</div>
+						<div class="zui_3">
+					
+						</div>
+						<div class="clothes">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="kd">
+					
+						</div>
+					</div>
+				</div>
+				<div class="down_right">
+					<a>力扣难题</a>
+					<ul>
+						<li>8. 字符串转换整数 (atoi)</li>
+						<li>16. 最接近的三数之和</li>
+						<li>29. 两数相除</li>
+						<li>100. 相同的树</li>
+						<li>190. 颠倒二进制位</li>
+						<li>801. 使序列递增的最小交换次数</li>
+						<li>870. 优势洗牌</li>
+						<li>1668. 最大重复子字符串</li>
+						<li>904. 水果成篮</li>
+					</ul>
+					<div class="jsj">
+						<div id="w">
+						
+						</div>
+						<button onclick="getzhi(this)">1</button>
+						<button onclick="getzhi(this)">2</button>
+						<button onclick="getzhi(this)">3</button>
+						<button onclick="getzhi(this)">+</button>
+						<button onclick="getzhi(this)">4</button>
+						<button onclick="getzhi(this)">5</button>
+						<button onclick="getzhi(this)">6</button>
+						<button onclick="getzhi(this)">-</button>
+						<button onclick="getzhi(this)">7</button>
+						<button onclick="getzhi(this)">8</button>
+						<button onclick="getzhi(this)">9</button>
+						<button onclick="getzhi(this)">*</button>
+						<button onclick="getzhi(this)">0</button>
+						<button id="double" onclick="zth()">=</button>
+						<button onclick="getzhi(this)">/</button>
+					</div>
+				</div>
+				<div class="down_left">
+					<!-- <button onclick="zha1()">zha</button> -->
+					<div class="three_body" id="you">
+						<div class="three_eye">
+							<div class="three_eyen">
+								<div class="three_white" id="zha1">
+									<div class="three_borwn1">
+										<div class="gl31">
+					
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="three_eye2">
+							<div class="three_eyen2">
+								<div class="three_white2" id="zha2">
+									<div class="three_borwn2">
+										<div class="gl32">
+					
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="zui_32">
+							<div class="y_31"></div>
+							<div class="y_32"></div>
+							<div class="y_33"></div>
+							<div class="y_34"></div>
+						</div>
+						<div class="zui_3">
+					
+						</div>
+						<div class="clothes">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="kd">
+					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var wc="";
+		var ans = 0
+		var ans1 = document.getElementById("w");
+		function getzhi(a) {
+			console.log(a);
+			
+			var txt = a.innerText?a.innerText:a.value;
+			console.log(txt);
+			wc=wc+txt;
+			console.log(wc)
+			ans1.innerText=wc
+		}
+		var answer=[]
+		var op=[]
+		function zth(){
+			input = wc
+			for(let i =0;i<input.length;i++){
+				if (input[i]>='0'){
+					answer.push(input[i])
+					console.log(input[i])
+				}
+				else{
+					var m={"+":1,
+					   "-":1,
+					   "*":2,
+					   "/":2,
+					   "(":0
+					   }
+					if(input[i]==")"){
+						while(op[op.length-1]!="("){
+							console.log(op[op.length-1])
+						    answer.push(op.pop())
+							}
+						op.pop()
+						console.log(op[op.length-1])
+					}
+					else{
+						console.log(input[i])
+						while(true){
+							if(op.length==0 || input[i]=="(" || m[input[i]]>m[op[op.length-1]]){
+								op.push(input[i])
+								console.log(op);
+								break;
+							}
+							else{
+								console.log(op[op.length-1])
+								answer.push(op.pop())
+							}
+						}
+					}
+				}
+			}
+			while(op.length!=0){
+				answer.push(op.pop())
+			}
+			console.log(answer)
+			let vl=answer
+			let num=[]
+			let index = -1
+			var ans
+			
+			for(let i = 0;i<vl.length;i++){
+				if("0"<=vl[i] && vl[i]<="9"){
+					console.log(vl[i])
+					num[++index]=vl[i]
+					
+				}
+				else{
+					let num1=num[index--]
+					let num2=num[index--]
+					if(vl[i]=="-"){
+						ans=num2-num1
+						console.log(ans)
+						num[++index]=ans
+					}
+					else if(vl[i]=="+"){
+						ans=parseInt(num2)+parseInt(num1)
+						console.log(ans)
+						num[++index]=ans
+					}else if(vl[i]=="*"){
+						ans=num2*num1
+						console.log(ans)
+						num[++index]=ans
+					}else if(vl[i]=="/"){
+						ans=num2/num1
+						console.log(ans)
+						num[++index]=ans
+					}
+				}
+			}
+			console.log(ans)
+			ans1.innerText=ans;
+		}
+		function zha1(){
+			setInterval(function zha(){
+			var a = document.getElementById("zha1")
+			var b = document.getElementById("zha2")
+				if(a.style.display=="block"){
+					a.style.display="none"
+					b.style.display="none"
+				}
+				else{
+					a.style.display="block"
+					b.style.display="block"
+				}
+		},400);
+		}
+		
+		
+	</script>
+</html>

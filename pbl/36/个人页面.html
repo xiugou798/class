@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .k {
+            margin-left: 460px;
+            margin-top: 300px;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            z-index: 999;
+
+        }
+
+        a {
+            text-decoration: none;
+
+            font-size: larger;
+            font-weight: 600;
+        }
+
+        #str {
+            width: 20px;
+            height: 20px;
+        }
+
+        .b1 {
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            width: 10px;
+            height: 26px;
+            margin-top: 329px;
+            margin-left: 480px;
+        }
+
+        .m1 {
+            margin-top: 300px;
+            margin-left: 568px;
+        }
+
+        .gw {
+            margin-left: 500px;
+            margin-top: 40px;
+        }
+
+        .gw i {
+            font-size: 36px;
+            color: rgba(10, 10, 224, 0.857);
+            font-weight: 600;
+        }
+
+        .gw span {
+            color: rgba(10, 10, 224, 0.857);
+            font-weight: bold;
+        }
+
+        .y1 {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(10, 10, 224, 0.857);
+            border-radius: 100% 100% 100% 100%;
+            margin-left: 120px;
+        }
+
+        .y2 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100% 100% 100% 100%;
+        }
+
+        .jb {
+            color: black;
+            position: absolute;
+            margin-left: 180px;
+            margin-top: 10px;
+            letter-spacing: 5px;
+        }
+
+        .xn {
+            color: black;
+            position: absolute;
+            margin-left: 178px;
+            margin-top: 14px;
+
+        }
+
+        .gra {
+            width: 700px;
+            height: 170px;
+            background-color: rgba(176, 176, 176, 0.437);
+            position: absolute;
+            margin-top: 110px;
+            margin-left: 130px;
+        }
+
+        .m2 {
+            width: 220px;
+            height: 220px;
+            border-radius: 100% 100% 100% 100%;
+            position: absolute;
+            z-index: 999;
+            margin-top: 85px;
+            margin-left: 350px;
+            border: 7px solid white;
+        }
+
+        .gra a {
+            float: left;
+            margin-top: 30px;
+            color: black;
+            font-weight: bold;
+
+        }
+
+        .gra a:nth-child(2) {
+            position: absolute;
+            margin-left: 330px;
+        }
+
+        .gra span {
+            letter-spacing: 25px;
+
+        }
+
+        .m3 {
+            width: 110px;
+            height: 60px;
+            position: absolute;
+            margin-left: 530px;
+            margin-top: 50px;
+        }
+
+        .h {
+            position: absolute;
+            margin-top: 54px;
+            margin-left: 555px;
+            z-index: 999;
+            font-size: 24px;
+            color: white;
+        }
+
+        .yellowman {
+            position: relative;
+            width: 640px;
+            height: 560px;
+            /* border: 1px solid black; */
+            transform: scale(0.65, 0.65);
+            size: 10%;
+            margin-top: 250px;
+            z-index: 999;
+            margin-left: 40px;
+            object-fit: contain;
+            margin-left: 518px;
+
+        }
+
+        .container {
+            width: 400px;
+            height: 336px;
+            border: 1px solid black;
+            position: absolute;
+            margin-top: 80px;
+            margin-left: 30px;
+        }
+
+        .weakend li {
+            list-style: none;
+            float: left;
+            margin-left: 35px;
+            margin-top: 70px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .weakend {
+            position: absolute;
+            /* background-color: black; */
+            /* width: 363px;
+            height: 40px; */
+            /* margin-top: 30px; */
+        }
+
+        header div {
+            float: left;
+        }
+
+        .bk {
+            background-color: black;
+            width: 356px;
+            height: 32px;
+            position: absolute;
+            margin-left: 10px;
+            border-radius: 20px;
+            margin-top: 67px;
+        }
+
+        #cal {
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 100px;
+        }
+
+        .h3 {
+            position: absolute;
+            /* margin-left: 17px; */
+            margin-top: 65px;
+            margin-right: 60px;
+        }
+        .m4{
+            margin-right: 240px;
+        }
+
+        .left {
+            overflow-y:auto; direction: rtl;
+            
+        }
+
+        .mj {
+            position: absolute;
+            width: 395px;
+            height: auto;
+            border: 2px solid black;
+            margin-top: 450px;
+            /* margin-left: 17px; */
+            /* overflow: auto; */
+            margin-right: 14px;
+            border-radius: 6px;
+            direction: ltr;
+        }
+
+        .yb {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 100% 100% 100% 100%;
+            background-color: black;
+            margin-top: 2px;
+        }
+
+        .mb {
+            /* position: absolute; */
+            margin-left: 150px;
+            position: absolute;
+        }
+
+        .hy {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 100% 100% 100% 100%;
+            background-color: rgba(0, 0, 255, 0.867);
+            text-align: center;
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+            margin-left: 360px;
+            margin-top: 2px;
+        }
+
+        .li {
+            /* position: absolute; */
+            margin-top: 70px;
+            /* overflow: scroll; */
+            margin-left: 30px;
+
+
+        }
+        
+
+        .it {
+            width: 330px;
+            height: 36px;
+            border: 2px solid black;
+            border-radius: 13px;
+        }
+
+        .li li {
+            padding-top: 8px;
+            list-style-type: decimal;
+            font-size: 18px;
+            font-weight: 600;
+            padding-bottom: 10px;
+
+        }
+        .chang{
+            height: 710px;
+            width: 2px;
+            background-color: black;
+            position: absolute;
+            margin-left: 486px;
+            
+        }
+
+        .jl{
+            width: 700px;
+            height: 900px;
+            /* border: 2px solid black; */
+            margin-left: 130px;
+            margin-top: 400px;
+        }
+        .right{
+            position: absolute;
+            overflow: auto;
+        }
+        .y3 {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(10, 10, 224, 0.857);
+            border-radius: 100% 100% 100% 100%;
+            /* margin-left: 120px; */
+        }
+
+        .y4 {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100% 100% 100% 100%;
+        }
+
+        .jl1 {
+            color: black;
+            position: absolute;
+            margin-left: 60px;
+            margin-top: 10px;
+            letter-spacing: 5px;
+        }
+
+        .xn1 {
+            color: black;
+            position: absolute;
+            margin-left: 61px;
+            margin-top: 14px;
+
+        }
+        /* iframe{
+            transform: scale(0.65,0.65);
+            width: 620px;
+            height: 600px;
+            border: 1px blue solid ;
+        } */
+        td{
+            border: 1px solid rgba(255, 253, 253, 0.465);
+            background-color: rgb(61, 117, 250);
+            color:rgb(255, 255, 255) ;
+            text-align: center;
+            
+        }
+        td:nth-child(1){
+            text-align: center;
+        }
+        td:nth-child(2){
+            text-align: center;
+        }
+        td:nth-child(3){
+            padding-left: 20px;
+        }
+        th{
+            /* border: 1px solid black; */
+            background-color: rgba(253, 214, 86, 0.461);
+            height: 40px;
+        }
+        
+        table{
+            
+            width: 670px;
+            height: 300px;
+            margin-top: 15px;
+            position: absolute;
+            margin-top: 95px;
+            margin-left:15px ;
+            
+        }
+        table a{
+            color: white;
+        }
+        .m2{
+            animation: rotate 8s linear infinite;
+            }
+
+        @keyframes rotate {
+    0%{-webkit-transform:rotate(0deg);}
+    25%{-webkit-transform:rotate(90deg);}
+    50%{-webkit-transform:rotate(180deg);}
+    75%{-webkit-transform:rotate(270deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+        .chang{
+            width: 6px;
+            height: 710px;
+            background-color: black;
+            position: absolute;
+            margin-left: 450px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="sha" style="width:100% ;height: 40px;background-color: rgba(188, 189, 189, 0.803);">
+
+    </div>
+
+    <!-- <div class="chang"></div> -->
+    <div class="zho" style="width:100% ;height: 710px;">
+        <div class="k" style="width:100px ;height: 25px;border: 2px solid black;position: absolute;
+        margin-top: 300px;text-align: center;" id="k1" >
+
+            <a href="" style="color:rgba(0, 0, 255, 0.867) ;"  onclick="f2()">基本信息</a>
+
+        </div>
+
+        <div class="b1">
+
+        </div>
+        <img src="./1.png" alt="" width="20px" height="20px" style="position: absolute;
+        margin-top: 355px;
+        rotate: 90deg;
+        margin-left: 558px;
+        " class="m1">
+
+        <div class="k" style="width:100px ;height: 22px;position: absolute;
+        -top: 30px;margin-top: 350px;text-align: center;"  onclick="f2()" id="k1">
+            <a href="" style="color:rgba(0, 0, 0, 0.867) ;"  onclick="f2()">我的记录</a>
+        </div>
+
+        <div class="b1">
+
+        </div>
+        <img src="./1.png" alt="" width="20px" height="20px" style="position: absolute;
+        rotate: 180deg;
+        margin-top: 308px;
+        
+        " class="m1">
+
+        <div class="k" style="width:100px ;height: 22px;position: absolute;
+        margin-top: 400px;text-align: center;"  onclick="f2()" id="k1">
+            <a href="" style="color:rgba(0, 0, 0, 0.867) ;"  onclick="f2()">生成简历</a>
+        </div>
+
+        <div class="b1" style="margin-top:372px ;">
+
+        </div>
+        <img src="./1.png" alt="" width="20px" height="20px" style="position: absolute;
+        margin-top: 405px;
+        rotate: 90deg;
+        margin-left: 558px;
+        " class="m1">
+
+
+
+
+        <div class="right" style="width: 940px; height: 710px;
+        position: absolute;
+        margin-left:500px ;
+        ">
+
+            <p class="gw"><i>关于我</i>&nbsp;&nbsp;|&nbsp;&nbsp;一个平凡的/<span>识时务者</span>&nbsp;&nbsp;|</p>
+            <div class="y1">
+                <div class="y2"></div>
+            </div>
+            <a href="" class="jb">基本信息</a>
+            <a class="xn">__________</a>
+
+
+            <p class="h">Hello!</p>
+            <img src="./标签1.png" alt="" class="m3">
+            <img src="./3.jpg" alt="" class="m2">
+            <div class="gra">
+                <a style="margin-left: 30px;">
+                    <p>姓名：万阳春</p>
+                    <p>性别：女</p>
+                    <p>爱好：植物静态拍摄</p>
+                </a>
+                <a>
+                    <p>星座：水瓶座</p>
+                    <p>政治面貌：团员</p>
+                    <p>家乡特产：羊肉汤</p>
+                </a>
+
+
+            </div>
+            <!-- <div class="y1" style="margin-top: ;">
+                <div class="y2"></div>
+            </div>
+            <a href="" class="jb">我的记录</a>
+            <a class="xn">__________</a> -->
+
+
+
+
+
+
+            <div class="jl">
+
+
+                <div class="y3">
+                    <div class="y4"></div>
+                </div>
+                <a href="" class="jl1">我的记录</a>
+                <a class="xn1">__________</a>
+                <table  cellspacing="0">
+                    <tr>
+                        <th>题目来源</th>
+                        <th>名称</th>
+                        <th>难度</th>
+                        <th>问题</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>Leetcode</td>
+                        <td>99.恢复二叉操作树</td>
+                        <td>中等</td>
+                        <td>遍历二叉</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Leetcode</td>
+                        <td>47.全排列2</td>
+                        <td>中等</td>
+                        <td><a href="https://leetcode.cn/problems/permutations-ii/solutions/417937/quan-pai-lie-ii-by-leetcode-solution/">Go</a></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>蓝桥杯</td>
+                        <td>二进制问题</td>
+                        <td>中等</td>
+                        <td>时间限制</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>蓝桥杯</td>
+                        <td>异或变换</td>
+                        <td>中等</td>
+                        <td>难懂sii 1⊕si</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Leetcode</td>
+                        <td>29.两数相除</td>
+                        <td>中等</td>
+                        <td><a href="https://leetcode.cn/problems/divide-two-integers/solutions/1041939/liang-shu-xiang-chu-by-leetcode-solution-5hic/">Go</a></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Leetcode</td>
+                        <td>3.无重复字符的最长子串</td>
+                        <td>中等</td>
+                        <td><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/solutions/3982/hua-dong-chuang-kou-by-powcai/">Go</a></td>
+                        
+                    </tr>
+                    
+                    
+                    
+                </table>
+                <!-- <iframe src="./04小黄人.html" frameborder="0"></iframe> -->
+
+
+                <table  cellspacing="0"  style="margin-top: 500px;">
+                    <tr>
+                        <th>项目</th>
+                        <th>预览</th>
+                        <th>概况</th>
+                        <th>缺点</th>
+                        
+                        
+                    </tr>
+                    <tr>
+                        <td>小黄人</td>
+                        <td><img src="./小黄人.png" alt=""  width="55px" height="55px"></td>
+                        <td><a href="./04小黄人.html">Click</a></td>
+                        <td>canvas|Bootstrap</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>计算器</td>
+                        <td><img src="./计算器.png" alt=""  width="55px" height="55px"></td>
+                        <td><a href="./计算器.html">Click</a></td>
+                        <td>括号运算</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>百度</td>
+                        <td><img src="./百度.png" alt=""  width="55px" height="55px"></td>
+                        <td><a href="./百度.html">Click</a></td>
+                        <td>无</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>专业表格</td>
+                        <td><img src="./表格123.png" alt=""  width="55px" height="55px"></td>
+                        <td><a href="./tble.html">Click</a></td>
+                        <td>无</td>
+                        
+                    </tr>
+                    <!-- <tr>
+                        <td>Leetcode</td>
+                        <td>两数相除</td>
+                        <td>中等</td>
+                        <td><a href="https://leetcode.cn/problems/divide-two-integers/solutions/1041939/liang-shu-xiang-chu-by-leetcode-solution-5hic/">Go</a></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Leetcode</td>
+                        <td>无重复字符的最长子串</td>
+                        <td>中等</td>
+                        <td><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/solutions/3982/hua-dong-chuang-kou-by-powcai/">Go</a></td>
+                        
+                    </tr> -->
+                    
+                    
+                    
+                </table>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <!-- <div class="chang"></div> -->
+
+
+
+        <div class="left"
+            style="width: 430px; height: 710px;position: relative;">
+            <iframe src="./日历.html" frameborder="0" scrolling="no" width="430px " height="360px" id="cal"></iframe>
+            <img src="./老头.png" alt="" width="160px" height="110px" style="
+           position: absolute;
+           "  class="m4">
+            <h3 class="h3">打工日记 非诚勿扰🙅‍</h3>
+            <div class="mj">
+                <div class="yb"></div>
+                <h3 class="mb">每日待办事项</h3>
+                <div class="hy" id="d1" onclick="f1()">
+                    +
+                </div>
+                <div class="li" id="li1">
+                    <ul id="list-ul">
+                        <li class="in"><input type="text" class="it"></li>
+                        <li class="in"><input type="text" class="it"></li>
+                        <li class="in"><input type="text" class="it"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xia" style="width:100% ;height: 40px;background-color: rgba(188, 189, 189, 0.803);">
+    </div>
+</body>
+<script >
+    function f1() {
+        var x = document.getElementById("list-ul");
+        x.innerHTML += `<li class="in"><input type="text" class="it"></li>`
+    }
+    function  f2(){
+        var s=document.getElementById("k1")
+        console.log(s)
+    }
+</script>
+
+</html>

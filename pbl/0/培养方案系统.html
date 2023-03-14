@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>培养方案系统</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+    #major-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    select {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table caption {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    th,
+    td {
+        border: 1px solid #999;
+        text-align: center;
+        padding: 5px;
+    }
+
+    table thead tr {
+        background-color: #008c8c;
+        color: #fff;
+    }
+
+    table tbody tr:nth-child(odd) {
+        background-color: #eee;
+    }
+
+    table tbody tr:hover {
+        background-color: #ccc;
+    }
+
+    table tbody tr td:first-child {
+        color: #f40;
+    }
+
+    table tfoot tr td {
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        background-color: #008c8c;
+    }
+
+    .button {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+        border-radius: 5px;
+    }
+
+    .button1:hover {
+        background-color: #008CBA;
+        color: white;
+    }
+
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+    }
+
+    .button2:hover {
+        background-color: #008CBA;
+        color: white;
+    }
+
+    #major {
+        display: inline-block;
+        width: 40%;
+        margin: 30px;
+    }
+
+    #industry {
+        display: inline-block;
+        width: 50%;
+        margin: 40px;
+    }
+
+    #major-now {
+        display: inline-block;
+        width: 50%;
+        margin: 30px;
+    }
+
+    #industry-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #no-opende-major {
+        display: inline-block;
+        width: 40%;
+        margin: 40px;
+    }
+
+    #major-now-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    button {
+        margin: 10px;
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #dcdfe6;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        transition: 0.1s;
+        font-weight: 500;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 10px;
+        color: #fff;
+        background-color: #409eff;
+        border-color: #409eff;
+    }
+
+    #addmodal {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+
+    #viewmodal {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+
+    #movemodal {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+
+    .modal-dialog {
+        position: relative;
+        width: 500px;
+        margin: 0px auto;
+        background: white;
+        border-radius: 5px;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #e5e5e5;
+
+        color: #fff;
+
+        background-color: #555;
+
+        height: 40px;
+
+        line-height: 40px;
+
+        padding-left: 20px;
+    }
+
+    .modal-header>i {
+        font-weight: bold;
+        color: #ADADAD;
+        float: right;
+        cursor: pointer;
+    }
+
+    .modal-body {
+        position: relative;
+        text-align: center;
+    }
+
+    .modal-body input {
+        width: 202px;
+        border: 1px solid #a9a9a9;
+        outline: none;
+        margin: 10px;
+    }
+
+    .modal-footer {
+        padding: 15px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .addButton_ok {
+        width: 93px;
+        height: 38px;
+        border-radius: 4px;
+        background: #fff;
+        color: #808080;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid #aeaeae;
+    }
+
+    .addButton_no {
+        width: 93px;
+        height: 38px;
+        border-radius: 4px;
+        background: #fff;
+        color: #808080;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid #aeaeae;
+    }
+
+    .pageInformation {
+        width: 226px;
+        height: 16px;
+        padding-top: 29px;
+        font-size: 15px;
+        line-height: 16px;
+        float: left;
+    }
+
+    .updatabtn_ok {
+        width: 93px;
+        height: 38px;
+        border-radius: 4px;
+        background: #fff;
+        color: #808080;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid #aeaeae;
+    }
+
+    .updatabtn_no {
+        width: 93px;
+        height: 38px;
+        border-radius: 4px;
+        background: #fff;
+        color: #808080;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid #aeaeae;
+    }
+
+    .shanxin,
+    .zhexian {
+        width: 90px;
+        height: 30px;
+        border-radius: 0%;
+        justify-self: center;
+        background-color: orange;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div id="header">
+            <button class="button1">系分院负责人</button>
+            <button class="button2">退出登录</button>
+        </div>
+        <div id="main">
+            <div id="major">
+                <div id="major-header">
+                    <h3>关注专业</h3>
+                    <select name="门类" id="">
+                        <option value="">门类</option>
+                        <option value="">计算机类</option>
+                        <option value="">123</option>
+                    </select>
+                    <select name="专业名称" id="">
+                        <option value="">专业名称</option>
+                        <option value="">计算机类</option>
+                        <option value="">123</option>
+                    </select>
+                </div>
+                <div style="height:300px;width:100%;display:block;overflow-y:auto;">
+                    <table>
+                        <tr>
+                            <th>门类</th>
+                            <th>专业类</th>
+                            <th>专业名称</th>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="industry">
+                <div id="industry-header">
+                    <h3>产业数据统计</h3>
+                    <button class="canvas1">canvas扇形图</button>
+                    <button class="canvas2">canvas折线图</button>
+                    <select name="学校所在地" id="">
+                        <option value="">学校所在地</option>
+                        <option value="">成都</option>
+                        <option value="">北京</option>
+                    </select>
+                </div>
+                <div style="height:300px;width:100%;display:block;overflow-y:auto;">
+                    <table>
+                        <tr>
+                            <th>专业名</th>
+                            <th>企业</th>
+                            <th>岗位</th>
+                            <th>技能</th>
+                            <th>任务</th>
+                            <th>最低薪酬</th>
+                            <th>最高薪酬</th>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="major-now">
+                <div>
+                    <div id="major-now-header">
+                        <h3>本校专业现状</h3>
+                        <button class="addButton">新增</button>
+                    </div>
+                    <div style="height:300px;width:100%;display:block;overflow-y:auto;">
+                        <table>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>专业名</th>
+                                <th>负责人</th>
+                                <th>课程数量</th>
+                                <th>学生数量</th>
+                                <th>师生比</th>
+                                <th>产教匹配度</th>
+                                <th>功能</th>
+                            </tr>
+                            <tbody id="tdata">
+                                <tr class="trHover">
+                                    <td><input type="checkbox"></td>
+                                    <td class="stuAcademy">计算机科学与工程学院</td>
+                                    <td class="stuName">ty</td>
+                                    <td class="stuNum">20</td>
+                                    <td class="stuNums">100</td>
+                                    <td class="stuScale">1:100</td>
+                                    <td class="stuDu">100%</td>
+                                    <td>
+                                        <button class="changeInfo">修改</button>
+                                        <button class="delete">删除</button>
+                                    </td>
+                                </tr>
+                                <tr class="trHover">
+                                    <td><input type="checkbox"></td>
+                                    <td class="stuAcademy">计算机科学与工程学院</td>
+                                    <td class="stuName">ty</td>
+                                    <td class="stuNum">20</td>
+                                    <td class="stuNums">99</td>
+                                    <td class="stuScale">1:99</td>
+                                    <td class="stuDu">100%</td>
+                                    <td>
+                                        <button class="changeInfo">修改</button>
+                                        <button class="delete">删除</button>
+                                    </td>
+                                </tr>
+                        </table>
+                        <!--增加的模态框-->
+                        <div class="modal addfade" id="addmodal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <i>X</i>
+                                        <h4>新增学生信息</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <p>
+                                            专业名：<input type="text" />
+                                        </p>
+                                        <p>
+                                            负责人：<input type="text" />
+                                        </p>
+                                        <p>
+                                            课程数量：<input type="text" />
+                                        </p>
+                                        <p>
+                                            学生数量：<input type="text" />
+                                        </p>
+                                        <p>
+                                            师生比：<input type="text" />
+                                        </p>
+                                        <p>
+                                            产教匹配度：<input type="text" />
+                                        </p>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="pageInfoBox"></div>
+                                        <button class="addButton_ok">确定</button>
+                                        <button class="addButton_no">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--修改的模态框-->
+                        <div class="modal movefade movemodal" id="movemodal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <i>X</i>
+                                        <h4>修改学生信息</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            专业名：<input type="text" />
+                                        </p>
+                                        <p>
+                                            负责人：<input type="text" />
+                                        </p>
+                                        <p>
+                                            课程数量：<input type="text" />
+                                        </p>
+                                        <p>
+                                            学生数量：<input type="text" />
+                                        </p>
+                                        <p>
+                                            师生比：<input type="text" />
+                                        </p>
+                                        <p>
+                                            产教匹配度：<input type="text" />
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="updatabtn_ok">保存</button>
+                                        <button class="updatabtn_no">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="no-opende-major">
+                <div>
+                    <div id="no-opende-major-header">
+                        <h3>未开设专业信息</h3>
+                    </div>
+                    <div style="height:300px;width:100%;display:block;overflow-y:auto;">
+                        <button>数字媒体技术</button>
+                        <button>智能科学与技术</button>
+                        <button>空间信息与数字技术</button>
+                        <button>新媒体技术</button>
+                        <button>电影制作</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>

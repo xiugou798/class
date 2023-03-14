@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* .one {
+				position: relative;
+				width: 200px;
+				height: 1000px;
+				background-color: beige;
+			} */
+			.one_one {
+				position: absolute;
+				width: 100%;
+				height: 400px;
+				background-color: white;
+				/* border: 1px solid gainsboro; */
+			
+			}
+			.one_two {
+				position: absolute;
+				width: 500px;
+				height: 300px;
+				background-color: white;
+				left: 100px;
+				top: 100px;
+				
+			}
+			.one_two_one {
+				position: absolute;
+				width: 100%;
+				height: 100px;
+				background-color: white;
+				
+				left: 100px;
+				overflow: hidden;
+			}
+			.one_one_one {
+				position: absolute;
+				width: 150px;
+				height: 60px;
+				left: 0px;
+				top: 20px;
+				background-color: lightblue;
+				border-radius: 40%;
+				line-height: 60px;
+				text-align: center;
+			}
+			.one_one_two {
+				position: absolute;
+				width: 150px;
+				height: 60px;
+				right: 0;
+				top: 20px;
+				background-color: lightblue;
+				border-radius: 40%;
+				line-height: 60px;
+				text-align: center;
+			}
+			#biaoge{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 50px;
+				left: 100px;
+				overflow: hidden;
+				background-color: white;
+			}
+			
+			
+		
+		</style>
+	</head>
+	<body >
+		<div class="one_one">
+			<div class="one_one_one" onclick="select()">分院负责人</div>
+			<div class="one_one_two">退出登录</div>
+		</div>
+		<div class="one_two">
+			<div class="one_two_one">
+				<table>
+		
+					<tr>
+						<th style="color: rgba(191,208,251);background-color: white;">
+							<a style="border-bottom: 1px solid rgba(191,208,251) ;">
+								关注专业
+							</a>
+						</th>
+		
+						<th style="background-color: white;">
+							<select id="fenlei" onchange="select()" style="width:200px ;height: 50px;background-color:skyblue;">
+								<option>门类</option>
+								<option>工学</option> 
+								<option>理学</option>
+								<option>文学</option>
+								<option>教育学</option>
+								<option>法学</option>
+								<option  value="gongke">工科类</option>
+							</select>
+						</th>
+						<th style="background-color: white;">
+							<select id="fenlei" onchange="select()" style="width:200px ;height: 50px;background-color:skyblue;">
+								<option>工1</option>
+								<option>工2</option>
+								<option>工3</option>
+								<option>工4</option>
+								
+								<option  value="gongke">工5</option>
+							</select>
+						</th>
+						<th></th>
+					</tr>
+				</table>
+			<div id = "biaoge">
+				
+			</div>
+		</div>
+		<script>
+		 function select(){
+			var arr=[
+			    {门类  :"工学",专业类:"计算机类",专业名称:"软件工程"},
+			    {门类  :"工学",专业类:"计算机类",专业名称:"软件工程"},
+			    {门类  :"工学",专业类:"计算机类",专业名称:"软件工程"},
+			    {门类  :"工学",专业类:"计算机类",专业名称:"软件工程"},
+			    {门类  :"工学",专业类:"计算机类",专业名称:"软件工程"},
+			    {门类  :"工学",专业类:"计算机类",专业名称:"软件工程"},
+			    {门类  :"工学",专业类:"计算机类",专业名称:"软件工程"},
+			];
+			
+			var i = 0 , j = 0; //i为制的表格行索引，j为原表格行索引
+			var con = document.getElementById("biaoge");
+			var table = document.createElement("table"); j = 0;
+			for (i=0; i<arr.length+1; i++){
+				if (i===0){
+					var tr= document.createElement("tr");
+					for (var key in arr[j]){
+						var td = document.createElement("td");
+						var txt = document.createTextNode(key);
+						td.appendChild(txt);
+						tr.appendChild(td);
+					}
+					table.appendChild(tr);
+					
+				}else{
+					var tr= document.createElement("tr");
+					for(let key  in arr[j]){
+						var td = document.createElement("td");
+						var txt = document.createTextNode(arr[j][key]);
+					    td.appendChild(txt);
+					    tr.appendChild(td);
+					    }
+					}
+					table.appendChild(tr);
+					j=j+1;
+				}
+				con.appendChild(table);
+			}
+			</script>
+	</body>
+</html>

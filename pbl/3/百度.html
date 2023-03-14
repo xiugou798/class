@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度图片</title>
+    <link rel="stylesheet" href="baidu.css">
+</head>
+<body>
+	
+<div class="header">
+    <ul class="left">
+        <li class="li_1"><a href="">新闻</a></li>
+        <li class="li_1"><a href="">hao123</a></li>
+        <li class="li_1"><a href="">地图</a></li>
+        <li class="li_1"><a href="">好看</a></li>
+        <li class="li_1"><a href="">贴吧</a></li>
+        <li class="li_1"><a href="">学术</a></li>
+        <li class="li_1" id="more_list">
+            <div id="more_wrap"> <a  href="">更多</a>
+                <div id="more_box">
+                    <ul>
+                        <li class="more_li">
+                            <div class="tag_more">网盘</div>
+                        </li>
+                        <li class="more_li">
+                            <div class="tag_more">知到</div>
+                        </li>
+                        <li class="more_li">
+                            <div class="tag_more">百科</div>
+                        </li>
+                        <li class="more_li">
+                            <div class="tag_more">图片</div>
+                        </li>
+                        <li class="more_li">
+                            <div class="tag_more">宝宝知道</div>
+                        </li>
+                        <li class="more_li">
+                            <div class="tag_more">文库</div>
+                        </li>
+                        <li class="more_li">
+                            <div class="tag_more">经验</div>
+                        </li>
+                        <li class="more_li">
+                            <div class="tag_more">音乐</div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="right" >
+        <div id="more_li">
+            <span class="r_btn1" ><a href="">13103981936</a></span>
+            <div id="more_menu">
+                <ul>
+                    <li><a href="">个人中心</a></li>
+                    <li><a href="">账号设置</a></li>
+                    <li><a href="">推出登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <a class="r_btn2">百度首页</a>
+		<a class="r_btn2">收藏本页</a>
+    </div>
+</div>
+
+
+
+    <input class="search_l">
+    <div class="search_r" href="" >百度一下</div>
+        <table  >
+            <tr class="news_type">
+                <td style="padding-left:14px;padding-top:3px;">热门搜索：</td>
+                <td style="width: 160px;"><a id="hhh">壁纸</a></td>
+				<td style="width: 200px;"><a id="hhh">头像</a></td>
+
+            </tr>
+			
+
+        </table>
+</div>
+
+</div>
+
+
+
+<div class="footer">
+    <div class="footer_l">
+        <ul >
+            <li><a href="">背景图片来源</a></li>
+			<tr class="picture">
+			    <td colspan="9">
+			        <table class="table-two">
+			            <tr>
+			            <td><a href="#"><img src="img/img01.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img02.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img03.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img04.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img05.jpeg" /></a></td>
+			            </tr>
+			            <tr>
+			            <td><a href="#"><img src="img/img06.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img07.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img08.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img09.jpeg" /></a></td>
+			            <td><a href="#"><img src="img/img10.jpeg" /></a></td>
+			            </tr>
+			        </table>
+			    </td>
+			 
+			</tr>
+    </div>
+    <img href="images/erweima">
+        
+</div>
+     <style>
+		 .header{
+		     height: 280px;
+		     line-height:120px;
+		     text-align: center;
+		 }
+		 .header .left{
+		     float:left;
+		 }
+		 .header .right{
+		     position:absolute;
+		     right:0px;
+		     top:0px;
+		     z-index:100;/*层叠*/
+		     padding-right:24px;
+		     float:right;
+		 
+		 }
+		 .header .li_1{
+		     float:left;
+		     font:13px/23px Arial,sans-serif;
+		     color:#222;
+		     position:relative;
+		     margin-right:31px;margin-top:19px;display:inline-block;
+		 
+		 }
+		 .right #more_li{
+		     color:#222;
+		     position:relative;
+		     margin-right:35px;
+		     display:inline-block;
+		     font-size:14px;
+		 }
+		 .header .right .r_btn1{
+		     display:inline-block;
+		     vertical-align:top;cursor:pointer;
+		 }
+		 
+		 .right #more_menu{
+		     display:none;
+		     position:absolute;
+		     top:40px;
+		     left:-14px;
+		     width:120px;
+		     height:165px;
+		     line-height: 22px;
+		     text-align: left;5  
+		     box-shadow:0 2px 10px 0 rgba(170, 0, 0, 0.1);
+		     border-radius: 6px;
+		     margin-top:15px;
+		 }
+		 .right #more_menu li{margin-top:9px;}
+		 #more_li:hover #more_menu{display:block;}
+		 .header .right .r_btn2{
+		     display:inline-block;
+		     margin-top:19px;
+		     background-color: #b4ab63;
+		     padding-left:2px;
+		     font-size:14px;
+		     height:30px;
+		     width:60px;
+		     color:#fff;
+		     line-height: 24px;
+		     border-radius: 6px;
+		 }
+		 
+		 #more_wrap{
+		     position:relative;
+		     display:block;
+		 }
+		 #more_box{
+		     display:none;
+		     position:absolute;
+		     right:-12px;
+		     top:30px;
+		     width: 300px;
+		     height: 223px;
+		     line-height:15px;
+		     text-align: center;
+		     box-shadow:0 2px 10px rgba(212, 212, 212, 0.1);
+		     border-radius:12px ;
+		     background-color: #fff;
+		     /*box-shadow: 10 10;*/
+		 }
+		 #more_box li{margin-left:18px;}
+		 #more_list:hover #more_box{
+		     display:block;
+		 }
+		 #more_box img {
+		     height: 42px;
+		     width: 42px;
+		     border:1px solid rgba(0,0,0,.03);
+		     border-radius: 12px;
+		 }
+		 .tag_more{
+		     width: 42px;
+		     text-align: center;
+		 }
+		 .more_li{
+		     float:left;
+		     line-height:24px;
+		     margin-left:12px;
+		     margin-right:12px;
+		     margin-top:16px;
+		 
+		 }
+		 .main{
+		     clear:both;
+		 
+		 }
+		 #lg{
+		     position:absolute;
+		     left:50%;
+		     top:45px;
+		     margin-left:-135px;
+		     width: 270px;
+		     height: 129px;
+		 }
+		 .search_l{
+		     position:absolute;
+		     left:625px;
+		     top:185px;
+		     font-size:16px;
+		     width: 546px;
+		     height: 40px;
+		     vertical-align: top;
+		     border:2px solid #c4c7ce;
+		     border-radius:10px 0 0 10px;
+		     background-color: #fff;
+		     color:#222;
+		     overflow: hidden;
+		 }
+		 .search_r {
+		     position: absolute;
+		     top:185px;
+		     left:1173px;
+		     cursor: pointer;
+		     width: 100px;
+		     height:44px;
+		     line-height: 45px;
+		     background-color: #bebebe;
+		     border-radius:0 10px 10px 0;
+		     font-size:14px;
+		     color:#fff;
+		     text-align: center;
+		 }
+		 .main .search_r:hover{
+		     background-color: #4662d9;
+		 }
+		 .main input:hover{
+		     border-color: #a7aab5;
+		 }
+		 
+		 
+		 .main table{
+		     margin:200px 610px;
+		     width: 670px;
+		     height: 180px;
+		     font-size:15px;
+		 }
+		 .main #hhh{
+		     padding-left:254px;
+		     color:#a6a9b4;
+		 }
+		 ._new{
+		     display: inline-block;
+		     background-color: #ff455b;
+		     width: 14px;
+		     height: 19px;
+		     color:#fff;
+		     padding:0 2px;
+		     border-radius: 5px;
+		 }
+		 ._hot{
+		     display: inline-block;
+		     background-color: #ff9812;
+		     width: 14px;
+		     height: 19px;
+		     color:#fff;
+		     padding:0 2px;
+		     border-radius: 5px;
+		 }
+		 .footer{
+		     width: 100%;
+		     height: 40px;
+		     position:fixed;
+		     bottom:0;
+		     background-color: #fbfbfb;
+		     line-height: 40px;
+		     font-size:12px;
+		 }
+		 .footer_l li a{
+		     float:left;
+		     padding-left:14px;
+		     color:#9195a3;
+		 }
+		 .footer_l li a:hover{
+		     color:#222;
+		 }
+		 .footer_r li a{
+		     float:right;
+		     font-size:16px;
+		     padding-right:15px;
+		 }	
+	     .top{
+			 width:100%;
+			 height:100px;
+			 top:0px;
+			 background-color:#b4ab63;
+			 position:fixed;
+		}
+		 
+		 
+	    </style> 
+    </head>
+	<body>
+	      <div class="top">
+				 </div>
+</body>
+</html>
+
+
+

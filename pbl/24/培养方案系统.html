@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.one_two_two th {
+				width: 107px;
+				height: 50px;
+				background-color: rgba(191, 208, 251);
+			}
+				
+			#c1{
+				width: 200px;
+				height: 200px;
+				top: 0;
+				left: 500px;
+				border: 1px solid #000000;
+			}
+			#c2{
+				width: 200px;
+				height: 200px;
+				top: 0;
+				left: 0;
+				border: 1px solid #000000;
+			}
+			#c3{
+				width: 200px;
+				height: 200px;
+				top: 0;
+				left: 0;
+				border: 1px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<canvas id="c1" width="200px" height="200px"></canvas>
+		<script>
+		    var canvas = document.getElementById("c1");
+		    var ctx = canvas.getContext("2d");
+		
+		    var data = [12, 19, 3, 5, 2, 3]; // 数据
+		    var colors = ["red", "green", "blue", "orange", "purple", "gray"]; // 扇形颜色
+		    var total = 0; // 总和
+		    var startAngle = 0; // 开始角度
+		
+		    // 计算总和
+		    for (var i = 0; i < data.length; i++) {
+		        total += data[i];
+		    }
+		
+		    // 绘制扇形
+		    for (var i = 0; i < data.length; i++) {
+		        var endAngle = startAngle + (data[i] / total) * 2 * Math.PI;
+		        ctx.fillStyle = colors[i];
+		        ctx.beginPath();
+		        ctx.moveTo(canvas.width / 2, canvas.height / 2);
+		        ctx.arc(canvas.width / 2, canvas.height / 2, 100, startAngle, endAngle);
+		        ctx.closePath();
+		        ctx.fill();
+		        startAngle = endAngle;
+		    }
+		</script>
+		
+		
+
+		<canvas id="c2" width="300px" height="300px"></canvas>
+		<script>
+		    var canvas = document.getElementById("c2");
+		    var ctx = canvas.getContext("2d");
+		
+		    var data = [12, 19, 3, 5, 2, 3]; // 数据
+		    var barWidth =40; // 柱子宽度
+		    var barSpacing = 10; // 柱子间距
+		    var barColor = "blue"; // 柱子颜色
+			
+		
+		    for (var i = 0; i < data.length; i++) {
+		        // 绘制柱子
+		        ctx.fillStyle = barColor;
+		        ctx.fillRect(i * (barWidth + barSpacing), canvas.height - data[i], barWidth, data[i]);
+		
+		        // 绘制数值
+		        ctx.fillStyle = "black";
+		        ctx.font = "16px Arial";
+		        ctx.fillText(data[i], i * (barWidth + barSpacing) + barWidth / 2, canvas.height - data[i] - 10);
+		    }
+		</script>
+		
+		<canvas id="c3" width="300px" height="300px"></canvas>
+		<script>
+		    var canvas = document.getElementById("c3");
+		    var ctx = canvas.getContext("2d");
+		
+		    var data = [70, 60, 50, 40, 30,20]; // 数据
+		    var barWidth =40; // 柱子宽度
+		    var barSpacing = 10; // 柱子间距
+		    var barColor = "blue"; // 柱子颜色
+			
+		
+		    for (var i = 0; i < data.length; i++) {
+		        // 绘制柱子
+		        ctx.fillStyle = barColor;
+		        ctx.fillRect(i * (barWidth + barSpacing), canvas.height - data[i], barWidth, data[i]);
+		
+		        // 绘制数值
+		        ctx.fillStyle = "black";
+		        ctx.font = "16px Arial";
+		        ctx.fillText(data[i], i * (barWidth + barSpacing) + barWidth / 2, canvas.height - data[i] - 10);
+		    }
+		</script>
+		
+      <!--  <div class="c3">
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div -->>
+		
+		<div class="one_two_two">
+			<table>
+				<tr>
+					<th style="background-color: white;color: rgba(191,208,251);">
+						<a style="border-bottom: 1px solid rgba(191,208,251);">产业数据统计</a>
+					</th>
+					<th style="background-color: white;"></th>
+					<th style="background-color: white;"></th>
+					<th style="background-color: white;"></th>
+					<th style="background-color: white;"></th>
+					<th style="background-color: white;"></th>
+					<th style="background-color: white;">
+						<select style="width:100px ;height: 30px; right :0px; background-color: rgba(191,208,251);">
+							<option>学校所在地</option>
+							<option>成都</option>
+							<option>北京</option>
+							<option>上海</option>
+							<option>深圳</option>
+							<option>长沙</option>
+						</select>
+					</th>
+				</tr>
+		
+				<tr>
+					<th>专业名</th>
+					<th >企业</th>
+					<th >岗位</th>
+					<th >技能</th>
+					<th>任务</th>
+					<th>最低薪酬</th>
+					<th>最高薪酬</th>
+				</tr>
+		
+				<tr>
+					<th>计算机科学与技术</th>
+					<th id="getc1" style="color:red;">300</th>
+					<th id="getc2" style="color:red;">5000</th>
+					<th id="getc3" style="color:red;">400</th>
+					<th>4500</th>
+					<th>2k</th>
+					<th>12k</th>
+				</tr>
+		
+				<tr>
+					<th>软件工程</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+				<tr>
+					<th>网络工程</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+				<tr>
+					<th>信息安全</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+				<tr>
+					<th>物联网工程</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+				<tr>
+					<th>数学媒体技术</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+				<tr>
+					<th>智能科学与技术</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+				<tr>
+					<th>空间信息与数学技术</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+				<tr>
+					<th>电子与计算机工程</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		
+			</table>
+		</div>
+		
+	</body>
+	
+	<script>
+		let getc1 = document.getElementById('getc1')
+		let getc2 = document.getElementById('getc2')
+		let getc3 = document.getElementById('getc3')
+		getc1.addEventListener('mouseenter', function () {
+		            c1.style.display = 'block'
+		            c2.style.display = 'none'
+		            c3.style.display = 'none'
+		    })
+		getc1.addEventListener('mouseleave', function () {
+		            c1.style.display = 'none'
+		            c2.style.display = 'none'
+		            c3.style.display = 'none'
+		    })
+		getc2.addEventListener('mouseenter', function () {
+		            c1.style.display = 'none'
+		            c2.style.display = 'block'
+		            c3.style.display = 'none'
+		    })
+		getc2.addEventListener('mouseleave', function () {
+		            c1.style.display = 'none'
+		            c2.style.display = 'none'
+		            c3.style.display = 'none'
+		    })
+		getc3.addEventListener('mouseenter', function () {
+		            c1.style.display = 'none'
+		            c2.style.display = 'none'
+		            c3.style.display = 'block'
+		    })
+		getc3.addEventListener('mouseleave', function () {
+		            c1.style.display = 'none'
+		            c2.style.display = 'none'
+		            c3.style.display = 'none'
+		    })
+	</script>
+		
+</html>

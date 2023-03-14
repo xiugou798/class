@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body,
+			html,
+			div {
+				padding: 0px;
+				margin: 0px;
+			}
+
+			#box {
+				width: 320px;
+				height: 450px;
+				padding: 20px;
+				border: 1px solid #000;
+				margin: 30px auto;
+				box-shadow: 3px 3px 5px #ccc;
+				background-color: #E6D4C2;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: flex-end;
+				flex-wrap: wrap;
+			}
+
+			#value {
+				width: 270px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 30px;
+				padding: 5px 20px;
+				border: 1px solid #000;
+				background-color: #E6D4C2;
+				text-align: right;
+			}
+
+			#box div {
+				width: 70px;
+				height: 70px;
+				border: 1px solid #000;
+				line-height: 70px;
+				text-align: center;
+				font-size: 28px;
+				box-shadow: 2px 2px 4px #ccc;
+				background-color: #7F5F4A;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input id="value" type="text" value="0">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>+</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>-</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>*</div>
+			<div>.</div>
+			<div>0</div>
+			<div>=</div>
+			<div>/</div>
+			<div style="width: 310px;height: 50px; border-radius: 20px;background-color: #7F5F4A;">CE</div>
+		</div>
+	</body>
+	<script>
+		var input, num1, type;
+		init();
+
+		function init() {
+			input = document.getElementById("value");
+			var divs = document.getElementById("box").getElementsByTagName("div");
+			for (var i = 0; i < divs.length; i++) divs[i].onclick = clickHand;
+		};
+		//点击事件
+		function clickHand() {
+			switch (this.innerHTML) {
+				//判断如果是 + - * / ，则表示第一个数输入完毕
+				case "+":
+				case "-":
+				case "*":
+				case "/":
+					num1 = input.value;
+					type = this.innerHTML;
+					input.value = 0;
+					break;
+				case "=":
+					getCont();
+					break;
+				case "CE":
+					//如果是CE，清空数据
+					input.value = "0";
+					num1 = 0;
+					type = "";
+					break;
+				default:
+					input.value = Number(input.value + this.innerHTML);
+			}
+		}
+		//运算
+		function getCont() {
+			switch (type) {
+				case "+":
+					input.value = Number(num1) + Number(input.value);
+					break;
+				case "-":
+					input.value = Number(num1) - Number(input.value);
+					break;
+				case "*":
+					input.value = Number(num1) * Number(input.value);
+					break;
+				case "/":
+					input.value = input.value == 0 ? "输入错误" : Number(num1) / Number(input.value);
+					break;
+			}
+		}
+	</script>
+</html>

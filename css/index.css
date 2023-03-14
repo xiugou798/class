@@ -98,7 +98,7 @@
 }
 
 .main .left .card p::after {
-    content: '11';
+    content: attr(data-after);
     font-size: 0.5em;
     position: relative;
     color: rgba(0, 0, 0, 0.6);
@@ -248,7 +248,7 @@
 }
 
 .tab .mask .cards {
-    width: 10000px;
+    width: 3000px;
     height: 100%;
     overflow: visible;
     margin-top: 10px;
@@ -267,6 +267,10 @@
     border: 1px solid #ffffff;
     border-radius: 10%;
     transition: all 0.3s ease-in-out;
+}
+.tab .mask .cards img{
+    width: 100%;
+    height: 100%;
 }
 
 .tab .mask .cards .card:hover {

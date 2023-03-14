@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>关注专业</title>
+		<!-- 表格增删改查 -->
+		<link rel="stylesheet" href="1.css" type="text/css">
+		<script src="1.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="total1">
+			<div class="top">
+				关注专业
+			</div>
+			<div class="main">
+				<div>
+					<select id="s" class="sel">
+						<option selected>门类</option>
+						<option>专业类</option>
+						<option>专业名称</option>
+					</select>
+					<input id="seach" class="inp" type="text" placeholder="请输入学生信息(可以空格隔开)" />
+					<button id="qstnMark" onclick="seach()">Q</button>
+					<input id="addTmplFile" type="button" value="新增专业信息" onclick="addTmplFile()" />
+				</div>
+				<div>
+					<table id="table1" cellspacing="0px">
+						<tr class="tableTitle" align="center">
+							<td class="col1">门类</td>
+							<td id="onlyId" style="display: none"></td>
+							<td class="col2">专业类</td>
+							<td class="col3">专业名称</td>
+							<td class="col5">操作</td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">计算机科学与技术</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">软件工程</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">网络工程</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">信息安全</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">物联网工程</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">数字媒体技术</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">智能科学与技术</td>
+
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">空间信息与数字技术</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2"></td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">电子与计算机工程</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2">
+							</td>
+						</tr>
+						<tr class="table2Td1" align="center">
+							<td class="col1">工学</td>
+							<td class="col2">计算机类</td>
+							<td class="col3">数据科学与大数据技术</td>
+							<td class="col5"><input type="button" value="编辑" onclick="modify(this)" id="btn1">
+								<input type="button" value="删除" onclick="del(this)" id="btn2">
+							</td>
+						</tr>
+
+					</table>
+					<div id="lowerLbl" align="center">
+						<p>共</p>
+						<p id="rowsNum">0</p>
+						<p>条</p>
+						<select id="sel" onclick="pagination()">
+							<option id="opt0" value="10">10条/页</option>
+							<option id="opt1" value="20">20条/页</option>
+							<option id="opt2" value="50">50条/页</option>
+						</select>
+						&nbsp;
+						<button onclick="last()"><</button>
+						<button id="pno" style="background-color: #5899ce; color: white">1</button>
+						<button onclick="next()">></button>
+						&nbsp;
+						<p>前往</p>
+						<input type="text" id="gopg" onclick="gopage()" />
+						<p>页</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="total2">
+			<div class="top">
+				<p style="display: inline; color: #999999"> >专业信息 </p>
+			</div>
+			<div class="main" align="center">
+				<table id="table2" cellspacing="18px">
+					<tr class="table2Tr">
+						<td class="table2Td1" align="right">门类</td>
+						<td class="table2Td2"><input id="name" type="text" placeholder="门类" /></td>
+					</tr>
+					<tr class="table2Tr">
+						<td class="table2Td1" align="right">
+							<p>*</p>专业类
+						</td>
+						<td class="table2Td2"><input id="title" type="text" placeholder="专业类" /></td>
+						<td class="table2Td1" align="right">专业名称</td>
+						<td class="table2Td2"><input id="address" type="text" placeholder="专业名称" /></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td><input id="submit1" style="height: 35px; width: 80px;" type="button" value="提交"
+								onclick="submit1()" /></td>
+						<td><input id="submit2" style="height: 35px; width: 80px; display: none" type="button"
+								value="提交" onclick="submit2()" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<script src="myJavaScript.js"></script>
+	</body>
+</html>

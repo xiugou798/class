@@ -1,0 +1,123 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.nav {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 1px 0 10px rgb(85, 163, 159);
+}
+
+.nav ul {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    width: 100%;
+}
+
+.nav ul li {
+
+    padding: 0 20px;
+}
+
+.nav ul li a:hover {
+    color: rgb(106, 194, 194);
+    transition: 0.9s;
+}
+
+.bg {
+    position: absolute;
+    top: 60px;
+    background-color: black;
+    height: 4px;
+    border-radius: 10px;
+    left: 50px;
+    width: 83px;
+    transition: 1s;
+}
+
+/* .nav ul li:nth-child(1):hover~.bg {
+    width: 83px;
+    left: 50px
+}
+
+
+.nav ul li:nth-child(2):hover~.bg {
+    width: 112px;
+    left: 133px
+}
+
+.nav ul li:nth-child(3):hover~.bg {
+    width: 106px;
+    left: 246px
+}
+
+.nav ul li:nth-child(4):hover~.bg {
+    width: 120px;
+    left: 352px
+}
+
+
+.nav ul li:nth-child(5):hover~.bg {
+    width: 137px;
+    left: 471px
+}
+
+
+.nav ul li:nth-child(6):hover~.bg {
+    width: 108px;
+    left: 608px
+} */
+
+.footer {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+}
+
+.footer:hover {
+    cursor: pointer;
+}
+
+.footer p {
+    font-size: 14px;
+    color: gray;
+    margin: 5px;
+}
+
+.page-index {
+    display: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

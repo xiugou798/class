@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.Box{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.one{
+				width: 100%;
+				height: 550px;
+				background-color: rgb(218, 206, 180);
+				opacity: 0.8;
+			}
+			.one p{
+				display: block;
+				color: white;
+				width: 180px;
+				height: 30px;
+				margin: -10px 0 0 15px;
+			}
+			.nav{
+				width: 100%;
+				height: 50px;
+				background-color: rgb(154, 149, 137);
+			}
+			.nav .left{
+				width: 500px;
+				height: 30px;
+				position: absolute;
+				top: 20px;
+			}
+			.left a{
+				margin-left: 10px;
+				margin-right: 10px;
+				text-decoration: none;
+				color:white;
+				text-shadow: 5px 5px 0 5px black;
+			}
+			.nav .right {
+				width: 270px;
+				height: 30px;
+				position: absolute;
+				top: 20px;
+				right: 10px;
+			}
+			.right a{
+				margin-right: 20px;
+				text-decoration: none;
+				color:white;
+				text-shadow: 5px 5px 0 5px black;
+			}
+			.login{
+				width: 55px;
+				height:  30px;
+				background-color:blue;
+				position: absolute;
+				right: 20px;
+				top: -3px;
+				text-align: center;
+				border-radius: 10px;
+			}
+			.login a{
+				margin-right: 20px;
+				text-decoration: none;
+				color:white;
+				text-shadow: 5px 5px 0 5px black;
+				display: block;
+				margin: 3px auto;
+			}
+			.sou{
+				display: block;
+				width: 850px;
+				height: 280px;
+				margin:100px auto;
+			}
+			.sou img{
+				display: block;
+				width: 310px;
+				height: 120px;
+				margin: auto;
+			}
+			.sou .kuang{
+				display: block;
+				width: 915px;
+				height: 60px;
+				margin:20px auto;
+				border: 1px solid gray; 
+				box-shadow: 0.5px 0.3px 0 0.5px grey;
+				border-radius: 10px;
+				border-right: 0px;
+			}
+			.sousuo{
+				position: absolute;
+				right: 350px;
+				width: 100px;
+				height: 60px;
+				border: 1px solid black;
+				background-color: rgb(228, 228, 229);
+				border-radius:0 10px 10px 0;
+				opacity: 0.5;
+			}
+			.sousuo a{
+				display: block;
+				text-decoration: none;
+				text-align: center;
+				margin: 15px auto;
+				color: black;
+				font-weight: 800;
+			}
+			.sousuo img{
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				right: 120px;
+				top: 15px;
+			}
+			.word{
+				display: block;
+				width: 410px;
+				height: 30px;
+				margin: 10px auto;
+			}
+			.word a{
+				margin-right: 25px;
+				text-decoration: none;
+				color:white;
+				text-shadow: 5px 5px 0 5px black;
+			}
+			.two {
+				display: block;
+				width: 1300px;
+				height: 600px;
+				margin: auto;
+			}
+			.top{
+				width: 100px;
+				height: 30px;
+				margin: 10px;
+			}
+			.top a{
+				text-decoration: none;
+				color: black;
+			}
+			.photo{
+				margin: 20px;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: flex-end;
+				flex-wrap:wrap;
+			}
+			.photo div{
+				width: 350px;
+				height: 250px;
+				margin: 10px;
+				background-color: rgb(103, 148, 206);
+				border-radius: 10px;
+			}
+			.photo div:nth-child(2n){
+				background-color: rgb(224, 203, 202);
+			}
+			.photo div a{
+				display: block;
+				text-decoration: none;
+				font-size: 18px;
+				color: white;
+				text-align: center;
+				margin: 120px 0  0 5px; 
+			}
+			.photo div p{
+				display: block;
+				color: white;
+				margin-top: 210px;
+			}
+			.bottom{
+				width: 100%;
+				height: 30px;
+				position: relative;
+			}
+			#bottom_left{
+				width: 300px;
+				height: 30px;
+			}
+			#bottom_left a{
+				margin: 10px;
+				text-decoration: none;
+				font-size: 10px;
+				color:rgb(145, 149, 163) ;
+			}
+			#bottom_right{
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				width: 615px;
+				height: 30px;
+			}
+			#bottom_right a{
+				margin-right: 20px;
+				text-decoration: none;
+				font-size: 10px;
+				color:rgb(145, 149, 163) ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="Box">
+			<div class="one">
+				<div class="nav">
+					<div class="left">
+						<a href="#">新闻</a>
+						<a href="#">hao123</a>
+						<a href="#">地图</a>
+						<a href="#">好看</a>
+						<a href="#">贴吧</a>
+						<a href="#">学术</a>
+						<a href="#">更多</a>
+					</div>
+					<div class="right">
+						<a href="#">百度首页</a>
+						<a href="#">收藏本页</a>
+						<div class="login">
+							<a href="#">登录</a>
+						</div>
+					</div>
+				</div>
+				<div class="sou">
+					<img src="img/百度图标.png">
+					<div class="kuang" style="border-right: none;">
+						<div class="sousuo">
+							<img src="img/photo.png">
+							<a href="#">百度一下</a>
+						</div>
+					</div>
+					<div class="word">
+						<a href="#">热门搜索：</a>
+						<a href="#">壁纸</a>
+						<a href="#">头像</a>
+						<a href="#">手抄报</a>
+						<a href="#">高清美图</a>
+					</div>
+				</div>
+				<p>背景 design：YOUNG</p>
+			</div>
+			<div class="two">
+				<div class="top">
+					<a href="#">精美合辑</a>
+				</div>
+				<div class="photo">
+					<div><p>城市建筑摄影专题</p></div>
+					<div><p>渐变风格插画</p></div>
+					<div><p>皮影</p></div>
+					<div><p>宠物图片</p></div>
+					<div><p>航拍地球系列</p></div>
+					<div>
+						<a href="#">查看更多合辑></a>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div id="bottom_left">
+					<a href="#">使用百度前必读</a>
+					<a href="#">高级搜索</a>
+					<a href="#">帮助中心</a>
+				</div>
+				<div id="bottom_right">
+					<a href="#">2022 Baidu</a>
+					<a href="#">(京)-经营-2017-0020</a>
+					<a href="#">京公网安备11000002000001号</a>
+					<a href="#">京ICP证030173号</a>
+					<a href="#">YOUNG</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

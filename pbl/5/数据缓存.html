@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div>
+    <input id="id" type="text" placeholder="编号">
+    <input id="name" type="text" placeholder="姓名">
+    <input id="btn_add" type="button" value="添加">
+</div>
+
+<table id="table">
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>张三</td>
+        <td onclick="del(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>李四</td>
+        <td onclick="del(this)">删除</a> </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>王五</td>
+        <td onclick="del(this)">删除</a> </td>
+    </tr>
+
+</table>
+
+<script>
+	//为a标签设置一个点击事件，a标签的父节点是td，td的父节点是tr，tr的父节点是table，通过parentNode可以获取父节点
+    function del(obj) {
+        var table = obj.parentNode.parentNode.parentNode;
+        var tr = obj.parentNode.parentNode;
+        table.removeChild(tr);
+    }
+    //添加操作
+    var button = document.getElementById("btn_add");
+    button.setAttribute("onclick","add()");//获取add属性里的值  属性名  属性值  相当于添加点击事件
+
+    function add() {
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+
+        var id_td = document.createElement("td");
+        var id_text = document.createTextNode(id);
+        id_td.appendChild(id_text);//孩子结点添加
+
+        var name_td = document.createElement("td");
+        var name_text = document.createTextNode(name);
+        name_td.appendChild(name_text);
+
+        //尾部加一个删除按钮
+        var a_td = document.createElement("td");
+        var a = document.createElement("a");
+        var a_text = document.createTextNode("删除");
+        a.appendChild(a_text);
+        a.setAttribute("onclick", "del(this)");
+        a_td.appendChild(a);
+
+
+        var tr = document.createElement("tr");
+        tr.appendChild(id_td);
+        tr.appendChild(name_td);
+        tr.appendChild(a_td);
+
+        document.getElementById("table").append(tr);
+
+    }
+</script>
+</body>
+</html>

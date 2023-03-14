@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>培养方案系统</title>
+    <link rel="stylesheet" href="./培养方案系统.css">
+</head>
+<body>
+    <div class="top">
+        <div class="left"><button>系分院负责人</button></div>
+        <div class="right"><button>退出登录</button></div>
+    </div>
+    <div class="table">
+        <div class="concern">
+            <div class="tabTop">
+                <div class="title">关注专业</div>
+                <!-- 下拉框 -->
+                <div class="choose">
+                    <select name="categories" id="conClass" onchange="operates['selects'].selectOnchange(this)">
+                        <!-- <option value="门类">门类</option>
+                        <option value="门类">门类</option>
+                        <option value="门类">门类</option> -->
+                    </select>
+                    <select name="conSpecialized" id="conSpecialized" onchange="operates['selects'].selectOnchange(this)">
+                        <!-- <option value=""></option> -->
+                    </select>
+                </div>
+            </div>
+            <table id="concernTable">
+                <tr>
+                    <th>门类</th>
+                    <th>专业类</th>
+                    <th class="concernName">专业名称</th>
+                </tr>
+            </table>
+        </div>
+        <div class="statistics">
+            <div class="tabTop">
+                <div class="title">产业数据统计</div>
+                <!-- 下拉框 -->
+                <div class="choose">
+                    <select name="onAddress" id="onAddress" onchange="operates['selects'].selectOnchange(this)">
+                        <option value="">学校所在地</option>
+                    </select>
+                </div>
+            </div>
+            <table id="statisticsTable">
+                <tr>
+                    <th>专业名</th>
+                    <th>企业</th>
+                    <th>岗位</th>
+                    <th>技能</th>
+                    <th>任务</th>
+                    <th>最低薪资</th>
+                    <th>最高薪资</th>
+                </tr>
+            </table>
+        </div>
+        <div class="status">
+            <div class="tabTop">
+                <div class="title">本校专业现状</div>
+                <div>
+                    <button class="Button" onclick="operates.Pop_upsOp.addData(this)">新增</button>
+                </div>
+            </div>
+            <table id="statusTable">
+                <tr>
+                    <th>专业名</th>
+                    <th>负责人</th>
+                    <th>课程数量（点击查看详情）</th>
+                    <th>学生数量</th>
+                    <th>师生比</th>
+                    <th>产教匹配度</th>
+                </tr>
+            </table>
+        </div>
+        <div class="NoOpened">
+            <div class="tabTop">
+                <div class="title">未开设专业信息</div>
+            </div>
+            <div class="NoOpenedInfo">
+                <div>数字媒体技术</div>
+                <div>智能科学与技术</div>
+                <div>空间信息与数字技术</div>
+                <div>新媒体技术</div>
+                <div>电影制作</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Pop-upsBody">
+        <div class="Pop-ups">
+            <!-- <div class="input">
+                <inputTitle>123：</inputTitle>
+                <input type="text">
+            </div> -->
+            <!-- <div class="bottom">
+                <button onclick="operates.Pop_upsOp.confirm(this)">确认</button>
+                <button onclick="hid(this.parentElement.parentElement.parentElement)">取消</button>
+            </div> -->
+        </div>
+    </div>
+    <script src="./培养方案系统.js"></script>
+</body>
+</html>

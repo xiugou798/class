@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>培养方案系统</title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+
+			.dhl {
+				position: absolute;
+				height: 40px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.xf {
+				top: 10px;
+				background-color: #CDE1FD;
+				width: 140px;
+				height: 30px;
+				color: black;
+				position: absolute;
+				border-radius: 6px;
+				left: 10px;
+				margin: auto;
+			}
+
+			.xf1 {
+				top: 10px;
+				background-color: #CDE1FD;
+				width: 140px;
+				height: 30px;
+				color: black;
+				position: absolute;
+				border-radius: 6px;
+				right: 10px;
+				margin: auto;
+			}
+
+			.pp {
+				font-size: 20px;
+				font-family: 隶书;
+				color: palevioletred;
+			}
+
+			.y1 {
+				top: 50px;
+				margin-top: 20px;
+				margin-left: 40px;
+				position: absolute;
+				width: 800px;
+				height: 400px;
+				overflow: hidden;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			.y11 {
+				margin-top: 9px;
+				position: absolute;
+				color: plum;
+			}
+
+			.y12 {
+				background-color: #CDE1FD;
+				font-size: 15px;
+				width: 120px;
+				height: 30px;
+				border: 0ch;
+				margin-left: 50px;
+				border-radius: 5px;
+				text-align: center;
+			}
+
+			.y13 {
+				background-color: #CDE1FD;
+				font-size: 15px;
+				width: 180px;
+				height: 30px;
+				border: 0ch;
+				margin-left: 50px;
+				border-radius: 5px;
+				text-align: center;
+			}
+
+			td {
+				border: 1px solid rgb(255, 255, 255);
+				background-color: #CDE1FD;
+				height: 30px;
+				text-align: center;
+			}
+
+			table {
+				width: 700px;
+				margin-top: 20px;
+			}
+
+			.bu {
+				width: 40px;
+				height: 25px;
+			}
+
+			.zengj {
+				width: 100px;
+				height: 30px;
+				position: absolute;
+				right: 100px;
+			}
+
+			.xsk {
+				width: 600px;
+				height: 200px;
+				position: absolute;
+				border: 1px solid;
+				top: 200px;
+				left: 260px;
+			}
+
+			.yck {
+				width: 600px;
+				height: 200px;
+				position: absolute;
+				border: 1px solid;
+				top: 200px;
+				left: 500px;
+				display: none;
+			}
+
+			.y2 {
+				top: 50px;
+				margin-top: 20px;
+				margin-left: 850px;
+				position: absolute;
+				width: 900px;
+				height: 400px;
+				overflow: hidden;
+			}
+
+			.y2 table {
+				width: 900px;
+			}
+
+			.y21 {
+				position: absolute;
+				margin-top: 9px;
+				color: plum;
+			}
+
+			.y22 {
+				background-color: #CDE1FD;
+				font-size: 15px;
+				color: rgb(0, 0, 0);
+				width: 150px;
+				height: 30px;
+				border: 0ch;
+				margin-left: 649px;
+				border-radius: 5px;
+				text-align: center;
+			}
+
+			.y23yck {
+				height: 150px;
+				width: 300px;
+				border: 1px solid;
+				top: 230px;
+				left: 1100px;
+				position: absolute;
+				overflow: hidden;
+				background-color: white;
+				display: none;
+			}
+
+			.y23 {
+				height: 150px;
+				width: 300px;
+				border: 1px solid;
+				top: 230px;
+				left: 1100px;
+				position: absolute;
+				overflow: hidden;
+				background-color: white;
+			}
+
+			.y231 {
+				left: 3px;
+				top: 3px;
+				position: absolute;
+			}
+
+			.y23 table {
+				width: 294px;
+				margin-top: 35px;
+				margin-left: 3px;
+			}
+
+			.y23 td {
+				border: 1px solid plum;
+				background-color: white;
+				height: 14px;
+				text-align: center;
+				padding: 0px;
+				font-size: 10px;
+			}
+
+			.y232 {
+				background-color: #CDE1FD;
+				border: 0ch;
+			}
+
+			.y24yck {
+				height: 140px;
+				width: 280px;
+				border: 1px solid blueviolet;
+				border-radius: 5px;
+				top: 1px;
+				left: 1000px;
+				position: absolute;
+				overflow: hidden;
+				background-color: white;
+				display: none;
+			}
+
+			.y24 {
+				height: 140px;
+				width: 280px;
+				border: 1px solid blueviolet;
+				border-radius: 5px;
+				top: 1px;
+				left: 1000px;
+				position: absolute;
+				overflow: hidden;
+				background-color: white;
+			}
+
+			.y241 {
+				left: 20px;
+				top: 20px;
+				position: absolute;
+			}
+
+			.y242 {
+				position: absolute;
+				left: 30px;
+				top: 15px
+			}
+
+			.y243 {
+				position: absolute;
+				left: 35px;
+				top: 25px;
+			}
+
+			.y244 {
+				height: 140px;
+				width: 140px;
+				left: 140px;
+				position: absolute;
+			}
+
+			.y25yck {
+				height: 120px;
+				width: 220px;
+				position: absolute;
+				border: 1px solid red;
+				left: 1500px;
+				top: 220px;
+				border-radius: 5px;
+				background-color: white;
+				display: none;
+			}
+
+			.y25 {
+				height: 120px;
+				width: 220px;
+				position: absolute;
+				border: 1px solid;
+				left: 1500px;
+				top: 220px;
+				background-color: white;
+			}
+
+			.y26yck {
+				height: 120px;
+				width: 220px;
+				position: absolute;
+				border: 1px solid plum;
+				left: 1500px;
+				top: 10px;
+				border-radius: 5px;
+				background-color: white;
+				display: none;
+			}
+
+			.y26 {
+				height: 120px;
+				width: 220px;
+				position: absolute;
+				border: 1px solid plum;
+				left: 1500px;
+				top: 10px;
+				border-radius: 5px;
+				background-color: white;
+			}
+
+			.y3 {
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				top: 500px;
+				left: 40px;
+			}
+
+			.y31 {
+				position: absolute;
+				margin-top: 10px;
+				color: plum;
+			}
+
+			.y4 {
+				width: 700px;
+				height: 150px;
+				position: absolute;
+				left: 850px;
+				top: 500px;
+			}
+
+			.y41 {
+				position: absolute;
+				margin-top: 10px;
+				color: plum;
+			}
+			.y42{
+				width: 150px;
+				height: 30px;
+				background-color:paleturquoise;
+				margin-top: 30px;
+				float: left;
+				margin-left: 12px;
+				border-radius: 7px;
+				text-align: center;
+				box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+			}
+			.y43yck{
+				width: 140px;
+				height: 40px;
+				position: absolute;
+				left: 900px;
+				top: 650px;
+				border: 1px solid plum;
+				background-color: #CDE1FD;
+				border-radius: 7px;
+				text-align: center;
+				display: none;
+			}
+			.y43{
+				width: 140px;
+				height: 40px;
+				position: absolute;
+				left: 900px;
+				top: 650px;
+				border: 1px solid plum;
+				background-color: #CDE1FD;
+				border-radius: 7px;
+				text-align: center;
+			}
+			.y44yck{
+				width: 400px;
+				height: 100px;
+				position: absolute;
+				left: 930px;
+				top: 750px;
+				display: none;
+			}
+			.y44{
+				width: 400px;
+				height: 100px;
+				position: absolute;
+				left: 930px;
+				top: 700px;
+			}
+			.y44 td {
+				border: 1px solid plum;
+				text-align: center;
+				padding: 0px;
+				font-size: 10px;
+			}
+			.jkx{
+				width: 100px;
+				height: 20px;
+				font-size: 12px;
+				font-family: 楷书;
+				left: 180px;
+				top: 20px;
+				position: absolute;
+				text-align: center;
+			}
+			.jkx:hover{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dhl">
+			<div class="xf">
+				<p class="pp">系分院负责人</p>
+			</div>
+			<div class="jsjkx">
+				<a class="jkx" href="./培养方案系统2.html">计算机科学与技术</a>
+			</div>
+			<div class="xf1">
+				<p class="pp">退出登录</p>
+			</div>
+		</div>
+		<div class="y1">
+			<div class="y11">_________</div>
+			<ul>
+				<li>
+					<a style="color: plum;">关注专业</a>
+
+					<select class="y12" id="y12">
+						<option value="门类">门类</option>
+						<option value="工学" onclick="mlcz()">工学</option>
+						<option value="理学" onclick="mlcz()">理学</option>
+						<option value="文学" onclick="mlcz()">文学</option>
+						<option value="教育学" onclick="mlcz()">教育学</option>
+						<option value="法学" onclick="mlcz()">法学</option>
+					</select>
+					<select class="y13" id="zy">
+						<option value="专业类">专业类</option>
+						<option value="计算机类" onclick="zylcz()">计算机类</option>
+						<option value="工商管理类" onclick="zylcz()">工商管理类</option>
+						<option value="电子商务类" onclick="zylcz()">电子商务类</option>
+						<option value="电子信息类" onclick="zylcz()">电子信息类</option>
+						<option value="材料类" onclick="zylcz()">材料类</option>
+					</select>
+					<input type="button" value="增加" onclick="zengj()" class="zengj">
+				</li>
+			</ul>
+			<table class="nnz">
+				<tbody id="nnz_tb">
+					<tr>
+						<td>门类</td>
+						<td>专业类</td>
+						<td>专业名称</td>
+						<td>操作按钮</td>
+					</tr>
+				</tbody>
+				<tbody id="st">
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>软件工程</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>计算机科学与技术</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>网络工程</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>信息安全</a </td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>物联网工程</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>数字媒体技术</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>智能科学与技术</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>空间信息与数字技术</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+					<tr class="zym">
+						<td>工学</td>
+						<td>计算机类</td>
+						<td>
+							<input type="radio" /><a>电子与计算机工程</a>
+						</td>
+						<td>
+							<input type="button" value="删除" onclick="delect(this)" class="bu">
+							<input type="button" value="修改" onclick="update(this)" class="bu">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="yck" id="tc">
+			<input type="text" placeholder="门类" id="ml">
+			<input type="text" placeholder="专业类" id="zyl">
+			<input type="text" placeholder="专业名称" id="zymc">
+			<input type="button" value="确定新增" id="tcxsqd" onclick="qdan()">
+			<input type="button" value="确定修改" id="tcxsqd" onclick="qdxg()">
+		</div>
+		<div class="y2">
+			<div class="y21">_____________</div>
+			<ul>
+				<li>
+					<a style="color: plum;">产业数据统计</a>
+					<select class="y22">
+						<option value="学校所在地">学校所在地</option>
+						<option value="成都">成都</option>
+						<option value="北京">北京</option>
+						<option value="上海">上海</option>
+						<option value="深圳">深圳</option>
+						<option value="长沙">长沙</option>
+					</select>
+				</li>
+			</ul>
+			<table>
+				<tr>
+					<td>专业名</td>
+					<td>企业</td>
+					<td>岗位</td>
+					<td>技能</td>
+					<td>任务</td>
+					<td>最低薪酬</td>
+					<td>最高薪酬</td>
+				</tr>
+				<tr>
+					<td>计算机科学与技术</td>
+					<td onclick="xs()">300</td>
+					<td onclick="gw()">5000</td>
+					<td onclick="jn()">400</td>
+					<td onclick="rw()">4500</td>
+					<td>2K</td>
+					<td>12K</td>
+				</tr>
+				<tr>
+					<td>软件工程</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>网络工程</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>信息安全</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>物联网工程</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>数字媒体技术</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>智能科学与技术</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>空间信息与数字技术</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>电子与计算机工程</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		<div class="y23yck" id="y23">
+			<ul class="y231">
+				<li>
+					<select class="y232">
+						<option value="全部企业">全部企业</option>
+					</select>
+					<p style="font-size: 10px;position: absolute;left:120px; top:20px;width: 200px;">
+						共500家企业：本地200家，外地300家</p>
+				</li>
+			</ul>
+			<table cellspacing="0">
+				<tr>
+					<td>名录</td>
+					<td>岗位数</td>
+					<td>薪酬</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		<div class="y24yck" id="y24">
+			<div class="y241">
+				<canvas id="acanvas" width="100" height="100">
+				</canvas>
+				<script>
+					var canvas = document.getElementById('acanvas');
+					var pi = canvas.getContext('2d');
+					pi.lineWidth = 2;
+					pi.fillStyle = "plum";
+					pi.moveTo(50, 50);
+					pi.arc(50, 50, 50, Math.PI * 1 / 3, Math.PI * 3 / 2, false);
+					pi.closePath();
+					pi.fill();
+				</script>
+			</div>
+			<div class="y242">
+				<canvas id="bcanvas" width="100" height="100">
+				</canvas>
+				<script>
+					var canvas = document.getElementById('bcanvas');
+					var pi = canvas.getContext('2d');
+					pi.lineWidth = 2;
+					pi.fillStyle = "plum";
+					pi.moveTo(50, 50);
+					pi.arc(50, 50, 50, Math.PI * 3 / 2, false);
+					pi.closePath();
+					pi.fill();
+				</script>
+			</div>
+			<div class="y243">
+				<canvas id="ccanvas" width="100" height="100">
+				</canvas>
+				<script>
+					var canvas = document.getElementById('ccanvas');
+					var pi = canvas.getContext('2d');
+					pi.lineWidth = 2;
+					pi.fillStyle = "plum";
+					pi.moveTo(50, 50);
+					pi.arc(50, 50, 50, Math.PI * 2, Math.PI * 1 / 3, false);
+					pi.closePath();
+					pi.fill();
+				</script>
+			</div>
+			<div class="y244">
+				<h3>Top5:</h3>
+				<div class="y2441" style="position: absolute;left:30px; ">
+					<table>
+						<tr>
+							<p>北京 500</p>
+						</tr>
+						<tr>
+							<p>上海 450</p>
+						</tr>
+						<tr>
+							<p>广州 400</p>
+						</tr>
+						<tr>
+							<p>成都 350</p>
+						</tr>
+						<tr>
+							<p>深圳 300</p>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="y25yck" id="y25">
+			<canvas id="dcanvas" width="210" height="110">
+			</canvas>
+			<script>
+				var canvas = document.getElementById('dcanvas');
+				var bt = canvas.getContext('2d');
+				bt.font = "16px 隶书"
+				bt.beginPath();
+				bt.moveTo(10, 10);
+				bt.lineTo(10, 110);
+				bt.lineTo(210, 110);
+				bt.stroke();
+				bt.beginPath();
+				bt.moveTo(20, 110);
+				bt.lineTo(20, 20);
+				bt.lineTo(30, 20);
+				bt.lineTo(30, 110);
+				bt.stroke();
+				bt.moveTo(40, 110);
+				bt.lineTo(40, 30);
+				bt.lineTo(50, 30);
+				bt.lineTo(50, 110);
+				bt.stroke();
+				bt.moveTo(60, 110);
+				bt.lineTo(60, 40);
+				bt.lineTo(70, 40);
+				bt.lineTo(70, 110);
+				bt.stroke();
+				bt.moveTo(80, 110);
+				bt.lineTo(80, 50);
+				bt.lineTo(90, 50);
+				bt.lineTo(90, 110);
+				bt.stroke();
+				bt.moveTo(100, 110);
+				bt.lineTo(100, 60);
+				bt.lineTo(110, 60);
+				bt.lineTo(110, 110);
+				bt.stroke();
+				bt.moveTo(120, 110);
+				bt.lineTo(120, 70);
+				bt.lineTo(130, 70);
+				bt.lineTo(130, 110);
+				bt.stroke();
+				bt.moveTo(140, 110);
+				bt.lineTo(140, 80);
+				bt.lineTo(150, 80);
+				bt.lineTo(150, 110);
+				bt.stroke();
+				bt.moveTo(160, 110);
+				bt.lineTo(160, 90);
+				bt.lineTo(170, 90);
+				bt.lineTo(170, 110);
+				bt.stroke();
+				bt.fillText('词频', 15, 15)
+				bt.fillText('技能', 180, 108)
+				bt.fillStyle = "blue"
+				bt.fillRect(20, 20, 10, 90);
+				bt.fillRect(40, 30, 10, 80);
+				bt.fillRect(60, 40, 10, 70);
+				bt.fillRect(80, 50, 10, 60);
+				bt.fillRect(100, 60, 10, 50);
+				bt.fillRect(120, 70, 10, 40);
+				bt.fillRect(140, 80, 10, 30);
+				bt.fillRect(160, 90, 10, 20);
+			</script>
+		</div>
+		<div class="y26yck" id="y26">
+			<canvas id="ecanvas" width="210" height="110">
+			</canvas>
+			<script>
+				var canvas = document.getElementById('ecanvas');
+				var bt = canvas.getContext('2d');
+				bt.font = "16px 隶书"
+				bt.beginPath();
+				bt.moveTo(5,5);
+				bt.lineTo(5,110);
+				bt.lineTo(210,110)
+				bt.stroke();
+				bt.moveTo(10, 10);
+				bt.lineTo(30, 30);
+				bt.lineTo(50, 10);
+				bt.lineTo(70, 60);
+				bt.lineTo(90, 80);
+				bt.lineTo(110, 20);
+				bt.lineTo(130, 40);
+				bt.lineTo(150, 50);
+				bt.lineTo(170, 90);
+				bt.lineTo(190, 100);
+				bt.stroke();
+				bt.fillText('词频', 15, 15)
+				bt.fillText('任务', 180, 108)
+				bt.fillStyle = "plum"
+			</script>
+		</div>
+		<div class="y3">
+			<div class="y31">_____________</div>
+			<ul>
+				<li>
+					<a style="color: plum;">本校专业现状</a>
+				</li>
+			</ul>
+			<table>
+				<tr>
+					<td>专业名</td>
+					<td>负责人</td>
+					<td>课程数量(点击查看详情)</td>
+					<td>学生数量</td>
+					<td>师生比</td>
+					<td>产教匹配度</td>
+				</tr>
+				<tr>
+					<td>计算机科学与技术</td>
+					<td>张三</td>
+					<td>50</td>
+					<td>400</td>
+					<td>1：200</td>
+					<td>85%</td>
+				</tr>
+				<tr>
+					<td>软件工程</td>
+					<td>李四</td>
+					<td>48</td>
+					<td>410</td>
+					<td>1：150</td>
+					<td>86%</td>
+				</tr>
+				<tr>
+					<td>网络工程</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>信息安全</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>物联网工程</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>电子与计算机工程</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>数据科技与大数据技术</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>网络空间安全</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		<div class="y4">
+			<div class="y41">________________</div>
+			<ul>
+				<li>
+					<a style="color: plum;">未开设专业信息</a>
+				</li>
+			</ul>
+			<div class="y42">
+			
+				<a>数字媒体技术</a>
+			</div>
+			<div class="y42">
+				<a>智能科学与技术</a>
+			</div>
+			<div class="y42">
+				<a>空间信息与数字技术</a>
+			</div>
+			<div class="y42">
+				<a>新媒体技术</a>
+			</div>
+			<div class="y42" id="y42">
+				<a onclick="dyzz()">电影制作</a>
+			</div>
+		</div>
+		<div class="y43yck" id="y43">
+			<tr><p style="color: plum;">教育部资料></p></tr>
+			<tr><p style="color: plum;" onclick="xgcyxx()">相关产业信息></p></tr>
+		</div>
+		<div class="y44yck" id="y44">
+			<table cellspacing="0">
+				<tr>
+					<td>企业</td>
+					<td>岗位</td>
+					<td>技能</td>
+					<td>任务</td>
+					<td>最低薪酬</td>
+					<td>最高薪酬</td>
+				</tr>
+				<tr>
+					<td>300</td>
+					<td>5000</td>
+					<td>400</td>
+					<td>4500</td>
+					<td>2K</td>
+					<td>12K</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script src="./培养方案系统1.js">
+
+	</script>
+</html>

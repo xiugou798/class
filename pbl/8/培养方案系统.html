@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./icon/iconfont.css">
+</head>
+<style>
+    body{
+        background-color: rgb(242, 242, 242);
+    }
+    .div{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+    }
+    .div_top{
+        display: flex;
+        flex-flow: row;
+        justify-content:space-between;
+    }
+    .xi,.exit{
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border-radius: 20px;
+        height: 40px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 30px;
+        margin-top: 6px;
+    }
+    .exit{
+        background-color: #1480ff;
+        color: rgb(255, 255, 255);
+        margin-right: 30px;
+    }
+    .div_tem,.div_xia{
+        width: 100%;
+        height: 370px;
+        display: flex;
+        flex-direction: row;
+        /*justify-content: space-between;*/
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+    .div_xia{
+        height: 300px;
+    }
+    .div_zuo,.div_you{
+        height: 100%;
+        width: 600px;
+        margin-top: 10px;
+    }
+    .div_you{
+        width: 700px;
+    }
+    .div_shang,.div_xia1{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .div_xia1{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 320px;
+        margin-top: 8px;
+    }
+    .gzzy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 30px;
+        color: #c5c3f5;
+        border-bottom:  1px solid #c5c3f5;
+    }
+    .xlk{
+        width: 130px;
+        height: 30px;
+    }
+    .xlk1{
+        width: 240px;
+        height: 30px;
+    }
+    .xlk select,.xlk1 select{
+        width: 100%;
+        height: 100%;
+        background-color: #bfd1fb;
+    }
+    .div_you_shang{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .cysj{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c5c3f5;
+        border-bottom:  1px solid #c5c3f5;
+        width: 100px;
+        height: 30px;
+    }
+    .xlk2{
+        width: 190px;
+        height: 30px;
+    }
+    .xlk2 select{
+        width: 100%;
+        height: 100%;
+        background-color: #bfd1fb;
+    }
+    .div_xia_zuo,.div_xia_you{
+        width: 740px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .div_xia_you{
+        width: 560px;
+
+    }
+    .div_xia_zuo_shang{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 30px;
+        width: 100%;
+    }
+    .div_xia_zuo_xia{
+        display: flex;
+        height: 100%;
+        margin-top: 8px;
+    }
+    .zyxz{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c5c3f5;
+        border-bottom:  1px solid #c5c3f5;
+        width: 100px;
+        height: 30px;
+    }
+    .div_xia_you_shang{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 30px;
+        width: 100%;
+    }
+    .wkszy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c5c3f5;
+        border-bottom:  1px solid #c5c3f5;
+        width: 140px;
+        height: 30px;
+    }
+    .div_xia_you_xia{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .div_xia_you_xia div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px;
+        height: 30px;
+        color: white;
+        background-color: burlywood;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-left: 1%;
+    }
+    .c{
+        width: 160px;
+    }
+    table{
+        flex-grow: 1;
+    }
+    th,td{
+        background-color:burlywood;
+        border:1px solid #d0defb;
+    }
+    select{
+        border-style: none;
+    }
+</style>
+<body>
+    <div class="div">
+        <div class="div_top">
+            <div class="xi"><p>系分院负责人</p></div>
+            <div class="exit"><p>退出登录></p></div>
+        </div>
+        <div class="div_tem">
+            <div class="div_zuo">
+                <div class="div_shang">
+                    <div class="gzzy"><p>关注专业</p></div>
+                    <div class="xlk">
+                        <select>
+                            <option>门类</option>
+                        </select>
+                    </div>
+                    <div class="xlk1">
+                        <select>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="div_xia1">
+                    <table>
+                        <tr>
+                          <th>门类</th>
+                          <th>专业类</th>
+                          <th>专业名称</th>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>软件工程</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>网络安全</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>信息安全</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>物联网工程</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>数字媒体技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>智能科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>空间信息与数字技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td><i class="iconfont">&#xf0129;</i>电子与计算机工程</td>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+            <div class="div_you">
+                <div class="div_you_shang">
+                    <div class="cysj"><p>产业数据统计</p></div>
+                    <div class="xlk2">
+                        <select>
+                            <option>学校所在地</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="div_xia1">
+                    <table>
+                        <tr>
+                            <th>专业名</th>
+                            <th>企业</th>
+                            <th>岗位</th>
+                            <th>技能</th>
+                            <th>任务</th>
+                            <th>最低薪酬</th>
+                            <th>最高薪酬</th>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                        <tr>
+                            <td>软件工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>网络工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>信息安全</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>物联网工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>数字媒体技术</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>智能科学与技术</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>空间信息与数字技术</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>电子与计算机工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="div_xia">
+            <div class="div_xia_zuo">
+                <div class="div_xia_zuo_shang">
+                    <div class="zyxz"><p>本校专业现状</p></div>
+                </div>
+                <div class="div_xia_zuo_xia">
+                    <table>
+                        <tr>
+                            <th>专业名</th>
+                            <th>负责人</th>
+                            <th>课程数量(点击查看详情）</th>
+                            <th>学生数量</th>
+                            <th>师生比</th>
+                            <th>产教匹配度</th>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td软件工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>网络工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>信息安全</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>物联网工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>电子与计算机工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>数据科技与大数据技术</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>网络工程安全</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="div_xia_you">
+                <div class="div_xia_you_shang">
+                    <div class="wkszy">未开设专业信息</div>
+                </div>
+                <div class="div_xia_you_xia">
+                    <div class="a"><p>数字媒体技术</p></div>
+                    <div class="b"><p>智能科学与技术</p></div>
+                    <div class="c"><p>空间信息与数字技术</p></div>
+                    <div class="d"><p>新媒体技术</p></div>
+                    <div class="e"><p>电影制作</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

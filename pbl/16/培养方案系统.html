@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>cpxmsj</title>
+	<style> 
+		* {
+		    padding: 0;
+		    margin: 0;
+		}
+		
+		body {
+		    width: 100%;
+		    height: 800px;
+		    display: flex;
+			background-color: white;
+			justify-content: center;
+		    align-items: center;
+		}
+		
+		.main {
+		    height: 100%;
+		    width: 100%;
+		    box-shadow: 0 0 10px #535353;
+		    border-radius: 5px;
+		    position: relative;
+		    background-color: wheat;
+		    transition: 1s;
+		}
+		
+		
+		.main>div:nth-child(1) span:nth-child(1) {
+			top: 3%;
+			left: 2%;
+		    position: absolute;
+		    border-radius: 20px;
+		    background-color: white;
+			border: solid white;
+		} 
+		
+	    .main>div:nth-child(1) span:nth-child(2) {
+		    position: absolute;
+			top: 3%;
+			left: 90%;
+		    color: white;
+		   border-radius: 20px;
+		    background-color: cornflowerblue;
+		    border: 6px solid cornflowerblue;
+		    font-weight: bolder;
+		}
+		
+		.main>div:nth-child(2) {
+		    position: absolute;
+		    top: 8%;
+		    left: 2%;
+		    height: 43%;
+		    width: 96%;
+		}
+		
+		.main>div:nth-child(3) {
+		    position: absolute;
+		    top: 54%;
+		    left: 2%;
+		    height: 43%;
+		    width: 96%;
+		}
+		
+		.one {
+		    width: 39%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    background-color: white;
+		}
+		
+		.two {
+		    position: absolute;
+		    top: 0px;
+		    right: 0px;
+		    width: 59%;
+		    height: 100%;
+		    background-color: white;
+		}
+		
+		.three {
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    width: 58%;
+		    height: 100%;
+		    background-color: white;
+		}
+		
+		.four {
+		    position: absolute;
+		    top: 0px;
+		    right: 0px;
+		    width: 40%;
+		    height: 100%;
+		    background-color: white;
+		}
+		
+		
+		.one>div:nth-child(2) {
+		    width: 100%;
+		    height: 10%;
+		}
+		
+		.one>div:nth-child(1) {
+		    width: 100%;
+		    height: 90%;
+		    transition: 0.2s;
+		}
+		
+		.two>div:nth-child(1) {
+		    width: 100%;
+		    height: 10%;
+		}
+		
+		.two>div:nth-child(2) {
+		    width: 100%;
+		    height: 90%;
+		}
+		
+		.three>div:nth-child(1) {
+		    width: 100%;
+		    height: 10%;
+		}
+		
+		.three>div:nth-child(2) {
+		    width: 100%;
+		    height: 90%;
+		}
+		
+		select {
+		    background-color: #c0d0f6;
+		    height: 25px;
+		    border: none;
+		}
+		
+		.one>div:nth-child(2) {
+		    position: absolute;
+		}
+		
+		.one>div:nth-child(1) {
+		    position: absolute;
+		    top: 13%;
+			left: 0%;
+		}
+		
+		.one-two {
+		    position: absolute;
+		    top: 3%;
+			left: 0%;
+		}
+		
+		
+		.one-two>span {
+		    color: #b6a9f0;
+		    position: absolute;
+		    width: 90%;
+		    left: 5%;
+		    top: 3%;
+		}
+		
+		.one-two>span::after {
+		    content: " ";
+		    display: block;
+		    width: 90px;
+		    height: 1px;
+		    border-radius: 20px;
+		    background-color: black;
+		    position: relative;
+		    bottom: -2px;
+		    left: -9px;
+		}
+		
+		.two>div:nth-child(1) {
+		    position: absolute;
+		}
+		
+		.two>div:nth-child(2) {
+		    position: absolute;
+		    top: 13%;
+		}
+		
+		
+		.two>div:nth-child(1):nth-child(1) {
+		    color: #b6a9f0;
+		    position: absolute;
+		    width: 90%;
+		    left: 5%;
+		    top: 3%;
+		}
+		
+		.two>div:nth-child(1):nth-child(1)::after {
+		    content: " ";
+		    display: block;
+		    width: 120px;
+		    height: 1px;
+		    border-radius: 20px;
+		    background-color: black;
+		    position: relative;
+		    bottom: -2px;
+		    left: -9px;
+		}
+		
+		.three>div:nth-child(1) {
+		    position: absolute;
+		}
+		
+		.three>div:nth-child(2) {
+		    position: absolute;
+		    top: 13%;
+		}
+		
+		
+		.three>div:nth-child(1):nth-child(1) {
+		    color: #b6a9f0;
+		    position: absolute;
+		    width: 90%;
+		    left: 5%;
+		    top: 3%;
+		}
+		
+		.three>div:nth-child(1):nth-child(1)::after {
+		    content: " ";
+		    display: block;
+		    width: 120px;
+		    height: 1px;
+		    border-radius: 20px;
+		    background-color: black;
+		    position: relative;
+		    bottom: -2px;
+		    left: -9px;
+		}
+		
+		.four>div:nth-child(1):nth-child(1) {
+		    color: #b6a9f0;
+		    position: absolute;
+		    width: 90%;
+		    left: 5%;
+		    top: 3%;
+		}
+		
+		.four>div:nth-child(1):nth-child(1)::after {
+		    content: " ";
+		    display: block;
+		    width: 130px;
+		    height: 1px;
+		    border-radius: 20px;
+		    background-color: black;
+		    position: relative;
+		    bottom: -2px;
+		    left: -9px;
+		}
+		
+		table {
+		    width: 90%;
+		    border-spacing: 4px;
+		    font-size: 10px;
+		    margin: 0 5%;
+		}
+		
+		.four>div:nth-child(2) {
+		    position: absolute;
+		    top: 13%;
+		    width: 90%;
+		    height: 85%;
+		    margin: 0 5%;
+		}
+		
+		.jishu>span {
+		    display: inline-block;
+		    background-color: #6687d3;
+		    border-radius: 30px;
+		    margin: 5px;
+		}
+		
+		.jishu>span>a {
+		    display: block;
+		    margin: 6px 15px;
+		    text-decoration: none;
+		    color: white;
+		}
+		
+		
+		tr {
+		    background-color: cornflowerblue;
+		    text-align: center;
+		    height: 30px;
+		
+		}
+		
+		.content {
+		    overflow-y: scroll;
+		    height: 80%;
+		    scrollbar-width: none;
+		
+		}
+		
+		.conthree a {
+		    text-decoration: none;
+		    color: black;
+		    border: 2px solid white;
+		    border-radius: 7px;
+		    font-size: 13px;
+		    padding: 2px 8px;
+		    font-weight: bolder;
+		
+		}
+		
+		.conthree a:hover {
+		    color: white;
+		    font-size: 14px;
+		    background-color: rgb(202, 164, 93);
+		    transition: 0.2s;
+		    font-weight: bolder;
+		
+		}
+		
+		::-webkit-scrollbar {
+		    display: none;
+		}
+		
+		.threone {
+		    display: inline-block;
+		    position: absolute;
+		    right: 5%;
+		    transition: 0.2s;
+		
+		}
+		
+		.threone a {
+		    text-decoration: none;
+		    color: black;
+		    border: 2px solid black;
+		    border-radius: 7px;
+		    font-size: 13px;
+		    padding: 2px 8px;
+		    transition: 0.2s;
+		    font-weight: bolder;
+		}
+		
+		.threone a:hover {
+		    color: white;
+		    font-size: 14px;
+		    background-color: rgb(0, 0, 0);
+		    transition: 0.2s;
+		    font-weight: bolder;
+		}
+		
+		.add {
+		    position: absolute;
+		    width: 30%;
+		    height: 50%;
+		    background-color: #ffffff;
+		    border-radius: 20px;
+		    box-shadow: 0 0 10px #535353;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    flex-direction: column;
+		    transition: 0.2s ease-in;
+		    transform: rotateX(90deg);
+		
+		}
+		
+		.add div {
+		    width: 70%;
+		    height: 10%;
+		    margin: 3px 0;
+		    text-align: center;
+		}
+		
+		.add div input {
+		    text-align: center;
+		    width: 100%;
+		    height: 100%;
+		    font-size: 16px;
+		    border: none;
+		    background-color: #f2f2f2;
+		    border-radius: 10px;
+		}
+		
+		.add div span {
+		    text-decoration: none;
+		    color: black;
+		    border: 2px solid black;
+		    border-radius: 7px;
+		    font-size: 13px;
+		    padding: 2px 8px;
+		    transition: 0.2s;
+		    font-weight: bolder;
+		    margin: 6%;
+		}
+		
+		.add div span:hover {
+		    color: white;
+		    font-size: 14px;
+		    background-color: rgb(0, 0, 0);
+		    transition: 0.2s;
+		    font-weight: bolder;
+		}
+		
+		.select {
+		    display: inline-block;
+		    position: absolute;
+		    right: 5%;
+		    height: 25px;
+		
+		}
+		
+		
+		
+		#seleone {
+		    background-color: #c0d0f6;
+		    display: inline-block;
+		    position: absolute;
+		    top: 0px;
+		    right: 220px;
+		
+		}
+		
+		#seletwo {
+		    background-color: #c0d0f6;
+		    width: 210px;
+		    height: 25px;
+		    display: inline-block;
+		    padding-left: 5px;
+		}
+		
+		#seletwo>div:nth-child(1) {
+		    background-color: #c0d0f6;
+		    height: 25px;
+		    overflow-y: hidden;
+		    overflow-x: scroll;
+		}
+		
+		#seletwo>div:nth-child(1) span {
+		    font-size: 12px;
+		    color: black;
+		    background-color: white;
+		    border-radius: 3px;
+		    padding: 1px 3px;
+		    width: 30%;
+		    overflow: inherit;
+		}
+		
+		#seletwo-option {
+		    background-color: #c0d0f6;
+		    color: black;
+		    font-size: 12px;
+		    z-index: 9;
+		    border-top: 2px solid white;
+		    height: 100px;
+		    overflow: scroll;
+		    transition: 0.5s;
+		    transform: rotateX(90deg);
+		    transform-origin: top;
+		}
+		
+		#seletwo-option>div {
+		    padding: 8px 10px
+		}
+		
+		#seletwo-option>div:hover {
+		    background-color: #e6f7ff;
+		}
+		
+		#seletwo-option input {
+		    margin: 0 7px;
+		}
+		
+		.zhao {
+		    position: absolute;
+		    width: 30%;
+		    height: 30%;
+		    background-color: #ffffff;
+		    border-radius: 20px;
+		    box-shadow: 0 0 10px #535353;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    flex-direction: column;
+		    transition: 0.2s ease-in;
+		    transform: rotateX(90deg);
+		
+		}
+		
+		.zhao div {
+		    width: 70%;
+		    height: 80%;
+		    margin: 4% 0;
+		    text-align: center;
+		}
+		
+		.zhao div input {
+		    text-align: center;
+		    width: 100%;
+		    height: 100%;
+		    font-size: 16px;
+		    border: none;
+		    background-color: #f2f2f2;
+		    border-radius: 10px;
+		}
+		
+		.zhao div span {
+		    text-decoration: none;
+		    color: black;
+		    border: 2px solid black;
+		    border-radius: 7px;
+		    font-size: 13px;
+		    padding: 2px 8px;
+		    transition: 0.2s;
+		    font-weight: bolder;
+		    margin: 6%;
+		}
+		
+		.zhao div span:hover {
+		    color: white;
+		    font-size: 14px;
+		    background-color: rgb(0, 0, 0);
+		    transition: 0.2s;
+		    font-weight: bolder;
+		}
+		
+		#canvas {
+		    width: 300px;
+		    height: 200px;
+		
+		}
+	</style>
+</head>
+
+<body>
+
+    <div class="main">
+		<div>
+		            <span>系分院负责人</span>
+		            <span>退出登录</span>
+		        </div>
+        <div>
+
+            <div class="one">
+                <div>
+                    <table>
+                        <tr>
+                            <th>门类</th>
+                            <th>专业类</th>
+                            <th>专业名称</th>
+                        </tr>
+                    </table>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>工学</td>
+                                <td>计算机系</td>
+                                <td> <input type="radio"> 计算机与科学</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="one-two">
+
+                    <span>关注专业</span>
+
+                    <div class="select">
+                        <select id="seleone" onmouseleave="sele1()">
+                            <option value="0">门类</option>
+                        </select>
+
+                        <div id="seletwo" onmousemove="seletwo1()" onmouseleave="seletwo2()">
+
+                            <div>
+                            </div>
+                            <div id="seletwo-option">
+                                <div><input type="checkbox" value="计算机与科学1" onmouseleave="seletwo3(this)">计算机与科学</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="two">
+
+                <div>
+
+                    <span>产业数据统计</span>
+
+                    <div class="select">
+                        <select name="" id="">
+                            <option value="">学校所在地
+
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <table>
+                        <tr>
+                            <th style="width:125px;">专业名</th>
+                            <th>企业</th>
+                            <th>岗位</th>
+                            <th>技能</th>
+                            <th>任务</th>
+                            <th>最低薪资</th>
+                            <th>最高薪资</th>
+                        </tr>
+                    </table>
+
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>数据科学与大数据技术</td>
+                                <td>2</td>
+                                <td onmouseenter="shanxing([range2(), range2(), range2(), range2()],['成都 100', '北京 500', '上海 200'
+                                    , '北京 500' ])" onmouseleave="removecav()">3</td>
+                                <td onmouseenter="zhuxing('任务','词','条',[range1(), range1(), range1(), range1(), range1()])"
+                                    onmouseout="removecav()">4</td>
+                                <td onmouseenter="zhuxing('技能','词','条',[range1(), range1(), range1(), range1(), range1(),range1(), range1(), range1(), range1(), range1()])"
+                                    onmouseleave="removecav()">5</td>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class=" three">
+
+                <div>
+
+                    <span>本校专业现状</span>
+
+                    <div class="threone">
+                        <a onmousedown="adddate()">增加</a>
+                        <a onmousedown="zhao1()">查询</a>
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <table>
+                        <tr>
+                            <th style="width:125px;">专业名</th>
+                            <th>负责人</th>
+                            <th>课程数(点击查看详情)</th>
+                            <th>学生数</th>
+                            <th>师生比例</th>
+                            <th>产教匹配度</th>
+                            <th style="width:100px">操作</th>
+                        </tr>
+                    </table>
+
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>数据科学与大数据技术</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td class="conthree">
+                                <a href="#" onmousedown="revise(this)">修改</a>
+								<a href="#" onmousedown="removeone(this)">删除</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="four">
+                <div>
+                    <span>未开设专业信息</span>
+                </div>
+
+                <div class="jishu">
+                    <span><a href="">数字媒体技术</a></span>
+                    <span><a href="">智能科学与技术</a></span>
+                    <span><a href="">空间信息与数字技术</a></span>
+                    <span><a href="">新媒体技术</a></span>
+                    <span><a href="">电影制作</a></span>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="add">
+        <div>
+			<input type="text" value="" placeholder="专业名">
+		</div>
+        <div>
+			<input type="text" value="" placeholder="负责人">
+		</div>
+        <div>
+			<input type="text" value="" placeholder="课程数">
+		</div>
+        <div>
+			<input type="text" value="" placeholder="学生数">
+		</div>
+        <div>
+			<input type="text" value="" placeholder="师生比例:">
+		</div>
+        <div>
+			<input type="text" value="" placeholder="产教匹配度">
+		</div>
+        <div>
+			<span>确认</span><span>取消</span>
+		</div>
+    </div>
+    <div class="zhao">
+        <div>
+			<input type="text" value="" placeholder="专业名">
+		</div>
+       <div>
+		   <input type="text" value="" placeholder="负责人">
+		</div>
+        <div>
+			<span>确认</span>
+			<span>取消</span>
+		</div>
+    </div>
+
+
+</body>
+<script src="./js/three.js"></script>
+
+</html>

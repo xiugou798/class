@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.bg {
+				width: 800px;
+				height: 740px;
+				border: 1px solid #000000;
+				position: absolute;
+				left: 300px;
+				
+
+			}
+
+			.one,
+			.two,
+			.three {
+				width: 250px;
+				height: 740px;
+				position: absolute;
+				border: 1px solid #000000;
+				border-top-width: 0px;
+				border-bottom-width: 0px;
+				overflow: hidden;
+				
+			}
+
+			.two {
+				left: 275px;
+			}
+
+			.three {
+				left: 550px;
+			}
+
+			.tou {
+				width: 300px;
+				height: 260px;
+				background-color: #FDE174;
+				border- radius 10px 200px/240px;
+				top: 55px;
+				border-radius: 70% 0 0 0/120px 0 0 0;
+
+				position: absolute;
+
+
+			}
+
+			.xhr_body1 {
+				width: 250px;
+				height: 515px;
+				position: absolute;
+				background-color: #FDE174;
+
+				bottom: 0px;
+
+				top: 170px;
+
+			}
+
+			.xhr_body2 {
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/30px 30px 0 0;
+				overflow: hidden;
+			}
+
+			.xhr_body3 {
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/50px 50px 0 0;
+
+			}
+
+			.yj_wai1 {
+				height: 170px;
+				width: 170px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				top: -100px;
+				left: -20px;
+
+			}
+
+			.yj_wai2 {
+				height: 170px;
+				width: 170px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				top: -100px;
+				right: -54px;
+			}
+
+			.yj_wai {
+				height: 280px;
+				width: 280px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				top: 35px;
+				border: 1px solid #FDE174;
+
+			}
+
+			.yj_wai3 {
+				height: 200px;
+				width: 200px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				top: 80px;
+				left: -30px;
+			}
+
+			.yj_wai4 {
+				height: 200px;
+				width: 200px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				top: 80px;
+				right: -110px;
+
+			}
+
+			.yj_li1 {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				width: 130px;
+				height: 130px;
+				border-radius: 50%;
+				background-color: rgb(229, 180, 122);
+				border: 1px solid #000000;
+
+			}
+
+			.yj_li2 {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				width: 130px;
+				height: 130px;
+				border-radius: 50%;
+				background-color: rgb(229, 180, 122);
+				border: 1px solid #000000;
+			}
+
+			.yj_li4 {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				width: 170px;
+				height: 170px;
+				border-radius: 50%;
+				background-color: rgb(229, 180, 122);
+				border: 1px solid #000000;
+
+			}
+
+			.yj_li3 {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				width: 170px;
+				height: 170px;
+				border-radius: 50%;
+				background-color: rgb(229, 180, 122);
+				border: 1px solid #000000;
+			}
+
+			.yj_li {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				width: 220px;
+				height: 220px;
+				border-radius: 50%;
+				background-color: rgb(229, 180, 122);
+				border: 1px solid #000000;
+
+			}
+
+			.yj_yanbai1 {
+				position: absolute;
+				top: -1px;
+				height: 130px;
+				width: 130px;
+				background-color: white;
+				border-radius: 50%;
+				border: 1px solid #000;
+			}
+
+			.yj_yanbai2 {
+				position: absolute;
+				top: -1px;
+				height: 130px;
+				width: 130px;
+				background-color: white;
+				border-radius: 50%;
+				border: 1px solid #000;
+			}
+
+			.yj_yanbai3 {
+				position: absolute;
+				top: 20px;
+				height: 150px;
+				width: 170px;
+				background-color: white;
+				border-radius: 50%;
+				border: 1px solid #000;
+
+			}
+
+			.yj_yanbai4 {
+				position: absolute;
+				top: 20px;
+				height: 150px;
+				width: 170px;
+				background-color: white;
+				border-radius: 50%;
+				border: 1px solid #000;
+
+			}
+
+			.yj_yanpi1 {
+				width: 130px;
+				height: 75px;
+				top: -65px;
+				left: -70px;
+				background-color: rgb(229, 180, 122);
+				border-radius: 80px 80px 0px 0px;
+				position: absolute;
+				border-bottom-style: none;
+				border: 1px solid #000;
+			}
+
+			.yj_yanpi2 {
+				width: 130px;
+				height: 75px;
+				top: -65px;
+				left: -70px;
+				background-color: rgb(229, 180, 122);
+				border-radius: 80px 80px 0px 0px;
+				position: absolute;
+				border-bottom-style: none;
+				border: 1px solid #000;
+
+			}
+
+			.yj_yanpi4 {
+				width: 170px;
+				height: 92px;
+				top: 60px;
+				left: -2px;
+				background-color: rgb(229, 180, 122);
+				border-radius: 0px 0px 80px 80px;
+				position: absolute;
+				border-bottom-style: none;
+				border: 1px solid #000;
+
+			}
+
+			.yj_yanpi3 {
+				width: 170px;
+				height: 92px;
+				top: 60px;
+				left: -2px;
+				background-color: rgb(229, 180, 122);
+				border-radius: 0px 0px 80px 80px;
+				position: absolute;
+				border-bottom-style: none;
+				border: 1px solid #000;
+
+
+			}
+
+			.yj_yanbai {
+				position: absolute;
+				top: 30px;
+				height: 160px;
+				width: 220px;
+				background-color: white;
+				border-radius: 50%;
+
+			}
+
+			.yan_hei {
+				position: absolute;
+				left: 65px;
+				top: 35px;
+				width: 90px;
+				height: 90px;
+				background-color: royalblue;
+				border-radius: 50%;
+				border: 1px solid #000000;
+				animation: yan_hei 3s infinite;
+				/*动画调用*/
+				transform-origin: center bottom;
+				/*旋转中心点*/
+			}
+
+			@keyframes yan_hei {
+
+				0%,
+					{
+					transform: rotate(-60deg);
+				}
+
+				50% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(60deg);
+				}
+			}
+
+			.yan_hei1 {
+				position: absolute;
+				left: 40px;
+				top: 50px;
+				width: 50px;
+				height: 50px;
+				background-color: lightblue;
+				border-radius: 50%;
+				border: 1px solid #000000;
+			}
+
+			@keyframes yan_hei1 {
+
+				0%,
+
+				100% {
+					transform: translate(0);
+				}
+
+				20% {
+					transform: translate(20px);
+				}
+
+				40% {
+					transform: translate(40px);
+				}
+
+				50% {
+					transform: translate(50px);
+				}
+
+				60% {
+					transform: translate(40px);
+				}
+
+				80% {
+					transform: translate(20px);
+				}
+			}
+
+			.yan_hei2 {
+				position: absolute;
+				left: 40px;
+				top: 50px;
+				width: 50px;
+				height: 50px;
+				background-color: mediumslateblue;
+				border-radius: 50%;
+				border: 1px solid #000000;
+
+
+			}
+
+			.yan_hei3 {
+				position: absolute;
+				left: 0px;
+				top: -30px;
+				width: 30px;
+				height: 30px;
+				background-color: #8c5342;
+				border-radius: 50%;
+				border: 1px solid #000000;
+				animation: yan_hei1 4s infinite;
+				/*动画调用*/
+				transform-origin: center bottom;
+				/*旋转中心点*/
+			}
+
+			.yj_yanhei4 {
+				position: absolute;
+				left: 0px;
+				top: -30px;
+				width: 30px;
+				height: 30px;
+				background-color: #8c5342;
+				border-radius: 50%;
+				border: 1px solid #000000;
+				animation: yan_hei1 4s infinite;
+				/*动画调用*/
+				transform-origin: center bottom;
+				/*旋转中心点*/
+
+			}
+
+			.yy {
+				width: 90px;
+				height: 90px;
+				margin: 50px;
+				background-color: #FDE174;
+				box-shadow: 90px 0px 0 0 #000000;
+			}
+
+			.gl1 {
+				position: absolute;
+				top: 12px;
+				left: 28px;
+				width: 10px;
+				height: 10px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: -8px 8px 8px 8px #000;
+			}
+
+			.gl2 {
+				position: absolute;
+				top: 12px;
+				left: 28px;
+				width: 10px;
+				height: 10px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: -8px 8px 8px 8px #000;
+			}
+
+			.gl3 {
+				position: absolute;
+				top: 10px;
+				left: 20px;
+				width: 5px;
+				height: 5px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: -5px 5px 5px 5px #000000;
+			}
+
+			.gl4 {
+				position: absolute;
+				top: 13px;
+				left: 20px;
+				width: 5px;
+				height: 5px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: -5px 1px 5px 5px #000000;
+			}
+
+			.gl {
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: 20px 20px 0px 20px #000000;
+			}
+
+			.zb,
+			.yh,
+			.yh_3 {
+				position: absolute;
+				bottom: 220px;
+				left: 42px;
+				width: 150px;
+				height: 70px;
+				border-radius: 50%;
+				background-color: #000000;
+				overflow: hidden;
+			}
+
+			.zb_3 {
+				position: absolute;
+				bottom: 300px;
+				right: 0px;
+				width: 150px;
+				height: 70px;
+				border-radius: 50%;
+				background-color: #000000;
+				overflow: hidden;
+			}
+
+			.zb_one {
+				position: absolute;
+
+				width: 100px;
+				height: 50px;
+				background-color: #FDE174;
+				border-radius: 100px/50px;
+				top: 450px;
+				left: 70px;
+				border: 5px solid #000;
+				border-bottom-style: none;
+				border-left-style: none;
+				border-right-style: none;
+			}
+
+			.yh {
+				position: absolute;
+				background-color: #FDE174;
+				bottom: 200px;
+				height: 63px;
+				width: 195px;
+				left: 35px;
+			}
+
+			.yh_3 {
+				position: absolute;
+				background-color: #FDE174;
+				bottom: 330px;
+				height: 63px;
+				width: 195px;
+				left: 90px;
+			}
+			}
+
+			.yc1 {
+				width: 54px;
+				height: 100px;
+				background-color: white;
+				position: absolute;
+				left: 30px;
+				top: -35px;
+				border-radius: 10px;
+			}
+
+			.yc2 {
+				width: 54px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 30px;
+				top: -35px;
+				border-radius: 10px;
+			}
+
+			.yc3 {
+				width: 54px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 84px;
+				top: -35px;
+				border-radius: 10px;
+			}
+
+			.yc4 {
+				width: 54px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 0px;
+				top: 5px;
+				border-radius: 10px;
+			}
+
+			.yc5 {
+				width: 54px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 54px;
+				top: 5px;
+				border-radius: 10px;
+			}
+
+			.yc6 {
+				width: 54px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 108px;
+				top: 5px;
+				border-radius: 10px;
+			}
+
+			.yc7 {
+				width: 54px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 15px;
+				top: 55px;
+				border-radius: 10px;
+			}
+
+			.yc8 {
+				width: 54px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 75px;
+				top: 55px;
+				border-radius: 10px;
+			}
+
+			.yf {
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+
+			}
+
+			.yf div {
+
+				width: 250px;
+				height: 50px;
+				background-color: #000000;
+			}
+
+			.yf div:nth-child(2n+1) {
+				background-color: rgb(225, 225, 217);
+			}
+
+			.kd {
+				width: 120px;
+				height: 90px;
+				border-color: gray;
+				border: 4px double gray;
+				position: absolute;
+				bottom: 60px;
+				right: 30px;
+				border-radius: 0 0 50% 50%;
+				opacity: 0.7;
+			}
+
+			.kd1 {
+				width: 120px;
+				height: 90px;
+				border-color: gray;
+				border: 4px double gray;
+				position: absolute;
+				bottom: 60px;
+				right: 80px;
+				border-radius: 0 0 50% 50%;
+				opacity: 0.7;
+			}
+
+			.xhr1_tf1,
+			.xhr1_tf2,
+			.xhr1_tf3 {
+				width: 120px;
+				height: 50px;
+				border-top: 4px solid #000;
+				border-radius: 80% 10%;
+				position: absolute;
+				z-index: 3;
+			}
+
+			.xhr1_tf1 {
+				left: -65px;
+				top: 38px;
+				transform: rotate(55deg);
+			}
+
+			.xhr1_tf2 {
+
+				top: 35px;
+				transform: rotate(25deg);
+			}
+
+			.xhr1_tf3 {
+				left: -40px;
+				top: 22px;
+				transform: rotate(55deg);
+			}
+
+			.xhr1_tf4,
+			.xhr1_tf5,
+			.xhr1_tf6 {
+				width: 80px;
+				height: 60px;
+				border-top: 3.5px solid #000;
+				border-radius: 80% 5%;
+				position: absolute;
+				z-index: 3;
+			}
+
+			.xhr1_tf4 {
+				left: 110px;
+				top: -15px;
+				transform: rotate(90deg);
+			}
+
+			.xhr1_tf5 {
+				left: 90px;
+				top: -10px;
+				transform: rotate(90deg);
+			}
+
+			.xhr1_tf6 {
+				left: 130px;
+				top: -15px;
+				transform: rotate(90deg);
+			}
+
+			.xhr2_tf1,
+			.xhr2_tf2,
+			.xhr2_tf3,
+			.xhr2_tf4,
+			.xhr2_tf5,
+			.xhr2_tf6 {
+				width: 120px;
+				height: 60px;
+				border-top: 4px solid #000;
+				border-radius: 50%;
+				position: absolute;
+			}
+
+			.xhr2_tf1 {
+				left: -30px;
+				top: 20px;
+				transform: rotate(65deg);
+			}
+
+			.xhr2_tf2 {
+				left: -45px;
+				top: 20px;
+				transform: rotate(50deg);
+			}
+
+			.xhr2_tf3 {
+				left: 150px;
+				top: -5px;
+				transform: rotate(300deg);
+			}
+
+			.xhr2_tf4 {
+				left: 150px;
+				top: 30px;
+				transform: rotate(290deg);
+			}
+
+			.xhr2_tf5 {
+				left: 110px;
+				top: 20px;
+				transform: rotate(280deg);
+			}
+
+			.xhr2_tf6 {
+				left: 100px;
+				top: 15px;
+				transform: rotate(270deg);
+			}
+
+			.xhr3_tf1,
+			.xhr3_tf2,
+			.xhr3_tf3,
+			.xhr3_tf4 {
+				width: 120px;
+				height: 100px;
+				border-top: 4px solid #000;
+				border-radius: 80% 10%;
+				position: absolute;
+				z-index: 3;
+			}
+
+			.xhr3_tf1 {
+				left: 7px;
+				top: -2px;
+				transform: rotate(-5deg);
+			}
+
+			.xhr3_tf2 {
+				left: 0px;
+				top: -10px;
+				transform: rotate(1deg);
+			}
+
+			.xhr3_tf3 {
+				left: -5px;
+				top: -15px;
+				transform: rotate(7deg);
+			}
+
+			.xhr3_tf4 {
+				left: -10px;
+				top: -23px;
+				transform: rotate(13deg);
+			}
+
+			.xhr3_tf5,
+			.xhr3_tf6,
+			.xhr3_tf7,
+			.xhr3_tf8 {
+				width: 150px;
+				height: 100px;
+				border-top: 4px solid #000;
+				border-radius: 10% 80%;
+				position: absolute;
+				z-index: 3;
+			}
+
+			.xhr3_tf5 {
+				right: -25px;
+				top: -12px;
+				transform: rotate(-5deg);
+			}
+
+			.xhr3_tf6 {
+				right: -21px;
+				top: -5px;
+				transform: rotate(1deg);
+			}
+
+			.xhr3_tf7 {
+				right: -30px;
+				top: -33px;
+				transform: rotate(-20deg);
+			}
+
+			.xhr3_tf8 {
+				right: -32px;
+				top: -47px;
+				transform: rotate(-30deg);
+			}
+
+			.sjx {
+				width: 0px;
+				height: 0px;
+				/*border-top-width: 50px;
+				border-bottom-width: 50px;
+				
+				border-left-width: 50px;
+				border-right-width: 50px;*/
+				border-style: solid;
+				border-color: red orange yellow green;
+				/*transparent表示为透明色*/
+				border-width: 50px;
+
+			}
+
+			.sjx_wu {
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				clip-path: polygon(50% 0%, 72% 38%, 100% 38%, 74% 76%, 86% 100%, 50% 88%, 14% 100%, 26% 76%, 0% 38%, 38% 38%);
+
+			}
+
+			.div {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='bg'>
+			<div class='one'>
+				<div class="xhr1_tf1"></div>
+				<div class="xhr1_tf2"></div>
+				<div class="xhr1_tf3"></div>
+				<div class="xhr1_tf4"></div>
+				<div class="xhr1_tf5"></div>
+				<div class="xhr1_tf6"></div>
+				<div class="tou">
+					<div class="xhr_body1">
+						<div class="yj_wai1">
+							<div class="yj_li1">
+								<div class="yj_yanbai1">
+									<div class="yan_hei1">
+										<div class="gl1">
+											<div class="yj_yanpi1"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="yj_wai2"">
+							<div class=" yj_li2">
+							<div class="yj_yanbai2">
+								<div class="yan_hei2">
+									<div class="gl2">
+										<div class="yj_yanpi2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" yf">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="kd1"></div>
+			<div class="zb_one"></div>
+		</div>
+		<div class='two'>
+			<div class="xhr2_tf1"></div>
+			<div class="xhr2_tf2"></div>
+			<div class="xhr2_tf3"></div>
+			<div class="xhr2_tf4"></div>
+			<div class="xhr2_tf5"></div>
+			<div class="xhr2_tf6"></div>
+			<div class="xhr_body2">
+				<div class="yf">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="kd"></div>
+				<div class="zb">
+					<div class="yc1"></div>
+					<div class="yc2""></div>
+								<div class=" yc3"></div>
+				</div>
+				<div class="yh"></div>
+				<div class="yj_wai">
+					<div class="yj_li">
+						<div class="yj_yanbai" align="center">
+							<div class="yan_hei">
+								<div class="gl"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='three'>
+			<div class="xhr_body3">
+				<div class="xhr3_tf1"></div>
+				<div class="xhr3_tf2"></div>
+				<div class="xhr3_tf3"></div>
+				<div class="xhr3_tf4"></div>
+				<div class="xhr3_tf5"></div>
+				<div class="xhr3_tf6"></div>
+				<div class="xhr3_tf7"></div>
+				<div class="xhr3_tf8"></div>
+				<div class="yf">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="kd"></div>
+
+				<div class="yj_wai3">
+					<div class="yj_li3">
+						<div class="yj_yanbai3">
+							<div class="yj_yanpi3">
+								<div class="yan_hei3">
+									<div class="gl3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="yj_wai4">
+					<div class="yj_li4">
+						<div class="yj_yanbai4">
+							<div class="yj_yanpi4">
+								<div class="yj_yanhei4">
+									<div class="gl4"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="zb_3">
+					<div class="yc4"></div>
+					<div class="yc5"></div>
+					<div class="yc6"></div>
+					<div class="yc7"></div>
+					<div class="yc8"></div>
+				</div>
+				<div class="yh_3"></div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+		<script>
+			var x = 20;
+			var speed = 4;
+			//电脑的帧率是1秒钟60Hz， 就相当于一秒钟可以播放60张图片，就相当于播放一张图片使用16.7ms
+			function draw() {
+				var canvas = document.getElementById("canvas");
+				var context = canvas.getContext('2d'); //得到画笔
+				//1. 先把画布清空
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				//2. 画小球
+				context.beginPath();
+				var gradient = context.createRadialGradient(x - 10, 190, 0, x, 200, 20);
+				gradient.addColorStop(0, '#fff');
+				gradient.addColorStop(1, '#333');
+				context.fillStyle = gradient;
+				context.arc(x, 200, 20, 0, 2 * Math.PI);
+				context.fill();
+				//3. x要移动
+				x += speed;
+				if (x > canvas.width - 20 || x < 20) {
+					speed = -speed;
+				}
+				//被优化过的动画执行方向1.递归调用；2.可以自适应浏览器的刷新的帧率
+				window.requestAnimationFrame(draw);
+			}
+			draw();
+		</script>
+		<script>
+			var canvas = document.getElementById("canvas");
+			var nb = canvas.getContext('2d'); //得到画笔
+			var flag = true;
+			ball = function() {
+				x = 0;
+				nb.beginPath();
+				nb.arc(x, 200, 20, 0, 2 * Math.PI)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>培养方案系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(242, 242, 242);
+        }
+
+        .shang {
+            position: absolute;
+            overflow: hidden;
+            height: 240px;
+            width: 1080px;
+            background-repeat: no-repeat;
+            box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                0 0 0 2px rgb(255, 255, 255),
+                0.3em -0.3em 4em rgba(0, 0, 0, 0.3);
+            ;
+            left: 220px;
+        }
+
+        .tou {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            top: 120px;
+            left: 30px;
+            border-radius: 50%;
+            background-image: url(./素材/我的\ \(2\).png);
+            background-size: 100%;
+        }
+
+        img {
+            opacity: 0.5;
+        }
+
+        button {
+            position: absolute;
+            width: 90px;
+            height: 30px;
+            top: 30px;
+            right: 40px;
+            border-radius: 15px;
+            background-color: rgb(194, 208, 208);
+            border: none;
+            color: white;
+            border: solid rgb(188, 190, 191) 0.5px;
+        }
+
+        .user {
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            background: none;
+        }
+
+        .dh {
+            position: absolute;
+            overflow: hidden;
+            top: 245px;
+            height: 35px;
+            width: 1080px;
+            background-color: rgb(182, 182, 125);
+            left: 220px;
+            padding-top: 6px;
+            z-index: 900000;
+        }
+
+        a {
+            text-decoration: none;
+            background: none;
+            color: white;
+            font-size: 18px;
+            margin: 30px;
+            padding: 10px;
+            padding-left: 73px;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+
+        #gzzy {
+            position: absolute;
+            background-color: rgb(215, 216, 216);
+            width: 1080px;
+            height: 678px;
+            top: 290px;
+            left: 220px;
+        }
+
+        #zyxz {
+            position: absolute;
+            top: 1671px;
+            left: 220px;
+            background-color: rgb(229, 212, 182);
+            width: 1080px;
+            height: 680px;
+        }
+
+        #cysj {
+            position: absolute;
+            left: 220px;
+            top: 980px;
+            background-color: rgb(214, 226, 244);
+            width: 1080px;
+            height: 680px;
+        }
+        #wks{
+            position: absolute;
+            top: 2363px;
+            left: 220px;
+            background-color:rgb(208, 218, 218);
+            width: 1080px;
+            height: 680px;
+        }
+        #input {
+            position: absolute;
+            top: 31px;
+            left: 50px;
+            width: 685px;
+            height: 30px;
+            border: 0.5px solid rgb(199, 196, 196);
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .che,
+        .xg,
+        .jia,
+        .zeng,
+        .shan,
+        .xiu {
+            height: 32px;
+            position: absolute;
+            border-radius: 0%;
+            top: 31px;
+            background-color: #AD9D81;
+            border: 0.5px solid rgb(199, 196, 196);
+            color: white;
+        }
+
+        .guan {
+            position: absolute;
+            top: 38px;
+            width: 18px;
+            height: 18px;
+            left: 640px;
+            background-image: url(./素材/关闭.png);
+            background-size: 98%;
+            display: none;
+        }
+
+        .guan:hover {
+            background-image: url(./素材/关闭\ \(1\).png);
+        }
+
+        .sou {
+            position: absolute;
+            top: 33px;
+            width: 28px;
+            height: 28px;
+            left: 675px;
+            background-image: url(./素材/搜索\ \(1\).png);
+            background-size: 100%;
+        }
+
+        .sou:hover {
+            background-image: url(./素材/搜索\ \(2\).png);
+        }
+
+        .che,
+        .zeng {
+            left: 748px;
+        }
+
+        .xg,
+        .shan {
+            left: 844px;
+        }
+
+        .jia,
+        .xiu {
+            left: 940px;
+        }
+
+        .che,
+        .xg,
+        .jia {
+            display: none;
+            background-color: rgb(165, 165, 165);
+        }
+
+        form {
+            position: absolute;
+            left: -10px;
+            top: 8px;
+        }
+
+        .select1 {
+            left: 220px;
+            width: 60px;
+        }
+
+        #qy {
+            left: 300px;
+            width: 160px;
+        }
+
+        #shai {
+            top: 8px;
+            right: 210px;
+        }
+
+        .select1,
+        #shai,
+        #qy {
+            position: absolute;
+            background-color: rgb(243, 236, 221);
+            border: solid rgb(188, 190, 191) 0.1px;
+            color: black;
+            border-radius: 4px;
+            text-align: center;
+            height: 35px;
+        }
+
+        #one {
+            background-color: rgb(243, 236, 221);
+            position: absolute;
+            left: 210px;
+            width: 660px;
+            height: 400px;
+            top: 50px;
+            padding: 10px;
+            border: solid rgb(188, 190, 191) 0.1px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th {
+            text-align: center;
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgb(243, 236, 221);
+            padding: 10px;
+        }
+
+        td {
+            text-align: center;
+            font-size: 14px;
+            background-color: rgb(243, 236, 221);
+            padding: 6px;
+        }
+
+        .t2 th {
+            background-color: #FFC7A1;
+        }
+
+        .t3 thead th {
+            background-color: rgb(165, 165, 165);
+            color: white;
+        }
+
+        #one tbody,
+        .t3 tbody {
+            display: block;
+            height: 540px;
+            overflow-y: scroll;
+            background-color: rgb(243, 236, 221);
+        }
+
+        .t3 tbody {
+            height: 520px;
+        }
+
+        #one thead,
+        .t3 thead,
+        #one tbody tr,
+        .t3 tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .t3 tbody tr:nth-of-type(odd) td {
+            background: #DFE0DF;
+        }
+
+        /*滚动条默认宽度是16px 将thead的宽度减16px*/
+        #one thead,
+        .t3 thead {
+            width: calc(100% - 16px);
+        }
+
+        /* 此 calc() 函数用一个表达式作为它的参数，用这个表达式的结果作为值。 */
+        #select1 {
+            position: absolute;
+            left: 940px;
+            width: 120px;
+            height: 35px;
+            background-color: #BFC4DD;
+            border: solid rgb(188, 190, 191) 0.1px;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 100;
+            top: 1px;
+        }
+
+        .t2 {
+            background-color: rgb(243, 236, 221);
+            left: 40px;
+            position: absolute;
+            width: 1020px;
+            height: 480px;
+            padding: 20px;
+            text-align: center;
+            top: 46px;
+            border-radius: 15px;
+        }
+
+        .t3 {
+            background-color: rgb(243, 236, 221);
+            left: 50px;
+            position: absolute;
+            width: 980px;
+            height: 480px;
+            padding: 20px;
+            text-align: center;
+            top: 80px;
+            border: 0.5px solid rgb(199, 196, 196);
+            padding: 10px;
+            overflow: hidden;
+            border-collapse: collapse;
+            /*清除内边框 */
+        }
+
+        canvas {
+            position: relative;
+            top: 180px;
+            left: 450px;
+            width: 300px;
+            height: 200px;
+            float: left;
+            display: flex;
+            flex-direction: row-reverse;
+            z-index: 988;
+            display: none;
+        }
+
+        #cbiao {
+            width: 350px;
+            height: 200px;
+        }
+
+        #tbody input {
+            width: 85px;
+            height: 19px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            border: solid rgb(188, 190, 191) 0.1px;
+            border-radius: 3px;
+        }
+
+        #tbody td:nth-child(2) input {
+            width: 120px;
+        }
+
+        span {
+            position: relative;
+            left: 30px;
+            display: flex;
+            float: left;
+            background: none;
+            gap: 10px;
+        }
+
+        .fan,
+        .xuan {
+            top: -4px;
+        }
+
+        .xuan {
+            left: 20px;
+        }
+
+        .fan {
+            left: 40px;
+        }
+
+        .qx {
+            top: 4px;
+        }
+
+        span:hover {
+            color: rgb(92, 62, 62);
+        }
+
+        .gai,
+        .chu,
+        .del {
+            position: relative;
+            top: 300px;
+            left: 380px;
+            text-align: center;
+            line-height: 100px;
+            width: 300px;
+            height: 150px;
+            border: solid rgb(188, 190, 191) 0.1px;
+            border-radius: 3px;
+            display: none;
+        }
+
+        #yes,
+        #no {
+            top: 85px;
+            background-color: #AD9D81;
+        }
+
+        #yes {
+            left: 35px;
+        }
+
+        #no {
+            right: 35px;
+        }
+
+        #che {
+            position: relative;
+            top: 2px;
+            width: 25px;
+            left: 50px;
+            background-color: rgb(229, 212, 182);
+            display: none;
+        }
+        #wks .zi{
+            position: absolute;
+            top:275px;
+            left: 480px;
+            border-radius:100%;
+            background:rgb(243, 236, 221);
+            text-align: center;
+            font-size: 15px;
+            box-shadow: 0px 0px 8px 0px grey;
+        }
+        #zi1{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+        }
+        #zi2{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+        }
+        #zi3{
+            padding: 2px;
+            width: 136px;
+            height: 136px;
+            line-height: 136px;
+        }
+        #zi4{
+            width: 90px;
+            height: 90px;
+            line-height: 80px;
+        }
+        #zi5{
+            width: 90px;
+            height: 90px;
+            line-height: 80px;
+        }
+        .wks{
+            position: absolute;
+            top:210px;
+            left: 425px;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            border-radius:100%; 
+            background:#849CBE;
+           text-align: center;
+            font-size: 30px;
+            color: white;
+            border:10px solid #9AA6B6;
+            overflow: hidden;
+            z-index: 500;
+        }
+        @keyframes bian1{        
+		  from {
+            top:280px;
+            left: 500px;
+		  }
+		  to {
+		    top:100px;
+            left: 125px;
+		  }    
+		}
+        @keyframes bian2{        
+		  from {
+            top:300px;
+            left: 500px;
+		  }
+		  to {
+		    top:100px;
+            left: 625px;
+		  }     
+		}
+        @keyframes bian3{        
+		  from {
+            top:275px;
+            left: 480px;
+		  }
+		  to {
+		    top:50px;
+            left: 350px;
+		  }     
+		}
+        @keyframes bian4{        
+		  from {
+            top:280px;
+            left: 500px;
+		  }
+		  to {
+		    top:240px;
+            left: 250px;
+		  }     
+		}
+        @keyframes bian5{        
+		  from {
+            top:280px;
+            left: 500px;
+		  }
+		  to {
+		    top:40px;
+            left: 800px;
+		  }     
+		}
+        #zi1 {
+            animation:bian1 5s ease-in-out  normal;
+            animation-fill-mode: forwards;/*当动画完成后，保持最后一个属性值 */
+        }
+        #zi2{
+            animation:bian2 6s linear  normal;
+            animation-fill-mode: forwards;
+        }
+        #zi3{
+            animation:bian3 7s ease-in normal;
+            animation-fill-mode: forwards;
+        }
+        #zi4{
+            animation:bian4 8s linear normal;
+            animation-fill-mode: forwards;
+        }
+        #zi5{
+            animation:bian5 6s ease-in-out normal;
+            animation-fill-mode: forwards;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="shang">
+        <img src="./素材/背景图.jpg">
+        <div class="tou"></div>
+        <h2 class="user">系分院负责人</h2>
+        <button>退出登录</button>
+
+    </div>
+    <div class="dh">
+        <a href="#gzzy">关注专业</a>
+        <a href="#cysj">产业数据统计</a>
+        <a href="#zyxz">本校专业现状</a>
+        <a href="#wks">未开设专业信息</a>
+    </div>
+    <div id="gzzy">
+        <form action="">
+            <select class="select1" onclick="Chang_select()">
+                <option>门类</option>
+                <option value="工学">工学</option>
+                <option value="理学">理学</option>
+            </select>
+            <select id="qy"></select>
+        </form>
+        <button id="shai" onclick="change_lb()">筛选</button>
+        <table id="one">
+            <thead>
+                <th>门类</th>
+                <th>专业类</th>
+                <th>专业名称</th>
+            </thead>
+            <tbody id="lb1">
+            </tbody>
+        </table>
+    </div>
+    <div id="cysj">
+        <canvas id="cbiao"></canvas>
+        <canvas id="cbing"></canvas>
+        <canvas id="ctiao"></canvas>
+        <canvas id="csan"></canvas>
+        <canvas id="czhe"></canvas>
+        <form action="">
+            <select id="select1">
+                <option value="">学校所在地</option>
+                <option value="">成都</option>
+                <option value="">北京</option>
+                <option value="">上海</option>
+                <option value="">深圳</option>
+                <option value="">长沙</option>
+            </select>
+            <table class="t2">
+                <tr>
+                    <th>专业名</th>
+                    <th>企业</th>
+                    <th>岗位</th>
+                    <th>技能</th>
+                    <th>任务</th>
+                    <th>最低薪酬</th>
+                    <th>最高薪酬</th>
+                </tr>
+                <tr>
+                    <td>计算机科学与技术</td>
+                    <td onmouseover="xian(1)" onmouseout="yin()">300</td>
+                    <td onmouseover="xian(2)" onmouseout="yin()">5000</td>
+                    <td onmouseover="xian(3)" onmouseout="yin()">400</td>
+                    <td onmouseover="xian(4)" onmouseout="yin()">4500</td>
+                    <td onmouseover="xian(5)" onmouseout="yin()">2k</td>
+                    <td>12k</td>
+                </tr>
+                <tbody id="t"></tbody>
+            </table>
+        </form>
+    </div>
+    <div id="zyxz">
+        <img src="./素材/撤销.png" alt="" id="che" onclick="cx()">
+        <input id="input" type="text" placeholder="请输入专业名" onfocus="guan()" onblur="gu()">
+        <div class="guan" onclick="clear1()"></div>
+        <div class="sou" onclick="sou()"></div>
+        <button class="zeng" onclick="zeng()">增加</button>
+        <button class="che" onclick="cx()">返回</button>
+        <button class="shan" onclick="shan()">删除</button>
+        <button class="xg" onclick="gai()">确定修改</button>
+        <button class="xiu" onclick="xiu()">修改</button>
+        <button class="jia" onclick="jia()">确定增加</button>
+        <table class="t3">
+            <thead>
+                <th><span class="xuan" onclick="opcheckboxed('checkbox', 'checkall')">全选</span><span class="fan"
+                        onclick="opcheckboxed('checkbox', 'reversecheck')">反选</span><span class="qx"
+                        onclick="opcheckboxed('checkbox', 'uncheckall')">取消全选</span></th>
+                <th>专业名</th>
+                <th>负责人</th>
+                <th>教师数量</th>
+                <th>学生数量</th>
+                <th>师生比</th>
+                <th>师生百分比</th>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        <div class="del">
+            是否要删除？
+            <button id="yes" onclick="chu()">是</button>
+            <button id="no" onclick="fou()">否</button>
+        </div>
+        <div class="chu">
+            已成功删除！
+        </div>
+        <div class="gai">
+            修改成功！
+        </div>
+    </div>
+    <div id="wks">
+        <div class="wks">未开设专业</div>
+        <div  class="zi">数字媒体技术</div>
+        <div  class="zi">智能科学技术</div>
+        <div  class="zi">空间信息与数学技术</div>
+        <div class="zi">新媒体技术</div>
+        <div  class="zi">电影制作</div>
+    </div>
+</body>
+<script src="./培养方案系统.js"></script>
+
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小黄人</title>
+    <style>
+        .bg {
+            width: 800px;
+            height: 740px;
+            border: 1px solid #0000;
+            position: relative;
+        }
+
+        .one,
+        .two,
+        .three {
+            width: 250px;
+            height: 750px;
+            border: 1px solid rgba(42, 37, 37, 0.703);
+            position: absolute;
+            overflow: hidden;
+            background-color: aliceblue;
+        }
+
+        .two {
+            left: 275px;
+        }
+
+        .three {
+            right: 0;
+        }
+
+        .xhr_body {
+            width: 250px;
+            height: 690px;
+            background-color: rgb(253, 225, 116);
+            position: absolute;
+            bottom: 0px;
+            border-radius: 50% 50% 0 0/30px 30px 0 0;
+            overflow: hidden;
+        }
+        .hair3-1,.hair3-2,.hair3-3,.hair3-4,.hair3-5,.hair3-6{
+				width: 130px;
+				height: 140px;
+				border-top: 4px solid #000000;
+				border-radius: 45%;
+				position: absolute;
+			}
+			.hair3-1{
+                top: 40px;
+                left: -10px;
+                border-radius: 30%;
+				transform: rotate(10deg);
+			}
+			.hair3-2{
+                top:48px;
+                left: 14px;
+				transform: rotate(-8deg);
+			}
+            .hair3-3{
+                width: 100px;
+				height: 120px;
+                top:50px;
+                left: 38px;
+                border-radius: 48%;
+				transform: rotate(-5deg);
+			}
+            .hair3-4{
+                top:41px;
+                left: 154px;
+				transform: rotate(-13deg);
+			}
+            .hair3-5{
+                top:50px;
+                left: 150px;
+				transform: rotate(-50deg);
+			}
+            .hair3-6{
+                top:57px;
+                left: 135px;
+				transform: rotate(-25deg);
+			}
+            .hair2-1,.hair2-2,.hair2-3,.hair2-4,.hair2-5,.hair2-6{
+				width: 130px;
+				height: 140px;
+				border-top: 4px solid #000000;
+				border-radius: 40%;
+				position: absolute;
+			}
+            .hair2-1{
+                top: 20px;
+                left: -50px;
+				transform: rotate(70deg);
+			}
+			.hair2-2{
+                top:21px;
+                left: -38px;
+                border-radius: 60%;
+				transform: rotate(75deg);
+			}
+            .hair2-3{
+                top:20px;
+				transform: rotate(86deg);
+			}
+            .hair2-4{
+                top:21px;
+                left: 150px;
+				transform: rotate(-60deg);
+			}
+            .hair2-5{
+                top:41px;
+                left: 179px;
+				transform: rotate(-48deg);
+			}
+            .hair2-6{
+                top:27px;
+                left: 135px;
+				transform: rotate(-58deg);
+			}
+            .hair1-1,.hair1-2,.hair1-3,.hair1-4,.hair1-5,.hair1-6{
+				width: 130px;
+				height: 140px;
+				border-top: 4px solid #000000;
+				border-radius: 40%;
+				position: absolute;
+			}
+            .hair1-1{
+                top: 65px;
+                left: -50px;
+				transform: rotate(70deg);
+			}
+			.hair1-2{
+                top:35px;
+                left: -38px;
+                border-radius: 60%;
+				transform: rotate(75deg);
+			}
+            .hair1-3{
+                top:25px;
+                left: 30px;
+				transform: rotate(86deg);
+			}
+            .hair1-4{
+                top:44px;
+                left: 15px;
+				transform: rotate(60deg);
+			}
+            .hair1-5{
+                top:61px;
+                left: 17px;
+				transform: rotate(48deg);
+			}
+            .hair1-6{
+                top:27px;
+                left: 195px;
+				transform: rotate(-78deg);
+			}
+        .body1 {
+            width: 250px;
+            height: 690px;
+            background-color: rgb(253, 225, 116);
+            position: absolute;
+            bottom: 0px;
+            border-radius: 90% 50% 0 0/190px 20px 0 0;
+            overflow: hidden;
+        }
+
+        .body2 {
+            width: 250px;
+            height: 690px;
+            background-color: rgb(253, 225, 116);
+            position: absolute;
+            bottom: 0px;
+            border-radius: 50% 50% 0 0/61px 61px 0 0;
+            overflow: hidden;
+        }
+
+        .yj_wai {
+            height: 280px;
+            width: 280px;
+            background-color: rgb(225, 225, 217);
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 35px;
+        }
+
+        .yj1_wai {
+            height: 170px;
+            width: 179px;
+            background-color: rgb(225, 225, 217);
+            border-radius: 47%;
+            position: absolute;
+            left: -30px;
+            top: 150px;
+        }
+
+        .yj1_wai2 {
+            height: 170px;
+            width: 182px;
+            background-color: rgb(225, 225, 217);
+            border-radius: 47%;
+            position: absolute;
+            left: 120px;
+            top: 153px;
+        }
+
+        #yj_wai {
+            height: 206px;
+            width: 211px;
+            background-color: rgb(225, 225, 217);
+            border-radius: 50%;
+            position: absolute;
+            left: -36px;
+            top: 82px;
+        }
+
+        #yj_wai1 {
+            height: 206px;
+            width: 211px;
+            background-color: rgb(225, 225, 217);
+            border-radius: 50%;
+            position: absolute;
+            right: -98px;
+            top: 82px;
+            border-right: none;
+        }
+
+        .yj_li {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            background-color: rgb(231, 198, 64);
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        #yj_li {
+            position: absolute;
+            top: 25px;
+            left: 21px;
+            height: 154px;
+            width: 158px;
+            border-radius: 50%;
+            background-color: rgb(231, 198, 64);
+            border: 0.1px solid rgb(146, 143, 143);
+            z-index: 900;
+        }
+
+        #yj_li1 {
+            position: absolute;
+            top: 27px;
+            left: 30px;
+            height: 154px;
+            width: 158px;
+            border-radius: 50%;
+            background-color: rgb(231, 198, 64);
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        .yjl_l1 {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            height: 125px;
+            width: 134px;
+            border-radius: 47%;
+            background-color: rgb(253, 225, 116);
+            border: 0.1px solid rgb(146, 143, 143);
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        .yjl_r1 {
+            position: absolute;
+            left: 173px;
+            top: 24px;
+            height: 130px;
+            width: 139px;
+            border-radius: 47%;
+            background-color: rgb(253, 225, 116);
+            border: 0.1px solid rgb(146, 143, 143);
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        .yj_bai {
+            height: 160px;
+            width: 220px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        #yj_bai {
+            height: 70px;
+            width: 158px;
+            background-color: white;
+            border-radius: 55%/90% 90% 0 0;
+            position: absolute;
+            top: 20px;
+            left: -1.5px;
+            overflow: hidden;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        #yj_bai1 {
+            height: 70px;
+            width: 158px;
+            background-color: white;
+            border-radius: 55%/90% 90% 0 0;
+            position: absolute;
+            top: 18px;
+            overflow: hidden;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        .yb_r1 {
+            height: 69px;
+            width: 138px;
+            background-color: white;
+            border-radius: 0 0 69px 69px;
+            position: absolute;
+            top: 60px;
+            left: -4.5px;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        .yb_l1 {
+            height: 74px;
+            width: 138px;
+            background-color: white;
+            border-radius: 0 0 63px 63px;
+            position: absolute;
+            top: 57px;
+            left: -1px;
+            border: 0.1px solid rgb(146, 143, 143);
+
+        }
+
+        .yj_hei {
+            width: 90px;
+            height: 90px;
+            background-color: rgb(214, 129, 83);
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+            left: 65px;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        #yj_hei {
+            width: 56px;
+            height: 56px;
+            background-color: rgb(214, 129, 83);
+            border-radius: 80%;
+            position: absolute;
+            top: 20px;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        #yj_hei1 {
+            width: 60px;
+            height: 59px;
+            background-color: rgb(214, 129, 83);
+            border-radius: 80%;
+            position: absolute;
+            top: 24.2px;
+            left: -3px;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        .yh_l1 {
+            width: 60px;
+            height: 30px;
+            background-color: rgb(214, 129, 83);
+            border-radius: 0 0 30px 30px;
+            position: absolute;
+            right: 40px;
+            overflow: hidden;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        .yh_r1 {
+            width: 60px;
+            height: 30px;
+            background-color: rgb(214, 129, 83);
+            border-radius: 0 0 30px 30px;
+            position: absolute;
+            left: 40px;
+            overflow: hidden;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        .gl {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            box-shadow: 16px 16px 7px 20px black;
+        }
+
+        #gl {
+            width: 9px;
+            height: 9px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 21.5px;
+            left: 24px;
+            box-shadow: -12px 4px 3px 9px black;
+        }
+
+        #gl1 {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            box-shadow: -12px 4px 3px 9px black;
+        }
+
+        .gl_l1 {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 11px;
+            box-shadow: 15px -1px 3px 6px black;
+        }
+
+        .gl_r1 {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 13px;
+            box-shadow: 15px -1px 3px 6px black;
+        }
+
+        .zb,
+        .yh {
+            width: 150px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgb(32, 29, 29);
+            position: absolute;
+            bottom: 220px;
+            left: 42px;
+            overflow: hidden;
+        }
+
+        #zb {
+            width: 140px;
+            height: 96px;
+            border-radius: 50% 0 50% 50%;
+            background-color: rgb(31, 29, 29);
+            position: absolute;
+            bottom: 250px;
+            left: 110px;
+            overflow: hidden;
+            border: 0.1px solid rgb(146, 143, 143);
+        }
+
+        .zb1 {
+            width: 120px;
+            height: 30px;
+            border-radius: 50%;
+            border-top: 5px solid rgb(160, 141, 67);
+            border-bottom: hidden;
+            position: absolute;
+            bottom: 280px;
+            left: 62px;
+        }
+
+        #zb1 {
+            background-color: rgb(253, 225, 116);
+            border: 2px solid #0000;
+            top: 280px;
+            height: 116px;
+            width: 211px;
+            left: 51px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        #zb11 {
+            background-color: rgb(253, 225, 116);
+            border: 2px solid #0000;
+            top: 280px;
+            height: 116px;
+            width: 211px;
+            left: 51px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .yh {
+            background-color: rgb(253, 225, 116);
+            bottom: 197px;
+            height: 63px;
+            width: 195px;
+            left: 25px;
+        }
+
+        .yc1 {
+            width: 54px;
+            height: 54px;
+            background-color: aliceblue;
+            position: absolute;
+            left: 30px;
+            top: -37px;
+            border-radius: 10px;
+        }
+
+        .yc2 {
+            width: 54px;
+            height: 54px;
+            background-color: aliceblue;
+            position: absolute;
+            left: 84px;
+            top: -37px;
+            border-radius: 10px;
+            border-left: 0.5px solid gainsboro;
+        }
+
+        .yc3 {
+            width: 54px;
+            height: 54px;
+            background-color: aliceblue;
+            position: absolute;
+            left: -24px;
+            top: -36px;
+            border-radius: 9px;
+            border-right: 0.5px solid gainsboro;
+        }
+
+        .yc4 {
+            width: 54px;
+            height: 54px;
+            background-color: aliceblue;
+            position: absolute;
+            left: -5px;
+            top: 30px;
+            border-radius: 18px;
+            border-right: 0.5px solid gainsboro;
+        }
+
+        .yc5 {
+            width: 54px;
+            height: 54px;
+            background-color: aliceblue;
+            position: absolute;
+            left: 108px;
+            top: 27px;
+            border-radius: 15px;
+            border-right: 0.5px solid gainsboro;
+        }
+
+        #yc1 {
+            width: 54px;
+            height: 54px;
+            background-color: white;
+            border-bottom: 0.5px solid gainsboro;
+            position: absolute;
+            left: 51.5px;
+            top: 20px;
+            border-radius: 15px;
+            z-index: 1000px;
+        }
+
+        #yc2 {
+            width: 54px;
+            height: 54px;
+            background-color: white;
+            position: absolute;
+            left: -2px;
+            border-right: 0.5px solid gainsboro;
+            border-bottom: 0.5px solid gainsboro;
+            top: 24px;
+            border-radius: 24px;
+        }
+
+        #yc3 {
+            width: 54px;
+            height: 54px;
+            background-color: white;
+            position: absolute;
+            left: 105px;
+            top: 15px;
+            border-radius: 22px;
+            border-left: 0.5px solid gainsboro;
+            border-bottom: 0.5px solid gainsboro;
+        }
+
+        #yc4 {
+            width: 54px;
+            height: 54px;
+            background-color: white;
+            position: absolute;
+            left: -10px;
+            border-top: 0.5px solid gainsboro;
+            border-right: 0.5px solid gainsboro;
+            top: 60px;
+            border-radius: 24px;
+        }
+
+        #yc5 {
+            width: 54px;
+            height: 54px;
+            background-color: white;
+            position: absolute;
+            left: 43px;
+            top: 70px;
+            border-radius: 15px;
+            border-top: 0.5px solid gainsboro;
+        }
+
+        #yc6 {
+            width: 54px;
+            height: 54px;
+            background-color: white;
+            position: absolute;
+            left: 97px;
+            top: 60px;
+            border-radius: 25px;
+            border-left: 0.5px solid gainsboro;
+            ;
+        }
+
+        .s1 {
+            width: 83px;
+            height: 40px;
+            background-color: rgb(165, 65, 62);
+            position: absolute;
+            border-radius: 50%;
+            top: 20px;
+            left: 3px;
+        }
+
+        .s2 {
+            width: 83px;
+            height: 40px;
+            background-color: rgb(165, 65, 62);
+            position: absolute;
+            border-radius: 50%;
+            top: 20px;
+            left: 68px;
+        }
+
+        .yf {
+            position: absolute;
+            background-color: rgba(43, 40, 40, 0);
+            bottom: 0px;
+            height: 200px;
+            width: 250px;
+
+        }
+
+        .yf div {
+            width: 250px;
+            height: 50px;
+            background-color: rgb(97, 91, 91)
+        }
+
+        .yf div:nth-child(2n) {
+            background-color: rgb(130, 166, 202);
+        }
+
+        .kd {
+            width: 120px;
+            height: 90px;
+            background-color: white;
+            border: 6px dotted rgba(34, 32, 32, 0.237);
+            position: absolute;
+            bottom: 60px;
+            right: 30px;
+            border-radius: 0 0 50% 50%;
+            opacity: 0.5;
+        }
+
+        #dong1 {
+            position: absolute;
+            bottom: 65px;
+            height: 125px;
+            width: 134px;
+            background-color: rgb(253, 225, 116);
+            z-index: 1;
+            animation: dong1 0.7s  linear 0s infinite alternate;
+        }
+        #dong2 {
+            position: absolute;
+            bottom: 75px;
+            height: 125px;
+            width: 134px;
+            background-color: rgb(253, 225, 116);
+            z-index: 1;
+            animation: dong2 0.7s  linear 0s infinite alternate;
+        }
+        @keyframes dong1 {
+            0%,30%{
+                bottom: 65px;
+            }
+            40% {
+                bottom: -1px;
+            }
+            60%,100%{
+                bottom: 65px;
+            }
+        }
+        @keyframes dong2 {
+            0%,30% {
+                bottom: 75px;
+            }
+            40% {
+                bottom: -1px;
+            }
+            60%,100%{
+                bottom: 75px;
+            }
+        }
+        .yj_hei{
+            animation: blackeye 6s ease-in infinite;
+        }
+        @keyframes blackeye {
+            0%, 20%, 50%, 70%, 100% {
+                transform: translateX(0px);
+            }
+            30%, 40% {
+                transform: translateX(15px);
+            }
+            80%, 90% {
+                transform: translateX(-15px);
+            }
+        }
+        .gl{
+            animation: whiteeye 6s ease-in-out infinite;
+        }
+        @keyframes whiteeye {
+            0%, 20%, 50%, 70%, 100%{
+                transform: translateX(0px);
+            }
+            30%, 40% {
+                transform: translate3d(3px, 4px, 0);
+            }
+            80%, 90%{
+                transform: translate3d(-5px, 4px, 0);
+            }
+        }
+        #zb11{
+            animation: zb 1.5s ease-in-out infinite;
+        }
+        @keyframes zb {
+            0%,30% {
+                top: 280px;
+            }
+            40% {
+                top:330px;
+            }
+            60%,100%{
+                top: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="one">
+            <div class="hair1-1"></div>
+            <div class="hair1-2"></div>
+            <div class="hair1-3"></div>
+            <div class="hair1-4"></div>
+            <div class="hair1-5"></div>
+            <div class="hair1-6"></div>
+            <div class="body1">
+                <div class="zb1"></div>
+                <div class="yf">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="kd"></div>
+            </div>
+            <div class="yj1_wai">
+                <div class="yjl_r1">
+                    <div id="dong2"></div>
+                    <div class="yb_l1">
+                        <div class="yh_l1">
+                            <div class="gl_l1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="yjl_l1">
+                    <div id="dong1"></div>
+                    <div class="yb_r1">
+                        <div class="yh_r1">
+                            <div class="gl_r1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="yj1_wai2"></div>
+        </div>
+
+        <div class="two">
+            <div class="hair2-1"></div>
+            <div class="hair2-2"></div>
+            <div class="hair2-3"></div>
+            <div class="hair2-4"></div>
+            <div class="hair2-5"></div>
+            <div class="hair2-6"></div>
+            <div class="xhr_body">
+
+                <div class="yj_wai">
+
+                    <div class="yj_li">
+                        <div class="yj_bai">
+                            <div class="yj_hei">
+                                <div class="gl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zb">
+                    <div class="yc1"></div>
+                    <div class="yc2"></div>
+                    <div class="yc3"></div>
+                    <div class="s1"></div>
+                    <div class="s2"></div>
+                    <div class="yc4"></div>
+                    <div class="yc5"></div>
+
+                </div>
+                <div class="yh"></div>
+                <div class="yf">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="kd"></div>
+            </div>
+        </div>
+        <div class="three">
+            <div class="hair3-1"></div>
+            <div class="hair3-2"></div>
+            <div class="hair3-3"></div>
+            <div class="hair3-4"></div>
+            <div class="hair3-5"></div>
+            <div class="hair3-6"></div>
+            <div class="body2">
+                <div id="yj_wai">
+                    <div id="yj_li">
+                        <div id="yj_bai">
+                            <div id="yj_hei">
+                                <div id="gl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="yj_wai1">
+                    <div id="yj_li1">
+                        <div id="yj_bai1">
+                            <div id="yj_hei1">
+                                <div id="gl1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="zb">
+                    <div id="yc5"></div>
+                    <div id="yc4"></div>
+                    <div id="yc6"></div>
+                    <div id="yc1">
+
+                    </div>
+                    <div id="yc2">
+
+                    </div>
+                    <div id="yc3">
+
+                    </div>
+
+
+                </div>
+                <div id="zb1"></div>
+                <div id="zb11"></div>
+                <div class="yf">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="kd"></div>
+            </div>
+
+        </div>
+</body>
+
+</html>

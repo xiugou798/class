@@ -1,0 +1,399 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+body{
+    display: block;
+}
+button{
+    outline: none;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+}
+button::after{
+    border: none;
+}
+li{
+    list-style: none;
+}
+input{
+    border: none;
+}
+input:focus{
+    outline: none;
+}
+i{
+    cursor: pointer;
+}
+hr{
+    width: 95%;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+.header{
+    width: 100%;
+    height: 100%;
+    min-width: 1140px;
+    position: relative;
+    background: url("./img/bg.jpeg") no-repeat;
+    background-position: top;
+}
+
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.highlight{
+    color: #ff5000;
+}
+.align-items-center {
+    align-items: center;
+}
+.float-left{
+    float: left;
+}
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+.center {
+    justify-content: center;
+}
+.space-evenly {
+    justify-content: space-evenly;
+}
+.space-between {
+    justify-content: space-between;
+}
+.space-around{
+    justify-content: space-around;
+}
+.margin-10px {
+    margin: 10px;
+}
+.border-bottom {
+    border-bottom: 2px solid #0060df;
+}
+.title-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0060df;
+}
+
+.title-text-normal {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+}
+.align-items-center {
+    align-items: center;
+}
+.nums{
+    width: 26px;
+    height: 20px;
+    padding: auto 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #ebebeb;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 10%;
+    margin: 0 10px;
+}
+
+/* 导航栏 */
+.nav{
+    margin: auto;
+    background-color: white;
+    height: 44px;
+    width: auto;
+    line-height: 44px;
+    justify-content: space-around;
+}
+.nav>div{
+    height: 44px;
+}
+.logo-huohu{
+    cursor: pointer;
+}
+.navTital{
+    cursor: pointer;
+    color: #bbb;
+}
+.left{
+    margin-left: 50px;
+}
+.left .Button,.right .Button{
+    color: #666;
+    float: left;
+    padding: 8px 16px;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.right .Button{
+    width: 84px;
+    padding: 8px;
+}
+.right .Button div{
+    width: 56px;
+    float: left;
+}
+.right .Button i{
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: 4px 0 4px 8px;
+    background-color: rgba(255, 255, 255, 0.235);
+    cursor: pointer;
+}
+
+/* 搜素区域 */
+.search{
+    z-index: 9999;
+    width: 100%;
+    min-width: 1140px;
+    height: 50px;
+    top: 0;
+    padding: 16px 0;
+    justify-content: space-around;
+    background-color: white;
+}
+.search .logo,.search .logo img{
+    height: 50px;
+}
+.search .searchInput{
+    height: 50px;
+}
+.searchFrame{
+    float: left;
+    width: 536px;
+    height: 46px;
+    border: 2px solid #0060df;
+    border-radius: 5px 0 5px 5px;
+    background-color: white;
+    overflow: hidden;
+    z-index: 999;
+    position: relative;
+}
+.searchFrame .top input{
+    width: 500px;
+    height: 30px;
+    padding: 8px 12px;
+    border-radius: 1px 0 0 5px;
+    font-size: 1rem;
+    line-height: 30px;
+    font-size: 20px;
+}
+.searchFrame .top i{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    margin-right: 10px;
+    text-align: center;
+}
+.searchFrame .searchMore{
+    width: calc(100% - 24px);
+    height: 292px;
+    padding: 12px;
+}
+.searchFrame .searchMore .searchTitle{
+    color: rgba(107,114,128,1);
+}
+.searchFrame .searchMore ul{
+    column-count: 2;
+    column-gap: 5px;
+    margin-top: 10px;
+}
+.searchMore ul li{
+    cursor: pointer;
+    margin: 5px 0;
+    padding: 5px 0;
+    display: flex;
+}
+.searchFrame .searchMore ul li:first-child{
+    margin-top: 0;
+}
+.searchFrame .searchMore ul li:hover{
+    background-color: #ebebeb;
+}
+
+.searchFrame .searchMore ul li .text{
+    max-width: 220px;
+    height: 20px;
+    overflow: hidden;
+    font-size: 18px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .875rem;
+}
+
+.searchInput .searchButton{
+    float: left;
+    height: inherit;
+}
+.searchInput .searchButton button{
+    width: 86px;
+    height: inherit;
+    background-color: #0060df;
+    border: 2px solid #0060df;
+    border-radius: 0 5px 5px 0;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 5px;
+    color: white;
+}
+.search .right{
+    text-align: center;
+    line-height: 50px;
+    width: 200px;
+    font-size: .875rem;
+    cursor: pointer;
+}
+.search .right:hover{
+    color: #4083ff;
+}
+
+/* 下面具体内容 */
+.concern{
+    width: 1140px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+.container {
+    width: 1100px;
+    height: 100px;
+    padding: 6px;
+    text-align: center;
+    font-weight: 500;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.concern-left{
+    background-color: #fff;
+    line-height: 34px;
+    width: 840px;
+}
+.concern-right{
+    position: absolute;
+    /* position: absolute; */
+    /* top: 187px; */
+    right: 0;
+    width: 300px;
+}
+.concern .concern-top ul li{
+    cursor: pointer;
+}
+
+.title-text-normal {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+}
+.main-left-top ul li {
+    line-height: 50px;
+}
+.main-left-main {
+    width: 800px;
+    height: 700px;
+}
+.main-left-top {
+    width: 800px;
+    height: 50px;
+}
+.main-left-left-bottom a img {
+    width: 176px;
+    height: 100px;
+}
+
+.main-left-left-bottom {
+    text-align: center;
+    width: 360px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.main-left-left {
+    padding: 20px 0;
+    text-align: center;
+    align-items: center;
+}
+
+.main-left-left>a>img {
+    width: 360px;
+    height: 230px;
+}
+.main-left-right {
+    width: 439px;
+    height: 642px;
+}
+.main-left-right li{
+    list-style: disc;
+    cursor: pointer;
+}
+.main-left-right li:hover a{
+    color: #0060df;
+}
+.main-right-box{
+    height: 82px;
+    background-color: #000000;
+}
+
+/* 右边悬浮 */
+.main-right {
+    width: 300px;
+    background-color: #FFFFFF;
+}
+.main-right-main{
+    padding: 12px 0;
+}
+.main-right-main a {
+    width: 224px;
+    height: 26px;
+}
+.main-right-main a span {
+    padding: 0 6px;
+    margin: 0 10px;
+    border-radius: 2px;
+}
+.main-right-main a:hover{
+    color: #4083ff;
+}
+.main-right-head {
+    width: 86px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 10px 10px;
+    font-size: 15px;
+    font-weight: 1000;
+    color: #0060df;
+}
+
+.fill{
+    height: 100px;
+}

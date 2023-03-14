@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>5000扇形图</title>
+		<style>
+			canvas {
+				border: 0px;
+			}
+		</style>
+		<script>
+			function drawCircle(canvasId, data_arr, color_arr, text_arr) {
+				var c = document.getElementById(canvasId);
+				var ctx = c.getContext("2d");
+				var radius = c.height / 2 - 20;
+				var ox = radius + 20,
+					oy = radius + 20;
+				var width = 30,
+					height = 10;
+				var posX = ox * 2 + 20,
+					posY = 30;
+				var textX = posX + width + 5,
+					textY = posY + 10;
+				var startAngle = 0;
+				var endAngle = 0;
+				for (var i = 0; i < data_arr.length; i++) {
+					ctx.fillStyle = color_arr[i];
+					ctx.fillRect(posX, posY + 20 * i, width, height);
+					ctx.moveTo(posX, posY + 20 * i);
+					ctx.font = 'bold 12px 微软雅黑';
+					ctx.fillStyle = color_arr[i];
+					var percent = text_arr[i] + "：" + 100 * data_arr[i] + "%";
+					ctx.fillText(percent, textX, textY + 20 * i);
+				}
+			}
+
+			function init() {
+				var data_arr = [0.3, 0.26, 0.23, 0.20];
+				var color_arr = ["#aaaaff", "#aaffff", "#f7b9f9", "#aaff7f"];
+				var text_arr = ["北京", "上海", "广州", "成都"];
+				drawCircle("canvas", data_arr, color_arr, text_arr);
+			}
+			window.onload = init;
+		</script>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<span id="clickMessage"></span>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+			var width = 1000;
+			var height = 500;
+			var cx = width / 2;
+			var cy = height / 2;
+			var index = 0;
+			var endObj = null;
+			var data = [{
+					name: "北京",
+					number: 500,
+					color: "#aaaaff",
+					size: 100
+				},
+				{
+					name: "上海",
+					number: 450,
+					color: "#aaffff",
+					size: 100
+				},
+				{
+					name: "广州",
+					number: 400,
+					color: "#f7b9f9",
+					size: 100
+				},
+				{
+					name: "成都",
+					number: 350,
+					color: "#aaff7f",
+					size: 100
+				}
+			]
+			canvas.width = width;
+			canvas.height = height;
+			calcPct(data);
+			console.log(data);
+			canvas.onclick = function(e) {
+				var obj = null;
+				var message = null;
+				for (var i in data) {
+					obj = data[i];
+					if (Math.sqrt(Math.pow(cx - e.offsetX, 2) + Math.pow(cy - e.offsetY, 2)) <= obj.size) {
+						var angle = calcAngle(cx, cy, e.offsetX, e.offsetY);
+						if (obj.startAngle <= angle && obj.endAngle >= angle) {
+							message = obj.name;
+							break;
+						}
+					}
+				}
+				if (!message)
+					message = "";
+				document.getElementById("clickMessage").innerHTML = message;
+			}
+
+			function calcPct(arr) {
+				var count = 0;
+				var angle = -90;
+				data.forEach(function(obj) {
+					count += obj.number
+				});
+				data.forEach(function(obj) {
+					obj.pct = obj.number / count;
+					obj.sAngle = angle;
+					obj.eAngle = angle + 360 * obj.pct;
+					obj.startAngle = angle + 90;
+					obj.endAngle = obj.startAngle + 360 * obj.pct;
+					Math.abs(Math.abs(obj.eAngle) - 90);
+					angle = obj.eAngle;
+					if (!obj.size)
+						obj.size = 100;
+				});
+			}
+			draw(data[index]);
+
+			function animationEnd(obj) {
+				if (endObj == obj) {
+					return;
+				}
+				endObj = obj;
+				index++;
+				if (index < data.length) {
+					draw(data[index]);
+				}
+			}
+
+			function draw(obj) {
+				if (obj.sAngle > obj.eAngle) {
+					animationEnd(obj);
+					return;
+				}
+				var radian = obj.sAngle * Math.PI / 180;
+				var x = Math.cos(radian) * obj.size + cx;
+				var y = Math.sin(radian) * obj.size + cy;
+				ctx.beginPath();
+				ctx.moveTo(cx, cy);
+				ctx.lineTo(x, y);
+				ctx.strokeStyle = obj.color;
+				ctx.stroke();
+				obj.sAngle += 0.1;
+				requestAnimationFrame(function() {
+					draw(obj);
+					draw(obj);
+					draw(obj);
+					draw(obj);
+				});
+			}
+
+			function calcAngle(cx, cy, x, y) {
+				var angle = null;
+				if (x > cx) {
+					if (y < cy) {
+						angle = 180 * Math.atan2(cy - y, cx - x) / Math.PI;
+						angle -= 90;
+					} else if (y > cy) {
+						angle = 180 * Math.atan2(y - cy, x - cx) / Math.PI;
+						angle += 90;
+					} else {
+						angle = 90;
+					}
+				} else if (x < cx) {
+					if (y < cy) {
+						angle = 180 * Math.atan2(cy - y, cx - x) / Math.PI;
+						angle += 270;
+					} else if (y > cy) {
+						angle = 180 * Math.atan2(y - cy, x - cx) / Math.PI;
+						angle += 90;
+					} else {
+						angle = 180;
+					}
+				} else {
+					if (y < cy)
+						angle = 0;
+					else if (y > cy)
+						angle = 180;
+					else
+						angle = 0;
+				}
+
+				return angle;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.hei{
+			  position: absolute;
+			
+			  border: 5px solid green;
+			  top: 20px;
+			  left: 20px;
+			  width: 450px;
+			  height: 100px;
+			  line-height: 100px;
+			  text-align: center;
+			  font: bold; //粗字体
+			
+			}
+			.toubiao{
+				position: absolute;
+				width: 100%;
+				height: 250px;
+				
+				background-color: ;
+				opacity: 1;
+				
+			}
+			.qianming{
+				position: absolute;
+				height: 50px;
+				width:250px;
+				bottom: 35px;
+				left: 120px;
+				text-align: center;
+				line-height: 50px;
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 20px;
+				
+			}
+			.study{
+				position: absolute;
+				width: 1200px;
+				height: 300px;
+				top: 250px;
+				left: 35px;
+				background-color: ;
+				border-radius: 10px;
+				border: 3px solid rgb(231,237,249);
+			}
+			.study_shangmian{
+				position: absolute;
+				width: 1200px;
+				height: 50px;
+				border-radius: 10px 10px 0 0;
+				background-color: rgb(231,237,249);
+			}
+			.study_xiamian{
+				position: absolute;
+				width: 1200px;
+				height: 250px;
+				top: 50px;
+				border-radius: 0 0 10px 10px;
+				
+			    display: flex;
+				flex-direction: row;
+				
+				justify-content: space-between;
+			}
+			.study_xiamian div{
+				
+				width: 300px;
+				height: 250px;
+				
+				/* background-color: rgb(147, 255, 147);	 */
+					
+			}
+			.rr{
+				position: absolute;
+				width: 400px;
+				height: 300px;
+				top: 250px;
+				right: 35px;
+				background-color: white;
+				border-radius: 10px;
+				border: 3px solid rgb(231,237,249);
+				
+			}
+			.rr_shang{
+				position: absolute;
+				width: 400px;
+				height: 50px;
+				border-radius: 10px 10px 0 0;
+				background-color: rgb(231,237,249);	
+				text-align:center;
+			}
+			.rr_xia{
+				position: absolute;
+				width: 400px;
+				height: 250px;
+				top: 50px;
+				border-radius: 0 0 10px 10px;
+			}		
+		</style>
+		
+		
+		<script>
+			function showTime(clock){
+			  var now = new Date();
+			  var year = now.getFullYear();
+			  var month= now.getMonth();
+			  var day = now.getDate();
+			  var hour = now.getHours();
+			  var minu = now.getMinutes();
+			  var second = now.getSeconds();
+			  month = month+1;
+			  var arr_work = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+			  var week = arr_work[ now.getDay()];
+			  
+			  
+			  	var hello = document.getElementById("hello");
+			  	
+			  	var t;
+			  	
+			  	if (hour<=12){
+			  		t = "上午好";
+			  	}else if(hour>12){
+			  		t = "下午好";
+			  	}
+			  	hello="KING, "+t+" ";
+			  
+			  
+			  var time = year+"年"+month+"月"+day+"日 "+ week+" "+hour+":"+minu+":"+second;
+			  clock.innerHTML="当前时间: "+time+" "+hello;
+			}
+			
+			
+			
+			window.onload = function(){
+				// var hello = document.getElementById("hello");
+				// window.setInterval("helloworld(hello)",1000);
+			    var clock = document.getElementById("clock");
+			    window.setInterval("showTime(clock)",1000);//
+			}
+			
+			
+			function jieshao(){
+				var a = document.getElementById('jieshao_1');
+				a = a.textContent;
+				var b = document.getElementById('a2');
+				b.innerHTML('a');
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="toubiao" style="background-image: url(888 (2).jpg);background-size:100%;">
+				<div class="hei" id ="clock" ></div>
+				<div class="qianming">我是菜狗我是菜狗</div>
+			</div>
+			
+			<div class="study">
+				<div class="study_shangmian">
+					<p style="font-size: 20px;">学习状况</p>
+				</div>
+				<div class="study_xiamian">
+					<div style="overflow: hidden;">
+						<h1 style="text-align: center;">学习任务</h1>
+						<p style="font-size: 25px;">1.算法
+						<p style="font-size: 25px;">2.JAVA
+						<p style="font-size: 25px;">3.前端
+						</p>
+						
+					</div>
+					<div style="overflow: hidden;">
+						<h1 style="text-align: center;">学习难题</h1>
+						<p style="font-size: 25px;">1.JavaScript
+						<p style="font-size: 25px;">2.动态规划
+						<p style="font-size: 25px;">3.力扣123
+						</p>
+					</div>
+					<div style="overflow: hidden;">
+						<h1 style="text-align: center;">目前状态</h1>
+						<p style="font-size: 25px;">1.嘻嘻
+						<p style="font-size: 25px;">2.嘻嘻
+						<p style="font-size: 25px;">3.嘻嘻
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="rr">
+				<div class="rr_shang">
+					<p style="font-size: 20px;">今日份心情</p>
+				</div>
+				<div class="rr_xia"> 
+				<p style="font-size: 25px;">
+					哈哈哈哈哈哈哈哈哈哈哈哈哈哈，非常美丽
+				</p>
+				</div>
+			</div>
+			<!-- <img src="picture/888 (2).jpg" alt=""> -->
+			
+		</div>
+	</body>
+</html>

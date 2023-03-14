@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Js日历</title>
+<style type="text/css">
+ .evrday{
+	    width:14%;     
+		 float:left;
+         font-weight: 600;
+		 }
+  #calendar{
+	  width:400px;
+	  margin:auto;
+      height: 310px;
+      border: 2px sol;
+       background-color: rgb(255, 255, 255);
+      /* box-shadow: inset 1px 1px 1px 1px rgba(40, 49, 85, 0.593);  */
+  }
+ button{
+	 width:25%;
+	 height:40px;
+	 float:left;
+ }
+ div{
+	 margin-top:10px;
+	 margin-bottom:5px;
+	 text-align:center;
+ }
+#month{
+width:50%;
+float:left;
+}
+
+.bk{
+    width: 400px;
+    height: 34px;
+    background-color: black;
+    position: absolute;
+    margin-top: 49px;
+    border-radius: 20px  20px 20px 20px ;
+    
+    /* z-index: 0; */
+}
+#w1{
+    color: white;
+    z-index: 999;
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+}
+.b1{
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+
+
+ 
+</style>
+</head>
+<body onLoad="showday()">
+ <div id="calendar" class="ca">
+    <div>
+       <button onClick="shang()"  class="b1">上个月</button>
+         <div id="month"></div>
+       <button onClick="next()" id="nav"  class="b1">下个月</button>
+    </div>
+    <div class="bk">
+
+    </div>
+    <div>
+       <div class="evrday" id="w1">S</div>
+       <div class="evrday" id="w1">M</div>
+       <div class="evrday" id="w1">T</div>
+       <div class="evrday" id="w1">W</div>
+       <div class="evrday" id="w1">T</div>
+       <div class="evrday" id="w1">F</div>
+       <div class="evrday" id="w1">S</div>
+    </div>
+    
+    <div id="day" style="color:rgb(0, 0, 0)"></div>
+ </div>
+ <script>
+      var today=new Date();
+	  var year=today.getFullYear();
+	  var month=today.getMonth()+1;
+	  var day=today.getDate();
+	  var allday=0;
+	  function showmonth(){
+		  var year_month=year+"年"+month+"月";
+		  document.getElementById("month").innerHTML=year_month;
+	  }
+	
+	  function count(){
+		  if(month!=2)
+		  {
+		  if(month==4||month==6||month==9||month==11)
+		     allday=30;
+			 else
+			 allday=31;
+		  }
+		  else
+		  {
+			  if((year%4==0&&year%100!=0)||(year%400==0))
+			  allday=29;
+			  else 
+			  allday=28;}
+	  }
+	  function showday(){	  
+         showmonth()
+		    count();
+		  var fistdate=new Date(year,month-1,1);
+		  var xinqi=fistdate.getDay();
+		  var daterow=document.getElementById("day");
+		  for(var i=0;i<xinqi;i++)
+		  {
+			  var dayElement=document.createElement("div");
+			    dayElement.className="evrday";
+			 daterow.appendChild(dayElement);
+		  }
+		  
+		  for(var j=1;j<=allday;j++)
+		  {	
+			  var dayElement=document.createElement("div");
+			   dayElement.innerHTML=j;
+			    dayElement.className="evrday";
+				if(j==day)//当前日，标红
+				 dayElement.style.color="red";
+				daterow.appendChild(dayElement);
+		  }
+	  }
+	    function next(){
+           document.getElementById('day').innerHTML ="";
+          if(month<12)
+		    {  month=month+1;
+		    }
+		      else
+		       {  month=1;
+		         year=year+1; 
+		     }
+		        document.getElementById('div').innerHTML =showday();    
+		}
+		function shang(){
+           document.getElementById('day').innerHTML ="";
+          if(month>1)
+		      {month=month-1;
+		      }
+		      else
+		      {
+		         month=12;
+		         year=year-1; 
+		     }
+		        document.getElementById('div').innerHTML =showday();    
+		}
+
+	 
+	  </script>
+</body>
+</html>
+

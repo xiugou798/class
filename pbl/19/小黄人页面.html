@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三个小黄人</title>
+		<style>
+			.bg {
+				width: 800px;
+				height: 740px;
+				border: 1px solid #000000;
+				position: relative;
+			}
+
+			.one,
+			.two,
+			.three {
+				width: 250px;
+				height: 740px;
+				position: absolute;
+				border: 1px solid #000000;
+				border-top-width: 0px;
+				border-bottom-width: 0px;
+				overflow: hidden;
+			}
+
+			.two {
+				left: 275px;
+			}
+
+			.three {
+				right: 0;
+			}
+
+			.xhr_body1 {
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0px;
+				border-radius: 70% 30% 0 0/120px 15px 0 0;
+			}
+
+			.yf1 {
+				position: absolute;
+				height: 230px;
+				width: 250px;
+				bottom: 0px;
+				background-color: rgb(74, 73, 71);
+			}
+
+			.yf11 {
+				position: absolute;
+				width: 250px;
+				height: 30px;
+				bottom: 0px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.yf111 {
+				position: absolute;
+				width: 250px;
+				height: 50px;
+				bottom: 80px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.yf1111 {
+				position: absolute;
+				width: 250px;
+				height: 50px;
+				bottom: 100px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.kd1 {
+				height: 70px;
+				width: 90px;
+				background-color: white;
+				border-radius: 0 0 50% 50%;
+				border: 4px double black;
+				position: absolute;
+				right: 70px;
+				top: 70px;
+				opacity: 0.5;
+				overflow: hidden;
+			}
+
+			.zb1 {
+				height: 70px;
+				width: 120px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				left: 40px;
+				top: 350px;
+				overflow: hidden;
+				animation: move 1s infinite;
+			}
+
+			.zb11 {
+				height: 100px;
+				width: 150px;
+				background-color: #FDE174;
+				border-radius: 50%;
+				position: absolute;
+				left: 20px;
+				top: 351px;
+				overflow: hidden;
+				animation: move 1s infinite;
+			}
+
+
+			.yj1_wai {
+				height: 150px;
+				width: 150px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -10px;
+				top: 95px;
+				border: 1px solid #000;
+			}
+
+			.yj1_li {
+				height: 100px;
+				width: 100px;
+				top: 25px;
+				left: 25px;
+				border-radius: 50%;
+				position: absolute;
+				background-color: #fde174;
+				border: 1px solid #000;
+			}
+
+			.yj1_bai {
+				height: 50px;
+				width: 100px;
+				background-color: white;
+				position: absolute;
+				top: 50px;
+				border-radius: 0 0 100px 100px;
+			}
+
+			.yj1_zong {
+				width: 40px;
+				height: 20px;
+				background-color: #8c5342;
+				border-radius: 0 0 100px 100px;
+				border: 1px solid #000;
+				position: absolute;
+				top: 0px;
+				left: 40px;
+				animation: move 1s infinite;
+			}
+
+			.gg1 {
+				width: 5px;
+				height: 5px;
+				background-color: white;
+				border-radius: 50%;
+				top: 10px;
+				left: 10px;
+			}
+
+			.li1_hei {
+				position: absolute;
+				width: 20px;
+				height: 10px;
+				background-color: black;
+				border-radius: 0 0 100px 100px;
+				top: 0px;
+				left: 10px;
+			}
+
+			.yj11_wai {
+				height: 150px;
+				width: 150px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				right: -20px;
+				top: 115px;
+				border: 1px solid #000;
+			}
+
+
+			.yj11_li {
+				position: absolute;
+				top: 25px;
+				right: 25px;
+				height: 100px;
+				width: 100px;
+				border-radius: 50%;
+				background-color: #fde174;
+				border: 1px solid #000;
+			}
+
+			.yj11_bai {
+				height: 50px;
+				width: 100px;
+				background-color: white;
+				border-radius: 0 0 100px 100px;
+				position: absolute;
+				top: 50px;
+
+			}
+
+			.yj11_zong {
+				width: 40px;
+				height: 20px;
+				background-color: #8c5342;
+				border-radius: 0 0 100px 100px;
+				border: 1px solid #000;
+				position: absolute;
+				top: 0px;
+				left: 40px;
+				animation: move 1s infinite;
+			}
+
+			.gg11 {
+				width: 5px;
+				height: 5px;
+				background-color: white;
+				border-radius: 50%;
+				top: 10px;
+				left: 10px;
+			}
+
+			.li11_hei {
+				position: absolute;
+				width: 20px;
+				height: 10px;
+				background-color: black;
+				border-radius: 0 0 100px 100px;
+				top: 0px;
+				left: 10px;
+			}
+
+			.tf {
+				position: absolute;
+				background-color: black;
+				top: 0px;
+				left: 10px;
+
+			}
+
+			.xhr_body2 {
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/40px 40px 0 0;
+				overflow: hidden;
+			}
+
+			.yf2 {
+				position: absolute;
+				height: 230px;
+				width: 250px;
+				bottom: 0px;
+				background-color: rgb(74, 73, 71);
+			}
+
+			.yf22 {
+				position: absolute;
+				width: 250px;
+				height: 30px;
+				bottom: 0px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.yf222 {
+				position: absolute;
+				width: 250px;
+				height: 50px;
+				bottom: 80px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.yf2222 {
+				position: absolute;
+				width: 250px;
+				height: 50px;
+				bottom: 100px;
+				background-color: rgb(179, 180, 175);
+			}
+
+
+
+			.kdd3 {
+				width: 90px;
+				height: 90px;
+				background-color: white;
+				border-radius: 0 0 50% 50%;
+				border: 4px double black;
+				opacity: 0.5;
+				margin: 30px 0;
+				transition: .5s;
+				left: 30px;
+				top: 70px;
+			}
+
+			.kdd1:hover {
+				transform: scaleX(1.5);
+			}
+
+			.kdd2:hover {
+				transform: scaleY(1.5);
+			}
+
+			.kdd3:hover {
+				transform: scaleZ(4) rotateX(80deg);
+			}
+
+
+			.zb2 {
+				height: 70px;
+				width: 120px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				left: 40px;
+				top: 365px;
+				overflow: hidden;
+				animation: move 2s infinite;
+			}
+
+			.zb22 {
+				height: 70px;
+				width: 150px;
+				background-color: #FDE174;
+				border-radius: 50%;
+				position: absolute;
+				left: 30px;
+				top: 390px;
+				overflow: hidden;
+				animation: move 2s infinite;
+			}
+
+			.yc2 {
+				width: 34px;
+				height: 34px;
+				background-color: white;
+				position: absolute;
+				left: 25px;
+				top: -20px;
+				border-radius: 10px;
+			}
+
+			.yc22 {
+				width: 34px;
+				height: 34px;
+				background-color: white;
+				position: absolute;
+				left: 57px;
+				top: -20px;
+				border-radius: 10px;
+			}
+
+			.yc222 {
+				width: 34px;
+				height: 34px;
+				background-color: white;
+				position: absolute;
+				left: 0px;
+				top: 25px;
+				border-radius: 10px;
+			}
+
+			.yc2222 {
+				width: 34px;
+				height: 34px;
+				background-color: white;
+				position: absolute;
+				right: 0px;
+				top: 25px;
+				border-radius: 10px;
+			}
+
+
+			.yj2_wai {
+				height: 280px;
+				width: 280px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				top: 35px;
+				border: 1px solid #000;
+			}
+
+			.yj2_li {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				height: 220px;
+				width: 220px;
+				border-radius: 50%;
+				background-color: #fde174;
+				border: 1px solid #000;
+			}
+
+			.yj2_bai {
+				height: 160px;
+				width: 220px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 30px;
+
+			}
+
+			.yj2_zong {
+				width: 90px;
+				height: 90px;
+				background-color: #8c5342;
+				border-radius: 50%;
+				border: 1px solid #000;
+				position: absolute;
+				top: 30px;
+				left: 60px;
+				animation: move 2s infinite;
+			}
+
+			.gg2 {
+				width: 15px;
+				height: 15px;
+				background-color: white;
+				border-radius: 50%;
+				top: 20px;
+				left: 20px;
+				position: absolute;
+			}
+
+			.li2_hei {
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				background-color: black;
+				border-radius: 50%;
+				top: 5px;
+				left: 5px;
+			}
+
+
+			.xhr_body3 {
+				width: 250px;
+				height: 680px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/60px 40px 0 0;
+				overflow: hidden;
+			}
+
+			.yf3 {
+				position: absolute;
+				height: 230px;
+				width: 250px;
+				bottom: 0px;
+				background-color: rgb(74, 73, 71);
+			}
+
+			.yf33 {
+				position: absolute;
+				width: 250px;
+				height: 30px;
+				bottom: 0px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.yf333 {
+				position: absolute;
+				width: 250px;
+				height: 50px;
+				bottom: 80px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.yf3333 {
+				position: absolute;
+				width: 250px;
+				height: 50px;
+				bottom: 100px;
+				background-color: rgb(179, 180, 175);
+			}
+
+			.kd3 {
+				height: 70px;
+				width: 90px;
+				background-color: white;
+				border-radius: 0 0 50% 50%;
+				border: 4px double black;
+				position: absolute;
+				right: 70px;
+				top: 70px;
+				opacity: 0.5;
+			}
+
+			.zb3 {
+				height: 100px;
+				width: 130px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				right: 0px;
+				top: 280px;
+				overflow: hidden;
+			}
+
+			.zb33 {
+				height: 80px;
+				width: 170px;
+				background-color: #FDE174;
+				border-radius: 50%;
+				position: absolute;
+				right: 5px;
+				top: 270px;
+				overflow: hidden;
+			}
+
+			.yc3 {
+				width: 45px;
+				height: 45px;
+				background-color: white;
+				position: absolute;
+				left: 0px;
+				top: 35px;
+				border-radius: 10px;
+			}
+
+			.yc33 {
+				width: 45px;
+				height: 45px;
+				background-color: white;
+				position: absolute;
+				left: 45px;
+				top: 35px;
+				border-radius: 10px;
+			}
+
+			.yc333 {
+				width: 45px;
+				height: 45px;
+				background-color: white;
+				position: absolute;
+				left: 85px;
+				top: 35px;
+				border-radius: 10px;
+			}
+
+			.yc3333 {
+				width: 45px;
+				height: 45px;
+				background-color: white;
+				position: absolute;
+				left: 125px;
+				top: 25px;
+				border-radius: 10px;
+			}
+
+			.yc33333 {
+				width: 54px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				left: 10px;
+				top: 85px;
+				border-radius: 10px;
+			}
+
+			.yc333333 {
+				width: 54px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				right: 10px;
+				top: 85px;
+				border-radius: 10px;
+			}
+
+			.yj3_wai {
+				height: 170px;
+				width: 170px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -30px;
+				top: 95px;
+				border: 1px solid #000;
+				overflow: hidden;
+
+			}
+
+			.yj3_li {
+				position: absolute;
+				top: 25px;
+				right: 25px;
+				height: 120px;
+				width: 120px;
+				border-radius: 50%;
+				background-color: #fde174;
+				border: 1px solid #000;
+				overflow: hidden;
+
+			}
+
+			.yj3_bai {
+				height: 50px;
+				width: 120px;
+				background-color: white;
+				position: absolute;
+				top: 10px;
+				border-radius: 100px 100px 0 0;
+				overflow: hidden;
+
+			}
+
+			.yj3_zong {
+				width: 50px;
+				height: 50px;
+				background-color: #8c5342;
+				border-radius: 100px 100px 100px 100px;
+				border: 1px solid #000;
+				position: absolute;
+				top: 20px;
+				right: 90px;
+				animation: move 2s infinite;
+			}
+
+			.gg3 {
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				background-color: white;
+				border-radius: 50%;
+				top: 10px;
+				right: 10px;
+			}
+
+			.li3_hei {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: black;
+				border-radius: 50%;
+				top: 0px;
+				right: 0px;
+			}
+
+			.yj33_wai {
+				height: 170px;
+				width: 170px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				right: -30px;
+				top: 90px;
+				border: 1px solid #000;
+				overflow: hidden;
+			}
+
+			.yj33_li {
+				position: absolute;
+				top: 25px;
+				right: 25px;
+				height: 120px;
+				width: 120px;
+				border-radius: 50%;
+				background-color: #fde174;
+				border: 1px solid #000;
+				overflow: hidden;
+			}
+
+			.yj33_bai {
+				height: 50px;
+				width: 120px;
+				background-color: white;
+				position: absolute;
+				top: 10px;
+				border-radius: 100px 100px 0 0;
+				overflow: hidden;
+			}
+
+			.yj33_zong {
+				width: 50px;
+				height: 50px;
+				background-color: #8c5342;
+				border-radius: 100px 100px 100px 100px;
+				border: 1px solid #000;
+				position: absolute;
+				top: 20px;
+				right: 85px;
+				animation: move 2s infinite;
+			}
+
+			.gg33 {
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				background-color: white;
+				border-radius: 50%;
+				top: 10px;
+				right: 15px;
+			}
+
+			.li33_hei {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: black;
+				border-radius: 50%;
+				top: 0px;
+				right: 0px;
+			}
+
+			.tf1 {
+				top: 30px;
+				width: 100px;
+				height: 50px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf2 {
+				top: 35px;
+				width: 100px;
+				height: 50px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf3 {
+				top: 40px;
+				width: 100px;
+				height: 50px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf4 {
+				top: 30px;
+				width: 100px;
+				height: 50px;
+				left: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf5 {
+				top: 35px;
+				width: 100px;
+				height: 50px;
+				left: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf6 {
+				top: 40px;
+				width: 100px;
+				height: 50px;
+				left: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf11 {
+				top: 10px;
+				width: 100px;
+				height: 50px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf22 {
+				top: 15px;
+				width: 100px;
+				height: 50px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf33 {
+				top: 20px;
+				width: 100px;
+				height: 50px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf44 {
+				top: 10px;
+				width: 100px;
+				height: 50px;
+				left: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf55 {
+				top: 15px;
+				width: 100px;
+				height: 50px;
+				left: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			.tf66 {
+				top: 20px;
+				width: 100px;
+				height: 50px;
+				left: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s infinite;
+			}
+
+			@keyframes move {
+				0% {
+					margin-left: 0px;
+				}
+
+				10% {
+					margin-left: 5px;
+				}
+
+				20% {
+					margin-left: 10px;
+				}
+
+				30% {
+					margin-left: 15px;
+				}
+
+				40% {
+					margin-left: 20px;
+				}
+
+				50% {
+					margin-left: 25px;
+				}
+
+				60% {
+					margin-right: 0px;
+				}
+
+				70% {
+					margin-right: 5px;
+				}
+
+				80% {
+					margin-right: 10px;
+				}
+
+				90% {
+					margin-right: 15px;
+				}
+
+				100% {
+					margin-right: 20px;
+				}
+			}
+		</style>
+	</head>
+
+
+	<body>
+		<div class="bg">
+			<div class="one">
+				<div class="xhr_body1">
+					<div class="tf11"></div>
+					<div class="tf22"></div>
+					<div class="tf33"></div>
+					<div class="tf44"></div>
+					<div class="tf55"></div>
+					<div class="tf66"></div>
+					<div class="yf1">
+						<div class="yf11">
+							<div class="yf111">
+								<div class="yf1111">
+									<div class="kd1">
+										<div class='tf'></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zb1"></div>
+					<div class="zb11"></div>
+					<div class="yj1_wai">
+						<div class="yj1_li">
+							<div class="yj1_bai">
+								<div class="yj1_zong">
+									<div class="gg1">
+										<div class="li1_hei"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="yj11_wai">
+						<div class="yj11_li">
+							<div class="yj11_bai">
+								<div class="yj11_zong">
+									<div class="gg11">
+										<div class="li11_hei"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="two">
+				<div class="tf1"></div>
+				<div class="tf2"></div>
+				<div class="tf3"></div>
+				<div class="tf4"></div>
+				<div class="tf5"></div>
+				<div class="tf6"></div>
+				<div class="xhr_body2 ">
+					<div class="zb2">
+						<div class="yc2"></div>
+						<div class="yc22"></div>
+						<div class="yc222"></div>
+						<div class="yc2222"></div>
+					</div>
+					<div class="yf2">
+						<div class="yf22">
+							<div class="yf222">
+								<div class="yf2222">
+									<div class="kd2">
+										<div class="kdd1"></div>
+										<div class="kdd2"></div>
+										<div class="kdd3"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zb22"></div>
+					<div class="yj2_wai">
+						<div class="yj2_li">
+							<div class="yj2_bai">
+								<div class="yj2_zong">
+									<div class="gg2 ">
+										<div class="li2_hei"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="three">
+				<div class="xhr_body3">
+					<div class="tf1"></div>
+					<div class="tf2"></div>
+					<div class="tf3"></div>
+					<div class="tf4"></div>
+					<div class="tf5"></div>
+					<div class="tf6"></div>
+					<div class="zb3">
+						<div class="yc3"></div>
+						<div class="yc33"></div>
+						<div class="yc333"></div>
+						<div class="yc3333"></div>
+						<div class="yc33333"></div>
+						<div class="yc333333"></div>
+					</div>
+					<div class="yf3">
+						<div class="yf33">
+							<div class="yf333">
+								<div class="yf3333">
+									<div class="kd3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zb33"></div>
+					<div class="yj33_wai">
+						<div class="yj33_li">
+							<div class="yj33_bai">
+								<div class="yj33_zong">
+									<div class="gg33">
+										<div class="li33_hei"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="yj3_wai">
+						<div class="yj3_li">
+							<div class="yj3_bai">
+								<div class="yj3_zong">
+									<div class="gg3">
+										<div class="li3_hei"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

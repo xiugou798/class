@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/three.css">
+
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div>
+            <span>系分院负责人</span>
+            <span>退出登录</span>
+        </div>
+
+        <div>
+
+            <div class="one">
+
+                <div>
+
+                    <table>
+                        <tr>
+                            <th>门类</th>
+                            <th>专业类</th>
+                            <th>专业名称</th>
+                        </tr>
+                    </table>
+
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>工学</td>
+                                <td>计算机系</td>
+                                <td> <input type="radio"> 计算机与科学</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="one-two">
+
+                    <span>关注专业</span>
+
+                    <div class="select">
+                        <select id="seleone" onmouseleave="sele1()">
+                            <option value="0">门类</option>
+                        </select>
+
+                        <div id="seletwo" onmousemove="seletwo1()" onmouseleave="seletwo2()">
+
+                            <div>
+                            </div>
+                            <div id="seletwo-option">
+                                <div><input type="checkbox" value="计算机与科学1" onmouseleave="seletwo3(this)">计算机与科学</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="two">
+
+                <div>
+
+                    <span>产业数据统计</span>
+
+                    <div class="select">
+                        <select name="" id="">
+                            <option value="">学校所在地
+
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <table>
+                        <tr>
+                            <th style="width:130px;">专业名</th>
+                            <th>企业</th>
+                            <th>岗位</th>
+                            <th>技能</th>
+                            <th>任务</th>
+                            <th>最低薪资</th>
+                            <th>最高薪资</th>
+                        </tr>
+                    </table>
+
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>数据科学与大数据技术</td>
+                                <td>2</td>
+                                <td onmouseenter="shanxing([range2(), range2(), range2(), range2()],['成都 100', '北京 500', '上海 200'
+                                    , '北京 500' ])" onmouseleave="removecav()">3</td>
+                                <td onmouseenter="zhuxing('任务','词','条',[range1(), range1(), range1(), range1(), range1()])"
+                                    onmouseout="removecav()">4</td>
+                                <td onmouseenter="zhuxing('技能','词','条',[range1(), range1(), range1(), range1(), range1(),range1(), range1(), range1(), range1(), range1()])"
+                                    onmouseleave="removecav()">5</td>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class=" three">
+
+                <div>
+
+                    <span>本校专业现状</span>
+
+                    <div class="threone">
+                        <a onmousedown="adddate()">增加</a>
+                        <a onmousedown="zhao1()">查找</a>
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <table>
+                        <tr>
+                            <th style="width:130px;">专业名</th>
+                            <th>负责人</th>
+                            <th>课程数量(点击查看详情)</th>
+                            <th>学生数量</th>
+                            <th>师生比</th>
+                            <th>产教匹配度</th>
+                            <th style="width:100px">操作</th>
+                        </tr>
+                    </table>
+
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>数据科学与大数据技术</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td class="conthree">
+                                    <a href="#" onmousedown="removeone(this)">删除</a>
+                                    <a href="#" onmousedown="revise(this)">修改</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="four">
+                <div>
+                    <span>未开设专业信息</span>
+                </div>
+
+                <div class="jishu">
+                    <span><a href="">数字媒体技术</a></span>
+                    <span><a href="">智能科学与技术</a></span>
+                    <span><a href="">空间信息与数字技术</a></span>
+                    <span><a href="">新媒体技术</a></span>
+                    <span><a href="">电影制作</a></span>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="add">
+        <div><input type="text" value="" placeholder="专业名"></div>
+        <div><input type="text" value="" placeholder="负责人"></div>
+        <div><input type="text" value="" placeholder="课程数量"></div>
+        <div><input type="text" value="" placeholder="学生数量"></div>
+        <div><input type="text" value="" placeholder="师生比:"></div>
+        <div><input type="text" value="" placeholder="产教匹配度"></div>
+        <div><span>确认</span><span>取消</span></div>
+    </div>
+    <div class="zhao">
+        <div><input type="text" value="" placeholder="专业名"></div>
+        <div><input type="text" value="1" placeholder="负责人"></div>
+        <div><span>确认</span><span>取消</span></div>
+    </div>
+
+
+</body>
+<script src="./js/three.js"></script>
+
+</html>

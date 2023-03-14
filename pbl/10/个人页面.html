@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人页面</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #B2AB99;
+            overflow-x: hidden;
+            overflow-y: hidden; 
+        }
+
+        div {
+            border: azure 2px solid;
+        }
+
+        .shang {
+            width: 99.7%;
+            position: absolute;
+            height: 35%;
+            margin-right: -50px;
+        }
+
+        #zong {
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .zuo,
+        .zhong,
+        .you {
+            float: left;
+            height: 580px;
+            margin-top: 16.8%;
+            border-top: none;
+            width: 578.61px;
+            overflow: hidden;
+            position: relative;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .zhong {
+            top: -55px;
+            width: 450px;
+            border: 3px dashed white;
+            border-top: none;
+            border-bottom: none;
+            overflow-y: scroll;
+            height: 470px;
+        }
+
+        #xhr {
+            position: absolute;
+            left: 26px;
+            border: none;
+        }
+
+        .me {
+            position: absolute;
+            top: 50px;
+            right: 380px;
+            border-radius: 40%/80%;
+            padding: 15px;
+            border: blanchedalmond 1px solid;
+            background-color: #FEF0CA;
+            font-size: 20px;
+        }
+
+
+        img {
+            position: relative;
+            left: 20px;
+            top: 20px;
+            border-radius: 50%;
+        }
+
+        h2,
+        h3 {
+            position: relative;
+            left: 250px;
+            bottom: 170px;
+        }
+
+        .zi {
+            color: rgb(40, 37, 37);
+        }
+
+        #myCanvas {
+            z-index: 200;
+            position: absolute;
+            top: 20px;
+            right: -90px;
+        }
+
+        #Canvas {
+            z-index: 200;
+            position: absolute;
+            top: 20px;
+            right: 350px;
+        }
+
+        .canvas2 {
+            position: absolute;
+            top: 20px;
+            right: 350px;
+            z-index: -1;
+        }
+
+        .a,
+        .b,
+        .c,
+        .d,
+        .e,
+        .f,
+        .g,
+        .h,
+        .i,
+        .j,
+        .k,
+        .l,
+        .m,
+        .n {
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            border: none;
+            width: 50px;
+            background-color: #BF5846;
+            position: absolute;
+            font-size: 20px;
+            text-align: center;
+            z-index: 9999;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .a {
+            right: 280px;
+            top: 480px;
+        }
+
+        .b {
+            right: 300px;
+            top: 300px;
+        }
+
+        .c {
+            right: 420px;
+            top: 372px;
+        }
+
+        .d {
+            right: 260px;
+            top: 370px;
+        }
+
+        .e {
+            right: 100px;
+            top: 330px;
+        }
+
+        .f {
+            right: 340px;
+            top: 350px;
+        }
+
+        .h {
+            right: 380px;
+            top: 430px;
+        }
+
+        .g {
+            right: 320px;
+            top: 410px;
+        }
+
+        .i {
+            right: 180px;
+            top: 300px;
+        }
+
+        .j {
+            right: 150px;
+            top: 370px;
+        }
+
+        .k {
+            right: 180px;
+            top: 300px;
+        }
+
+        .l {
+            right: 210px;
+            top: 430px;
+        }
+
+        .m {
+            right: 170px;
+            top: 500px;
+        }
+
+        .n {
+            right: 140px;
+            top: 440px;
+        }
+        .zhong{
+            overflow-y: scroll;
+            overflow-x: none;
+        }
+        table {
+            background-color: #659B90;
+            padding: 10px;
+            height: 1px;
+            width: 430px;
+            overflow: scroll;
+        }
+
+        td {
+            padding: 5px;
+            margin: 0;
+            padding-bottom: 0px;
+        }
+
+        tr {
+            border: 4px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shang">
+        <img src="./素材/10.png" alt="" height=200px width=200px border-radius=50%>
+        <h2 class="zi">Zhuo JinTing</h2>
+        <h3 class="zi">God helps those who helps themselves.</h3>
+        <button type="button" class="me"><b> Here<br>Learn about me</b></button>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+        <canvas id="Canvas" width="500" height="500"></canvas>
+    </div>
+    <div id="zong">
+        <div class="zuo">
+            <iframe id="xhr" src="./小黄人.html" ;
+                style="width: 860px; height: 800px; transform-origin: left top; transform: scale(0.61, 0.61)"></iframe>
+        </div>
+        <div class="zhong">
+            <table>
+                <tr>
+                    <td>哈希集合</td>
+                </tr>
+                <th>
+                <td>202</td>
+                <td>36</td>
+                </th>
+                <tr>
+                    <td>递归</td>
+                </tr>
+                <th>
+                <td>94</td>
+                <td>101</td>
+                </th>
+                <tr>
+                    <td>贪心算法</td>
+                </tr>
+                <th>
+                <td>45</td>
+                </th>
+                <tr>
+                    <td>双指针</td>
+                </tr>
+                <th>
+                <td>18</td>
+                </th>
+                <tr>
+                    <td>回溯</td>
+                </tr>
+                <th>
+                <td>78</td>
+                <td>46</td>
+                <td>40</td>
+                <td>39</td>
+                </th>
+                </th>
+                <tr>
+                    <td>搜索</td>
+                </tr>
+                <th>
+                <td>100</td>
+                </th>
+                <tr>
+                    <td>动态规划</td>
+                </tr>
+                <th>
+                <td>53</td>
+                <td>62</td>
+                </th>
+                <tr>
+                    <td>迭代</td>
+                </tr>
+                <th>
+                <td>94</td>
+                </th>
+                <tr>
+                    <td>二分查找</td>
+                </tr>
+                <th>
+                <td>33</td>
+                </th>
+            </table>
+        </div>
+        <div class="you">
+            <canvas id="canvas2" width="518" height="460"></canvas>
+        </div>
+        <div class="a"><a href="https://leetcode.cn/problems/4sum/" title="四数之和">18</a></div>
+        <div class="b"><a href="https://leetcode.cn/problems/symmetric-tree/" title="对称二叉树">101</a></div>
+        <div class="c"><a href="https://leetcode.cn/problems/happy-number/" title="快乐数">202</a></div>
+        <div class="d"><a href="https://leetcode.cn/problems/subsets/" title="子集">78</a></div>
+        <div class="e"><a href="https://leetcode.cn/problems/same-tree/" title="相同的树">100</a></div>
+        <div class="f"><a href="https://leetcode.cn/problems/maximum-subarray/" title="最大子数组和">53</a></div>
+        <div class="g"><a href="https://leetcode.cn/problems/unique-paths/" title="不同路径">62</a></div>
+        <div class="h"><a href="https://leetcode.cn/problems/binary-tree-inorder-traversal/" title="二叉树的中序遍历">94</a></div>
+        <div class="i"><a href="https://leetcode.cn/problems/permutations/" title="全排列">46</a></div>
+        <div class="j"><a href="https://leetcode.cn/problems/combination-sum-ii/" title="组合总和II">40</a></div>
+        <div class="k"><a href="https://leetcode.cn/problems/combination-sum/" title="组合总和">39</a></div>
+        <div class="l"><a href="https://leetcode.cn/problems/valid-sudoku/" title="有趣的数独">36</a></div>
+        <div class="m"><a href="https://leetcode.cn/problems/jump-game-ii/" title="跳跃游戏II">45</a></div>
+        <div class="n"><a href="https://leetcode.cn/problems/rotate-image/" title="旋转图像">48</a></div>
+    </div>
+    <script>
+        function draw() {
+            var can = document.getElementById('myCanvas');
+            if (can.getContext) {
+                var c1 = can.getContext('2d');
+                c1.shadowOffsetX = 8;
+                c1.shadowOffsetY = 8;
+                c1.shadowColor = "black";
+                c1.shadowBlur = 6;
+                c1.strokeStyle = "#C2CE66";
+                c1.lineWidth = 3;
+                // c1.fillStyle("black");
+                c1.font = "20px  sans-serif";
+                c1.fillStyle = "white";
+                c1.strokeRect(120, 55, 80, 50);
+                c1.fillText("慢热型", 132, 87);
+                c1.strokeStyle = "#FB8C77";
+                c1.strokeRect(250, 45, 95, 40);
+                c1.fillText("热爱生活", 260, 75);
+                c1.strokeStyle = "#C4FCF0";
+                c1.strokeRect(300, 110, 90, 45);
+                c1.fillText("乐观自信", 305, 142);
+                c1.strokeStyle = "#F2FEDC";
+                c1.strokeRect(180, 2, 80, 30);
+                c1.fillText("细节控", 190, 25);
+                c1.strokeStyle = "#CAA38E";
+                c1.strokeRect(180, 145, 95, 35);
+                c1.fillText("乐于分享", 190, 170);
+                c1.strokeStyle = "#51A160";
+                c1.strokeRect(45, 130, 95, 35);
+                c1.fillText("敢于尝试", 52, 155);
+                c1.textAlign = "center";
+            }
+        }
+        draw("myCanvas")
+        function draw1() {
+            var can1 = document.getElementById('Canvas');
+            if (can1.getContext) {
+                var b1 = can1.getContext('2d');
+                b1.shadowOffsetX = 8;
+                b1.shadowOffsetY = 8;
+                b1.shadowColor = "black";
+                b1.shadowBlur = 6;
+                b1.strokeStyle = "#C2CE66";
+                b1.lineWidth = 3;
+                b1.font = "20px  sans-serif";
+                b1.fillStyle = "white";
+                b1.strokeStyle = "#659B90";
+                b1.strokeRect(120, 40, 95, 35);
+                b1.fillText("来自广西", 128, 65);
+                b1.strokeStyle = "#00DFFF";
+                b1.strokeRect(290, 150, 165, 35);
+                b1.fillText("take baby-steps", 300, 175);
+                b1.strokeStyle = "#FF89B6";
+                b1.strokeRect(140, 115, 120, 35);
+                b1.fillText("选择恐惧症", 150, 140);
+                b1.strokeStyle = "#2F4858";
+                b1.strokeRect(60, 0, 35, 35);
+                b1.fillText("忙", 68, 25);
+                b1.strokeStyle = "#9C881A";
+                b1.strokeRect(10, 60, 60, 40);
+                b1.fillText("阅读", 20, 88);
+                b1.strokeStyle = "#9E6B4E";
+                b1.strokeRect(50, 130, 60, 35);
+                b1.fillText("唱歌", 60, 155);
+            }
+        }
+         draw1("Canvas")
+        function shu() {
+            var can2 = document.getElementById('canvas2');
+            if (can2.getContext) {
+                var c1 = can2.getContext('2d');
+                c1.beginPath();
+                c1.moveTo(185, 498);
+                c1.lineTo(290, 390);
+                c1.lineTo(375, 498);
+                c1.fillStyle = "#54433A";
+                c1.fill();
+                c1.fillRect(258, 120, 55, 310);
+                c1.closePath();
+                c1.beginPath();
+                c1.arc(120, 150, 80, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(220, 65, 75, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(250, 140, 70, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(150, 220, 65, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(240, 250, 65, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(350, 250, 85, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(350, 100, 95, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(435, 170, 55, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.arc(445, 100, 55, 0, Math.PI * 2, false);
+                c1.closePath();
+                c1.fillStyle = "#1B3D2F";
+                c1.fill();
+
+            }
+        }
+        shu("canvas2")
+    </script>
+</body>
+
+</html>

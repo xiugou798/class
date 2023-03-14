@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.jisuanqi {
+				position: absolute;
+				width: 500px;
+				height: 600px;
+				background-color: aqua;
+
+			}
+
+			.shangmian {
+				position: absolute;
+				width: 500px;
+				height: 100px;
+				background-color: aliceblue;
+			}
+
+			.xiamian {
+				position: absolute;
+				width: 500px;
+				height: 500px;
+				background-color: bisque;
+				top: 100px;
+			}
+
+			td {
+
+				width: 125px;
+				height: 125px;
+				border: 1px solid black;
+				font-size: 40px;
+			}
+
+			#wxl {
+				position: relative;
+				font-size: 48px;
+				
+			}
+
+			.yuan {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: brown;
+			}
+			
+			input{
+				width: 120px;
+				height: 120px;
+				font-size: 40px;
+			}
+			
+			#fu div{
+				width: 120px;
+				height: 120px;
+				background-color: white;
+				border: 1px solid black;
+				font-size: 40px;
+				line-height: 120px;
+				
+			}
+			
+		</style>
+		<script>
+			var wc="";
+			var da="0";
+			
+			// function changecolor() {
+			// 	var bluediv = document.getElementById("wxl");
+			// 	bluediv.style.backgroundColor = "red";
+			// }
+
+			// function changeclass() {
+			// 	var bluediv = document.getElementById("wxl");
+			// 	bluediv.style.borderRadius = "50%";
+
+			// }
+
+			// function changeclass2() {
+			// 	var bluediv = document.getElementById("wxl");
+			// 	bluediv.className = "yuan";
+			// }
+
+			// function divvalue(a, b, c) {
+			// 	//函数参数的传递
+			// 	//a=3
+			// 	//b='fdhjdhgj'
+			// 	//c=this
+			// 	var yellowdiv = document.getElementById("wxl");
+			// 	//yellowdiv.textContent=b;
+
+			// 	var txt = c.textContent ? c.textContent : c.value;
+
+			// 	console.log(txt);
+			// 	yellowdiv.textContent = txt;
+
+			// }
+
+			function getzhi(a) {
+				console.log(a);
+				var yellowdiv = document.getElementById("wxl");
+				var txt = a.innerText?a.innerText:a.value;
+				
+				if(txt=="="){
+					//wc="";
+					wc=da;
+				}else{
+					wc=wc+txt;
+				}
+				
+				yellowdiv.innerText=wc;
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="jisuanqi">
+			<div class="shangmian" id="wxl">
+			
+			</div>
+			<div class="xiamian">
+				<table>
+					<tr>
+						<td onclick="getzhi(this)">1</td>
+						<td onclick="getzhi(this)">2</td>
+						<td onclick="getzhi(this)">3</td>
+						<td onclick="getzhi(this)">4</td>
+					</tr>
+
+				</table>
+
+				<input type="button" value="5" onclick="getzhi(this)" />
+				<input type="button" value="6" onclick="getzhi(this)" />
+				<input type="button" value="7" onclick="getzhi(this)" />
+				<input type="button" value="8" onclick="getzhi(this)" />
+
+
+				<div id="fu"  style="width: 100%; display: flex;flex-direction: row;">
+					<div onclick="getzhi(this)">+</div>
+					<div onclick="getzhi(this)">-</div>
+					<div onclick="getzhi(this)">*</div>
+					<div onclick="getzhi(this)">/</div>
+					<div onclick="getzhi(this)">=</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+		
+	</body>
+</html>

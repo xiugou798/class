@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas画柱状图</title>
+  <style>
+    canvas {
+      border: 1px solid #ddd;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
+</head>
+<body>
+	</div>
+				<a href='index.html' style="background-color: aqua;align-items: center;text-align: center;">
+					<button>点击返回</button>
+				</a>
+			</div>
+	
+
+  <canvas id="canvas"></canvas>
+  
+  <script>
+  	// 获取画布元素，设置画布的大小
+    let canvas = document.querySelector('#canvas')
+    canvas.width= 500
+    canvas.height= 500
+    let ctx = canvas.getContext('2d')
+
+    // 绘制 x 轴，y 轴
+    ctx.beginPath()
+    // 线条开始坐标
+    ctx.moveTo(50,100)
+    // 线条结束坐标
+    ctx.lineTo(50,450)
+    ctx.lineTo(450,450)
+    ctx.stroke()
+    // 绘制数字 x，y
+    let context = canvas.getContext('2d')
+    // context.beginPath()
+    context.font= "15px arial"
+    context.fillText("词频",40,85)
+    context.fillText("技能",455,460)
+    // context.closePath()
+
+    // 绘制 x ，y 轴箭头
+    ctx.beginPath()
+    ctx.moveTo(45,105)
+    ctx.lineTo(50,100)
+    ctx.lineTo(55,105)
+    ctx.stroke()
+    ctx.closePath()
+
+    ctx.beginPath()
+    ctx.moveTo(445,445)
+    ctx.lineTo(450,450)
+    ctx.lineTo(445,455)
+    ctx.stroke()
+    ctx.closePath()
+
+    let colorArr = []
+    for (let i = 0; i < 8; i++) {
+      // 使用随机数生成每条柱子的颜色，使用16进制格式
+      let color = '#'+parseInt(Math.random()*0xffffff).toString(16)
+      colorArr.push(color)
+    }
+    // console.log(colorArr);
+    // 绘制x轴坐标，在对应坐标位置绘制对应的矩形
+    for(let i = 0; i < 8; i++) {
+      let xStart = 80 + i * 50
+      ctx.beginPath()
+      ctx.moveTo(xStart,450)
+      ctx.lineTo(xStart,460)
+      ctx.stroke()
+      ctx.closePath()
+      ctx.beginPath()
+      ctx.fillStyle = colorArr[i]
+      let height = Math.random()*350
+      ctx.fillRect(xStart-10,450-height,20,height)
+      context.font = "12px Arial"
+      context.textAlign = "center"
+      context.fillStyle = 'black'
+      context.fillText((xStart-80)/50,xStart,475)
+      ctx.closePath()
+    }
+
+    // 绘制y轴坐标和坐标值
+    for(let i = 430; i > 100; i-=50) {
+      ctx.beginPath()
+      ctx.moveTo(45,i)
+      ctx.lineTo(50,i)
+      ctx.stroke()
+      context.font = "12px Arial"
+      // 字体的水平对齐设置
+      context.textAlign = "right"
+      context.fillStyle = 'black'
+      context.fillText(Math.abs(i-430),40,i)
+      ctx.closePath()
+    }
+
+    for (let i = 0; i < 8; i++) {
+      let x = 100 + i * 40
+      let y = 30
+      ctx.fillStyle = colorArr[i]
+      ctx.fillRect(x,y,25,20)
+    }
+  </script>
+</body>
+</html>

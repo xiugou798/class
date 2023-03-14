@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>培养方案</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: #f5f6f7;
+        }
+
+        #one td{
+            height: 50px;
+        }
+        .bigBox {
+            width: 68%;
+            height: 680px;
+            background-color: white;
+            margin: auto;
+            margin-left: 120px;
+            margin-top: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+            border-radius: 5px;
+            float: left;
+        }
+
+        .top {
+            width: 100%;
+            height: 123px;
+            position: relative;
+            background-color: #001529;
+            /*opacity: 0.8;*/
+            /*background: url(./img/黑色背景.png) repeat-x;*/
+            padding: 0;
+            margin: 0;
+
+            border: 1px solid black;
+        }
+
+        .top img {
+            margin-top: 20px;
+        }
+
+        .tx {
+            width: 190px;
+            height: 50px;
+            float: right;
+            border: 1px black solid;
+            top: 30px;
+            right: +70px;
+            position: relative;
+
+        }
+
+        .tx img {
+            position: absolute;
+            margin-top: 10px;
+            padding: 0;
+        }
+
+        .left {
+            width: 140px;
+            height: 30px;
+            position: absolute;
+            transform: translate(30%, 30%);
+            font-size: 20px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 30px;
+            background-color: white;
+            position: relative;
+        }
+
+        .right {
+            width: 80px;
+            height: 30px;
+            position: absolute;
+            transform: translate(30%, 30%);
+            border-radius: 15px;
+            text-align: center;
+            line-height: 30px;
+            right: 50px;
+            background-color: rgb(16, 133, 235);
+        }
+
+        .right,
+        a {
+            color: white;
+        }
+
+        #one {
+            margin-top: 100px;
+            width: 680px;
+            height: 500px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: rgba(53, 42, 42, 0.594);
+            overflow: scroll;
+        }
+
+        .one_top {
+            width: 400px;
+            height: 35px;
+            margin-top: 0px;
+            position: relative;
+        }
+
+        p {
+            font-size: 20px;
+            /*text-decoration: underline;*/
+            border-bottom: 1px solid rgba(0, 140, 255, 0.936);
+            width: 90px;
+            margin-left: 5px;
+            text-align: center;
+            color: rgba(0, 140, 255, 0.936);
+            float: left;
+        }
+
+        #door_class {
+            float: left;
+            width: 80px;
+            height: 25px;
+            margin-top: 5px;
+            font-size: 15px;
+            background-color: #e3e3e3;
+            margin-left: 40px;
+        }
+
+        #right_class {
+            width: 170px;
+            height: 25px;
+            margin-top: 5px;
+            background-color: #e3e3e3;
+            margin-left: 10px;
+        }
+
+        .f_form1 {
+            width: 660px;
+            height: 400px;
+            position: relative;
+            bottom: -15px;
+            top: 0px;
+
+
+        }
+
+        td {
+            text-align: center;
+            background-color: #e3e3e3;
+            opacity: 0.8;
+        }
+
+        #two {
+            margin-top: 30px;
+            width: 800px;
+            height: 500px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            display: none;
+            border-radius: 10px;
+            border: 1px solid black;
+            background-color: rgba(53, 42, 42, 0.594);
+        }
+
+        .two_top {
+            width: 800px;
+            height: 35px;
+            margin-top: 0px;
+            position: relative;
+        }
+
+        #spot {
+            width: 120px;
+            height: 25px;
+            margin-top: 5px;
+            background-color: #e3e3e3;
+            margin-left: 520px;
+            font-size: 15px;
+        }
+
+        .f_form2 {
+            position: absolute;
+            width: 800px;
+            height: 450px;
+            bottom: -55px;
+            top: 30px;
+            margin-top: 5px;
+        }
+
+        #three {
+            width: 920px;
+            height: 500px;
+            margin: auto;
+            display: none;
+            margin-top: 50px;
+            border-radius: 10px;
+            border: 1px solid black;
+            background-color: rgba(53, 45, 45, 0.594);
+            overflow: scroll;
+        }
+
+        .three_top {
+            width: 700px;
+            height: 35px;
+        }
+
+        .wen3 {
+            width: 140px;
+        }
+
+        .f_form3 {
+            width: 900px;
+            height: 400px;
+            border: black;
+        }
+        .f_form3 tr td{
+            height: 60px;
+        }
+
+        .con {
+            margin-top: 150px;
+            top: +50px;
+        }
+    </style>
+    <!-- /*-------------后续补充----------------*/ -->
+    <style>
+        h1 {
+            font-size: 20px;
+            height: 40px;
+            border-bottom: 2px solid black;
+            box-shadow: 1px;
+            /*background-color: rgba(128, 128, 128, 0.715);*/
+            background-color: black;
+            opacity: 0.8;
+            border-radius: 5px 5px 0 0;
+
+        }
+
+        table {
+            table-layout: fixed;
+            display: table;
+            overflow: scroll;
+        }
+
+        .bigBox span {
+            float: left;
+            list-style: 30px;
+            background: black;
+            color: #fff;
+            cursor: pointer;
+            margin-left: 90px;
+            margin-top: 8px;
+
+
+        }
+
+        .bigBox span:hover {
+            opacity: 0.8;
+        }
+
+        input{
+            width: 60px;
+            height: 25px;
+            border: gray 1px;
+            border-radius: 5px;
+            margin-top: 2px;
+        }
+    </style>
+
+    <!-- /*------------------气泡----------------------*/ -->
+    <style>
+        .last {
+            width: 340px;
+            height: 680px;
+            margin-right: 5px;
+            float: right;
+            margin-top: 10px;
+            /*background-color: rgb(0, 0, 0);*/
+            background-color: rgb(0, 0, 0);
+            opacity: 0.8;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+        }
+        /* 设置弹性容器，弹性盒子居中以及背景色 */
+        .bubble {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            /* 内部阴影（注意透明度）*/
+            box-shadow: inset 0 0 25px rgba(255, 255, 255, .3);
+            /* 给个高斯模糊 
+          filter: blur(2px);*/
+            /* 上下运动的动画 */
+            animation: animate 8s ease-in-out infinite;
+        }
+        @keyframes animate {
+
+            0%,
+            100% {
+                transform: translateY(-20px);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        /* span共同的样式 */
+        .bubble span {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(8px);
+        }
+
+        /* 分别给5个span设置不同的方向的边距以及颜色*/
+        .bubble span:nth-child(1) {
+            inset: 10px;
+            border-left: 10px solid #05eaf6;
+        }
+
+        .bubble span:nth-child(2) {
+            inset: 10px;
+            border-top: 20px solid #faca81;
+        }
+
+        .bubble span:nth-child(3) {
+            inset: 10px;
+            border-right: 15px solid #fa6f6f;
+        }
+
+        .bubble span:nth-child(4) {
+            inset: 12px;
+            border-left: 16px solid #6feefa;
+        }
+
+        .bubble span:nth-child(5) {
+            inset: 8px;
+            border-bottom: 8px solid rgb(249, 255, 167);
+            transform: rotate(-20deg);
+        }
+
+        /* 逆时针旋转20度，到右下角（白色的）*/
+        .bubble span:nth-child(6) {
+            inset: 10px;
+            border-bottom: 10px solid #fff;
+            transform: rotate(-20deg);
+        }
+
+        /*---------------高光--------------------*/
+
+        /* 左上角的大一点的白光*/
+        .bubble::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 40px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .8);
+            filter: blur(2px);
+            z-index: 10;
+            /* 加上层级，相对靠前显示才有光的样子 */
+        }
+
+        /* 小一点的白光 */
+        .bubble::after {
+            content: '';
+            position: absolute;
+            top: 85px;
+            left: 70px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .9);
+            filter: blur(2px);
+            z-index: 10;
+        }
+
+        a {
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 40px;
+            line-height: 190px;
+            font-size: 25px;
+        }
+
+        #big a {
+            font-size: 28px;
+        }
+
+        #x a {
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        #y a {
+            margin-left: 10px;
+        }
+
+
+        /*气泡位置*/
+        .bubble:nth-child(1) {
+            z-index: 2;
+            position: relative;
+            margin: auto;
+            margin-top: 300px;
+        }
+        .bubble:nth-child(2) {
+            /*数字媒体技术*/
+            position: relative;
+            top: -700px;
+            left: 200px;
+            zoom: 0.65;
+            animation-delay: -4s;
+        }
+        .bubble:nth-child(3) {
+            /*空间信息*/
+            position: relative;
+            top: -650px;
+            left: 30px;
+            zoom: 0.75;
+            animation-delay: -5s;
+        }
+        .bubble:nth-child(4) {
+            /*新媒体*/
+            position: relative;
+            top: -390px;
+            left: 240px;
+            zoom: 0.55;
+            animation-delay: -8s;
+        }
+        .bubble:nth-child(5) {
+            /*电影制作*/
+            position: relative;
+            top: -600px;
+            left: -5px;
+            zoom: 0.5;
+            animation-delay: -6s;
+        }
+        .bubble:nth-child(6) {
+            /*智能科学与技术*/
+            position: relative;
+            top: -800px;
+            left: 230px;
+            zoom: 0.7;
+            animation-delay: -6s;
+        }
+    </style>
+
+    <!-- /*--------------------画图-----------------------*/ -->
+    <style>
+        #t1 {
+            width: 350px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        canvas {
+            position: relative;
+            top: 120px;
+            left: 200px;
+            width: 350px;
+            height: 200px;
+            display: flex;
+            flex-direction: row-reverse; /*flex-direction属性决定主轴的方向(即项目的排列方向) row-reverse从右到左*/
+            z-index: 999;
+            display: none;
+            background-color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <img src="./img/科成logo.png" alt="">
+
+        <div class="tx">
+            <img src="./img/头像 .png" alt="" width="30px" height=30px>
+            <div class="left">
+                系分院负责人
+            </div>
+        </div>
+        <!-- <div class="right"><a>退出登录</a></div> -->
+    </div>
+    <div class="bigBox" id="bigBox">
+
+        <H1>
+            <span class="cur">关注专业</span>
+            <span>产业数据统计</span>
+            <span>本校专业现状</span>
+        </H1>
+
+        <div class="con" id="one">
+            <div class="one_top">
+                <!-- <p>关注专业</p> -->
+                <select name="门类" id="door_class">
+                    <option value="门类">门类</option>
+                    <option>工学</option>
+                    <option value="">理学</option>
+                    <option value="">文学</option>
+                    <option value="">教育学</option>
+                    <option value="">法学</option>
+                </select>
+
+                <select id="right_class" name="">
+                    <!-- 有没有option里这一串效果一样的 -->
+                    <option selected="selected" disabled="disabled" style="display: none" value=></option>
+                    <option>计算机类</option> <!-- 这里为什么option中有 value=""则无法显示 -->
+                    <option>工商管理类</option>
+                    <option>电子商务类</option>
+                    <option>电子信息类</option>
+                    <option>材料类</option>
+                </select>
+            </div>
+
+
+            <div class="form1">
+                <table class="f_form1" >
+                    <tr>
+                        <td>门类</td>
+                        <td>专业类</td>
+                        <td>专业名称</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>医学信息工程</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>电磁场与无线技术</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>电波传播与天线</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>电子信息科学与技术</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>电信工程及管理</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>应用电子技术教育</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>海洋信息工程</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>人工智能</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>软件工程</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>柔性电子学</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>电子信息类</td>
+                        <td>智能测控工程</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>自动化</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>轨道交通信号与控制</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>机器人工程</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>邮政工程</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>核电技术与控制工程</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>智能装备与系统</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>工业智能</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>自动化类</td>
+                        <td>智能工程与创意设计</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>计算机类</td>
+                        <td>计算机科学与技术</td>
+                    </tr>
+                    <tr>
+                        <td>工学</td>
+                        <td>计算机类</td>
+                        <td>软件工程</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="con" id="two">
+            
+
+            
+
+            <div calss="two_top">
+                <!-- <p class="wen2">产业数据统计</p> -->
+                <select name="学校所在地" id="spot">
+                    <option value="">学校所在地</option>
+                    <option value="">成都</option>
+                    <option value="">北京</option>
+                    <option value="">上海</option>
+                    <option value="">深圳</option>
+                    <option value="">长沙</option>
+                </select>
+            </div>
+
+            <div class="huatu">
+                <canvas id="t1"></canvas>
+                <canvas id="t2"></canvas>
+                <canvas id="t3"></canvas>
+                <canvas id="t4"></canvas>
+                <canvas id="t5"></canvas>
+            </div>
+
+            <div class="form2">
+                <table class="f_form2">
+                    <tr>
+                        <td>专业名</td>
+                        <td>企业</td>
+                        <td>岗位</td>
+                        <td>技能</td>
+                        <td>任务</td>
+                        <td>最低薪酬</td>
+                        <td>最高薪酬</td>
+                    </tr>
+                    <tr>
+                        <td>计算机科学技术</td>
+                        <td onmouseover="xian(1)" onmouseout="yin()">300</td>
+                        <td onmouseover="xian(2)" onmouseout="yin()">5000</td>
+                        <td onmouseover="xian(3)" onmouseout="yin()">400</td>
+                        <td onmouseover="xian(4)" onmouseout="yin()">4500</td>
+                        <td onmouseover="xian(5)" onmouseout="yin()">2k</td>
+                        <td>12k</td>
+                    </tr>
+                    <tr>
+                        <td>软件工程</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>网络工程</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>信息安全</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>物联网工程</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>数字媒体技术</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>智能科学与技术</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>智能科学与技术</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+        <div class="con" id="three">
+            <div class="three_top">
+                
+            </div>
+            <div class="form3">
+                <table class="f_form3" id="stuRecordTable" border="1" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>专业名</td>
+                      <td>负责人</td>
+                      <td>课程数量</td>
+                      <td>学生数量</td>
+                      <td>师生比</td>
+                      <td>师生百分比</td>
+                      <td>编辑</td>
+                    </tr>
+                    <tr>
+                      <td>计算机科学与技术</td>
+                      <td>付浩然</td>
+                      <td>2</td>
+                      <td>400</td>
+                      <td>1/200</td>
+                      <td>0.50%</td>
+                      <td><input type="button" value="删除" class="del" />
+                        <input type="button" value="修改" class="update" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>软件工程</td>
+                      <td>胥又文</td>
+                      <td>3</td>
+                      <td>410</td>
+                      <td>3/410</td>
+                      <td>0.73%</td>
+                      <td><input type="button" value="删除" class="del" />
+                        <input type="button" value="修改" class="update" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <input type="button" value="添加" onclick="addRow()" />
+                      </td>
+                    </tr>
+                  </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="last">
+        <div class="bubble" id="big">
+            <a href="">未开设专业</a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="bubble">
+            <a href="">数字媒体技术</a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="bubble" id="x">
+            <a href="">空间信息与数字技术</a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="bubble">
+            <a href="">新媒体技术</a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="bubble">
+            <a href="">电影制作</a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="bubble">
+            <a href="">数字媒体技术</a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/select.js"></script>
+<script src="./js/画图.js"></script>
+<script src="./js/网页切换.js"></script>
+<script src="./js/增删改查.js"></script>

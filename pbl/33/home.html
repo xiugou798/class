@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+    a{text-decoration:none}
+    a:hover{text-decoration:none}
+    a{color:#000000;}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial;
+      padding: 10px;
+      background: #f1f1f1;
+    }
+
+    /* 头部标题 */
+    .header {
+      padding: 30px;
+      text-align: center;
+      background: white;
+    }
+
+    .header h1 {
+      font-size: 50px;
+    }
+
+    /* 导航条 */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    /* 导航条链接 */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /* 链接颜色修改 */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* 创建两列 */
+    /* Left column */
+    .leftcolumn {
+      float: left;
+      width: 15%;
+    }
+
+    /* 右侧栏 */
+    .rightcolumn {
+      float: left;
+      width: 85%;
+      background-color: #f1f1f1;
+      padding-left: 20px;
+    }
+
+    /* 图像部分 */
+    .fakeimg {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+    }
+
+    /* 文章卡片效果 */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* 列后面清除浮动 */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* 底部 */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+
+    /* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+    </style>
+
+</head>
+<body>
+<div class="topnav">
+    <a href="/">首页</a>
+    <a href="{% url 'tow:secondary' %}">关于HelloWorld</a>
+	<input type="text" style="height: 20px; width: 100px;">
+</div>
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+        <h4>Django的使用</h4>
+        <a href="http://127.0.0.1:8000{% url 'django' %}" rel='next' title="Django的创建方法">Django的创建方法</a>
+        <h4>render函数</h4>
+        <a href="http://127.0.0.1:8000/render/">render函数的使用方法</a>
+        <h4>图片的使用</h4>
+        <a href="http://127.0.0.1:8000{% url 'img' %}">web图片使用方式</a>
+        <h4>跨应用解析</h4>
+        <a href="http://127.0.0.1:8000/other_app_visit">跨应用的反向解析</a>
+        <h4>正则表达式</h4>
+        <a href="http://127.0.0.1:8000/regular_expression">正则表达式使用方法</a>
+        <h4>变量传参</h4>
+        <a href="http://127.0.0.1:8000/variable_name_through_method">变量传参方式</a>
+        </div>
+    </div>
+        <div class="rightcolumn">
+        <div class="card">
+            <h4>创建django项目方法</h4>
+            <a>1.在Windows终端先输入D:进入D盘，再使用django-admin startproject name (name为你创建的django项目名称)</a>
+            <a>2.进入项目启动服务器python manage.py runserver出现小火箭代表django项目创建成功</a>
+            <a>3然后使用python manage.py startapp name(name为你创建的应用名称)</a>
+        </div>
+    </div>
+</div>
+<div class="footer">
+  <h2>底部区域</h2>
+</div>
+</body>
+</html>

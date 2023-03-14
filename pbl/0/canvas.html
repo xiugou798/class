@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制扇形统计图</title>
+    <style>
+        canvas {
+            border: solid 1px #dddddd;
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<canvas width="600" height="400"></canvas>
+<button class="back">返回</button>
+<script>
+    $(function () {
+       $('.back').click(function () {
+           window.location.href = 'index.html';
+       });
+    });
+    /*绘制扇形统计图（面向对象的思维）
+     * 1.绘制扇形
+     * 2.绘制标题
+     *3. 绘制说明*/
+    var PieChart = function (ctx) {
+        //绘制工具
+        this.ctx = ctx || document.querySelector('canvas').getContext('2d');
+        //绘制饼图的中心;
+        this.w = this.ctx.canvas.width;
+        this.h = this.ctx.canvas.height;
+        this.x0 = this.w / 2 + 60;
+        this.y0 = this.h / 2;
+        //饼图半径
+        this.radius = 150;
+        //标题伸出距离圆心的距离
+        this.outline = 15;
+        //说明矩形的宽和高
+        this.rectW = 30;
+        this.rectH = 16;
+        this.space = 20;
+
+    };
+    PieChart.prototype.init = function (data) {
+        this.drawPie(data);
+    };
+    PieChart.prototype.drawPie = function (data) {
+        var that = this;
+        //将角度转化为弧度
+        var newData = this.transFormData(data);
+        //绘制饼状图
+        var startAngle = 0;
+        newData.forEach(function (item, i) {
+            var endAngle = startAngle + item.angle;
+            that.ctx.beginPath();
+            that.ctx.moveTo(that.x0, that.y0);
+            that.ctx.arc(that.x0, that.y0, that.radius, startAngle, endAngle);
+            //添加随机颜色
+            var color = that.ctx.fillStyle = that.getRandomColor();
+            that.ctx.fill();
+
+            //调用画标题的方法.
+            that.drawTitle(startAngle, item.angle, color, item.title);
+            //调用画说明的方法
+            that.drawDesc(i, item.title);
+
+
+            //将下一次的起始值设为本次绘画的结束值
+            startAngle = endAngle;
+
+
+        });
+
+
+    };
+    PieChart.prototype.drawTitle = function (startAngle, angle, color, text) {
+        /*需要先找到伸出点的坐标
+         * 1.计算出斜边相对于圆点的坐标*/
+        var edge = this.radius + this.outline;
+        var edgeX = edge * Math.cos(startAngle + angle / 2);
+        var edgeY = edge * Math.sin(startAngle + angle / 2);
+
+        //伸出点的坐标
+        var outX = this.x0 + edgeX;
+        var outY = this.y0 + edgeY;
+
+        //画线
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.x0, this.y0);
+        this.ctx.lineTo(outX, outY);
+        this.ctx.strokeStyle = color;
+        this.ctx.stroke();
+        //画底部线;
+        //字体大小
+        this.ctx.font = "14px Microsoft YaHei";
+        this.ctx.textBaseline = "bottom";
+        var textWidth = this.ctx.measureText(text).width;
+        if (outX > this.x0) {
+            this.ctx.textAlign = 'left';
+            this.ctx.lineTo(outX + textWidth, outY);
+        } else {
+            this.ctx.textAlign = 'right';
+            this.ctx.lineTo(outX - textWidth, outY);
+        }
+
+        this.ctx.stroke();
+        //画文字
+        this.ctx.fillText(text, outX, outY);
+
+
+    };
+    PieChart.prototype.drawDesc = function (index, title) {
+        /*画说明矩形*/
+        this.ctx.fillRect(this.space, this.space + index * (this.space + 10), this.rectW, this.rectH);
+        /*画说明内容*/
+        this.ctx.beginPath();
+        this.ctx.textAlign="left";
+        this.ctx.textBaseline='top';
+        this.ctx.fillText(title, this.space+this.rectW + 10, this.space + index * (this.space + 10));
+    };
+    //得到一个随机的颜色
+    PieChart.prototype.getRandomColor = function () {
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return 'rgb(' + r + ',' + g + ',' + b + ')';
+    };
+    //将数据的需要统计的数据转换成弧度，并返回该数据
+    PieChart.prototype.transFormData = function (data) {
+        var total = 0;
+        data.forEach(function (item, i) {
+            total += item.num;
+        });
+        //计算出角度并添加一个属性记录角度
+        data.forEach(function (item, i) {
+            var angle = item.num / total * Math.PI * 2;
+            item.angle = angle;
+        });
+        return data;
+    };
+    var data = [
+        {title: 'Java', num: 432},
+        {title: 'PHP', num: 200},
+        {title: 'C', num: 189},
+        {title: 'Python', num: 385},
+        {title: 'Go', num: 199}
+    ];
+    //实例化对象，并调用该对象的初始化方法
+    var pieChart = new PieChart();
+    pieChart.init(data);
+</script>
+</body>
+</html>

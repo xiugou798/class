@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>折线图</title>
+</head>
+<body>
+	<h2>折线图</h2>
+	<canvas id="mc" width="500" height="400" style="border:1px solid black"></canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById('mc');
+		var ctx=canvas.getContext('2d');
+		ctx.beginPath();
+		
+		//坐标轴
+		ctx.moveTo(30,20);
+		ctx.lineWidth="1";
+		ctx.lineTo(30,380);
+		ctx.lineTo(400,380);
+		//ctx.closePath();
+		
+ 
+		//横线
+		ctx.strokeStyle="#999";
+		for(var i=0;i<7;i++)
+		{
+			ctx.moveTo(30,30+50*i);
+			ctx.lineTo(400,30+50*i);
+		}
+		
+		//折线
+		ctx.moveTo(100,300);
+		ctx.lineTo(200,200);
+		ctx.lineTo(280,280);
+		ctx.lineTo(380,30);
+		ctx.stroke();
+	</script>
+ 
+ 
+</body>
+</html>
+ 

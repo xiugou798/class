@@ -1,0 +1,167 @@
+.hero{
+	height: 100vh;
+	background-image: url(../images/background.jpg);
+	background-size: cover;
+	}
+nav{
+	display: flex;
+	align-items: center;
+	padding-top: 15px;
+	position:fixed;
+	font-size: 25px;
+	z-index: 99;
+	background:#222;
+	width:100%;
+	justify-content: space-around;
+}
+canvas{
+	z-index:999;
+	border: 1px solid white;
+	border-radius: 50%;
+}
+.logo{
+	color: #00a6bc;
+	font-size: 35px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+nav ul li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 10px  25px;
+}
+nav ul li a{
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+nav ul li a:hover{
+	color: #00a6bc;
+	transition: .4s;
+}
+
+
+.content{
+	position: absolute;
+	width: 100%;
+	top: 150px;
+	left:100px;
+}
+
+.content h1{
+	color: #fca311;
+	margin-bottom: 25px;
+}
+.content h2{
+	color: #000000;
+	top: 80%;
+	left: 45%;
+	position: absolute;
+}
+
+h1{
+	color: #fff;
+	margin: 20px 0px 20px;
+	font-size: 75px;
+}
+h2{
+	color: #00a6bc;
+	font-size: 25px;
+	margin-bottom: 25px;
+}
+
+.about{
+	width: flex;
+	padding: 100px 0px;
+	background-color: #14213d;
+}
+.main{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.about img{
+	height: auto;
+	width: 300px;
+	border-radius: 50%;
+}
+.about-text{
+	width: 500px;
+}
+.about-text h2{
+	color: #fff;
+	font-size: 75px;
+}
+.about-text h5{
+	color: #fca311;
+	font-size: 30px;
+}
+.about-text p{
+	color: #ffffff;
+	font-size: 25px;
+	margin-bottom: 45px;
+}
+
+
+.service{
+	background: #e5e5e5;
+	width: 100%;
+
+}
+.box{
+	background: #ffc4a1;
+	min-height: 650px;
+}
+.box h2{
+	color: #cb8700;
+	font-size: 75px;
+}
+.box1{
+	background-image: url(../images/background2.jpg);
+	background-size:cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+}
+.button,.yi{
+	background-color: #e39400;
+	position: absolute;
+	top: 355%;
+	left: 30px;
+	font-size: 20px;
+	border-radius: 35%;
+}
+.button,.er {
+	background-color: #e39400;
+	position: absolute;
+	top: 355%;
+	left: 150px;
+	font-size: 20px;
+	border-radius: 35%;
+}
+.button,.san{
+	background-color: #e39400;
+	position: absolute;
+	top: 355%;
+	left: 270px;
+	font-size: 20px;
+	border-radius: 35%;
+}
+.button,.si{
+	background-color: #e39400;
+	position: absolute;
+	top: 355%;
+	left: 390px;
+	font-size: 20px;
+	border-radius: 35%;
+}
+.title{
+	background: #ffc4a1;
+	min-height: 650px;
+}
+.title h2{
+	color: #cb8700;
+	font-size: 75px;
+}

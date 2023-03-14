@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <style type="text/css">
+        a {
+            text-decoration: none;
+            color: black;
+        }
+ 
+        .nav {
+            background-color: steelblue;
+            height: 40px;
+            width: 80%;
+            border: 1px solid #f0ad4e;
+            border-radius: 5px;
+            margin: 0 auto;
+            padding-top: 1px;
+            padding-bottom: 3px;
+            box-shadow: 1px 1px 0 0 gray;
+        }
+ 
+        .dropdown {
+            list-style: none;
+            float: left;
+            margin-right: 5px;
+            display: block;
+            width: 15%;
+        }
+ 
+        .dropdown:hover {
+            background-color: white;
+            border-radius: 5px 5px 0 0;
+            padding-top: 5px;
+        }
+ 
+        .menubar {
+            color: white;
+        }
+ 
+        .dropdown:hover .menubar{
+            color: black;
+        }
+ 
+        .dropdown:hover .dropdown-menu {
+            border: 1px solid #f7ecb5;
+            border-radius: 5px;
+            padding: 5px;
+            width: 100%;
+            margin-top: 8px;
+        }
+ 
+        .dropdown:hover .dropdown-menu li {
+            list-style: none;
+            line-height: 30px;
+            display: block;
+        }
+ 
+        .dropdown-menu li {
+            display: none;
+            background-color: transparent;
+        }
+ 
+        .dropdown-menu > li:hover {
+            background-color: steelblue;
+        }
+ 
+        .dropdown-menu > li:hover a {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li class="dropdown">
+            <a href="#" class="menubar">数字媒体技术</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">数</a></li>
+                <li><a href="#">字</a></li>
+                <li><a href="#">媒</a></li>
+                <li><a href="#">体</a></li>
+                <li><a href="#">技</a></li>
+                <li><a href="#">术</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="menubar">智能科学与技术</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">数</a></li>
+                <li><a href="#">字</a></li>
+                <li><a href="#">媒</a></li>
+                <li><a href="#">体</a></li>
+                <li><a href="#">技</a></li>
+                <li><a href="#">术</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="menubar">空间信息与数字技术</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">数</a></li>
+                <li><a href="#">字</a></li>
+                <li><a href="#">媒</a></li>
+                <li><a href="#">体</a></li>
+                <li><a href="#">技</a></li>
+                <li><a href="#">术</a></li>
+            </ul>
+        </li>
+		<li class="dropdown">
+		    <a href="#" class="menubar">新媒体技术</a>
+		    <ul class="dropdown-menu">
+		        <li><a href="#">数</a></li>
+		        <li><a href="#">字</a></li>
+		        <li><a href="#">媒</a></li>
+		        <li><a href="#">体</a></li>
+		        <li><a href="#">技</a></li>
+		        <li><a href="#">术</a></li>
+		    </ul>
+		</li>
+		<li class="dropdown">
+		    <a href="#" class="menubar">电影制作</a>
+		    <ul class="dropdown-menu">
+		        <li><a href="#">教育部资料</a></li>
+		        <li><a href="4photo.html" target="box">相关产业信息</a></li>
+		    </ul>
+		</li>
+    </ul>
+</div>
+<div style="float:right;width:1400px;height:100%;">
+			<iframe  width="1350px" name="box" scrolling="no" style="border: 0;"></iframe>
+		</div>
+</body>
+</html>

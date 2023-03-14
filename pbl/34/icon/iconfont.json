@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "82753",
+      "name": "未选中圆圈",
+      "font_class": "weixuanzhongyuanquan",
+      "unicode": "f0129",
+      "unicode_decimal": 983337
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	width: 170px;
+}
+#div1{
+	top:90px;
+	left: 100px;
+	position: absolute;
+	border-radius: 6px;
+}
+input[type="button"]{
+	width: 30px;
+	margin-right: 5px;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	background-color: darkgrey;
+}
+input[type="text"]{
+	width:145px ;
+	text-align: right;
+	background-color: #fff;
+	border: 1px solid;
+	padding-right: 3px;
+	box-sizing:content-box;
+	border-radius: 6px;
+	
+}
+input[type="button"]:hover{
+	background-color: bisque;
+	border: 0px solid;
+}

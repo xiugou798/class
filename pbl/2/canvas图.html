@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			html,
+			body,
+			.tb {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+
+			.tb {
+
+				display: grid;
+				grid-definition-columns: 1fr 1fr 1fr 1fr;
+				/* 			grid-definition-rows: 1fr 1fr; */
+
+			}
+
+
+			canvas {
+				background-color: darksalmon;
+				border: 1px solid black;
+			}
+
+			.tu {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+
+				display: flex;
+				grid-definition-columns: 1fr 1fr 1fr 1fr;
+				text-align: center;
+				/* 水平方向居中 */
+				justify-content: center;
+				/* 弹性盒子当中横轴方向居中 */
+			}
+
+			a {
+				width: 0px;
+				height: 0px;
+
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="tu">
+
+			<div style="margin-right:2px;">
+				<div>
+					<canvas id="sx"></canvas>
+				</div>
+				<div>
+
+					<canvas id="zh"></canvas>
+				</div>
+			</div>
+			<div>
+				<div>
+
+					<canvas id="sd"></canvas>
+				</div>
+				<div>
+					<canvas id="zx"></canvas>
+				</div>
+			</div>
+			<a href='index.html' style="background-color: aqua;align-items: center;text-align: center;">
+				<button>点击返回</button>
+			</a>
+		</div>
+
+
+		<script type="text/javascript">
+			var sdxy = [{
+				x: 10,
+				y: 20
+			}, {
+				x: 40,
+				y: 40
+			}, {
+				x: 250,
+				y: 130
+			}, {
+				x: 280,
+				y: 10
+			}, {
+				x: 90,
+				y: 90
+			}, {
+				x: 200,
+				y: 50
+			}, {
+				x: 150,
+				y: 60
+			}]
+
+
+			var sd = document.getElementById("sd").getContext("2d");
+
+
+
+			for (let i = 0; i < sdxy.length - 1; i++) {
+				sd.beginPath();
+
+				sd.fillStyle = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+
+
+
+				sd.arc(sdxy[i].x, sdxy[i].y, 10, 0, Math.PI * 2, true);
+				let x = sdxy[i + 1].x;
+				let y = sdxy[i + 1].y;
+				sd.moveTo(x, y);
+				sd.fill();
+
+			}
+
+
+
+			var zht = [100, 130, 50, 70,90,50,150,90,150]
+			var zh = document.getElementById("zh").getContext("2d");
+
+			for (let i = 0; i < zht.length; i++) {
+				zh.fillStyle = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+
+				zh.fillRect(i * 30, 150 - zht[i], 30, zht[i]); //左上角x坐标，左上角y坐标，宽度，长度
+
+			}
+
+
+
+			var sxs = [100, 200, 50, 50]; //
+			var colors = ["red", "orange", "yellow", "blue"];
+			var fm = 0;
+			for (let i = 0; i < sxs.length; i++) {
+				fm = fm + sxs[i];
+			}
+
+			var sx = document.getElementById("sx").getContext("2d");
+
+			// sx.beginPath();
+			// sx.moveTo(150,75);
+			// sx.arc(150,75,75,0,Math.PI*0.25,false);
+			// sx.fill();
+			var beginange = 0
+			var endange = 0;
+			for (let i = 0; i < sxs.length; i++) {
+
+
+				endange = endange + sxs[i] / fm;
+
+
+				sx.beginPath();
+
+				sx.fillStyle = colors[i];
+
+
+
+
+				if (i == 2) {
+					sx.moveTo(152, 70); //移动到152，70
+					sx.arc(152, 70, 65, 2 * Math.PI * beginange, 2 * Math.PI * endange, false);
+					sx.lineTo(152, 70)
+				} else {
+
+					sx.moveTo(150, 75);
+					console.log(beginange)
+					console.log(endange)
+
+					sx.arc(150, 75, 65, 2 * Math.PI * beginange, 2 * Math.PI * endange, false);
+
+					sx.fill();
+
+					sx.lineTo(150, 75)
+
+				}
+
+
+
+
+
+
+				sx.strokeStyle = "black";
+				sx.stroke();
+
+
+
+				beginange = endange;
+
+
+				//	 endange = endange+beginange;
+
+
+				console.log("--------------------")
+
+			}
+
+
+
+			var zxxy = [{
+				x: 30,
+				y: 20
+			}, {
+				x: 60,
+				y: 40
+			}, {
+				x: 90,
+				y: 40
+			}, {
+				x: 120,
+				y: 90
+			}, {
+				x: 150,
+				y: 120
+			}, {
+				x: 180,
+				y: 90
+			}, {
+				x: 210,
+				y: 50
+			}, {
+				x: 240,
+				y: 30
+			}, {
+				x: 270,
+				y: 10
+			}]
+			var zx = document.getElementById("zx").getContext("2d");
+
+			for (let i = 0; i < zxxy.length - 1; i++) {
+				zx.beginPath();
+				zx.arc(zxxy[i].x, zxxy[i].y, 2, 0, Math.PI * 2, true);
+				let x = zxxy[i + 1].x;
+				let y = zxxy[i + 1].y;
+				zx.moveTo(x, y);
+				zx.fill();
+				console.log(i)
+				if (i == 0) {
+					zx.beginPath();
+					zx.moveTo(0, 0);
+					zx.lineTo(zxxy[i].x, zxxy[i].y);
+					zx.stroke();
+				} else {
+					/*上一个点*/
+					zx.beginPath();
+					zx.moveTo(zxxy[i - 1].x, zxxy[i - 1].y);
+					zx.lineTo(zxxy[i].x, zxxy[i].y);
+					zx.stroke();
+				}
+			}
+		</script>
+
+	</body>
+</html>

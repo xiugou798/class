@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/jsq.css">
+    <script>
+        function fund(a) {
+            var b = document.getElementById("xianshi");
+            b.value = b.value + a;
+        }
+        function shuanshu() {
+            var he = document.getElementById("xianshi").value;
+            document.getElementById("xianshi").value = eval(he);
+        }
+    </script>
+
+</head>
+
+<body style="background-color: rgb(239, 239, 239);">
+    <div id="fixedtoper" class="toper navbar-fixed-top">
+        <div class="nav">
+            <ul class="nav-l">
+                <li>首页</li>
+                <li>消息</li>
+                <li>动态</li>
+                <li>下载</li>
+                <li>会员中心</li>
+            </ul>
+        </div>
+        <div class="nav-tx">
+            <div id="nav-tx-img">
+                <img src="images/txjpg.jpg" alt="" width="50px" height="50px">
+            </div>
+            <div id="yc">
+                <div class="yc_mz">不想起名字</div>
+                <div class="yc_id"><span>weixin_12345</span></div>
+                <div class="yc_fsgz">
+                    <ul>
+                        <li><a href="">粉丝</a></li>
+                        <li><a href="">关注</a></li>
+                        <li><a href="">获赞</a></li>
+                    </ul>
+                </div>
+                <div class="hx"></div>
+                <div class="yc_cdl">
+                    <a href="">个人中心</a>
+                    <a href="">我的学习</a>
+                    <a href="">我的钱包</a>
+                    <a href="">退出登录</a>
+                </div>
+            </div>
+        </div>
+        <div class="search">
+            <div class="search_content">Web前端工程师</div>
+            <div class="search_img">
+                <img src="images/206搜索.png" alt="" width="20px" height="20px">
+            </div>
+        </div>
+    </div>
+    <div class="bgtp">
+        <img src="images/微信图片.jpg" alt="">
+    </div>
+    <div class="box_fff">
+        <div class="box">
+            <div>
+                <input id="xianshi" type="text" style="width: 506px;border-radius: 20px;" value="">
+            </div>
+            <div class="jisuan">
+                <div>
+                    <input onclick="fund(1)" type="button" value="1" style="border-radius: 20px;">
+                    <input onclick="fund(2)" type="button" value="2" style="border-radius: 20px;">
+                    <input onclick="fund(3)" type="button" value="3" style="border-radius: 20px;">
+                    <input onclick="fund('+')" type="button" value="+"
+                        style="background-color: rgb(234, 107, 26);border-radius: 20px;">
+                    <input onclick="fund(4)" type="button" value="4" style="border-radius: 20px;">
+                    <input onclick="fund(5)" type="button" value="5" style="border-radius: 20px;">
+                    <input onclick="fund(6)" type="button" value="6" style="border-radius: 20px;">
+                    <input onclick="fund('-')" type="button" value="-"
+                        style="background-color: rgb(234, 107, 26);border-radius: 20px;">
+                    <input onclick="fund(7)" type="button" value="7" style="border-radius: 20px;">
+                    <input onclick="fund(8)" type="button" value="8" style="border-radius: 20px;">
+                    <input onclick="fund(9)" type="button" value="9" style="border-radius: 20px;">
+                    <input onclick="fund('*')" type="button" value="*"
+                        style="background-color: rgb(234, 107, 26);border-radius: 20px;">
+                    <div>
+                        <input onclick="fund(0)" type="button" value="0" style="border-radius: 20px;">
+                        <input onclick="shuanshu()" type="button" value="="
+                            style="flex-grow:1;background-color: rgb(234, 107, 26);">
+                        <input onclick="fund('/')" type="button" value="/"
+                            style="background-color: rgb(234, 107, 26);border-radius: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

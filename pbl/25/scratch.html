@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>学科基础课程</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #e7e7e7;
+            background-image: linear-gradient(to right, #33d1f0 0%, #00abf0 100%);
+            position: fixed;
+            top: 0; /* bottom: 0;为固定在底部 */
+            width: 100%;
+        }
+
+        li {
+            float: left;
+            border-bottom: 1px solid #bbb; /* 添加分割线 */
+            height: 100%;
+        }
+
+        li a {
+            display: block;
+            color: #666;
+            text-align: center;
+            padding: 0;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            font-size: 36px;
+            line-height: 300%;
+
+        }
+
+        li a:hover { /*鼠标移动到选项上修改背景颜色 */
+            background-color: #00668f;
+        }
+
+        p {
+            font-size: 28px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 得意黑, serif;
+        }
+
+        .xkjs {
+            width: 100%;
+            height: 15%;
+            border-radius: 10px;
+            border: 1px solid #ffffff;
+            background-image: linear-gradient(to left, #FF6A6A 0%, #FFFACD 100%);
+            opacity: 0.85;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+            float: left;
+        }
+
+        /*国家标准课程推荐*/
+        .tj {
+            width: 10%;
+            height: 100%;
+            border-radius: 10px 0 0 10px;
+            border: 1px solid #ffffff;
+            background-image: linear-gradient(to left,  #BBFFFF 0%, #F0FFFF 100%);
+            opacity: 0.85;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+            float: left;
+        }
+
+        .zy {
+            width: 89%;
+            height: 100%;
+            border-radius: 0 10px 10px 0;
+            opacity: 0.85;
+            border: 1px solid #ffffff;
+            background-image: linear-gradient(to bottom, #F0FFFF 0%, #F0FFFF 50%, #33d1f0 100%);
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+            float: left;
+        }
+
+        table {
+            border: #333333 solid 1px;
+            width: 100%;
+            border-radius: 0 10px 10px 0;
+        }
+
+        th {
+            border: #333333 solid 1px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="xkjs">
+    <!--学科介绍-->
+    <p style="font-size: 28px;opacity: 0.7">
+        学科基础知识被视为专业类基础知识，培养学生计算思维、程序设计与实现、算法分析与设计、系统能力等专业基本能力，能够解决实际问题。</p>
+    <p style="font-size: 28px;opacity: 0.7">
+        建议教学内容覆盖以下知识领域的核心内容：程序设计、数据结构、计算机组成、操作系统、计算机网络、信息管理，包括核心概念、基本原理以及相关的基本技术和方法，并让学生了解学科发展历史和现状。</p>
+</div>
+<div class="tj">
+    <p style="margin: 10px;opacity: 0.85">核心课程推荐</p>
+    <ul style="position: relative">
+        <li style="width: 100%;height: 10% ;background-image: linear-gradient(to left, #FFFAFA 0%, #BBFFFF 100%);"><a href="实例1.html" target="1">实例1</a></li>
+        <li style="width: 100%;height: 10% ;background-image: linear-gradient(to left, #FFFAFA 0%, #BBFFFF 100%);"><a href="实例2.html" target="1">实例2</a></li>
+        <li style="width: 100%;height: 10% ;background-image: linear-gradient(to left, #FFFAFA 0%, #BBFFFF 100%);"><a href="实例3.html" target="1">实例3</a></li>
+    </ul>
+</div>
+<div class="zy">
+    <iframe src="./实例1.html" name="1"></iframe>
+</div>
+</body>
+</html>

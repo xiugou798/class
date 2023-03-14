@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>css-border-radius</title>
+		<style>
+			body,
+			html {
+				margin: 10px;
+				padding: 0;
+			}
+
+			.start {
+				display: flex;
+				
+			} 
+			.one {
+				width: 200px;
+				height: 200px;
+				border-radius:100% ;
+				border: 1px solid #000;
+				position: absolute;
+			}
+			.one1{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius:0 0 130% 0;
+				border-top: 0;
+				border-left: 0;
+			}
+			.one2{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius:0 130% 0 0;
+				border-bottom: 0;
+				border-left: 0;
+			}
+			.one3{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius:130% 0 0 0;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+				border-right: 0;
+				border-bottom: 0;
+			}
+			.one4{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius:0 0 0 130%;
+				position: absolute;
+				left: 100px;
+				top: 0;
+				border-top: 0;
+				border-right: 0;
+			}
+			.two {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius: 50% 50% 0 50%;
+			}
+			.x4{
+				display: flex;
+				position: relative;
+				left: 300px;
+			}
+			.two2 {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius: 50% 50% 50% 0;
+			}
+			.two3 {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius: 50% 0 50% 50%;
+			}
+			.two4 {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius: 0 50% 50% 50%;
+			}
+			.x3{
+				display: flex;
+				position: relative;
+				left: 400px;
+			}
+			.three{
+				width: 200px;
+				height: 200px;
+				border-radius: 100% 0 0 0;
+				border: 1px solid black;
+				border-right: 0;
+				border-bottom: 0;
+				position: relative;
+			}
+			.three1{
+				width: 200px;
+				height: 200px;
+				border-radius: 0 0 100% 0;
+				border: 1px solid black;
+				border-left: 0;
+				border-top: 0 ;
+				position: absolute;
+				left: 0px;
+			}
+			.three2{
+				width: 200px;
+				height: 200px;
+				border-radius: 0 100% 0 0;
+				border: 1px solid black;
+				border-left: 0;
+				border-bottom: 0;
+				position: absolute;
+				left: 0px;
+			}
+			.three3{
+				width: 200px;
+				height: 200px;
+				border-radius: 0 0 0 100%;
+				border: 1px solid black;
+				border-right: 0;
+				border-top: 0;
+				position: absolute;
+				left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="start">
+			<div class="x1">
+				<div class="one">
+					<div class="one1"></div>
+					<div class="one2"></div>
+					<div class="one3"></div>
+					<div class="one4"></div>
+				</div>
+			</div>
+			<div class="x2">
+				<div class="x4">
+					<div class="two"></div>
+					<div class="two2"></div>
+				</div>
+				<div class="x4">
+					<div class="two3"></div>
+					<div class="two4"></div>
+				</div>
+			</div>
+			<div class="x3">
+				<div class="three"></div>
+				<div class="three1"></div>
+				<div class="three2"></div>
+				<div class="three3"></div>
+			</div>
+		</div>
+	</body>
+</html>

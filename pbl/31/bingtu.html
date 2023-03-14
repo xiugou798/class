@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas width="600" height="400" ></canvas>
+<script>
+    var PieChart = function () {
+        this.ctx = document.querySelector("canvas").getContext("2d");
+        //获取画布的中心
+        this.x0 = this.ctx.canvas.width / 2 + 60;
+        this.y0 = this.ctx.canvas.height / 2;
+        //获取半径
+        this.radius = 150;
+        //标题伸出去的距离
+        this.outLine = 20;
+        //小矩形距横向间距
+        this.spaceX=10;
+        //小矩形距纵向间距
+        this.spaceY=20;
+        //小矩形的宽度
+        this.smallW=30;
+        //小矩形的宽度
+        this.smallH=15;
+    }
+    //初始化饼状图
+    PieChart.prototype.init = function () {
+        this.drawPie();
+    }
+    //添加饼图
+    PieChart.prototype.drawPie = function () {
+        //1、将数据转为弧度
+        var angleList = this.drawAngle();
+        var start = 0;//起始弧度
+        angleList.forEach(function (item, i) {
+            var end = item.angle + start;
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.x0, this.y0);
+            this.ctx.arc(this.x0, this.y0, this.radius, start, end);
+            this.ctx.fillStyle = this.randomColor();
+            this.ctx.fill();
+
+            //调用标的方法
+            this.drawTitle(start, item, this.ctx.fillStyle);
+
+            //调用画小矩形
+            this.drawInfo(i,item.title,this.ctx.fillStyle);
+
+            //记录上一个结束的弧度
+            start = end;
+        }.bind(this));
+    }
+    //添加标题
+    PieChart.prototype.drawTitle = function (start, item, color) {
+        //斜边的长度
+        var edge = this.radius + this.outLine;
+        //x轴方向的直角边
+        var edgeX = edge * Math.cos(start + item.angle / 2);
+        //y轴方向的直角边
+        var edgeY = edge * Math.sin(start + item.angle / 2);
+        //伸出去的横纵坐标
+        var outX = this.x0 + edgeX;
+        var outY = this.y0 + edgeY;
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.x0, this.y0);
+        this.ctx.lineTo(outX, outY);
+        this.ctx.strokeStyle = color;
+        this.ctx.stroke();
+
+        //添加字体
+        var align = outX > this.x0 ? "left" : "right";
+        this.ctx.font = "15px 微软雅黑";
+        this.ctx.textAlign = align;
+        this.ctx.textBaseline = "bottom";
+        this.ctx.fillStyle = color;
+        this.ctx.fillText(item.title, outX, outY);
+
+        //添加文字下面的线
+        var textW = this.ctx.measureText(item.title).width;
+        this.ctx.moveTo(outX, outY);
+        outX = outX > this.x0 ? outX + textW : outX - textW;
+        this.ctx.lineTo(outX, outY);
+        this.ctx.stroke();
+
+    }
+    //添加说明
+    PieChart.prototype.drawInfo = function (index,text,color) {
+        this.ctx.beginPath();
+        //画小矩形
+        this.ctx.fillRect(this.spaceX,this.spaceY*index+this.smallH,this.smallW,this.smallH);
+        //画文字
+        this.ctx.font = "12px 微软雅黑";
+        this.ctx.fillStyle = color;
+        this.ctx.textAlign="left";
+        this.ctx.fillText(text,this.spaceX*2+this.smallW,this.spaceY*index+this.smallH*2);
+    }
+    //添加转化弧度的方法
+    PieChart.prototype.drawAngle = function () {
+        //先获取数据的总和
+        var total = 0;
+        data.forEach(function (item, index) {
+            total += item.num;
+        });
+        //获取每条数据的弧度
+        data.forEach(function (item, index) {
+            var angle = item.num / total * Math.PI * 2;
+            item.angle = angle;
+        });
+        return data;
+    }
+    //随机颜色
+    PieChart.prototype.randomColor = function () {
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    //创建数据
+    var data = [
+        {title: "北京", num: 30},
+        {title: "上海", num: 240},
+        {title: "广州", num: 90},
+        
+    ];
+    
+    var pieChart = new PieChart();
+    pieChart.init();//初始化
+</script>
+</body>
+</html>

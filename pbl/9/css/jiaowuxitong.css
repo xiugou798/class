@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    margin: 30px auto;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px 1px rgba(128, 128, 128, 0.549);
+    /* border-radius: 3%; */
+    border: 1px solid rgba(128, 128, 128, 0.549);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    /* line-height: 30px; */
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
+a:hover {
+    color: rgb(255, 115, 0);
+    text-decoration: underline;
+}
+
+.box1,
+.box2 {
+    flex: 1;
+    display: flex;
+}
+
+.one {
+    width: 35%;
+}
+
+.two {
+    width: 65%;
+}
+#canva1,#canva2,#canva3,#canva4 {
+    position: absolute;
+    top: 33%;
+    left: 60%;
+}
+
+/* #qy,#gw,#jn,#rw {
+    cursor: pointer;
+} */
+
+.one,
+.two,
+.three,
+.four {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+table th,
+table td {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #fff;
+}
+
+table tbody,table thead tr {
+    background-color: rgb(230, 230, 230);
+}
+
+table td {
+    text-align: center;
+}
+
+.three {
+    width: 65%;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: rgb(255, 111, 0);
+    color: white;
+    border: none;
+    border-radius: 15%;
+    cursor: pointer;
+}
+
+#divaddjwxt,#divxgjwxt,#divcxjwxt {
+    position: absolute;
+    z-index: 1;
+    top: 680px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 500px;
+    height: 320px;
+    margin: auto;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px 50px;
+}
+
+#divaddjwxt h2,#divxgjwxt h2,#divcxjwxt h2 {
+    margin-bottom: 30px;
+}
+
+#divaddjwxt p,#divxgjwxt p,#divcxjwxt p {
+    margin-top: 10px;
+}
+
+#zhezhao {
+    position: absolute;
+    top: 380px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.four {
+    width: 35%;
+}
+
+#ds_xs {
+    position: absolute;
+    bottom: -50px;
+    left: 910px;
+    width: 120px;
+    height: 70px;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
+}
+
+#ds_xs2 {
+    position: absolute;
+    bottom: -150px;
+    left: 63%;
+    width: 30%;
+    background-color: rgba(220, 220, 220, 0.877);
+}
+
+.gzzy,
+.cysjtj,
+.bxzy,
+.zyxi_wks {
+    color: rgb(255, 111, 0);
+}
+
+.gzzy,
+.cysjtj,
+.bxzy {
+    padding-bottom: 0px;
+}
+
+.zyxi_wks {
+    padding-bottom: 35px;
+}
+.ck {
+    background-color: rgb(230, 230, 230);
+    color: #2e2e2e;
+}

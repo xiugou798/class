@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			html,
+			body,
+			.tb {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+
+			.tb {
+
+				display: grid;
+				grid-definition-columns: 1fr 1fr 1fr 1fr;
+				/* 			grid-definition-rows: 1fr 1fr; */
+
+			}
+
+			.tb>div {
+				border: 1px solid #000;
+			}
+
+			canvas {
+				background-color: darksalmon;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="tb">
+				<canvas id="sd"></canvas>
+			</div>
+			
+		</div>
+
+		<script type="text/javascript">
+			var sdxy = [{
+				x: 10,
+				y: 20
+			}, {
+				x: 40,
+				y: 40
+			}, {
+				x: 280,
+				y: 140
+			}, {
+				x: 280,
+				y: 10
+			}, {
+				x: 60,
+				y: 60
+			},{
+				x:0,
+				y:0
+			}]
+
+
+			var sd = document.getElementById("sd").getContext("2d");
+
+
+
+			for (let i = 0; i < sdxy.length - 1; i++) {
+				sd.beginPath();
+
+				sd.fillStyle = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+
+
+
+				sd.arc(sdxy[i].x, sdxy[i].y, 10, 0, Math.PI * 2, true);
+				let x = sdxy[i + 1].x;
+				let y = sdxy[i + 1].y;
+				sd.moveTo(x, y);
+				sd.fill();
+
+			}
+
+		</script>
+
+	</body>
+</html>

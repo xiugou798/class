@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.right_details_selfdate {
+				position: relative;
+				width: 100%;
+				height: auto;
+				display: inline-block;
+			}
+			
+			.right_details_selfkill {
+				top: 30px;
+				padding: 10px;
+				position: relative;
+				width: 100%;
+				height: auto;
+				display: inline-block;
+			}
+			
+			.right_details_selfdate_conment {
+				position: relative;
+				width: 70%;
+				height: 100%;
+			
+			}
+			
+			.right_details_selfdate_jiesao {
+				position: absolute;
+				width: 25%;
+				height: auto;
+				left: 74%;
+				top: 20px;
+				background-color: #ddd;
+				text-align: center;
+				border-radius: 5px;
+			}
+			.right_details_selfdate_jiesao:hover{
+				transform: scale(1.05);
+				box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.1);
+				transition-duration: .15s;
+			}
+			.bimg {
+				width: 100%;
+				column-count: 3;
+				column-gap: 20px;
+				column-rule: 2px;
+			}
+			.card {
+			  background-color: white;
+			  padding: 20px;
+			  width: 80%;
+			  height: 400px;
+			  border-radius: 10px;
+			}
+			.card:hover{
+				transform: scale(1.05);
+				box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
+				opacity: 0.7;
+				color: lightpink;
+				transition-duration: .15s;
+			}
+			.card h1{
+				text-align: center;
+			}
+			.right_details_selfdate_conment ul {
+				list-style-type: circle;
+				display: inline-block;
+				font-size: 17px;
+			}
+			#suanfa{
+				
+			}
+			#date_ku{
+				
+			}
+			#zidonghua{
+				
+			}
+			.mostly-customized-scrollbar::-webkit-scrollbar {
+			  width: 5px;
+			  height: 8px;
+			  background-color: #aaa; /* or add it to the track */
+			}
+			
+			/* Add a thumb */
+			.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+			  background: #000;
+			}
+		</style>
+		<script>
+			function card_tiaozhuan(data){
+				var dic = {"suanfa":"算法.html", "date_ku":"数据库.html", "zidonghua":"自动化测试.html"};
+				console.log(dic[data.id]);
+				var s = dic[data.id];
+				window.location.href = "http://127.0.0.1:8848/web_self/"+s;
+			}
+		</script>
+	</head>
+	<body style="overflow:scroll;overflow-x:hidden;" class="mostly-customized-scrollbar">
+		<div class="right_details_selfdate">
+			<div class="right_details_selfdate_jiesao">
+				<p>  借大梦人间一春秋</p>					
+				<p>  别后可认我眼眸</p>
+				<p>  画不完爱恨情仇</p>
+				<p>  痴怨旧恨如星宿</p>
+				<p>  寥寥人间走一走</p>
+				<p>  携壶相思酿做酒</p>
+				<p>  容颜易换 心依旧</p>
+				<p>  独我白头</p>
+				<p>  虚梦中 依稀眼眸</p>
+				<p>  几番更迭 颠沛过心舟</p>
+				<audio controls="controls" style="width: 90%;">
+				  <source src="i/旧颜.flac" type="audio/mp3" />
+				</audio>
+			</div>
+			<div class="right_details_selfdate_conment">
+				<hr/>
+				<h2 style="left: 5px;"><img src="img/个人信息.png" style="width: 20px;height: 20px;"/>	个人介绍</h2>
+				<hr />
+				<ul>
+					<li>姓名:刘江萍</li>
+					<li>性别:男</li>
+					<li>年龄:20</li>
+					<li>学历:在校大学生</li>
+				</ul>
+				<ul>
+					<li>爱好:游戏、各种游戏</li>
+					<li>学校:电子科技大学成都学院</li>
+					<li>座右铭:混吃等死</li>
+					<li>邮箱:liumengxuchun@qq.com</li>
+				</ul>
+				<ul>
+					<li style="top: 0px;">歌曲右边:旧颜,秋殇别恋</li>
+				</ul>
+				<hr />
+				<h2><img src="img/编辑.png" style="width: 20px;height: 20px;"/>	我的一些话</h2>
+				<hr />
+				<ul>
+					<li>前端真难学</li>
+					<li>自闭人士</li>
+					<li>莫得情商</li>
+					<li>想要变强的菜狗</li>
+					<li>各位手下留情</li>
+				</ul>
+			</div>
+		</div>
+			<div class="right_details_selfkill">
+				<div class="bimg">
+					<!-- 点击card,跳转到学习界面 -->
+					<div id="suanfa" class="card" onclick="card_tiaozhuan(this)">
+						<h1><img src="img/算法.png" style="width: 30px;height: 30px;"/> 	算法</h1>
+						<ul>
+							<li>递归</li>
+							<li>回溯</li>
+							<li>排序</li>
+						</ul>
+					</div>
+					<div id="date_ku" class="card" onclick="card_tiaozhuan(this)">
+						<h1><img src="img/数据库.png" style="width: 25px;height: 25px;"/>	数据库</h1>
+						<ul>
+							<li>欸,还没开始呢</li>
+							<li>伪分布的搭建</li>
+							<li>环境准备</li>
+						</ul>
+					</div>
+					<div id="zidonghua" class="card" onclick="card_tiaozhuan(this)">
+						<h1><img src="img/自动化测试.png" style="width: 25px;height: 25px;"/>	自动化测试</h1>
+						<ul>
+							<li>这个简单,but无聊</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

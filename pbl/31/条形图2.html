@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<script>
+			var canvas = document.getElementById('canvas')
+			canvas.width = '1000';
+			canvas.height = '300';
+			var ctx = canvas.getContext('2d');
+			var x0 = 30,
+				y0 = 280,
+				x1 = 800,
+				y1 = 30,
+				dis = 30;
+			draw();
+
+			function draw() {
+				ctx.beginPath();
+				ctx.lineWidth = 1;
+				ctx.moveTo(x0, y1);
+				ctx.lineTo(x0, y0);
+				ctx.lineTo(x1, y0);
+				ctx.stroke();
+			}
+			var yDis = y0 - y1;
+			var n = 1;
+			ctx.fillText(0, x0 - 20, y0); //x,y轴原点显示0
+
+			var xDis = 30, //设定柱子之前的间距
+				width = 40; //设定每个柱子的宽度
+			//绘制柱状和在顶部显示值
+			for (var i = 0; i < 10; i++) { //假设有8个月
+				ctx.beginPath();
+				var color = '#' + Math.random().toString(16).substr(2, 6).toUpperCase(); //随机颜色
+				ctx.fillStyle = color;
+				ctx.font = "13px scans-serif"; //设置字体
+				ctx.fillText("词频", 20, 30);
+				ctx.fillText("技能", 800, 280);
+				var height = Math.round(Math.random() * 220 + 20); //在一定范围内随机高度
+				var rectX = x0 + (width + xDis) * i, //柱子的x位置
+					rectY = height; //柱子的y位置
+				ctx.fillRect(rectX, y0, width, -height); //绘制一个柱状
+
+			}
+			
+		</script>
+	</body>
+</html>

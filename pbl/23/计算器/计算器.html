@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <link rel="stylesheet" href="./计算器.css">
+    <script>
+        const fh = ['+','-','*','/'],
+              opmap = {'(':0,'+':1,'-':1,'*':2,'/':2}
+        function suffix(s){
+            let op = [],ans = [];
+            let opi = -1,ani = -1,isPrenum = false,preGrade = 0;
+            for (let i=0;i<s.length;i++){
+                if (s[i]>='0' && isPrenum){
+                    ans[ani] = ans[ani] + s[i]
+                }else if(s[i]>='0'){
+                    isPrenum = true
+                    ans[++ani] = s[i]
+                }else{  // 字符
+                    isPrenum = false
+                    if (s[i] == '(' || opi == -1){
+                        op[++opi] = s[i]
+                    }else{
+                        if (s[i] == ')'){
+                            // 一直弹出op中的符号元素，直到遇到(
+                            while (op[opi] != '('){
+                                ans[++ani] = op[opi--]
+                            }
+                            opi--
+                        }else{
+                            // +-*/
+                            while(true){
+                                let preGrade = opmap[op[opi]]
+                                let grade = opmap[s[i]]
+                                console.log(grade)
+                                if (grade>preGrade){
+                                    op[++opi] = s[i]
+                                    break
+                                }else{
+                                    ans[++ani] = op[opi--]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            while (opi != -1){
+                ans[++ani] = op[opi--]
+            }
+            return ans
+        }
+        function getAns(sList){
+            let res;
+            let index = -1;
+            let num = [];
+            // res = eval(s)
+            for (let i=0;i<sList.length;i++){
+                if ('0'<=sList[i] && sList[i]<='9'){
+                    num[++index] = parseInt(sList[i]);  // 是数字就进栈
+                }else{ // 符号
+                    let num1 = num[index--];
+                    let num2 = num[index--];
+                    if (sList[i] == "-"){
+                        res = num2 - num1;
+                        num[++index] = res;
+                    }else if (sList[i] == '+'){
+                        res = num2 + num1;
+                        num[++index] = res;
+
+                    }else if (sList[i] == '*'){
+                        res = num2 * num1;
+                        num[++index] = res;
+
+                    }else if (sList[i] == '/'){
+                        res = num2 / num1;
+                        num[++index] = res;
+                    }else if (sList[i] == '%'){
+                        res = num2 % num1;
+                        num[++index] = res;
+                    }
+                }
+            }
+            return num[index]
+        }
+        function getVal(e){
+            const top = document.getElementById('top'),
+                  text = top.innerHTML;
+            
+            let input = e.innerHTML;
+            if (!('0'<text.charAt(-1)<'9') && fh.indexOf(text.slice(-1)) != -1){
+                top.innerHTML = text.slice(0,-1) + input
+            }else{
+                if (input == "="){
+                    top.innerHTML = getAns(suffix(text))
+                }else if(input == "C"){
+                    top.innerHTML = ''
+                }else{
+                    top.innerHTML += input;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="contain">
+        <div class="top" id="top"></div>
+        <div class="op">
+            <div class="num" onclick="getVal(this)">C</div>
+            <div class="num" onclick="getVal(this)" style="margin: 0 5px;">%</div>
+            <div class="num" onclick="getVal(this)">(</div>
+            <div class="num padding-left-5" onclick="getVal(this)">)</div>
+            <div class="num" onclick="getVal(this)">1</div>
+            <div class="num" onclick="getVal(this)" style="margin: 0 5px;">2</div>
+            <div class="num" onclick="getVal(this)">3</div>
+            <div class="num padding-left-5" onclick="getVal(this)">+</div>
+            <div class="num" onclick="getVal(this)">4</div>
+            <div class="num" onclick="getVal(this)" style="margin: 0 5px;">5</div>
+            <div class="num" onclick="getVal(this)">6</div>
+            <div class="num padding-left-5" onclick="getVal(this)">-</div>
+            <div class="num" onclick="getVal(this)">7</div>
+            <div class="num" onclick="getVal(this)" style="margin: 0 5px;">8</div>
+            <div class="num" onclick="getVal(this)">9</div>
+            <div class="num padding-left-5" onclick="getVal(this)">*</div>
+            <div class="num" onclick="getVal(this)">0</div>
+            <div class="num" onclick="getVal(this)" style="margin: 0 5px;">.</div>
+            <div class="num" onclick="getVal(this)">=</div>
+            <div class="num padding-left-5" onclick="getVal(this)">/</div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

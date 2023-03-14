@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.bg {
+				width: 800px;
+				height: 740px;
+				border: 1px solid #000000;
+				position: absolute;
+				
+			}
+
+			.one,
+			.two,
+			.three {
+				width: 250px;
+				height: 740px;
+				position: absolute;
+				/*脱离文本流  绝对定位*/
+				border: 1px solid #000000;
+				border-top-width: 0px;
+				border-bottom-width: 0px;
+				overflow: hidden;
+			}
+
+			.two {
+				left: 275px;
+			}
+
+			.three {
+				right: 0;
+			}
+
+			.xhr_body {
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				/*rgb(a,b,c)颜色*/
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/30px 30px 0 0;
+				overflow: hidden;
+				animation: hair 0.5s infinite;
+			}
+
+			.yj_wai {
+				/*眼睛外圈*/
+				height: 280px;
+				width: 280px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				top: 90px;
+				border: 1px solid #000000;
+				animation: hair 0.5s infinite;
+			}
+
+			.yj_li {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				height: 220px;
+				width: 220px;
+				border-radius: 50%;
+				background-color: #fde174;
+				border: 1px solid #000;
+				animation: hair 0.5s infinite;
+			}
+
+			.yj_bai {
+				/*眼白*/
+				height: 160px;
+				width: 220px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 30px;
+				animation: hair 0.5s infinite;
+			}
+
+			.yj_hei {
+				/*眼黑*/
+
+				width: 90px;
+				height: 90px;
+				background-color: #8c5342;
+				border-radius: 50%;
+				border: 1px solid #000;
+				position: absolute;
+				left: 65px;
+				top: 30px;
+				animation: hair 0.5s infinite;
+				/*动画调用*/
+				transform-origin: center bottom;
+				/*旋转中心点*/
+			}
+
+			/*.yy{
+            	width: 90px;
+            	height: 90px;
+            	margin: 50px;
+            	background-color: #fde174;
+            	box-shadow: 90px 0px 0 20px #000;
+			}*/
+			.gl {
+				/*光亮*/
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				box-shadow: 20px 20px 0 20px #000;
+			}
+
+			.zb,
+			.yh {
+				/*嘴巴*/
+				width: 150px;
+				height: 70px;
+				border-radius: 50%;
+				background-color: #000;
+				position: absolute;
+				bottom: 220px;
+				left: 42px;
+				overflow: hidden;
+				animation: hair 1s ease-in infinite;
+			}
+
+			.yh {
+				position: absolute;
+				background-color: #fde174;
+				bottom: 200px;
+				width: 195px;
+				height: 63px;
+				left: 35px;
+				animation: hair 0.5s infinite;
+
+			}
+
+			.yc1 {
+				/*牙齿*/
+				width: 54px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				left: 30px;
+				top: -40px;
+				border-radius: 10px;
+				animation: hair 0.5s infinite;
+			}
+
+			.yc2 {
+				width: 54px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				right: 10px;
+				top: -35px;
+				border-radius: 10px;
+				animation: hair 0.5s infinite;
+			}
+
+			.yc7 {
+				width: 54px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				right: -10px;
+				bottom: -8px;
+				border-radius: 10px;
+				animation: hair 0.5s infinite;
+			}
+
+			.yc8 {
+				width: 54px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				left: -10px;
+				bottom: -13px;
+				border-radius: 10px;
+				animation: hair 0.5s infinite;
+			}
+
+			.yf {
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+
+			}
+
+			.yf div {
+				/*衣服*/
+				width: 250px;
+				height: 50px;
+				background-color: #000;
+				animation: hair 0.5s infinite;
+			}
+
+			.yf div:nth-child(2n+1) {
+				background-color: rgb(225, 225, 217);
+			}
+
+			.kd {
+				/*口袋*/
+				width: 120px;
+				height: 90px;
+				border-color: gray;
+				border: 4px double gray;
+				position: absolute;
+				bottom: 65px;
+				right: 60px;
+				border-radius: 0 0 50% 50%;
+				opacity: 0.5;
+				animation: hair 0.5s infinite;
+			}
+
+			.xhr_bodyleft {
+				width: 373px;
+				height: 200px;
+				background-color: #FDE174;
+				position: absolute;
+				top: 60px;
+				left: 0px;
+				border-radius: 50%;
+				animation: hair 0.5s infinite;
+
+
+			}
+
+			.xhr_bodyleft1 {
+				position: absolute;
+				width: 255px;
+				height: 520px;
+				background-color: #FDE174;
+				border-radius: 0;
+				bottom: 0px;
+				top: 231px;
+				animation: hair 0.5s infinite;
+
+			}
+
+			.zb2,
+			.zb3 {
+				position: absolute;
+				background-color: #FDE174;
+				height: 63px;
+				width: 89px;
+				border: 5px solid #8c5342;
+				border-radius: 50%;
+				left: 80px;
+				bottom: 250px;
+				animation: hair 0.5s infinite;
+			}
+
+			.zb3 {
+				position: absolute;
+				width: 120px;
+				height: 45px;
+				left: 63px;
+				border: 5px solid #FDE174;
+				border-radius: 50%;
+				background-color: #FDE174;
+				animation: hair 0.5s infinite;
+
+			}
+
+			.yj_wai1 {
+				position: absolute;
+				width: 190px;
+				height: 190px;
+				border-radius: 50%;
+				background-color: rgb(225, 225, 217);
+				top: -90px;
+				left: -20px;
+				border: 1px solid #000000;
+				animation: hair 0.5s infinite;
+
+			}
+
+			.yj_wai2 {
+				position: absolute;
+				width: 190px;
+				height: 190px;
+				border-radius: 50%;
+				background-color: rgb(225, 225, 217);
+				top: -90px;
+				right: -70px;
+				border: 1px solid #000000;
+				border-left-width: 0;
+				animation: hair 0.5s infinite;
+			}
+
+			.yj_li1 {
+				position: absolute;
+				top: 30px;
+				left: 20px;
+				width: 130px;
+				height: 130px;
+				border-radius: 50%;
+				background-color: #FDE174;
+				border: 1px solid #000000;
+				animation: hair 0.5s infinite;
+
+			}
+
+			.yj_li2 {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				width: 130px;
+				height: 130px;
+				border-radius: 50%;
+				background-color: #FDE174;
+				border: 1px solid #000000;
+
+			}
+
+			.yj_bai1 {
+				position: absolute;
+				width: 130px;
+				height: 65px;
+				top: 70px;
+				left: 0px;
+				border-radius: 0 0 65px 65px;
+				background-color: white;
+				border: 1px solid #000000;
+			}
+
+			.yj_bai2 {
+				position: absolute;
+				width: 130px;
+				height: 65px;
+				top: 70px;
+				right: 0px;
+				border-radius: 0 0 65px 65px;
+				background-color: white;
+				border: 1px solid #000000;
+
+			}
+
+			.yj_hei1 {
+				position: absolute;
+				left: 40px;
+				top: 0px;
+				width: 50px;
+				height: 25px;
+				background-color: #8c5342;
+				border-radius: 0 0 25px 25px;
+				border: 1px solid #000000;
+				animation: hair 0.5s infinite;
+				/*动画调用*/
+				transform-origin: center bottom;
+				/*旋转中心点*/
+
+
+
+			}
+
+			.yj_hei2 {
+				position: absolute;
+				right: 42px;
+				top: 0px;
+				width: 50px;
+				height: 25px;
+				background-color: #8c5342;
+				border-radius: 0 0 25px 25px;
+				border: 1px solid #000000;
+				animation: hair 0.5s infinite;
+				/*动画调用*/
+				transform-origin: center bottom;
+				/*旋转中心点*/
+			}
+
+			.gl1 {
+				position: absolute;
+				top: 0px;
+				left: 15px;
+				width: 10px;
+				height: 5px;
+				background-color: white;
+				border-radius: 0 0 5px 5px;
+				box-shadow: 5px 5px 0px 5px #000000;
+			}
+
+			.gl2 {
+				position: absolute;
+				top: 0px;
+				right: 20px;
+				width: 10px;
+				height: 5px;
+				background-color: white;
+				border-radius: 0 0 5px 5px;
+				box-shadow: 5px 5px 0px 5px #000000;
+			}
+
+			.xhr_bodyright {
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/50px 50px 0 0;
+				overflow: hidden;
+				animation: hair 0.5s infinite;
+
+
+			}
+
+			.yj_wai3 {
+				height: 200px;
+				width: 200px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -25px;
+				bottom: 420px;
+				border: 1px solid #000000;
+
+			}
+
+			.yj_wai4 {
+				height: 200px;
+				width: 200px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				right: -90px;
+				bottom: 420px;
+				border: 1px solid #000000;
+				border-left-width: 0;
+			}
+
+			.yj_li3 {
+				position: absolute;
+				top: 30px;
+				left: 20px;
+				width: 140px;
+				height: 140px;
+				border-radius: 50%;
+				background-color: #FDE174;
+				border: 1px solid #000000;
+				overflow: hidden;
+			}
+
+			.yj_li4 {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				width: 140px;
+				height: 140px;
+				border-radius: 50%;
+				background-color: #FDE174;
+				border: 1px solid #000000;
+				overflow: hidden;
+			}
+
+			.yj_bai3 {
+				position: absolute;
+				width: 140px;
+				height: 70px;
+				top: 15px;
+				left: 0px;
+				border-radius: 70px 70px 0 0;
+				border: 1px solid #000000;
+				background-color: white;
+				overflow: hidden;
+
+			}
+
+			.yj_bai4 {
+				position: absolute;
+				width: 140px;
+				height: 70px;
+				top: 15px;
+				left: -10px;
+				border-radius: 70px 70px 0 0;
+				border: 1px solid #000000;
+				background-color: white;
+				overflow: hidden;
+
+			}
+
+			.yj_hei3 {
+				position: absolute;
+				left: -10px;
+				top: 25px;
+				width: 40px;
+				height: 70px;
+				background-color: #8c5342;
+				border-radius: 100%;
+				border: 1px solid #000000;
+				overflow: hidden;
+				animation: hair 0.5s infinite;
+				/*动画调用*/
+				transform-origin: center bottom;
+				/*旋转中心点*/
+
+
+			}
+
+			.yj_hei4 {
+				position: absolute;
+				left: 5px;
+				top: 25px;
+				width: 40px;
+				height: 70px;
+				background-color: #8c5342;
+				border-radius: 100%;
+				border: 1px solid #000000;
+                animation: hair 0.5s infinite;
+                /*动画调用*/
+                transform-origin: center bottom;
+                /*旋转中心点*/
+			}
+
+			.gl3 {
+				position: absolute;
+				top: 20px;
+				left: 15px;
+				width: 8px;
+				height: 8px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: 0px 20px 20px 20px #000000;
+				animation: hair 0.5s  infinite;
+				transform-origin: center bottom;
+			}
+
+			.gl4 {
+				position: absolute;
+				top: 20px;
+				left: 5px;
+				width: 8px;
+				height: 8px;
+				background-color: white;
+				border-radius: 50%;
+				box-shadow: 5px 5px 10px 10px #000000;
+				animation: hair 0.5s  infinite;
+			}
+
+			.zb4,
+			.zb5 {
+				position: absolute;
+				background-color: #000000;
+				bottom: 270px;
+				height: 60px;
+				width: 120px;
+				right: -5px;
+				border-radius: 100%;
+				position: absolute;
+				overflow: hidden;
+				animation: hair 0.5s  infinite;
+			}
+
+			.zb5 {
+				position: absolute;
+				bottom: 300px;
+				right: 10px;
+				width: 170px;
+				height: 75px;
+				border-radius: 100%;
+				background-color: #FDE174;
+				animation: hair 0.5s  infinite;
+
+			}
+
+			.yc3 {
+				width: 44px;
+				height: 44px;
+				background-color: white;
+				position: absolute;
+				left: -8px;
+				top: 0px;
+				border-radius: 10px;
+				animation: hair 0.5s  infinite;
+			}
+
+			.yc4 {
+				width: 44px;
+				height: 44px;
+				background-color: white;
+				position: absolute;
+				right: -10px;
+				top: -15px;
+				border-radius: 10px;
+				animation: hair 0.5s  infinite;
+			}
+
+			.yc5 {
+				width: 44px;
+				height: 44px;
+				background-color: white;
+				position: absolute;
+				right: 25px;
+				bottom: -30px;
+				border-radius: 10px;
+				animation: hair 0.5s  infinite;
+			}
+
+			.yc6 {
+				width: 47px;
+				height: 44px;
+				background-color: white;
+				position: absolute;
+				right: 35px;
+				top: 0;
+				border-radius: 10px;
+				animation: hair 0.5s  infinite;
+			}
+
+			.tf1,
+			.tf2,
+			.tf3 {
+				top: 0px;
+				width: 100px;
+				height: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s  infinite;
+			}
+
+			.tf2 {
+				top: 15px;
+				width: 100px;
+				height: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s  infinite;
+
+			}
+
+			.tf3 {
+				/*border:1px solid #005500;*/
+				right: 50px;
+				transform: skew(20deg);
+				animation: hair 0.5s  infinite;
+
+			}
+
+			.tf4,
+			.tf5,
+			.tf6 {
+				top: 30px;
+				width: 60px;
+				height: 80px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s  infinite;
+			}
+
+			.tf5 {
+				top: 20px;
+				width: 100px;
+				height: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s  infinite;
+
+			}
+
+			.tf6 {
+				right: 50px;
+				transform: skew(20deg);
+				animation: hair 0.5s  infinite;
+			}
+
+			.tf7 .tf8 .tf9 {
+				top: 0px;
+				width: 60px;
+				height: 80px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s  infinite;
+			}
+			
+
+			.tf8 {
+				top: 20px;
+				width: 100px;
+				height: 100px;
+				border-top: 5px solid #000;
+				border-radius: 50%;
+				position: absolute;
+				animation: hair 0.5s  infinite;
+
+			}
+
+			.tf9 {
+				right: 80px;
+				transform: skew(20deg);
+				animation: hair 0.5s  infinite;
+			}
+
+
+			/*动画效果定义*/
+			@keyframes hair {
+
+				0% {
+					transform: rotate(-6deg);
+				}
+
+				50% {
+					transform: rotate(6deg);
+				}
+
+				100% {
+					transform: rotate(-6deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bg">
+			<div class="one">
+				<div class="tf4"></div>
+				<div class="tf5"></div>
+				<div class="tf6"></div>
+				<div class="yy"></div>
+				<div class="xhr_bodyleft"></div>
+				<div class="xhr_bodyleft1">
+					<div class="yj_wai1">
+						<div class="yj_li1">
+							<div class="yj_bai1">
+								<div class="yj_hei1">
+									<div class="gl1"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="yj_wai2">
+						<div class="yj_li2">
+							<div class="yj_bai2">
+								<div class="yj_hei2">
+									<div class="gl2"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="yf">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="zb2"></div>
+					<div class="zb3"></div>
+					<div class="kd"></div>
+				</div>
+
+			</div>
+
+			<div class="two">
+				<div class="tf1"></div>
+				<div class="tf2"></div>
+				<div class="tf3"></div>
+				<div class="xhr_body">
+					<div class="yf">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="kd"></div>
+
+					<div class="yj_wai">
+						<div class="yj_li">
+							<div class="yj_bai">
+								<div class="yj_hei">
+									<div class="gl"></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zb">
+						<div class="yc1"></div>
+						<div class="yc2"></div>
+						<div class="yc7"></div>
+						<div class="yc8"></div>
+					</div>
+					<div class="yh"></div>
+				</div>
+			</div>
+
+			<div class="three">
+				<div class="tf7"></div>
+				<div class="tf8"></div>
+				<div class="tf9"></div>
+				<div class="xhr_bodyright">
+					<div class="zb4">
+						<div class="yc3"></div>
+						<div class="yc4"></div>
+						<div class="yc5"></div>
+						<div class="yc6"></div>
+					</div>
+					<div class="zb5"></div>
+					<div class="yf">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="kd"></div>
+					<div class="yj_wai3">
+						<div class="yj_li3">
+							<div class="yj_bai3">
+								<div class="yj_hei3">
+									<div class="gl3"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="yj_wai4">
+						<div class="yj_li4">
+							<div class="yj_bai4">
+								<div class="yj_hei4">
+									<div class="gl4"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面</title>
+    <link rel="stylesheet" href="D:\前端\css\bootstrap.min.css" type="text/css">
+    <script src="D:\前端\js\jquery-1.12.4.min.js"></script>
+    <script src="D:\前端\js\bootstrap.min.js"></script>
+    <script src="D:\前端\js\jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 仿宋;
+            font-weight: bold;
+        }
+
+        .all {
+            margin: 20px;
+        }
+
+        .jumbotron {
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            background: url(bg.jpg);
+            background-size: 100%;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        p {
+            color: rgb(204, 222, 238);
+        }
+
+        .blank {
+            height: 50px;
+            font-weight: bold;
+        }
+
+        img {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 100px;
+        }
+
+        .down-all {
+            height: 1000px;
+        }
+
+        .left-side {
+            width: 30%;
+            height: 500px;
+            border: 1px dashed rgb(66, 63, 63);
+            text-align: center;
+            background-color: rgb(205, 195, 182);
+        }
+
+        .right-side {
+            width: 50%;
+            height: 500px;
+            border: 1px dashed black;
+            margin: auto;
+        }
+
+        .basetext {
+            top: 500px;
+            left: 600px;
+            position: absolute;
+            font-size: 15px;
+            width: 400px;
+            height: 300px;
+        }
+
+        .data {
+            width: 100%;
+            height: 200px;
+            border: 1px dashed rgb(29, 28, 26);
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(33, 31, 25);
+        }
+
+        .circle {
+            position: absolute;
+            left: 900px;
+            top: 600px;
+            width: 40px;
+            height: 40px;
+            background-color: #f8da1a;
+            border-radius: 100%;
+            border: 1px solid #fabf53;
+            animation: y 0.5s infinite;
+            /*动画调用*/
+            transform-origin: center bottom;
+            /*旋转中心点*/
+        }
+
+        @keyframes y {
+
+            0% {
+                transform: rotate(-60deg);
+            }
+
+            50% {
+                transform: rotate(60deg);
+            }
+
+            100% {
+                transform: rotate(-60deg);
+            }
+        }
+
+        #text {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .xx {
+            float: left;
+            margin: 40px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="jumbotron " id="shouye">
+            <div class="container">
+                <div class="blank"> </div>
+                <img src="tx.jpg" alt="tx">
+                <h1>jiu</h1>
+                <p>[平凡的日子也要熠熠生辉]</p>
+            </div>
+        </div>
+        <div class="down-all">
+            <div class="content">
+                <div class="left-side">
+                    <div class="blank"> </div>
+                    <a href="#shouye">
+                        <h3>首页</h3>
+                    </a>
+                    <div class="blank"> </div>
+                    <a href="#data">
+                        <h3>资料</h3>
+                    </a>
+                    <div class="blank"> </div>
+                    <a href="#skill">
+                        <h3>技能</h3>
+                    </a>
+                </div>
+
+                <div class="right-side">
+                    <div class="basetext">
+                        <div class="xx">姓名：郑涵月</div>
+                        <div class="xx">性别：女</div>
+                        <div class="xx">年龄:19</div>
+                        <div class="xx">星座：天秤座</div>
+                    </div>
+                    <!-- 星之卡比 -->
+                    <div class="kb">
+                        <canvas width="700" height="500" id="myCanvas"></canvas>
+                        <script type="text/javascript">
+                            var c = document.getElementById("myCanvas")
+                            var ctx = c.getContext("2d")
+                            ctx.beginPath();
+                            ctx.ellipse(300, 350, 50, 40, 50, 0, Math.PI * 2) //手
+                            ctx.fillStyle = "rgb(246,178,189)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.ellipse(490, 425, 50, 40, 0, 0, Math.PI * 2) //脚
+                            ctx.fillStyle = "rgb(238,126,153)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.arc(400, 350, 100, 0, Math.PI * 2, true) //大圈圈
+                            ctx.fillStyle = "rgb(246,178,189)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath()
+                            ctx.ellipse(370, 320, 10, 20, 0, 0, Math.PI * 2);//眼睛框框
+                            ctx.fillStyle = "rgb(106,77,65)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath()
+                            ctx.ellipse(420, 320, 10, 20, 0, 0, Math.PI * 2);//眼睛框框
+                            ctx.fillStyle = "rgb(106,77,65)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.arc(420, 310, 7, 0, Math.PI * 2, true)//眼白
+                            ctx.fillStyle = "white"
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.arc(370, 310, 7, 0, Math.PI * 2, true)//眼白
+                            ctx.fillStyle = "white"
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.moveTo(370, 350) //嘴巴最上面的线
+                            ctx.lineTo(420, 350)
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.arc(395, 350, 25, 0, Math.PI, false) //嘴巴外框
+                            ctx.fillStyle = "rgb(106,77,65)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.arc(395, 370, 15, 0, Math.PI, true) //嘴巴里面
+                            ctx.fillStyle = "rgb(239,124,153)";
+                            ctx.fill();
+                            ctx.stroke()
+
+                            ctx.beginPath();
+                            ctx.arc(350, 350, 10, 0, Math.PI * 2, true) //腮红
+                            ctx.fillStyle = "rgb(238,126,153)";
+                            ctx.fill();
+                            ctx.stroke()
+
+                            ctx.beginPath();
+                            ctx.arc(440, 350, 10, 0, Math.PI * 2, true) //腮红
+                            ctx.fillStyle = "rgb(238,126,153)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.ellipse(300, 400, 50, 40, 20, 0, Math.PI * 2) //脚
+                            ctx.fillStyle = "rgb(238,126,153)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.beginPath();
+                            ctx.ellipse(500, 300, 50, 40, 90, 0, Math.PI * 2) //手
+                            ctx.fillStyle = "rgb(246,178,189)";
+                            ctx.fill();
+                            ctx.stroke()
+                            ctx.save();
+
+                        // 然后把星之卡比眼睛动一下
+                        // setInterval(function(){
+                        //     ctx.clearRect(0,0,500,500);
+                        //    if
+                        //     left++;
+
+                        //     ctx.fillRect(left,100,100,100);
+
+                        // },30)
+
+                        </script>
+                        <div class="circle">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="data" id="data">
+                <h2>资料</h2>
+                <div id="text">leetcode难题</div>
+                <input type="button" value="点击查看" id="btn1" onclick="changetext">
+                <script>
+                    // function changetext(){
+                    //     document.getElementById('#text').innerText="22,23,25,37,38...."
+                    // }
+                    $("#btn1").click(function () { $("#text").html("22,23,25,37,38....") })
+                </script>
+
+            </div>
+
+            <div class="skill" id="skill">
+                <div class="panel panel-default col-lg-12">
+                    <div class="panel-heading">
+                        -个人技能-
+                    </div>
+                    <div class="panel-body">
+                        HTML5
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary progress-bar-striped active"
+                                aria-valuenow="80" aria-valuemax="100" style="width: 80%;">80%</div>
+                        </div>
+                        CSS
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info progress-bar-striped active" aria-valuenow="70"
+                            aria-valuenow="70" aria-valuemax="100" style="width: 70%;">70%</div>
+                        </div>
+                        JQuery
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped active" aria-valuenow="10"
+                            aria-valuenow="10" aria-valuemax="100" style="width: 10%;">10%</div>
+                        </div>
+                        JavaScript
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active"
+                                aria-valuenow="20" aria-valuemax="100" style="width: 20%;">20%</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="D:\前端\自己的页面\xhr.html" id="xhr">摇摆小黄人</a>
+                <a href="D:\前端\自己的页面\计算器.html" id="computer">简洁计算器</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        transform: scale(0.8);
+
+		}
+        .div {
+            width: 300px;
+            height: 400px;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .shang {
+            width: 100%;
+            height: 15%;
+            border: 2px solid rgb(0, 0, 0);
+            display: flex;
+        }
+
+        .shang input {
+            height: 100%;
+            width: 75%;
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        .shang .ce {
+            height: 100%;
+            width: 25%;
+        }
+
+        .ce {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .xia {
+            width: 100%;
+            height: 85%;
+        }
+
+        .a,
+        .b,
+        .c,
+        .d,
+        .e {
+            height: 25%;
+            width: 100%;
+            border: 2px solid rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .a div,
+        .b div,
+        .c div,
+        .d div,
+        .e div {
+            width: 25%;
+            height: 100%;
+            border: 2px solid rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .mc {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div class="shang">
+            <input type="text" id="text">
+            <div class="ce" onclick="getzhi(this)"><a>CE</a></div>
+        </div>
+        <div class="xia">
+            <div class="e">
+                <div onclick="getzhi(this)">(</div>
+                <div onclick="getzhi(this)">)</div>
+                <div onclick="getzhi(this)" class="mc">C</div>
+            </div>
+            <div class="a">
+                <div onclick="getzhi(this)">1</div>
+                <div onclick="getzhi(this)">2</div>
+                <div onclick="getzhi(this)">3</div>
+                <div onclick="getzhi(this)">+</div>
+            </div>
+            <div class="b">
+                <div onclick="getzhi(this)">4</div>
+                <div onclick="getzhi(this)">5</div>
+                <div onclick="getzhi(this)">6</div>
+                <div onclick="getzhi(this)">-</div>
+            </div>
+            <div class="c">
+                <div onclick="getzhi(this)">7</div>
+                <div onclick="getzhi(this)">8</div>
+                <div onclick="getzhi(this)">9</div>
+                <div onclick="getzhi(this)">*</div>
+            </div>
+            <div class="d">
+                <div onclick="getzhi(this)">0</div>
+                <div class="mc" onclick="getzhi(this)">=</div>
+                <div onclick="getzhi(this)">/</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var wc = "";
+    var da = 0;
+    // var zuo = 0;
+    // var op = '';
+    function getzhi(a) {
+        var i = document.getElementById("text");
+        console.log(i)
+        var txt = a.innerText ? a.innerText : a.value;
+        if ('0123456789()%'.indexOf(txt) > -1) {
+            wc = wc + txt;
+        }
+        else if ('+-*/'.indexOf(txt) > -1) {
+            // zuo = wc;
+            // op = txt;
+            wc = wc + txt;
+            // console.log(zuo)
+            // console.log(op)
+
+        }
+        else if (txt == "C") {
+            wc = wc.substr(0, wc.length - 1);
+        }
+        else if (txt == "=") {
+            // wc=eval(wc);
+            // you = wc.split(op)[1];
+            // console.log(you)
+            // wc = qz(op, zuo, you);
+            var ji = zzh(wc);
+            console.log(houjisuan(ji))
+            wc = houjisuan(ji)[0];
+
+        } else {
+            wc = "";
+        }
+        i.value = wc;
+    }
+    // function qz(op, zuo, you) {
+    //     switch (op) {
+    //         case "+":
+    //             return da = parseInt(zuo) + parseInt(you);
+    //             break;
+    //         case "-":
+    //             return da = parseInt(zuo) - parseInt(you);
+    //             break;
+    //         case "*":
+    //             return da = parseInt(zuo) * parseInt(you);
+    //             break;
+    //         case "/":
+    //             return da = parseInt(zuo) / parseInt(you);
+    //             break;
+    //     }
+    // }
+    function houjisuan(aa) {
+        let hou = aa;
+        let index = -1;
+        var num = [];
+        let da = 0;
+        for (let i = 0; i <= hou.length - 1; i++) {
+            if (hou[i] > "0") {
+                num[++index] = hou[i];
+                console.log(hou[i])
+            } else {
+                //是符号
+                let num1 = num[index--];
+                let num2 = num[index--];
+                console.log(hou[i])
+                if (hou[i] == "-") {
+                    answer = parseInt(num2) - parseInt(num1);
+                    num[++index] = answer;
+                } else if (hou[i] == "+") {
+                    answer = parseInt(num2) + parseInt(num1);
+                    num[++index] = answer;
+                } else if (hou[i] == "*") {
+                    answer = parseInt(num2) * parseInt(num1);
+                    num[++index] = answer;
+                } else {
+                    answer = parseInt(num2) / parseInt(num1);
+                    num[++index] = answer;
+                }
+            }
+        }
+        return num;
+    }
+    // function Stack() {
+    //     var items = [];     //用来保存栈里的元素
+    //     var top=-1;
+    //     this.push = function (element) {
+    //         items.push(element);
+    //     }
+    //     this.pop = function () {
+    //         return items.pop();
+    //     }
+    //     this.isEmpty = function () {
+    //         return items.length == 0;
+    //     }
+    //     this.print = function(){
+    //         console.log(items)
+    //     }
+    // }
+    function zzh(cc) {
+        var op = [];
+
+        var answer = [];
+        var A = cc;
+        var top = -1;
+        var fhsx = { '+': 0, '-': 0, '*': 1, '/': 1, '(': -1 }
+        var flag = 0
+        for (var i in A) {
+            if ("0123456789".indexOf(A[i]) != -1 && flag == 1) {
+                answer[top] += A[i];
+                console.log(answer[0])
+            }
+            else if ("0123456789".indexOf(A[i]) != -1) {
+                flag = 1;
+                answer.push(A[i]);
+                top++;
+            }
+            else if (A[i] == '(') {
+                op.push(A[i])
+                flag = 0
+            }
+            else if (A[i] == ')') {
+                ding = op.pop()
+                while (ding != '(') {
+                    answer.push(ding)
+                    top++
+                    ding = op.pop()
+                }
+                flag = 0
+            }
+            else {
+                while (op.length != 0 && fhsx[op[-1]] >= fhsx[i]) {
+                    ding1 = op.pop()
+                    answer.push(ding1)
+                    top++
+                }
+                op.push(A[i])
+                flag = 0
+            }
+        }
+        while (op.length != 0) {
+            ding2 = op.pop()
+            answer.push(ding2)
+            top++
+        }
+        return answer;
+    }
+</script>
+
+</html>

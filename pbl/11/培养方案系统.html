@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jq.js"></script>
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        /* width: 100%;
+        height: 100%; */
+    }
+
+    .up {
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid; */
+        height: 50px;
+    }
+
+    .up_left {
+        width: 120px;
+        height: 27px;
+        /* border: 1px solid; */
+        border-radius: 24px;
+        background-color: rgb(168, 168, 169);
+        text-align: center;
+        margin-left: 2%;
+
+    }
+
+    .up_left a {
+        display: block;
+        margin-top: 2px;
+    }
+
+    .up_right {
+        width: 85px;
+        height: 28px;
+        /* border: 1px solid; */
+        color: white;
+        border-radius: 24px;
+        background-color: rgb(4, 139, 250);
+        text-align: center;
+        margin-right: 2%;
+    }
+
+    .up_right a {
+        display: block;
+        margin-top: 2px;
+    }
+
+    .mid {
+        display: flex;
+        /* border: 1px solid; */
+        justify-content: space-around;
+        height: 350px;
+    }
+
+    .mid_left {
+        /* display: flex;
+        flex-direction: column; */
+        /* border: 1px solid; */
+        width: 30%;
+    }
+
+    .mid_left_up {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 30px;
+    }
+
+    .guanzhu {
+        width: 135px;
+        align-items: center;
+        font-size: 20px;
+        color: rgb(111, 103, 252);
+        text-decoration: underline;
+    }
+
+    .menlei {
+        width: 72px;
+        background-color: rgb(191, 209, 251);
+    }
+
+    .menlei select {
+        background-color: rgb(191, 209, 251);
+    }
+
+    .zhuanyem {
+        width: 145px;
+        background-color: rgb(191, 209, 251);
+    }
+
+    .zhuanyem select {
+        background-color: rgb(191, 209, 251);
+    }
+
+    .mid_left_down {
+        display: flex;
+        width: 100%;
+        /* flex-direction: row;
+        justify-content: flex-start; */
+        /* height: 320px; */
+    }
+
+    th,td {
+        border: 1px solid;
+        background-color: rgb(191, 209, 251);
+    }
+    table{
+        flex-grow: 1;
+    }
+    .mid_right{
+        width: 60%;
+    }
+    .mid_right_up {
+        display: flex;
+        justify-content: space-between;
+        height: 30px;
+    }
+
+    .chanye {
+        width: 120px;
+        font-size: 20px;
+        color: rgb(111, 103, 252);
+        text-decoration: underline;
+    }
+
+    .mid_right_up select {
+        width: 120px;
+    }
+    .mid_right_down{
+        display: flex;
+    }
+
+    .down {
+        display: flex;
+        justify-content: space-around;
+        /* border: 1px solid; */
+    }
+
+    .down_left {
+        /* border: 1px solid; */
+
+    }
+
+    .down_left_up {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 30px;
+        /* border: 1px solid; */
+        /* width: 135px; */
+        /* align-items: center; */
+        font-size: 20px;
+        color: rgb(111, 103, 252);
+        
+
+    }
+    .down_left_up a{
+        text-decoration: underline;
+    }
+    .down_left_down {
+        display: flex;
+
+    }
+    .down_right {
+        width: 696px;
+
+    }
+
+    .down_right_up {
+        width: 100%;
+        height: 30px;
+        font-size: 20px;
+        color: rgb(111, 103, 252);
+        text-decoration: underline;
+        /* border: 1px solid; */
+    }
+
+    .down_right_down {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        /* border: 1px solid; */
+    }
+
+    .down_right_down div {
+        width: 160px;
+        height: 25px;
+        margin: 10px;
+        margin-left: 25px;
+        border-radius: 30px;
+        background-color: rgb(55, 106, 247);
+        /* border: 1px solid; */
+        color: white;
+        text-align: center;
+    }
+    .input{
+        width: 50px;
+        background-color: rgb(191, 209, 251);
+    }
+    #canvas{
+        /* display: none; */
+        position: absolute;
+        top: 135px;
+        right: 235px;
+        height: 215px;
+        width: 340px;
+        /* border: 1px solid; */
+    }
+    canvas{
+        border: 1px solid;
+        width: 330px;
+        height: 210px;
+        background-color: #fff;
+    }
+    #c1{
+        display: none;
+    }
+    #c2{
+        display: none;
+    }
+    #c3{
+        display: none;
+    }
+    
+</style>
+
+<body>
+    <div class="total">
+        <div class="up">
+            <div class="up_left"><a>系分院负责人</a></div>
+            <div class="up_right"><a>退出系统</a></div>
+        </div>
+        <div class="mid">
+            <div class="mid_left">
+                <div class="mid_left_up">
+                    <div class="guanzhu">
+                        <a>关注专业</a>
+                    </div>
+                    <div class="menlei">
+                        <select id = 'profession1'>
+                            <option value="门类" selected>门类</option>
+                            <option value="工学" >工学</option>
+                            <option value="理学">理学</option>
+                            <option value="文学">文学</option>
+                            <option value="法学">法学</option>
+                            <option value="商学">商学</option>
+                            
+                        </select>
+                    </div>
+                    <div class="zhuanyem">
+                        <select id="profession2">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="mid_left_down">
+                    <table class="t1">
+                        <tr>
+                            <th>门类</th>
+                            <th>专业类</th>
+                            <th>专业名称</th>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>计算机科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>软件工程</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>网络安全</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>信息安全</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>物联网工程</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>数字媒体技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>智能科学与技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>空间信息与数字技术</td>
+                        </tr>
+                        <tr>
+                            <td>工学</td>
+                            <td>计算机类</td>
+                            <td>电子与计算机工程</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="mid_right">
+                <div class="mid_right_up">
+                    <div class="chanye">
+                        <a>产业数据统计</a>
+                    </div>
+                    <select>
+                        <option value="">学校所在地</option>
+                        <option value="">成都</option>
+                        <option value="">北京</option>
+                        <option value="">上海</option>
+                        <option value="">广州</option>
+                        <option value="">深圳</option>
+    
+                    </select>
+                </div>
+                <div class="mid_right_down">
+                    <table class="t2">
+			            <tr>
+			                <th>专业名</th>
+			                <th id="getc1">企业</th>
+			                <th id="getc2">岗位</th>
+			                <th id="getc3">技能</th>
+			                <th>任务</th>
+			                <th>最低薪酬</th>
+			                <th>最高薪酬</th>
+			            </tr>
+			            <tr>
+			                <td>计算机科学与技术</td>
+			                <td>300</td>
+			                <td>5000</td>
+			                <td>400</td>
+			                <td>4500</td>
+			                <td>2k</td>
+			                <td>12k</td>
+			            </tr>
+			            <tr>
+			                <td>软件工程</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			            <tr>
+			                <td>网络工程</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			            <tr>
+			                <td>信息安全</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			            <tr>
+			                <td>物联网工程</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			            <tr>
+			                <td>数字媒体技术</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			            <tr>
+			                <td>智能科学与技术</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			            <tr>
+			                <td>空间信息与数字技术</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			            <tr>
+			                <td>电子与计算机工程</td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			                <td></td>
+			            </tr>
+			        </table>
+                    <div id="canvas">
+                        <canvas id="c1"></canvas>
+                        <canvas id="c2"></canvas>
+                        <canvas id="c3" width="200" height="140"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="down">
+            <div class="down_left">
+                <div class="down_left_up">
+                    <a>本校专业现状</a>
+                    <div>
+                        <button id="addbutton">添加</button>
+                        <button id="deletebutton">删除</button>
+                    </div>
+                    
+                </div>
+                <div class="down_left_down">
+                    <table class="t3" id="table">
+                        <tr>
+                            <th>专业名</th>
+                            <th>负责人</th>
+                            <th>课程数量(点击查看详情）</th>
+                            <th>学生数量</th>
+                            <th>师生比</th>
+                            <th>产教匹配度</th>
+                            <th>执行操作</th>
+                        </tr>
+                        <tr>
+                            <td>计算机科学与技术</td>
+                            <td>付浩然</td>
+                            <td>50</td>
+                            <td>400</td>
+                            <td>1:200</td>
+                            <td>85%</td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>软件工程</td>
+                            <td>胥又文</td>
+                            <td>48</td>
+                            <td>410</td>
+                            <td>1:150</td>
+                            <td>86%</td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>网络工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>信息安全</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>物联网工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>电子与计算机工程</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>数据科技与大数据技术</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>网络工程安全</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="updateButton" onclick="update(this)">修改</button>
+                                <button class="querenButton" onclick="queren(this)">确定</button>
+                            </td>
+                        </tr>
+                </table>
+                </div>
+            </div>
+            <div class="down_right">
+                <div class="down_right_up">
+                    <a>未开设专业信息</a>
+                </div>
+                <div class="down_right_down">
+                    <div class="a">数字媒体技术</div>
+                    <div class="b">智能科学与技术</div>
+                    <div class="c">信息空间与数字技术</div>
+                    <div class="d">新媒体技术</div>
+                    <div class="e">电影制作</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/system.js"></script>
+</html>

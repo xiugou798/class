@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>流梦的个人主页</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script>
+		function html_tiaozhuan(data){
+			const dic = {
+				"信息详情": "信息详情.html",
+				"技能详情": "技能详情.html",
+				"成就详情": "成就详情.html",
+				"未来的展望": "未来的展望.html"
+			};
+			const fa_screen = document.getElementById("ifm");
+			console.log(fa_screen);
+			const ab = data.innerText;
+			console.log(ab);
+			fa_screen.src = dic[ab];
+			// 实现点击这个按钮颜色长久变化
+		}
+	</script>
+	<body style="margin: 0;padding: 0;">
+		<div class="quanti">
+			<div class="left_self_date">
+				<div class="left_self_date_touxiang">
+					<img src="img/8.jpg" style="width: 100%;height: 100%;border: 4px solid ghostwhite;"/>
+				</div>
+				<div class="left_self_date_nicheng">
+					<a style="color: lightpink;">流梦</a>
+				</div>
+				<div class="left_self_date_nav">
+					<!-- 使用button按钮 -->
+					<p><a id="shouye" href="">首页</a></p>
+					<p ><a id="xinxi" href="javascript:void(0);" onclick="html_tiaozhuan(this)">信息详情</a></p>
+					<p><a id="jineng" href="javascript:void(0);" onclick="html_tiaozhuan(this)">技能详情</a></p>
+					<p><a id="chengjiu" href="javascript:void(0);" onclick="html_tiaozhuan(this)">成就详情</a></p>
+					<p><a id="weilai" href="javascript:void(0);" onclick="html_tiaozhuan(this)">未来的展望</a></p>
+				</div>
+			</div>
+			<div class="right_details" style="">
+				<iframe id="ifm" src="首页信息.html" ></iframe>
+			</div>
+		</div>
+		<script id="sk" src="js/sakura.js"></script>
+	</body>
+</html>

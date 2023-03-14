@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="css/个人页面.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="quanbu">
+			<div class="ztl">
+				<div class="photograph">
+					<div style="font-size: 25px;">Photograph</div>
+					<img src="img/图片1.png" width="100" height="100" />
+					<div class="shezhi">
+						<img src="img/设置 .png" width="20" height="20" style="" />
+					</div>
+					<div>谢林峰</div>
+				</div>
+				<div class="zuopin">
+					<div class="nr" onclick="shouye();yingcang();">首页</div>
+					<div class="nr" onclick="xhr_();yingcang();">小黄人</div>
+					<div class="nr" onclick="jsq();yingcang();">计算器</div>
+					<div class="nr" onclick="xitong();yingcang();">培养方案</div>
+				</div>
+				<div>
+					<div class="lianxi">
+						<canvas id="canvas"></canvas>
+						<div>联系方式:</div>
+						<p>QQ:2044624784</p>
+						<p>微信：</p>
+					</div>
+				</div>
+			</div>
+			<div class="xxk">
+				<div id="shouye" style="width: 100%;height: 678px;">
+					<div class="shizhong">
+						<div style="font-size: 100px;" id="time">08:49:00</div>
+						<div style="font-size: 30px;float: right;" id="date">2023年1月5日 星期四</div>
+					</div>
+					<div style="font-family: FZShuTi;font-size: 70px;text-align: center;">今天你学废了吗？</div>
+					<div class="xxk_nr">
+						<div class="fangkuang1" style="background-color: aqua;" onclick="gerenxx_xs()">个人信息</div>
+						<div class="fangkuang2" style="background-color: coral;" onclick="canvas_xs()">我的canvas图标</div>
+						<div class="fangkuang3" style="background-color: black;color: white;">未知</div>
+						<div class="fangkuang4" style="background-color: black;color: white;">未知</div>
+					</div>
+
+				</div>
+				<iframe class="yc_" id="xhr_" src="./xiaohuangren.html"></iframe>
+				<iframe class="yc_" id="jsq_" src="./jsq.html"></iframe>
+				<iframe class="yc_" id="xitong" src="./pyfabzxt/index.html"></iframe>
+			</div>
+		</div>
+		<div class="yc_" id="gerenxx">
+			<div>姓名：谢林峰</div>
+			<div>年龄：20</div>
+			<div>专业：软件工程</div>
+			<div>QQ：2044624784</div>
+			<div>微信：XLF15520516570</div>
+			<div>电话：15520516570</div>
+			<img src="img/关闭.png" style="width: 30px;height: 30px;" onclick="gerenxx_yc()" />
+		</div>
+		<div class="yc_" id="canvas_">
+			<canvas id="canvas_one"></canvas>
+			<img src="img/关闭.png" style="width: 30px;height: 30px;position: absolute;left: 130px;"
+				onclick="canvas_yc()" />
+		</div>
+		<script>
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext("2d");
+			ctx.beginPath();
+			ctx.moveTo(10, 50);
+			ctx.lineTo(100, 50);
+			ctx.closePath();
+			ctx.lineWidth = 20;
+			ctx.strokeStyle = "red";
+			ctx.stroke();
+		</script>
+		<script src="js/个人页面.js"></script>
+	</body>
+
+</html>

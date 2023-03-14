@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			#wxl {
+				width: 100%;
+				height: 100%;
+				background-color: cornflowerblue;
+
+				display: flex;
+				flex-direction: column;
+
+
+
+			}
+
+			div {
+				border: 1px solid #000;
+			}
+
+			.one {
+				flex: 1;
+				display: flex;
+			}
+
+			.two {
+				flex: 1;
+				display: flex;
+			}
+
+			.one .one_one,
+			.two div {
+				width: 50%;
+				margin: 1%;
+
+			}
+
+			.two_one {
+				background-color: aliceblue;
+			}
+
+			.tcxs {
+				width: 400px;
+				height: 400px;
+				background-color: aqua;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -200px;
+				margin-top: -200px;
+
+			}
+
+			.tcyc {
+				/* 	position: absolute; */
+				display: none;
+
+			}
+			canvas{
+				background-color: aqua;
+				margin: 10px;
+			}
+		</style>
+		<link rel="stylesheet" href="css/one_one.css" />
+	</head>
+	<body>
+		<div id="wxl">
+			<div class="one">
+
+				<div class="one_one">
+					<div>
+						<select>
+							<option value="门类" selected>门类</option>
+							<option value="工学">工学</option>
+							<option value="理学">理学</option>
+						</select>
+
+
+						<select id="qy" onclick="selectonclick()"></select>
+						<button onclick=zxzy() style="width: 100px;height: 20px;">点击确认</button>
+					</div>
+
+					<div id="sjxx">
+						<ul id="ul1"></ul>
+
+					</div>
+
+				</div>
+				<div class="one_two">
+					
+					<button onclick="zz()">柱状图</button>
+					<button onclick="sx()">扇形图</button>
+					<button onclick="zx()">折线图</button>
+					<button onclick="sd()">散点图</button>
+					
+					<canvas id="zz"></canvas>
+					<canvas id="sx"></canvas>
+					<canvas id="zx"></canvas>
+					<canvas id="sd"></canvas>
+					
+					
+				</div>
+			</div>
+			<div class="two">
+				<div class="two_one">
+					<div><input type="button" value="增加" id="add" onclick="adddata2()" />
+						<input type="text" placeholder="请输入专业名" id="search" onclick="searchdata()" />
+
+
+					</div>
+					<div>
+						<table id="two_one_td" border="1">
+							<th>专业名</th>
+
+							<th>操作按钮组合</th>
+
+							<tbody>
+								<tr class="fz">
+									<td>dd</td>
+									<td><input type="button" value="删除" onclick="delect(this)" /><input type="button"
+											value="修改" onclick="update(this)" /></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+
+
+
+
+				</div>
+				<div class="two_two"></div>
+			</div>
+
+		</div>
+
+		<div class="tcyc" id="tc">
+
+			<input type="text" placeholder="专业名" id="zym" />
+			<input type="button" value="确定新增" id="tcqd" onclick="qdan()" />
+			<input type="button" value="确定修改" id="tcqd" onclick="qdxg(this)" />
+		</div>
+
+
+
+		<script src="js/two_one.js"></script>
+		<script src="js/one_one.js"></script>
+	</body>
+</html>

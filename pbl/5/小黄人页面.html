@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小黄人出击</title>
+		<style>
+			.stet{
+				width: 800px;
+				height: 740px;
+				border: 1px solid black;
+				position: relative;
+			}
+			.one,.two,.three{
+				width: 250px;
+				height: 740px;
+				background-color: white;
+				position: absolute;
+				border: 1px solid black;
+				border-top-width: 0px;
+				
+				
+			}
+			.one{
+				border-left:0px
+			}
+			.two{
+				left:275px;
+				
+			}
+			.three{
+				right: 0;
+				border-right:0px
+			}
+			.two_body{
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0;
+				
+				border-radius:  50% 50% 0 0/30px 30px 0 0;
+				
+				overflow: hidden;
+			}
+			.yj{
+				height:280px;
+				width: 280px;
+				background-color: rgb(151,151,143);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				top: 35px;
+				border: 1px solid black;
+			}
+			.yjli{
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				height: 220px;
+				width: 220px;
+				border-radius: 50%;
+				background-color: #FDE174;
+			}
+			.yanbai{
+				height: 160px;
+				width: 220px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 30px;
+				animation: a 2s infinite;
+				/* animation-iteration-count: infinite;; */
+				
+			}
+			@keyframes a{
+				0%{
+					height: 160px;
+					width: 220px;
+					background-color: white;
+					border-radius: 50%;
+					position: absolute;
+					top: 30px;
+				}
+				100%{
+					height: 220px;
+					width: 220px;
+					background-color: white;
+					border-radius: 50%;
+					position: absolute;
+					top: 0;
+					
+				}
+			}
+			.yanhei{
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				border: 1px solid #000;
+				position: absolute;
+				top: 35px;
+				left: 65px;
+				background-color: #8c5342;
+				
+			}
+			.yy{
+				width: 90px;
+				height: 90px;
+				margin: 50px;
+				background-color: #FDE174;
+				box-shadow: 90px 0px 10px 0 black;
+			} 
+			.gl{
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: white;
+				top: 20px;
+				left: 20px;
+				box-shadow: 16px 16px 0px 13px black;
+				
+			}
+			.zb,.yh{
+				width: 150px;
+				height: 70px;
+				border-radius: 50%;
+				background-color: #000000;
+				position: absolute;
+				bottom: 220px;
+				left: 42px;
+				overflow: hidden;
+				
+			}
+			 .yh{
+				background-color: #FDE174;
+				bottom: 200px;
+				width: 195px;
+				height: 70px;
+				left: 35px;
+				
+			} 
+			.yc1{
+				position: absolute;
+				width: 54px;
+				height: 40px;
+				background-color: white;
+				left: 0px;
+				top: 28px;
+				border-radius: 10px;
+			}
+			.yc2{
+				position: absolute;
+				width: 54px;
+				height: 40px;
+				background-color: white;
+				left: 40px;
+				top: -30px;
+				border-radius: 10px;
+			}
+			.yf{
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+				background-color: gray;
+				
+			}
+			.yf div{
+				width: 250px;
+				height: 50px;
+				
+			}
+			.yf div:nth-child(2n){
+				background-color: white;
+				
+			}
+			.kd{
+				position: absolute;
+				width: 100px;
+				height: 90px;
+				border: 1px dashed white;
+				bottom: 30px;
+				right: 30px;
+				border-radius: 0 0 50% 50%;
+				opacity: 0.3;
+				background-color: #000;
+			}
+		    
+			
+			.one_body{
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0;
+				
+				border-radius:  60% 50% 0 0/100px 10px 0 0;
+				
+				overflow: hidden;
+			}
+			.one_eye1{
+				height:150px;
+				width: 150px;
+				background-color: rgb(151,151,143);
+				border-radius: 50%;
+				position: absolute;
+				
+				top: 100px;
+				border: 1px solid black;
+			}
+			.one_eye2{
+				height:150px;
+				width: 150px;
+				background-color: rgb(151,151,143);
+				border-radius: 50%;
+				position: absolute;
+				top: 130px;
+				left: 150px;
+				border: 1px solid black;
+			}
+			.one_eye1_yanli{
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				height: 120px;
+				width: 120px;
+				border-radius: 50%;
+				background-color: #FDE174;
+			}
+			.one_eye2_yanli{
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				height: 120px;
+				width: 120px;
+				border-radius: 50%;
+				background-color: #FDE174;
+			}
+			.one_eye1_yanli_yanbai{
+				height: 60px;
+				width: 120px;
+				background-color: white;
+				border-radius: 50% / 0 0 60px 60px;
+				position: absolute;
+				top: 60px;
+				overflow: hidden;
+			}
+			.one_eye2_yanli_yanbai{
+				height: 60px;
+				width: 120px;
+				background-color: white;
+				border-radius: 50% / 0 0 60px 60px;
+				position: absolute;
+				top: 60px;
+				overflow: hidden;
+			}
+			.one_eye1_yanli_yanbai_yanhei{
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				border: 1px solid #000;
+				position: absolute;
+				top: -45px;
+				left: 15px;
+				background-color: #8c5342;
+				
+			}
+			.one_eye2_yanli_yanbai_yanhei{
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				border: 1px solid #000;
+				position: absolute;
+				top: -45px;
+				left: 15px;
+				background-color: #8c5342;
+			}
+			.one_gl1{
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: white;
+				top: 50px;
+				left: 20px;
+				box-shadow: 12px 0px 0px 10px black;
+			}
+			.one_gl2{
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: white;
+				top: 50px;
+				left: 20px;
+				box-shadow: 12px 0px 0px 10px black;
+			}
+			.one_zb,.one_yh{
+				width: 180px;
+				height: 80px;
+				border-radius: 50%/0px 40px 0 0;
+				background-color: #000000;
+				position: absolute;
+				bottom: 250px;
+				left: 42px;
+				overflow: hidden;
+				
+			}
+			.one_zb{
+				animation: b 3s infinite;
+			}
+			@keyframes b{//打哈欠
+				0%{
+				width: 180px;
+				height: 80px;
+				border-radius: 50%/0px 40px 0 0;
+				background-color: #000000;
+				position: absolute;
+				bottom: 250px;
+				left: 42px;
+				overflow: hidden;
+				}
+				100%{
+					width: 180px;
+					height: 180px;
+					border-radius: 50%;
+					background-color: #000000;
+					position: absolute;
+					bottom: 250px;
+					left: 42px;
+					
+				}
+			}
+			 .one_yh{
+				background-color: #FDE174;
+				bottom: 220px;
+				width: 195px;
+				height: 105px;
+				left: 35px;
+				
+            }
+			.one_yf{
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+				background-color: gray;
+				
+			}
+			.one_yf div{
+				width: 250px;
+				height: 50px;
+				
+			}
+			.one_yf div:nth-child(2n){
+				background-color: white;
+				
+			}
+			.one_kd{
+				position: absolute;
+				width: 100px;
+				height: 90px;
+				border: 1px dashed white;
+				bottom: 30px;
+				right: 30px;
+				border-radius: 0 0 50% 50%;
+				opacity: 0.3;
+				background-color: #000;
+			}
+			.three_body{
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0;
+				border-radius:  50% 50% 0 0/45px 45px 0 0;
+				overflow: hidden;
+			}
+			.three_eye1{
+				height:150px;
+				width: 150px;
+				background-color: rgb(151,151,143);
+				border-radius: 50%;
+				position: absolute;
+				
+				top: 100px;
+				border: 1px solid black;
+			}
+			.three_eye2{
+				height:150px;
+				width: 150px;
+				background-color: rgb(151,151,143);
+				border-radius: 50%;
+				position: absolute;
+				top: 100px;
+				left: 150px;
+				border: 1px solid black;
+			}
+			.three_eye1_yanli{
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				height: 120px;
+				width: 120px;
+				border-radius: 50%;
+				background-color: #FDE174;
+			}
+			.three_eye2_yanli{
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				height: 120px;
+				width: 120px;
+				border-radius: 50%;
+				background-color: #FDE174;
+			}
+			.three_eye1_yanli_yanbai{
+				height: 60px;
+				width: 120px;
+				background-color: white;
+				border-radius: 50% / 60px 60px 0 0;
+				position: absolute;
+				top: 0px;
+				overflow: hidden;
+			}
+			.three_eye2_yanli_yanbai{
+				height: 60px;
+				width: 120px;
+				background-color: white;
+				border-radius: 50% / 60px 60px 0 0 ;
+				position: absolute;
+				top: 0px;
+				overflow: hidden;
+			}
+			.three_eye1_yanli_yanbai_yanhei{
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				border: 1px solid #000;
+				position: absolute;
+				top: 0px;
+				left: -5px;
+				background-color: #8c5342;
+			}
+			.three_eye2_yanli_yanbai_yanhei{
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				border: 1px solid #000;
+				position: absolute;
+				top: 0px;
+				left: -3px;
+				background-color: #8c5342;
+			}
+			.three_gl1{
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: white;
+				top: 50px;
+				left: 30px;
+				box-shadow: -12px 0px 0px 10px black;
+			}
+			.three_gl2{
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: white;
+				top: 50px;
+				left: 30px;
+				box-shadow: -12px 0px 0px 10px black;
+			}
+			.three_zb,.three_yh{
+				width: 150px;
+				height: 70px;
+				border-radius: 50%;
+				background-color: #000000;
+				position: absolute;
+				bottom: 280px;
+				right: 30px;
+				overflow: hidden;
+				
+			}
+			 .three_yh{
+				background-color: #FDE174;
+				bottom: 300px;
+				width: 195px;
+				height: 70px;
+				left: 35px;
+			}
+			.three_yc1{
+				position: absolute;
+				width: 54px;
+				height: 40px;
+				background-color: white;
+				left: 20px;
+				top: 28px;
+				border-radius: 10px;
+			}
+			.three_yc2{
+				position: absolute;
+				width: 54px;
+				height: 40px;
+				background-color: white;
+				right: 10px;
+				top: 30px;
+				border-radius: 10px;
+			}
+			.three_yf{
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+				background-color: gray;
+				animation: c 2s infinite;
+			}
+			@keyframes c {
+				0%{background-color: gray;}
+				100%{background-color: red;}
+			}
+			.three_yf div{
+				width: 250px;
+				height: 50px;
+				
+			}
+			.three_yf div:nth-child(2n){
+				background-color: white;
+				
+			}
+			.three_kd{
+				position: absolute;
+				width: 100px;
+				height: 90px;
+				border: 1px dashed white;
+				bottom: 30px;
+				right: 30px;
+				border-radius: 0 0 50% 50%;
+				opacity: 0.3;
+				background-color: #000;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class='stet'>
+			<div class="one">
+				<div class='one_body'>
+					<div class="one_eye1">
+						<div class="one_eye1_yanli">
+						    <div class="one_eye1_yanli_yanbai">
+								<div class="one_eye1_yanli_yanbai_yanhei">
+									<div class="one_gl1"></div>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+					<div class="one_eye2">
+						<div class="one_eye2_yanli">
+							<div class="one_eye2_yanli_yanbai">
+								<div class="one_eye2_yanli_yanbai_yanhei">
+									<div class="one_gl2"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="one_zb"></div>
+				<div class="one_yh"></div>
+				<div class="one_yf">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+				</div>
+				<div class="one_kd"></div>
+				</div>
+			
+			</div>
+			<div class="two">
+				<div class="two_body">
+					<div class="yj">
+						<div class='yjli'>
+							<div class='yanbai'>
+								<div class='yanhei'>
+									<div class='gl'></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='zb'>
+					<div class="yc1"></div>
+					<div class="yc2"></div>
+				</div>
+				<div class="yh"></div>
+				<div class='yf'>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>			
+				</div>
+				<div class='kd'></div>
+			</div>
+			<div class="three">
+				<div class='three_body'>
+					<div class="three_eye1">
+						<div class="three_eye1_yanli">
+							<div class="three_eye1_yanli_yanbai">
+								<div class="three_eye1_yanli_yanbai_yanhei">
+									<div class="three_gl1"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="three_eye2">				
+						<div class="three_eye2_yanli">
+							<div class="three_eye2_yanli_yanbai">
+								<div class="three_eye2_yanli_yanbai_yanhei">
+									<div class="three_gl2"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='three_zb'>
+						<div class="three_yc1"></div>
+						<div class="three_yc2"></div>
+					</div>
+					<div class="three_yh"></div>
+					<div class='three_yf'>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>			
+					</div>
+					<div class='three_kd'></div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

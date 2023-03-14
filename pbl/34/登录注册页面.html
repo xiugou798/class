@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录/注册</title>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link href="iconfont/iconfont.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    *{
+        font-family: "宋体"
+    }
+
+    body{
+        background: url(bg.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+    .head{
+        font-family: "华文琥珀"
+    }
+    h1,p{
+        display: flex;
+        justify-content: center;
+    }
+    .layout{
+        margin-top: 90px;
+        margin-left: 460px;
+        margin-right: 460px;
+        height: 418px;
+        background-color: #8abcd1;
+        box-shadow: 5px 5px 5px #ffffff;
+    }
+    .fl1 {
+	float: left;
+    margin-top: 62px;
+    }
+    .fl2 {
+	float: left;
+    margin-top: 34px;
+    }
+    .icon{
+        font-size: 24px;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        $(".login").ready(function(){
+            $(".code").hide()
+            $("button:eq(1)").click(function(){
+                $(".login").hide()
+                $(".code").show()
+            })
+            $("input:eq(0),input:eq(1),input:eq(2)").change(function(){
+                let a=$("input[type='checkbox']").prop("checked")
+                let b=$("input[type='text']").val()
+                let c=$("input[type='password']").val()
+                if(a==true && b!="" && c!=""){
+                    $("button:eq(0)").prop("disabled",false)
+                }
+                else if(a!=true || b=="" || c==""){
+                    $("button:eq(0)").prop("disabled",true)
+                    $("button:eq(0)").click(function(){
+                        window.open("./个人网页.html")
+                    })
+                }
+            })
+        })
+        $(".code").ready(function(){
+            $("input:eq(3),input:eq(4),input:eq(5),input:eq(6)").change(function(){
+                let f=$("input[name='b1']").val()==""
+                let g=$("input[name='b2']").val()==""
+                let h=$("input[name='b3']").val()==""
+                let e=$("input[name='b4']").prop("checked")
+                let x=$("input:eq(4)").val()
+                let y=$("input:eq(5)").val()
+                let aa = {
+                    "background":"red",
+                    "color":"white"
+                }
+                let flag=0
+                let flag2=0
+                if(x==y){flag=1}
+                if(f==true){flag2=1}else{flag2=0}
+                if(e==true && f==false && g==false && h==false && flag==1){
+                    $("button:eq(2)").prop("disabled",false)
+                }else{
+                    $("button:eq(2)").prop("disabled",true)
+                }
+                if(flag2==1){
+                    $("#tip1").text("账号不能为空")
+                    $("#tip1").css(aa)
+                }else{
+                    $("#tip1").text("")
+                }
+                if(flag==0){
+                    $("#tip2").text("两次输入密码未能保持一致")
+                    $("#tip2").css(aa)
+                }else{
+                    $("#tip2").text("")
+                }
+            })
+            $("button:eq(2),button:eq(3)").click(function(){
+                $(".login").show()
+                $(".code").hide()
+            })
+        })
+        $(":input").focus(function(){
+                $(this).css("background","#f8f4ed")
+            })
+            $(":input").blur(function(){
+                $(this).css("background","white")
+            })      
+    })
+</script>
+<body>
+    <div class="container-fluid layout">
+        <div class="container-fluid  login">
+            <div class="a1 container-fluid" >
+                <i class="iconfont icon fl1">&#xe611;</i>
+                <h1 class="head">欢迎回来</h1>
+                <p>请先登录</p>
+                <hr>
+            </div>
+            <div>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="exampleInput1">账号</label>
+                        <input type="text" class="form-control" id="exampleInput1" placeholder="请输入您的账号">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">密码</label>
+                        <input type="password" class="form-control" id="exampleInputword1" placeholder="请输入您的密码">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="Notice1">我已经阅读登录须知
+                        </label>
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-default" disabled>登录</button>
+                <button type="submit" class="btn btn-default">注册</button>
+            </div>
+        </div>
+        <div class="container-fluid code">
+            <div class="a1 container-fluid">
+                <i class="iconfont icon fl2">&#xe6d6;</i>
+                <h1 class="head">用户注册</h1>
+                <hr>
+            </div>
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInput2">账号</label>
+                        <input type="text" class="form-control" id="exampleInput2" placeholder="请输入您的账号" name="b1"><a id="tip1"></a>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">密码</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="请输入密码" name="b2">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword3">确认密码</label>
+                        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="请确认密码" name="b3"><a id="tip2"></a>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="Notice2" name="b4">我已经阅读注册须知
+                        </label>
+                    </div>
+                  </form>
+            </div>
+              <button type="submit" class="btn btn-default" disabled>确认</button>
+              <button type="submit" class="btn btn-default">返回</button>
+        </div>
+    </div>
+</body>
+</html>

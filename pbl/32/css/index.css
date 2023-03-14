@@ -1,0 +1,171 @@
+@font-face {
+    font-family: font1;
+    src: url(../font/CEF\ Fonts\ CJK\ Mono.ttf);
+}
+
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.button {
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+    animation: jump 3s infinite;
+    transition: 1s
+}
+
+.button:hover {
+    animation: none;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(30px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(30px);
+    }
+}
+
+
+
+
+
+.outline {
+    fill: white;
+    stroke: #ffcc00;
+    stroke-width: 12;
+    stroke-dasharray: 400 100;
+    stroke-dashoffset: 100;
+    transition: 1s;
+}
+
+.button:hover .outline {
+    stroke: deeppink;
+    stroke-width: 12;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    transition: 1s;
+    transform: rotate(-30deg) translateY(50px);
+}
+
+.button:hover .svg-text {
+    color: deeppink;
+    transition: 1s;
+    transform: rotate(-30deg);
+}
+
+
+.body {
+    height: 100vh;
+}
+
+.hello {
+    margin-top: 10%;
+
+}
+
+.text {
+    width: 40%;
+    text-align: center;
+    font-family: font1;
+    margin: 10px;
+}
+
+.block {
+    animation: flash 0.5s infinite;
+}
+
+.svg-text {
+    color: #ffcc00;
+    position: relative;
+    top: -80%;
+    font-size: 30px;
+    transition: 1s;
+}
+
+
+
+@keyframes flash {
+    form {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.text h1 {
+    margin-bottom: 5%;
+}
+
+.text span {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+#cls-1 {
+    animation: svg-hello 4s;
+}
+
+
+
+@keyframes svg-hello {
+    0% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: gold;
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 0.2;
+    }
+
+    50% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgb(45, 152, 95);
+        stroke-width: 0.5;
+    }
+
+    70% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-width: 1;
+    }
+
+    90%,
+    100% {
+        fill: black;
+        stroke: rgba(54, 95, 160, 1);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+
+}
+
+.bg-white {
+    position: absolute;
+    top: 0px;
+    width: 60%;
+    height: 40%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+.bg-white span {
+    position: absolute;
+    top: 0px;
+    font-size: 20px;
+    font-family: font1;
+    transition: linear;
+    font-weight: bolder;
+}

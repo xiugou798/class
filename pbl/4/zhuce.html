@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+	<html lang="ch">
+		<head>
+			<title>注册</title>
+			<meta charset="utf-8">
+			<style type="text/css">
+				#Box {
+					position: absolute;
+					top: 50%;
+					left: 30%;
+					width: 40%;
+					height: 500px;
+					margin-top: -200;
+					background-color: rgb(90, 172, 184);
+					text-align-last: center;
+					opacity: 0.9;
+					border-radius: 15px;
+				}
+
+				#Box input {
+					width: 300px;
+					height: 36px;
+					font-size: 10px;
+					text-align: center;
+					border-radius: 15px;
+				}
+			</style>
+		</head>
+		<body background="./img/login背景.png">
+			<div id="Box">
+				<h1>注册</h1><br />
+				<form action="#" method="post">
+					<img src="./img/用户.png" style="width: 35px;height: 35px;">
+					<input type="text" name="username" id="zcname" placeholder="3-5位,数字字母下划线" /><span id="namespan"
+						style="color: red;"></span><br /><br />
+					<img src="./img/密码.png" style="width: 35px;height: 35px;">
+					<input type="password" name="password1" id="zcpass" placeholder="密码:6-12位" /><span id="passspan"
+						style="color: red;"></span><br /><br />
+					<img src="./img/密码1.png" style="width: 35px;height: 35px;">
+					<input type="password" name="password2" id="zcrpass" placeholder="请再次确认密码" /><span id="passrspan"
+						style="color: red;"></span><br /><br />
+					<img src="./img/邮箱.png" style="width: 35px;height: 35px;">
+					<input type="text" name="email" id="zcemail" placeholder="请输入邮箱" /><br /><br />
+					<img src="./img/手机.png" style="width: 35px;height: 35px;">
+					<input type="tel" name="phone" id="zcpgone" placeholder="请输入手机号" /><br /><br />
+					<input type="image" src="img/zc.png" onclick="onclickfun()">
+					<a href="login.html" target="_blank"><input type="button" style="width: 100px;height: 45px;border-radius: 15px;position: absolute;bottom:5px;right: 270px;" name="zhuce" id="zhuce" value="注册" /></a>
+				</form>
+			</div>
+		</body>
+		<script type="text/javascript">
+			function onclickfun() {
+				var nameobj = document.getElementById("zcname");
+				var nametext = nameobj.value;
+				var namespanobj = document.getElementById("namespan");
+				var natt = /^\w{3,5}$/; //正则表达式
+				if (natt.test(nametext) != true) {
+					namespanobj.innerHTML = "用户名不合要求";
+				}
+				var passobj = document.getElementById("zcpass");
+				var passtext = passobj.value;
+				var passspanobj = document.getElementById("passspan");
+				var patt = /^\w{6,12}$/; //正则表达式 
+				if (patt.test(passtext) != true) {
+					passspanobj.innerHTML = "密码不合要求";
+				}
+				var passrobj = document.getElementById("zcrpass");
+				var passrtext = passrobj.value;
+				var passrspanobj = document.getElementById("passrspan");
+				if (passrtext != passtext) {
+					passrspanobj.innerHTML = "密码不正确";
+				}
+
+			}
+		</script>
+	</html>

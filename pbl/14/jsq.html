@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易计算器</title> 
+		<style type="text/css">
+			*{
+				margin: auto;//将文字居中
+				padding: 0px;//与margin类似
+				text-align: center;//设置元素内文本居中对齐
+				font-family: "微软雅黑";//设置字体
+			}
+			.content{//设置一整个大框的属性
+				border-radius: 100%;//实现圆角边框
+				width: 400px;
+				height: 550px;
+				background-color: antiquewhite;
+			}
+			.clear{//设置清除按钮属性
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: blueviolet;
+			}
+			#result{//设置结果属性
+				margin-top: 24px;
+				font-size: 16px;
+				width: 60%;
+				height: 72px;
+				text-align: left;
+				border-radius: 20px;
+				background-color: #FFE4C4;
+			}
+			.symbol{//设置符号属性
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:bisque;
+			}
+			.number{//设置数字键属性
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:beige;
+			}
+			.calculate{//等号键设置
+				margin-top: 36px;
+				font-size: xx-large;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: #FF4500;
+			}
+			.content input:hover{//鼠标在其上面时会变化
+				box-shadow: 50px 50px 50px #888888;//用于元素框架添加阴影效果
+			}
+			.content input:active{//用户按下按键和松开按键时间
+				background-color: #FF0000;
+			}
+		</style>
+		<script type="text/javascript">
+			function clearValue(){
+				document.getElementById("result").value="";
+			}
+			function get(value){
+				document.getElementById("result").value+=value;
+			}
+			function calculate(){
+				var result=0;
+				result=document.getElementById("result").value;
+				document.getElementById("result").value="";
+				document.getElementById("result").value=eval(result);
+			};
+		</script>
+	</head>
+	<body>
+		<div class="banner">
+			<h2>
+				简 易 计 算 器
+			</h2>
+		</div>
+			<br />
+		<div class="content">
+			<input type="button" value="清 除" class="clear" onclick="clearValue()"/>
+			<input type="text" id="result" readonly="readonly" placeholder="运 算 结 果 显 示"/>
+				<br />
+			<input type="button" value="1" class="number" onclick="get(this.value)"/>
+			<input type="button" value="2" class="number" onclick="get(this.value)"/>
+			<input type="button" value="3" class="number" onclick="get(this.value)"/>
+			<input type="button" value="+" class="symbol" onclick="get(this.value)"/>
+				<br />
+			<input type="button" value="4" class="number" onclick="get(this.value)"/>
+			<input type="button" value="5" class="number" onclick="get(this.value)"/>
+			<input type="button" value="6" class="number" onclick="get(this.value)"/>
+			<input type="button" value="-" class="symbol" onclick="get(this.value)"/>
+				<br />
+			<input type="button" value="7" class="number" onclick="get(this.value)"/>
+			<input type="button" value="8" class="number" onclick="get(this.value)"/>
+			<input type="button" value="9" class="number" onclick="get(this.value)"/>
+			<input type="button" value="*" class="symbol" onclick="get(this.value)"/>
+				<br />
+			<input type="button" value="0" class="number" onclick="get(this.value)"/>
+			<input type="button" value="." class="symbol" onclick="get(this.value)"/>
+			<input type="button" value="/" class="symbol" onclick="get(this.value)"/>
+			<input type="button" value="=" class="calculate" onclick="calculate()"/>
+		</div>
+			<br />
+		<div class="footer">
+			<p align="center">r; rq</p>
+		</div>
+	</body>
+</html>

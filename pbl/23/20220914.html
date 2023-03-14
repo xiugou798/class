@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画饼</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vh;
+        height: 100%;
+    }
+    .top{
+        position: relative;
+        width: 100vh;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border: 2px solid red;
+    }
+    .top-left{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        margin-left: 10px;
+        line-height: 50px;
+    }
+    .top-right{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 20px;
+        line-height: 50px;
+    }
+    .bar{
+        position: absolute;
+        top: 0;
+        right: 100px;
+        width: 165px;
+    }
+    .bar div{
+        width: 80px;
+        height: 50px;
+        float: left;
+    }
+    .bar-first{
+        background-color: deeppink;
+        margin-right: 5px;
+    }
+    .bar-last{
+        background-color: aqua;
+    }
+    .search{
+        height: 50px;
+        position: absolute;
+        top: 0;
+        right: 280px;
+    }
+    .search input{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 20px;
+        margin: auto 0;
+        outline: none;
+        border: 2px solid aqua;
+        border-radius: 10px;
+    }
+    
+    .contain{
+        border: 2px solid red;
+        margin-left: 10px;
+        padding: 5px;
+        width: 100px;
+        height: 400px;
+    }
+    .h{
+        height: 30px;
+        margin-bottom: 5px;
+        border: 2px solid black;
+        text-align: center;
+        line-height: 30px;
+    }
+</style>
+<body>
+    <div class="top">
+        <div class="top-left">常育豪的网页</div>
+        <div class="search"><input type="text"></div>
+        <div class="bar">
+            <div class="bar-first"></div>
+            <div class="bar-last"></div>
+        </div>
+        <i class="top-right">武鑫林</i>
+    </div>
+    <div class="contain">
+        <div class="h">标题1</div>
+        <div class="h">标题2</div>
+    </div>
+</body>
+</html>

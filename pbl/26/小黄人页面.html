@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.bj {
+				width: 800px;
+				height: 740px;
+				border: 1px solid #000000;
+				position: relative;
+			}
+
+			.one,
+			.two,
+			.three {
+				width: 250px;
+				height: 740px;
+				position: absolute;
+				border: 1px solid #000000;
+				border-top-width: 0px;
+				border-bottom-width: 0px;
+				overflow: hidden;
+			}
+
+			.two {
+				left: 275px;
+			}
+
+			.three {
+				right: 0;
+			}
+
+			.xhr_body {
+				width: 250px;
+				height: 690px;
+				background-color: #ffff00;
+				position: absolute;
+				bottom: 0px;
+				border-radius: 50% 50% 0 0/30px 30px 0 0;
+				overflow: hidden;
+				animation: wave 0.5s infinite;/*动画调用*/
+				transform-origin: center center;/*旋转中心点*/
+				
+			}
+
+			.yj_wai {
+				width: 280px;
+				height: 280px;
+				background-color: rgb(225, 225, 217);
+				border-radius: 50%;
+				position: absolute;
+				left: -15px;
+				top: 35px;
+				border: 1px solid #dd0c0c;
+				
+
+				
+			}
+
+			.yj_li {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				height: 220px;
+				width: 220px;
+				border-radius: 50%;
+				background-color: #ffff00;
+				border: 1px solid #f10f0f;
+				
+				
+			}
+
+			.yj_bai {
+				height: 160px;
+				width: 220px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 30px;
+				
+			}
+
+			.yj_hei {
+				position: absolute;
+				height: 90px;
+				width: 90px;
+				top: 35px;
+				left: 65px;
+				background-color: #8c5d00;
+				border-radius: 50%;
+				border: 1px solid black;
+				
+
+			}
+			/*动画效果定义*/
+			@keyframes wave {
+			    0%{
+			        transform: rotate(-6deg);
+			    }
+			    50%{
+			        transform: rotate(6deg);
+			    }
+			    100%{
+			        transform: rotate(-6deg);
+			    }
+			}
+
+			yy {
+				width: 90px;
+				height: 90px;
+				margin: 50px;
+				background-color: #141411;
+				box-shadow: 90px 0px 0 20px #000000,
+					0px 90px 20px 0px #a5f
+			}
+
+			.gl {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				border-radius: 50%;
+				top: 20px;
+				left: 20px;
+				box-shadow: 20px 20px 0px 20px #000000;
+			}
+
+			.zb,
+			.yh {
+				position: absolute;
+				width: 158px;
+				height: 105px;
+				border-radius: 50%;
+				background-color: #000000;
+				bottom: 200px;
+				left: 33px;
+				overflow: hidden;
+			}
+
+			.yh {
+				position: absolute;
+				width: 318px;
+				height: 150px;
+				background-color: #ffff00;
+				border-radius: 50%;
+				bottom: 116px;
+				left: -53px;
+
+			}
+
+
+
+
+			.yc1 {
+				width: 54px;
+				height: 54px;
+				background-color: white;
+				position: absolute;
+				left: 25px;
+				top: -30px;
+				border-radius: 10px;
+			}
+
+			.yc2 {
+				width: 50px;
+				height: 50px;
+				background-color: white;
+				position: absolute;
+				left: 90px;
+				top: -30px;
+				border-radius: 10px;
+			}
+
+			.yc3 {
+				width: 30px;
+				height: 30px;
+				background-color: white;
+				position: absolute;
+				left: 0px;
+				top: 35px;
+				border-radius: 10px;
+			}
+
+			.yc4 {
+				width: 40px;
+				height: 40px;
+				background-color: white;
+				position: absolute;
+				left: 120px;
+				top: 35px;
+				border-radius: 10px;
+			}
+
+			
+
+			.yf {
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+				background-color: #8c5d00;
+			}
+
+			.yf div {
+				width: 250px;
+				height: 50px;
+				background-color: #2402ff;
+			}
+
+			.yf div:nth-child(2n) {
+				background-color: gray;
+			}
+
+			.kd {
+				width: 125px;
+				height: 90px;
+				border: 4px double #000000;
+				position: absolute;
+				bottom: 65px;
+				left: 85px;
+				border-radius: 0 0 50px 50px;
+				background-color: rgb(243, 13, 13);
+				opacity: 0.5;
+
+			}
+
+			.tf1,
+			.tf2,
+			.tf3 {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 10px;
+				z-index: 10;
+
+
+			}
+			.tf1{
+				
+			}
+
+			.tf2 {
+				border: 10px solid #0b0ff0;
+				border-radius: 0 70% 0 0;
+				left: 50px;
+				border-left: white;
+				border-bottom: none;
+				border-top-color: white;
+			}
+
+			.tf3 {
+				width: 1px;
+				height: 1px;
+				border-radius: 50%;
+				border: 1px solid #005500;
+				left: 100px;
+				background-color: #000;
+				box-shadow: 0px 0px 0 0 #000,
+					1px 0px 0 0 #000,
+					2px 0px 0 0 #000,
+					3px 0px 0 0 #000,
+					4px 1px 0 0 #000,
+					5px 2px 0 0 #000,
+					6px 3px 0 0 #000,
+					7px 4px 0 0 #000,
+					8px 6px 0 0 #000,
+					9px 8px 0 0 #000,
+					10px 10px 0 0 #000,
+					11px 12px 0 0 #000,
+					12px 14px 0 0 #000,
+					13px 16px 0 0 #000,
+					14px 19px 0 0 #000,
+					15px 22px 0 0 #000,
+					16px 25px 0 0 #000,
+					17px 28px 0 0 #000,
+					18px 32px 0 0 #000,
+					19px 36px 0 0 #000;
+
+
+
+			}
+
+			.bj1 {
+				position: absolute;
+				height: 415px;
+				width: 415px;
+				background-color: #ffff00;
+				border-radius: 30% 30% 30% 30%;
+				top: 56px;
+				right: -130px;
+				overflow: hidden;
+			}
+
+			.bj12 {
+				position: absolute;
+				height: 400px;
+				width: 400px;
+				background-color: #ffff00;
+				bottom: 0px;
+			}
+
+			.yjk1 {
+				position: absolute;
+				width: 180px;
+				height: 180px;
+				border-radius: 50%;
+				left: 15px;
+				top: 65px;
+				background-color: rgb(231, 231, 223);
+				border: 1px solid black;
+			}
+
+			.yjk2 {
+				position: absolute;
+				width: 135px;
+				height: 135px;
+				border-radius: 50%;
+				left: 20px;
+				top: 20px;
+				background-color: #ffff00;
+				border: 1px solid black;
+				overflow: hidden;
+				animation: wave 1.5s infinite;/*动画调用*/
+				transform-origin: center bottom;/*旋转中心点*/
+
+			}
+
+			.yjk3 {
+				position: absolute;
+				width: 170px;
+				height: 170px;
+				border-radius: 50%;
+				left: 160px;
+				top: 95px;
+				background-color: rgb(225, 225, 217);
+				border: 1px solid black;
+				animation: wave 1.5s infinite;/*动画调用*/
+				transform-origin: center bottom;/*旋转中心点*/
+
+				
+			}
+
+			.yjk4 {
+				position: absolute;
+				width: 125px;
+				height: 125px;
+				border-radius: 50%;
+				left: 20px;
+				top: 20px;
+				background-color: #ffff00;
+				border: 1px solid black;
+				overflow: hidden;
+			
+			}
+
+			.yjbai1,
+			.yjbai2 {
+				position: absolute;
+				width: 135px;
+				height: 135px;
+				background-color: ghostwhite;
+				top: 62px;
+				left: -10px;
+				transform: rotate(10deg);
+				overflow: hidden;
+				
+			}
+
+			.yjhei1,
+			.yjhei2 {
+				position: absolute;
+				height: 80px;
+				width: 80px;
+				top: -25px;
+				left: 30px;
+				background-color: #8c5d00;
+				border-radius: 100%;
+				border: 1px solid black;
+				
+
+			}
+			
+
+			.gl1,
+			.gl2 {
+				position: absolute;
+				width: 8px;
+				height: 8px;
+				background-color: white;
+				border-radius: 50%;
+				top: 10px;
+				left: 8px;
+				box-shadow: 10px 10px 0px 10px #000000;
+			}
+
+			.yf1 {
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+				background-color: #340aee;
+			}
+
+			.yf1 div {
+				width: 250px;
+				height: 50px;
+				background-color: #e60909;
+			}
+
+			.yf1 div:nth-child(2n) {
+				background-color: rgb(185, 125, 125);
+			}
+
+			.kd1 {
+				width: 125px;
+				height: 90px;
+				border: 4px double #c6b7b7;
+				position: absolute;
+				bottom: 65px;
+				left: 45px;
+				border-radius: 0 0 50px 50px;
+				background-color: gray;
+				opacity: 0.5;
+
+			}
+
+			.zb1 {
+				position: absolute;
+				width: 50px;
+				height: 5px;
+				border: 1px solid #8c5d00;
+				border-radius: 50% 50% 0 0/100% 100% 0 0;
+				border-bottom: 0;
+				left: 60px;
+				bottom: 270px;
+
+			}
+
+			.bj2 {
+				position: absolute;
+				height: 420px;
+				width: 470px;
+				background-color: #ffff00;
+				border-radius: 50%;
+				top: 50px;
+				left: -88px;
+				overflow: hidden;
+			}
+
+			.bj22 {
+				position: absolute;
+				height: 315px;
+				width: 315px;
+				background-color: #ffff00;
+				bottom: 0px;
+			}
+
+			.yjk11 {
+				position: absolute;
+				width: 180px;
+				height: 180px;
+				border-radius: 50%;
+				left: 60px;
+				top: 90px;
+				background-color: rgb(225, 225, 217);
+				border: 1px solid black;
+				
+			
+			    }
+
+			.yjk22 {
+				position: absolute;
+				width: 170px;
+				height: 170px;
+				border-radius: 50%;
+				left: 220px;
+				top: 90px;
+				background-color: rgb(225, 225, 217);
+				border: 1px solid black;
+				
+
+			}
+
+			.yjk33 {
+				position: absolute;
+				width: 140px;
+				height: 140px;
+				border-radius: 50%;
+				left: 20px;
+				top: 20px;
+				background-color: #ffff00;
+				border: 1px solid black;
+				overflow: hidden;
+				animation: wave 1.5s infinite;
+				transform-origin: center bottom;
+			}
+
+			.yjk44 {
+				position: absolute;
+				width: 130px;
+				height: 130px;
+				border-radius: 50%;
+				left: 20px;
+				top: 20px;
+				background-color: #ffff00;
+				border: 1px solid black;
+				overflow: hidden;
+				animation: wave 1.5s infinite;
+				transform-origin: center bottom;
+				
+				    }
+			
+
+			.xdd1 {
+				height: 12px;
+				width: 5px;
+				background-color: white;
+				border-radius: 50%;
+				top: 12px;
+				left: 30px;
+				position: absolute;
+				transform: rotate(65deg);
+			}
+
+			.xdd2 {
+				height: 12px;
+				width: 5px;
+				background-color: white;
+				border-radius: 50%;
+				position: absolute;
+				top: 12px;
+				left: 30px;
+				transform: rotate(65deg);
+
+			
+}
+			.bai1 {
+				position: absolute;
+				width: 170px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: white;
+				top: 15px;
+				left: -15px;
+				overflow: hidden;
+			}
+
+			.bai2 {
+				position: absolute;
+				width: 170px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: white;
+				top: 15px;
+				left: -15px;
+				overflow: hidden;
+			    
+			    }
+
+			.xzh1 {
+				position: absolute;
+				width: 160px;
+				height: 160px;
+				top: 65px;
+				left: 0px;
+				background-color: #ffff00;
+				overflow: hidden;
+			}
+
+			.xzh2 {
+				position: absolute;
+				width: 160px;
+				height: 160px;
+				top: 65px;
+				left: 0px;
+				background-color: #ffff00;
+				overflow: hidden;
+			}
+
+			.hei1 {
+				position: absolute;
+				height: 100px;
+				width: 60px;
+				border-radius: 50%;
+				background-color: #8c5d00;
+				left: 0px;
+				top: 15px;
+				overflow: hidden;
+			    
+			    
+			        }
+
+			.hei2 {
+				position: absolute;
+				height: 100px;
+				width: 60px;
+				border-radius: 50%;
+				background-color: #8c5d00;
+				left: 15px;
+				top: 15px;
+				overflow: hidden;
+			}
+
+			.hdd1 {
+				position: absolute;
+				height: 25px;
+				width: 25px;
+				border-radius: 50%;
+				background-color: black;
+				left: 15px;
+				top: 20px;
+			}
+
+			.hdd2 {
+				position: absolute;
+				height: 25px;
+				width: 25px;
+				border-radius: 50%;
+				background-color: black;
+				left: 15px;
+				top: 20px;
+			}
+
+			.zf1 {
+				position: absolute;
+				width: 60px;
+				height: 60px;
+				top: 50px;
+				left: 0px;
+				background-color: #ffff00;
+				border: 1px solid #ffff00;
+
+			}
+
+			.zf2 {
+				position: absolute;
+				width: 60px;
+				height: 60px;
+				top: 50px;
+				left: 0px;
+				background-color: #ffff00;
+				border: 1px solid #ffff00;
+
+			}
+
+			.xdd3 {
+				position: absolute;
+				height: 5px;
+				width: 5px;
+				border-radius: 50%;
+				background-color: white;
+				left: 32px;
+				top: 30px;
+			}
+
+			.xdd4 {
+				position: absolute;
+				height: 5px;
+				width: 5px;
+				border-radius: 50%;
+				background-color: white;
+				left: 35px;
+				top: 25px;
+			}
+
+
+			.zb22{
+				position: absolute;
+				height: 140px;
+				width: 120px;
+				border-radius: 20%;
+				background-color: #8c5d00;
+				left: 115px;
+				bottom: 250px;
+				overflow: hidden;
+				
+			}
+			.zb11 {
+				position: absolute;
+				height: 140px;
+				width: 140px;
+				border-radius: 50%;
+				background-color: #8c5d00;
+				left: 115px;
+				bottom: 250px;
+				overflow: hidden;
+				
+			}
+
+			.zb11 {
+				position: absolute;
+				height: 140px;
+				width: 240px;
+				border-radius: 50%;
+				background-color: #ffff00;
+				left: 40px;
+				bottom: 290px;
+				
+
+			}
+
+			.yc11 {
+				width: 40px;
+				height: 40px;
+				background-color: white;
+				position: absolute;
+				left: 7px;
+				bottom: 15px;
+				border-radius: 10px;
+			}
+
+			.yc22 {
+				width: 60px;
+				height: 40px;
+				background-color: white;
+				position: absolute;
+				left: 47px;
+				bottom: 15px;
+				border-radius: 10px;
+			}
+
+			.yc33 {
+				width: 40px;
+				height: 40px;
+				background-color: white;
+				position: absolute;
+				left: 107px;
+				bottom: 25px;
+				border-radius: 10px;
+			}
+
+			.yc44 {
+				width: 60px;
+				height: 60px;
+				background-color: white;
+				position: absolute;
+				left: 20px;
+				bottom: -45px;
+				border-radius: 10px;
+				
+			}
+
+			.yf2 {
+				position: absolute;
+				bottom: 0px;
+				height: 200px;
+				width: 250px;
+				background-color: #8c5d00;
+			}
+
+			.yf2 div {
+				width: 250px;
+				height: 50px;
+				background-color: #e01111;
+			}
+
+			.yf2 div:nth-child(2n) {
+				background-color: rgb(12, 1, 1);
+			}
+
+			.kd3 {
+				width: 125px;
+				height: 90px;
+				border: 4px double #000000;
+				position: absolute;
+				bottom: 65px;
+				left: 85px;
+				border-radius: 0 0 50px 50px;
+				background-color: gray;
+				opacity: 0.5;
+				
+
+			}
+
+			.tf1,
+			.tf2,
+			.tf3 {
+				width: 4px;
+				height: 100px;
+				position: absolute;
+				left: 10px;
+				top: 10px z-index：10px border-radius：0 50% 0 0;	
+							
+			}
+			/*动画效果定义*/
+			
+			@keyframes wave {
+			    0%{
+			        transform: rotate(-6deg);
+			    }
+			    50%{
+			        transform: rotate(6deg);
+			    }
+			    100%{
+			        transform: rotate(-6deg);
+			    }
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class='bj'>
+			<div class='one'>
+				<div class="bj1">
+					<div class="yjk1">
+						<div class="yjk2">
+							<div class="yjbai1">
+								<div class="yjhei1">
+									<div class="gl1"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="yjk3">
+						<div class="yjk4">
+							<div class="yjbai2">
+								<div class="yjhei2">
+									<div class="gl2"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bj12">
+					<div class="yf1">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="kd1"></div>
+					<div class="zb1"></div>
+				</div>
+			</div>
+
+
+			<div class='two'>
+				<!-- <div class="tf1"></div>
+				<div class="tf2"></div>
+				<div class="tf3"></div>
+				<div class="xhr_body"> -->
+
+					<div class='xhr_body'>
+						<!-- <>div class="tf1" -->
+
+							<div class='yj_wai'>
+								<div class="yj_li">
+									<div class="yj_bai">
+										<div class="yj_hei">
+											<div class='gl'>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='zb'>
+								<div class="yc1"></div>
+								<div class="yc2"></div>
+								<div class="yc3"></div>
+								<div class="yc4"></div>
+								<div class="st1"></div>
+								<div class="st2"></div>
+							</div>
+							<div class="yh"></div>
+							<div class="yf">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+
+							</div>
+							<div class="kd"></div>
+					</div>
+				</div>
+
+
+				<div class='three'>
+					<div class="bj2">
+						<div class="yjk11">
+							<div class="yjk33">
+
+								<div class="xdd1"></div>
+								<div class="bai1">
+									<div class="xzh1"></div>
+									<div class="hei1">
+										<div class="hdd1"></div>
+										<div class="zf1"></div>
+										<div class="xdd3"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="yjk22">
+							<div class="yjk44">
+
+								<div class="xdd2"></div>
+								<div class="bai2">
+									<div class="xzh2"></div>
+									<div class="hei2">
+										<div class="hdd2"></div>
+										<div class="zf2"></div>
+										<div class="xdd4"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+					<div class="bj22">
+						<div class="zb22">
+							<div class="yc11"></div>
+							<div class="yc22"></div>
+							<div class="yc33"></div>
+							<div class="yc44"></div>
+						</div>
+						<div class="zb11"></div>
+						<div class="yf2">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="kd3"></div>
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+			</div>
+
+
+
+
+
+
+
+
+
+	</body>
+</html>

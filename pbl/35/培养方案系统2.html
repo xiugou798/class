@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>培养方案系统</title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+
+			.dhl {
+				position: absolute;
+				height: 40px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.xf {
+				top: 10px;
+				background-color: #CDE1FD;
+				width: 140px;
+				height: 30px;
+				color: black;
+				position: absolute;
+				border-radius: 6px;
+				left: 10px;
+				margin: auto;
+			}
+
+			.jkx {
+				width: 100px;
+				height: 20px;
+				font-size: 12px;
+				font-family: 楷书;
+				left: 180px;
+				top: 20px;
+				position: absolute;
+				text-align: center;
+				color: red;
+			}
+
+			.xf1 {
+				top: 10px;
+				background-color: #CDE1FD;
+				width: 140px;
+				height: 30px;
+				color: black;
+				position: absolute;
+				border-radius: 6px;
+				right: 10px;
+				margin: auto;
+			}
+
+			.pp {
+				font-size: 20px;
+				font-family: 隶书;
+				color: palevioletred;
+			}
+
+			.kzl {
+				width: 1200px;
+				height: 50px;
+				top: 80px;
+				left: 50px;
+				position: absolute;
+				text-align: center;
+			}
+
+			.zs {
+				font-size: 25px;
+				height: 50px;
+				width: 300px;
+				text-align: center;
+			}
+			.n2{
+				font-size: 25px;
+				height: 50px;
+				width: 300px;
+				text-align: center;
+				color: plum;
+			}
+
+			.tskcyck {
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+				display: none;
+			}
+			.tskc {
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+			}
+
+			.tsk1 {
+				width: 1400px;
+				height: 70px;
+				background-color: gainsboro;
+				font-family: 隶书;
+				font-size: 20px;
+				left: 10px;
+				top: 3px;
+				position: absolute;
+			}
+
+			.kclb1 {
+				width: 1600px;
+				height: 670px;
+				position: absolute;
+				top: 100px;
+			}
+
+			.qr1 {
+				width: 150px;
+				height: 40px;
+				position: absolute;
+				border: 1px solid;
+				border-radius: 10px;
+				background-color: aqua;
+				text-align: center;
+				font-family: 隶书;
+				font-size: 30px;
+				color: white;
+				left: 800px;
+				top: 630px;
+			}
+
+			.xkjcyck {
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+				display: none;
+			}
+			.xkjc {
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+			}
+
+			.gjtj {
+				width: 1800px;
+				height: 80px;
+				border: 1px solid powderblue;
+				position: absolute;
+				top: 90px;
+			}
+
+			.g1 {
+				background-color: aqua;
+				font-size: 15px;
+				width: 140px;
+				height: 30px;
+				border: 0ch;
+				left: 50px;
+				top: 40px;
+				position: absolute;
+				border-radius: 5px;
+				text-align: center;
+			}
+
+			.g2 {
+				background-color: aqua;
+				font-size: 15px;
+				width: 140px;
+				height: 30px;
+				border: 0ch;
+				left: 350px;
+				top: 40px;
+				position: absolute;
+				border-radius: 5px;
+				text-align: center;
+			}
+
+			.g3 {
+				background-color: aqua;
+				font-size: 15px;
+				width: 140px;
+				height: 30px;
+				border: 0ch;
+				left: 650px;
+				top: 40px;
+				position: absolute;
+				border-radius: 5px;
+				text-align: center;
+			}
+
+			.kclb2 {
+				width: 1600px;
+				height: 600px;
+				position: absolute;
+				top: 200px;
+			}
+
+			.qr2 {
+				width: 150px;
+				height: 40px;
+				position: absolute;
+				border: 1px solid;
+				border-radius: 10px;
+				background-color: aqua;
+				text-align: center;
+				font-family: 隶书;
+				font-size: 30px;
+				color: white;
+				left: 780px;
+				top: 560px;
+			}
+
+			.zyzskcyck {
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+				display: none;
+			}
+			.zyzskc {
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+			}
+
+			.zx {
+				width: 200px;
+				height: 10px;
+				text-align: center;
+			}
+			.n7{
+				width: 200px;
+				height: 10px;
+				text-align: center;
+				color: plum;
+			}
+
+			.zd {
+				position: absolute;
+				top: 5px;
+				left: 450px;
+			}
+
+			.tsk2 {
+				width: 1400px;
+				height: 50px;
+				background-color: gainsboro;
+				font-family: 隶书;
+				font-size: 20px;
+				left: 10px;
+				top: 30px;
+				position: absolute;
+			}
+
+			.gjtj1 {
+				width: 1800px;
+				height: 80px;
+				border: 1px solid powderblue;
+				position: absolute;
+				top: 90px;
+			}
+
+			.kclb3 {
+				width: 1600px;
+				height: 600px;
+				position: absolute;
+				top: 200px;
+			}
+
+			.qr3 {
+				width: 150px;
+				height: 40px;
+				position: absolute;
+				border: 1px solid;
+				border-radius: 10px;
+				background-color: aqua;
+				text-align: center;
+				font-family: 隶书;
+				font-size: 30px;
+				color: white;
+				left: 780px;
+				top: 560px;
+			}
+
+			.teszyzskcyck {
+				display: none;
+			}
+			.teszyzskc {
+				/* display: none; */
+			}
+
+			.kclb4 {
+				width: 1800px;
+				height: 440px;
+				position: absolute;
+				top: 120px;
+			}
+
+			.kclb5 {
+				position: absolute;
+				top: 590px;
+			}
+
+			.zyzsqzkcyck {
+				display: none;
+			}
+			.zyzsqzkc{
+				/* display: none; */
+			}
+			.sjyck {
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+				display: none;
+			}
+			.sj{
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+			}
+
+			.tsk3 {
+				width: 1400px;
+				height: 50px;
+				background-color: gainsboro;
+				font-family: 隶书;
+				font-size: 20px;
+				left: 30px;
+				top: 10px;
+				position: absolute;
+			}
+
+			.gwmc {
+				position: absolute;
+				top: 80px;
+				left: 30px;
+				width: 1800px;
+				height: 40px;
+				display: flex;
+			}
+
+			.rmgw1 {
+				width: 350px;
+				height: 400px;
+				background-color: paleturquoise;
+				position: absolute;
+				top: 120px;
+				left: 40px;
+			}
+
+			.rmgw2 {
+				width: 30px;
+				height: 120px;
+				background-color: aqua;
+				position: absolute;
+				text-align: center;
+				top: 230px;
+				left: 30px;
+			}
+
+			.rmgw3 {
+				width: 50px;
+				height: 400px;
+				position: absolute;
+				display: flex;
+				top: 120px;
+				left: 80px;
+			}
+			.rmgw4{
+				width: 200px;
+				height: 400px;
+				position: absolute;
+				left: 155px;
+				top: 120px;
+			}
+			.rmgw41{
+				position: absolute;
+				background-color: white;
+				border-radius: 10px;
+				border: 1px solid white;
+				text-align: center;
+				width: 180px;
+			}
+			.rmrw1{
+				width: 700px;
+				height: 400px;
+				position: absolute;
+				top: 120px;
+				left: 500px;
+				background-color: paleturquoise;
+			}
+			.xgjn1{
+				width: 500px;
+				height: 400px;
+				position: absolute;
+				top: 120px;
+				left: 1300px;
+				background-color: paleturquoise;
+			}
+			.rmrw2{
+				width: 30px;
+				height: 120px;
+				background-color: aqua;
+				position: absolute;
+				text-align: center;
+				top: 230px;
+				left: 485px;
+			}
+			.rmrw3{
+				width: 35px;
+				height: 400px;
+				position: absolute;
+				top: 130px;
+				left: 540px;
+			}
+			.rmrw31{
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				border: 1px solid;
+				background-color: white;
+			}
+			.rmrw4{
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				top: 120px;
+				left: 560px;
+			}
+			.xgjn2{
+				width: 30px;
+				height: 120px;
+				background-color: aqua;
+				position: absolute;
+				text-align: center;
+				top: 230px;
+				left: 1285px;
+			}
+			.xgjn3{
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				top: 120px;
+				left: 1320px;
+				text-align: center;
+			}
+			.xgjn31{
+				width: 380px;
+				height: 20px;
+				background-color: white;
+				position: absolute;
+			}
+			.jt1{
+				position: absolute;
+				top: 280px;
+				left: 400px;
+			}
+			.jt2{
+				position: absolute;
+				top: 280px;
+				left: 1220px;
+			}
+			.kclb6{
+				position: absolute;
+				top: 530px;
+			}
+			.kclb7{
+				position: absolute;
+				top: 700px;
+			}
+			.byyqyck{
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+				display: none;
+			}
+			.byyq{
+				width: 1800px;
+				height: 800px;
+				position: absolute;
+				top: 130px;
+				left: 50px;
+			}
+			.kclb8{
+				position: absolute;
+				top: 35px;
+				left: 50px;
+			}
+			.cjpb{
+				position: absolute;
+				height: 100px;
+				width: 200px;
+				top: 35px;
+				left: 1150px;
+				font-family: 隶书;
+				font-size: 20px;
+			}
+			.kclb9{
+				position: absolute;
+				top: 490px;
+				left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dhl">
+			<div class="xf">
+				<p class="pp">系分院负责人</p>
+			</div>
+			<div class="jsjkx">
+				<a class="jkx" href="./培养方案系统1.html">计算机科学与技术</a>
+			</div>
+			<div class="xf1">
+				<p class="pp">退出登录</p>
+			</div>
+		</div>
+		<div class="kzl">
+			<table cellspacing="0">
+				<tr>
+					<td class="n2" id="n1" onclick="tskc()">通识课程(<a style="color: red;">40.7%</a>/30%)</td>
+					<td class="zs" id="n2" onclick="xkjckc()">学科基础课程(20%)</td>
+					<td class="zs" id="n3" onclick="zyzskc()">专业知识课程(30%)</td>
+					<td class="zs" id="n4" onclick="sjkc()">实践课程(20%)</td>
+					<td class="zs" id="n5" onclick="byyq()">毕业要求</td>
+				</tr>
+			</table>
+		</div>
+		<div class="byyqyck" id="c5">
+			<a style="position: absolute;left: 40px; font-size:25px;">毕业要求</a>
+			<div class="kclb8">
+				<table border="1" height="400" width="1000" cellspacing="0" align="center">
+					<tr align="center">
+						<td rowspan="2" colspan="3" style="background-color: aqua;">课程类别</td>
+						<td colspan="4" style="background-color: aqua;">学时分配</td>
+					</tr>
+					<tr align="center">
+						<td style="background-color: aqua;">学时</td>
+						<td style="background-color: aqua;">学分</td>
+						<td style="background-color: aqua;">学分比例</td>
+						<td style="background-color: aqua;">占比</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="3">通识课程</td>
+						<td rowspan="2">大通知识课程</td>
+						<td>必修</td>
+						<td>968</td>
+						<td>60.5</td>
+						<td>35.59%</td>
+						<td rowspan="3">40.7%</td>
+					</tr>
+					<tr align="center">
+						<td>选修</td>
+						<td>48</td>
+						<td>3</td>
+						<td>1.76%</td>
+					</tr>
+					<tr align="center">
+						<td>小通知识课程</td>
+						<td>必修</td>
+						<td>64</td>
+						<td>4</td>
+						<td>2.35%</td>
+					</tr>
+					<tr align="center">
+						<td colspan="2">学科基础课程</td>
+						<td>必修</td>
+						<td>368</td>
+						<td>23</td>
+						<td>13.53%</td>
+						<td>13.53%</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="2">专业课程</td>
+						<td>专业必修课程</td>
+						<td>必修</td>
+						<td>560</td>
+						<td>35</td>
+						<td>20.59%</td>
+						<td rowspan="2">30%</td>
+					</tr>
+					<tr align="center">
+						<td>专业选修课程</td>
+						<td>选修</td>
+						<td>256</td>
+						<td>16</td>
+						<td>9.41%</td>
+					</tr>
+					<tr align="center">
+						<td colspan="2" rowspan="2">实践课程</td>
+						<td>必修</td>
+						<td>334</td>
+						<td>21.5</td>
+						<td>12.65%</td>
+						<td rowspan="2">16.77%</td>
+					</tr>
+					<tr align="center">
+						<td>选修</td>
+						<td>112</td>
+						<td>7</td>
+						<td>4.12%</td>
+					</tr>
+					<tr align="center">
+						<td colspan="3">合计</td>
+						<td>2720</td>
+						<td>170</td>
+						<td>100%</td>
+						<td>100%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="cjpb">
+				<p>产教匹配度：<a style="color: plum;">85%</a></p>
+				<p>所涉岗位数：<a style="color: plum;">1000</a></p>
+				<p>本地企业数：<a style="color: plum;">85</a></p>
+				<p>外地企业数：<a style="color: plum;">255</a></p>
+			</div>
+			<a style="position: absolute;left: 40px; font-size:25px; top:450px;">课程计划</a>
+			<div class="kclb9">
+				<table border="1" height="300" width="1800" cellspacing="0" align="center">
+					<tr align="center">
+						<td rowspan="2" style="background-color: aqua;">课程类别</td>
+						<td rowspan="2" style="background-color: aqua;">课程性质</td>
+						<td rowspan="2" style="background-color: aqua;">课程编号</td>
+						<td rowspan="2" style="background-color: aqua;">课程名称</td>
+						<td rowspan="2" style="background-color: aqua;">学分</td>
+						<td rowspan="2" style="background-color: aqua;">总学时</td>
+						<td colspan="2" style="background-color: aqua;">学时分配</td>
+						<td rowspan="2" style="background-color: aqua;">开课学期</td>
+						<td rowspan="2" style="background-color: aqua;">周学时</td>
+						<td rowspan="2" style="background-color: aqua;">技能</td>
+						<td rowspan="2" style="background-color: aqua;">推荐教材</td>
+					</tr>
+					<tr align="center">
+						<td style="background-color: aqua;">理论</td>
+						<td style="background-color: aqua;">实践</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="13">通识课程</td>
+						<td>必修</td>
+						<td>A400101</td>
+						<td>思想道德与法治</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400103</td>
+						<td>中国近现代史</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400105</td>
+						<td>毛泽东思想和中国特色社会主义理论体系概论</td>
+						<td>5</td>
+						<td>80</td>
+						<td>48</td>
+						<td>32</td>
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400107</td>
+						<td>马克思主义基本原理</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400109</td>
+						<td>形势与政策|</td>
+						<td>1</td>
+						<td>16</td>
+						<td>16</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400110</td>
+						<td>形势与政策||</td>
+						<td>1</td>
+						<td>16</td>
+						<td>16</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400201</td>
+						<td>大学英语|</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400202</td>
+						<td>大学英语||</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="sjyck" id="c4">
+			<div class="tsk3">
+				<table>
+					<tr>
+						<p>具有满足教学需要的完备实践教学体系。主要包括实验课程，课程设计，实习，毕业设计(论文)。</p>
+					</tr>
+					<tr>
+						<p>4年总的实验当量不少于2万行代码。积极开展科技创新，社会实践等多种形式的实践活动，到各类工程单位实习或工作，取得工程经验，基本了解本行业状况。</p>
+					</tr>
+				</table>
+			</div>
+			<div class="gwmc">
+				<p>岗位名称：</p>
+				<div
+					style="border: 1px solid aquamarine; width:120px; height:30px;top: -5px; position: absolute; left:80px;">
+				</div>
+				<p style="position: absolute; left:300px;">工作地点：</p>
+				<div
+					style="border: 1px solid aquamarine; width:120px; height:30px;top: -5px; position: absolute; left:380px;">
+				</div>
+				<p style="position: absolute; left:600px;">薪资范围：</p>
+				<div
+					style="border: 1px solid aquamarine; width:90px; height:30px;top: -5px; position: absolute; left:680px;">
+				</div>
+				<p style="position: absolute; left:777px; color:aquamarine;">—</p>
+				<div
+					style="border: 1px solid aquamarine; width:90px; height:30px;top: -5px; position: absolute; left:800px;">
+				</div>
+				<div
+					style="border: 1px solid aquamarine; width:60px; height:20px;top: 2px; position: absolute; left:900px;background-color: aqua;border-radius: 7px; text-align:center">
+					<p style="color: white;">确认</p>
+				</div>
+			</div>
+			<div class="rmgw1"></div>
+			<div class="rmgw2"><a style="font-size: 20px; color:white;">热门岗位</a></div>
+			<div class="rmgw3">
+				<p style="position: absolute; top:10px; color:red;">No.1</p>
+				<p style="position: absolute; top:50px;color: aqua;">No.2</p>
+				<p style="position: absolute; top:90px;color: blue;">No.3</p>
+				<p style="position: absolute; top:130px;">No.4</p>
+				<p style="position: absolute; top:170px;">No.5</p>
+				<p style="position: absolute; top:210px;">No.6</p>
+				<p style="position: absolute; top:250px;">No.7</p>
+				<p style="position: absolute; top:290px;">No.8</p>
+				<p style="position: absolute; top:330px;">No.9</p>
+				<p style="position: absolute; top:370px;">No.10</p>
+			</div>
+			<div class="rmgw4">
+				<div class="rmgw41" style="top: 5px;">大数据开发工程师</div>
+				<div class="rmgw41" style="top: 45px;">机器人算法工程师</div>
+				<div class="rmgw41" style="top: 85px;">大数据运维工程师</div>
+				<div class="rmgw41" style="top: 125px;">AI算法工程师</div>
+				<div class="rmgw41" style="top: 165px;">前端开发工程师</div>
+				<div class="rmgw41" style="top: 205px;">Java高级开发工程师</div>
+				<div class="rmgw41" style="top: 245px;">Android工程师</div>
+				<div class="rmgw41" style="top: 285px;">IT运维工程师</div>
+				<div class="rmgw41" style="top: 325px;">C++开发工程师</div>
+				<div class="rmgw41" style="top: 365px;">NLP算法工程师</div>
+			</div>
+			<div class="rmrw1"></div>
+			<div class="rmrw2"><a style="font-size: 20px; color:white;">热门任务</a></div>
+			<div class="rmrw3">
+				<div class="rmrw31" style="top: 12px;"></div>
+				<div class="rmrw31" style="top: 72px;"></div>
+				<div class="rmrw31" style="top: 102px;"></div>
+				<div class="rmrw31" style="top: 132px;"></div>
+				<div class="rmrw31" style="top: 200px;"></div>
+				<div class="rmrw31" style="top: 250px;"></div>
+				<div class="rmrw31" style="top: 300px;"></div>
+				<div class="rmrw31" style="top: 350px;"></div>
+			</div>
+			<div class="rmrw4">
+				<p style="position: absolute;top: 15px;">负责：民航业务的大数据开发工作，对数据治理全生命周期进行跟进，结合民航业务需求设计数据分析场景，并形成后台实现方案，提高整个平台的计算能力和效率</p>
+				<p style="position: absolute;top: 75px;">负责：和客户的需求沟通，有过项目管理经验者优先</p>
+				<p style="position: absolute;top: 105px;">负责：数据库结构设计，以及架构分析设计</p>
+				<p style="position: absolute;top: 135px;">参与：产品及方案功能设计，架构优化，性能优化并能给出良好的解决方案，并协助其他人员完成开发及调试工作</p>
+				<p style="position: absolute;top: 203px;">负责：和客户的需求沟通，有过项目管理经验者优先</p>
+				<p style="position: absolute;top: 253px;">负责：数据库结构设计，以及架构分析设计</p>
+				<p style="position: absolute;top: 303px;">参与：产品及方案功能设计，架构优化，性能优化并能给出良好的解决方案，并协助其他人员完成开发及调试工作</p>
+				<p style="position: absolute;top: 353px;">负责：技术相关文档的编写及核心代码的研发</p>
+			</div>
+			<div class="jt1"><p>————></p></div>
+			<div class="jt2"><p>———></p></div>
+			<div class="xgjn1"></div>
+			<div class="xgjn2"><a style="font-size: 20px; color:white;">相关技能</a></div>
+			<div class="xgjn3">
+				<div class="xgjn31" style="top: 10px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：python等开发语言</p></div>
+				<div class="xgjn31" style="top: 50px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：java</p></div>
+				<div class="xgjn31" style="top: 90px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：Hadoop</p></div>
+				<div class="xgjn31" style="top: 130px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：Hive</p></div>
+				<div class="xgjn31" style="top: 170px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练：常用设计模式</p></div>
+				<div class="xgjn31" style="top: 210px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：scala</p></div>
+				<div class="xgjn31" style="top: 250px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">精通：计算机原理</p></div>
+				<div class="xgjn31" style="top: 290px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：flume</p></div>
+				<div class="xgjn31" style="top: 330px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：Sqoop</p></div>
+				<div class="xgjn31" style="top: 370px;"><div class="rmrw31" style="top:4px; left:4px;"></div><p style="position: absolute;left: 30px;">熟练掌握：SparkSql</p></div>
+			</div>
+			<div class="kclb6">
+				<table border="1" height="160" width="1800" cellspacing="0" align="center">
+					<tr align="center">
+						<td  style="background-color: aqua;">课程类别</td>
+						<td  style="background-color: aqua;">课程名称</td>
+						<td  style="background-color: aqua;">开课学期</td>
+						<td  style="background-color: aqua;">学时</td>
+						<td  style="background-color: aqua;">对标任务</td>
+						<td  style="background-color: aqua;">条件性知识</td>
+						<td  style="background-color: aqua;">锤炼目标</td>
+						<td  style="background-color: aqua;">成果形式</td>
+						<td  style="background-color: aqua;">参考信息</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="4">pbl项目实践</td>
+						<td rowspan="2">系统运维工程师实训</td>
+						<td>4</td>
+						<td>32</td>
+						<td>系统和模块的评估及审核</td>
+						<td>操作系统计算机原理</td>
+						<td>能力转化素养提升</td>
+						<td>报告</td>
+						<td rowspan="2" style="color: plum;">点击查看详情</td>
+					</tr>
+					<tr align="center">
+						<td>4</td>
+						<td>32</td>
+						<td>日常运维工具和脚本的开发</td>
+						<td>python语言</td>
+						<td></td>
+						<td>实物交付</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="2">系统运维工程师实训</td>
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="kclb7">
+				<table border="1" height="100" width="1800" cellspacing="0" align="center">
+					<tr align="center">
+						<td rowspan="2" style="background-color: aqua;">课程类别</td>
+						<td rowspan="2" style="background-color: aqua;">课程性质</td>
+						<td rowspan="2" style="background-color: aqua;">课程编号</td>
+						<td rowspan="2" style="background-color: aqua;">课程名称</td>
+						<td rowspan="2" style="background-color: aqua;">学分</td>
+						<td rowspan="2" style="background-color: aqua;">总学时</td>
+						<td colspan="2" style="background-color: aqua;">学时分配</td>
+						<td rowspan="2" style="background-color: aqua;">开课学期</td>
+						<td rowspan="2" style="background-color: aqua;">周学时</td>
+						<td rowspan="2" style="background-color: aqua;">技能</td>
+						<td rowspan="2" style="background-color: aqua;">推荐教材</td>
+					</tr>
+					<tr align="center">
+						<td style="background-color: aqua;">理论</td>
+						<td style="background-color: aqua;">实践</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="2">通识课程</td>
+						<td>必修</td>
+						<td>A400101</td>
+						<td>思想道德与法治</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400103</td>
+						<td>中国近现代史</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+		<div class="tskc" id="c1">
+			<div class="tsk1">
+				<table>
+					<tr>
+						<p>通识类知识包括人文社会科学类，数学和自然科学类两部分。</p>
+					</tr>
+					<tr>
+						<p>人文社会科学类知识包括经济,环境，法律，伦理等基本内容。</p>
+					</tr>
+					<tr>
+						<p>数学和自然科学类知识包括高等工程数学，概率论与数理统计，离散数学，力学，电磁学，光学与现代物理的基本内容。</p>
+					</tr>
+				</table>
+			</div>
+			<div class="kclb1">
+				<table border="1" height="600" width="1600" cellspacing="0" align="center">
+					<tr align="center">
+						<td rowspan="2" style="background-color: aqua;">课程类别</td>
+						<td rowspan="2" style="background-color: aqua;">课程性质</td>
+						<td rowspan="2" style="background-color: aqua;">课程编号</td>
+						<td rowspan="2" style="background-color: aqua;">课程名称</td>
+						<td rowspan="2" style="background-color: aqua;">学分</td>
+						<td rowspan="2" style="background-color: aqua;">总学时</td>
+						<td colspan="2" style="background-color: aqua;">学时分配</td>
+						<td rowspan="2" style="background-color: aqua;">开课学期</td>
+						<td rowspan="2" style="background-color: aqua;">周学时</td>
+						<td rowspan="2" style="background-color: aqua;">技能</td>
+						<td rowspan="2" style="background-color: aqua;">推荐教材</td>
+					</tr>
+					<tr align="center">
+						<td style="background-color: aqua;">理论</td>
+						<td style="background-color: aqua;">实践</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="13">通识课程</td>
+						<td>必修</td>
+						<td>A400101</td>
+						<td>思想道德与法治</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400103</td>
+						<td>中国近现代史</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400105</td>
+						<td>毛泽东思想和中国特色社会主义理论体系概论</td>
+						<td>5</td>
+						<td>80</td>
+						<td>48</td>
+						<td>32</td>
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400107</td>
+						<td>马克思主义基本原理</td>
+						<td>3</td>
+						<td>48</td>
+						<td>48</td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400109</td>
+						<td>形势与政策|</td>
+						<td>1</td>
+						<td>16</td>
+						<td>16</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400110</td>
+						<td>形势与政策||</td>
+						<td>1</td>
+						<td>16</td>
+						<td>16</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400201</td>
+						<td>大学英语|</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400202</td>
+						<td>大学英语||</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400203</td>
+						<td>大学英语|||</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400204</td>
+						<td>大学英语||||</td>
+						<td>2</td>
+						<td>32</td>
+						<td>32</td>
+						<td></td>
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400310</td>
+						<td>微积分(上)</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400311</td>
+						<td>微积分(下)</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td>A400313</td>
+						<td>线性代数</td>
+						<td>4</td>
+						<td>64</td>
+						<td>64</td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div class="qr1">
+					确认
+				</div>
+			</div>
+		</div>
+		<div class="xkjcyck" id="c2">
+			<div class="tsk1">
+				<table>
+					<tr>
+						<p>学科基础知识被视为专业类基础知识，培养学生计算思维，算法分析与设计，系统能力等专业基本能力，能够解决实际问题。</p>
+					</tr>
+					<tr>
+						<p>建议教学内容覆盖以下知识领域的核心内容：程序设计，数据结构，计算机组成，操作系统，计算机网络，信息管理，包括核心概念，基本原理以及相关的基本技术和方法，并让学生了解学科发展历史和现状。
+						</p>
+					</tr>
+				</table>
+			</div>
+			<div class="gjtj">
+				<table>
+					<tr>
+						<h3>国家标准课程推荐：</h3>
+					</tr>
+					<select class="g1">
+						<option value="实例1">实例1</option>
+					</select>
+					<select class="g2">
+						<option value="实例2">实例2</option>
+					</select>
+					<select class="g3">
+						<option value="实例3">实例3</option>
+					</select>
+				</table>
+			</div>
+			<div class="kclb2">
+				<table border="1" height="540" width="1600" cellspacing="0" align="center">
+					<tr align="center">
+						<td rowspan="2" style="background-color: aqua;">课程类别</td>
+						<td rowspan="2" style="background-color: aqua;">课程性质</td>
+						<td rowspan="2" style="background-color: aqua;">课程编号</td>
+						<td rowspan="2" style="background-color: aqua;">课程名称</td>
+						<td rowspan="2" style="background-color: aqua;">课程名称</td>
+						<td rowspan="2" style="background-color: aqua;">学分</td>
+						<td colspan="2" style="background-color: aqua;">学时分配</td>
+						<td rowspan="2" style="background-color: aqua;">开课学期</td>
+						<td rowspan="2" style="background-color: aqua;">周学时</td>
+						<td rowspan="2" style="background-color: aqua;">技能</td>
+						<td rowspan="2" style="background-color: aqua;">推荐教材</td>
+					</tr>
+					<tr align="center">
+						<td style="background-color: aqua;">理论</td>
+						<td style="background-color: aqua;">实践</td>
+					</tr>
+					<tr align="center">
+						<td rowspan="12">学科基础课程</td>
+						<td>必修</td>
+						<td></td>
+						<td>数据科学导论</td>
+						<td>2</td>
+						<td>32</td>
+						<td>16</td>
+						<td>16</td>
+						<td>1</td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td>程序设计基础</td>
+						<td>3</td>
+						<td>48</td>
+						<td>24</td>
+						<td>24</td>
+						<td>1</td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr align="center">
+						<td>必修</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<div class="qr2">确认</div>
+			</div>
+		</div>
+		<div class="zyzskcyck" id="c3">
+			<div class="zd">
+				<table cellspacing="0">
+					<tr>
+						<td class="n7" id="n7" onclick="tszyzs()">特色专业知识课程(15%)</td>
+						<td class="zx" id="n6" onclick="zyzsqz()">专业知识前置课程(15%)</td>
+					</tr>
+				</table>
+			</div>
+			<div class="tsk2">
+				<table>
+					<tr>
+						<p>培养学生将基本原理与技术运用于计算学科研究以及计算机系统设计，开发与应用等工作能力。建议教学内容包含数字电路，计算机系统结构，算法，程序设计语言，软件工程，并行分布计算，智能技术，计算机图形学与人机交互等知识领域基本内容。
+						</p>
+					</tr>
+				</table>
+			</div>
+			<div class="teszyzskc" id="t1">
+				<div class="gjtj1">
+					<table>
+						<tr>
+							<h3>国家标准课程推荐：</h3>
+						</tr>
+						<select class="g1">
+							<option value="实例1">实例1</option>
+						</select>
+						<select class="g2">
+							<option value="实例2">实例2</option>
+						</select>
+						<select class="g3">
+							<option value="实例3">实例3</option>
+						</select>
+					</table>
+				</div>
+				<div class="kclb3">
+					<table border="1" height="540" width="1800" cellspacing="0" align="center">
+						<tr align="center">
+							<td rowspan="2" style="background-color: aqua;">课程类别</td>
+							<td rowspan="2" style="background-color: aqua;">课程性质</td>
+							<td rowspan="2" style="background-color: aqua;">课程编号</td>
+							<td rowspan="2" style="background-color: aqua;">课程名称</td>
+							<td rowspan="2" style="background-color: aqua;">学分</td>
+							<td rowspan="2" style="background-color: aqua;">总学时</td>
+							<td colspan="2" style="background-color: aqua;">学时分配</td>
+							<td rowspan="2" style="background-color: aqua;">开课学期</td>
+							<td rowspan="2" style="background-color: aqua;">周学时</td>
+							<td rowspan="2" style="background-color: aqua;">技能</td>
+							<td rowspan="2" style="background-color: aqua;">推荐教材</td>
+						</tr>
+						<tr align="center">
+							<td style="background-color: aqua;">理论</td>
+							<td style="background-color: aqua;">实践</td>
+						</tr>
+						<tr align="center">
+							<td rowspan="12">国标课程</td>
+							<td>必修</td>
+							<td></td>
+							<td>数据科学导论</td>
+							<td>2</td>
+							<td>32</td>
+							<td>16</td>
+							<td>16</td>
+							<td>1</td>
+							<td>2</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td>程序设计基础</td>
+							<td>3</td>
+							<td>48</td>
+							<td>24</td>
+							<td>24</td>
+							<td>1</td>
+							<td>3</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<div class="qr3">确认</div>
+					</table>
+				</div>
+			</div>
+			<div class="zyzsqzkcyck" id="t2">
+				<p style="position: absolute; top:90px;">已设课程</p>
+				<div class="kclb4">
+					<table border="1" height="440" width="1800" cellspacing="0" align="center">
+						<tr align="center">
+							<td rowspan="2" style="background-color: aqua;">课程类别</td>
+							<td rowspan="2" style="background-color: aqua;">课程性质</td>
+							<td rowspan="2" style="background-color: aqua;">课程编号</td>
+							<td rowspan="2" style="background-color: aqua;">课程名称</td>
+							<td rowspan="2" style="background-color: aqua;">学分</td>
+							<td rowspan="2" style="background-color: aqua;">总学时</td>
+							<td colspan="2" style="background-color: aqua;">学时分配</td>
+							<td rowspan="2" style="background-color: aqua;">开课学期</td>
+							<td rowspan="2" style="background-color: aqua;">周学时</td>
+							<td rowspan="2" style="background-color: aqua;">技能</td>
+							<td rowspan="2" style="background-color: aqua;">推荐教材</td>
+							<td rowspan="2" style="background-color: aqua;">缺失知识</td>
+						</tr>
+						<tr align="center">
+							<td style="background-color: aqua;">理论</td>
+							<td style="background-color: aqua;">实践</td>
+						</tr>
+						<tr align="center">
+							<td rowspan="10">产业课程</td>
+							<td>必修</td>
+							<td></td>
+							<td>Linux操作系统</td>
+							<td>3</td>
+							<td>48</td>
+							<td>24</td>
+							<td>24</td>
+							<td>4</td>
+							<td>3</td>
+							<td>java,Python</td>
+							<td></td>
+							<td>
+								<p style="color: red;">Scala</p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td>深度学习及其应用</td>
+							<td>3</td>
+							<td>48</td>
+							<td>24</td>
+							<td>24</td>
+							<td>5</td>
+							<td>3</td>
+							<td>算法</td>
+							<td></td>
+							<td>
+								<p style="color: red;">Sqoop</p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td>数据分析思维与方法</td>
+							<td>3</td>
+							<td>48</td>
+							<td>24</td>
+							<td>24</td>
+							<td>2</td>
+							<td>3</td>
+							<td>离线数据分析</td>
+							<td></td>
+							<td>
+								<p style="color: red;">计算机原理</p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<p style="color: red;"></p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<p style="color: red;"></p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<p style="color: red;"></p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<p style="color: red;"></p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<p style="color: red;"></p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<p style="color: red;"></p>
+							</td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<p style="color: red;"></p>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<p style="position: absolute; top:565px;">前置课程</p>
+				<div class="kclb5">
+					<table border="1" height="210" width="1800" cellspacing="0" align="center">
+						<tr align="center">
+							<td rowspan="2" style="background-color: aqua;">课程类别</td>
+							<td rowspan="2" style="background-color: aqua;">课程性质</td>
+							<td rowspan="2" style="background-color: aqua;">课程编号</td>
+							<td rowspan="2" style="background-color: aqua;">课程名称</td>
+							<td rowspan="2" style="background-color: aqua;">学分</td>
+							<td rowspan="2" style="background-color: aqua;">总学时</td>
+							<td colspan="2" style="background-color: aqua;">学时分配</td>
+							<td rowspan="2" style="background-color: aqua;">开课学期</td>
+							<td rowspan="2" style="background-color: aqua;">注(开课学期<)< /td>
+							<td rowspan="2" style="background-color: aqua;">周学时</td>
+							<td rowspan="2" style="background-color: aqua;">技能</td>
+							<td rowspan="2" style="background-color: aqua;">推荐教材</td>
+						</tr>
+						<tr align="center">
+							<td style="background-color: aqua;">理论</td>
+							<td style="background-color: aqua;">实践</td>
+						</tr>
+						<tr align="center">
+							<td rowspan="4"></td>
+							<td>必修</td>
+							<td></td>
+							<td>Scala编程语言</td>
+							<td>2</td>
+							<td>24</td>
+							<td>24</td>
+							<td></td>
+							<td>3</td>
+							<td>4</td>
+							<td>3</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr align="center">
+							<td>必修</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="./培养方案系统2.js">
+		
+	</script>
+</html>

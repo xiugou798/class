@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 1000px;
+        }
+
+        .nav {
+            width: 100%;
+            height: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            position: fixed;
+        }
+
+        .zhong {
+            margin: auto;
+            width: 80%;
+            height: 100%;
+            background-color: #f2f2f2;
+            border: 1px solid rgb(20, 1, 1);
+        }
+
+        .nav .zi {
+            width: 100px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rebeccapurple;
+        }
+
+        .png {
+            flex-grow: 1;
+        }
+
+        .png img {
+            height: 100%;
+            width: 96px;
+        }
+
+        .zhong_shang {
+            margin-top: 15px;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: flex-start;
+
+        }
+
+        .tp {
+            width: 80px;
+            height: 80px;
+            border: 1px solid rebeccapurple;
+        }
+
+        .tp img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .tuku {
+            border: 1px solid rebeccapurple;
+            width: 120px;
+            height: 100%;
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .tuku img {
+            border-radius: 10%;
+            width: 120px;
+            height: 50px;
+        }
+        .wz {
+            width: 150px;
+            height: 100%;
+            border: 1px solid rebeccapurple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .zhong_zhong {
+            top: 30px;
+            position: sticky;
+            width: 100%;
+            height: 30px;
+            border: 1px solid rebeccapurple;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.5;
+        }
+
+        select,button {
+            border-style: none;
+        }
+        .zhong_xia{
+            width: 100%;
+            height: 100%;
+            border: 1px solid royalblue;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            align-content: space-between;
+        }
+        .zhong_xia div{
+            width: 23%;
+            height: 32%;
+            background-color: rgb(105, 188, 17);
+        }
+        /*.menu{
+            display: none;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: transparent;
+        }
+        .zi:hover .menu {
+            display: block;
+        }*/
+    </style>
+</head>
+<script>
+</script>
+
+<body>
+    <div style="height: 30px;">
+        <div class="nav">
+            <div class="png"><img src="./img/./baidu.png"></div>
+            <div class="zi"><a>百度主页</a></div>
+            <div class="zi"><a>合辑主页</a></div>
+            <div class="zi">
+                <a>马超</a>
+            </div>
+        </div>
+    </div>
+    <div class="zhong">
+        <div class="zhong_shang">
+            <div class="tp">
+                <img src="./img/tp.jfif">
+            </div>
+            <div class="wz">
+                <div>
+                    <a style="font-size: 18px; font-weight:bolder;">城市建筑摄影专题</a>
+                    <a style="font-size: 10px;">共791张图片</a>
+                </div>
+            </div>
+            <div class="tuku">
+                <img src="./img/图库.jfif">
+            </div>
+        </div>
+        <div class="zhong_zhong">
+            <div class="qbys">
+                <select>
+                    <option selected>全部颜色</option>
+                    <option>红</option>
+                    <option>蓝</option>
+                    <option>黄</option>
+                    <option>绿</option>
+                </select>
+            </div>
+            <div>
+                <button>查看更多合集></button>
+            </div>
+        </div>
+        <div class="zhong_xia">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

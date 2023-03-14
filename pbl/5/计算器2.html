@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			 body,
+			html,
+			div {
+			    padding: 0px;
+			    margin: 0px;
+			}
+			
+			body {
+			    padding: 40px 80px;
+			}
+			
+			#show_result,#yunsuan {
+			    width: 275px;
+			    height: 20px;
+			    border: 1px solid #000;
+			    border-bottom:none;
+			    padding: 5px;
+				background-color: aqua;
+			}
+			#show_result{
+			    border-bottom:1px solid #000;
+			    border-top:none;
+			    height:40px;
+			    text-align: right;
+			    font-weight: bold;
+				background-color: aliceblue;
+			}
+			
+			#xiamian{
+			    width: 303px;
+			    line-height: 50px;
+			    text-align: center;
+			    font-weight: bold;
+			    border-left: 1px solid #000;
+			    overflow: hidden;
+			}
+			
+			#xiamian div {
+			    width: 70px;
+			    height: 50px;
+			    float: left;
+			    border-right: 1px solid #000;
+			    border-bottom: 1px solid #000;
+			    cursor: pointer;
+				background-color: aquamarine;
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<div id="yunsuan"></div>
+		    <div id="show_result">0</div>
+		    <div id="xiamian">
+		        <div>1</div>
+		        <div>2</div>
+		        <div>3</div>
+		        <div>4</div>
+		        <div>5</div>
+		        <div>6</div>
+		        <div>7</div>
+		        <div>8</div>
+		        <div>9</div>
+		        <div>0</div>
+		        <div>+</div>
+		        <div>-</div>
+		        <div>*</div>
+		        <div>/</div>
+		        <div>=</div>
+		        <div>CE</div>
+		    </div>
+		
+	</body>
+	<script>
+		var showResult = document.getElementById("show_result");
+		var showCourse = document.getElementById("yunsuan");
+		var divs = document.getElementById("xiamian").getElementsByTagName("div");
+		
+		//遍历div,给div添加点击事件
+		for (var i = 0; i < divs.length; i++) divs[i].onclick = clickHand;
+		
+		var num1 = 0,
+		    num2 = "",
+		    symbol = "",
+		    value = "",
+		    bool = false,
+		    result = 0;
+		
+		//点击事件
+		function clickHand() {
+		    value = this.innerHTML;
+		    //给第一个数字赋值
+		    if (!bool) {
+		        //判断是否为数字，如果是数字，就赋值给num1
+		        if (!isNaN(value)) {
+		            num1 += value;
+		            num1 = parseInt(num1);
+		            showResult.innerHTML = num1;
+		        } else {
+		            //将除了等号和reset之外的运算符赋值给symbol
+		            if (value !== "=" && value !== "CE") {
+		                //bool用来控制给第一个数字赋值结束
+		                bool = true;
+		                symbol = value;
+		                value = "";
+		            }
+		        }
+		    } else {
+		        //给第二个数字赋值
+		        num2 += value;
+		        num2 = parseInt(num2);
+		        showResult.innerHTML = num2;
+		    }
+		
+		    if (value === "=") {
+		        switch (symbol) {
+		            case "+":
+		                result = num1 + num2;
+		                break;
+		            case "-":
+		                result = num1 - num2;
+		                break;
+		            case "*":
+		                result = num1 * num2;
+		                break;
+		            case "/":
+		                result = num1 / num2;
+		                break;
+		        }
+		
+		        showResult.innerHTML = result;
+		
+		        //运算完后，将变量值清空
+		        num1 = 0;
+		        num2 = "";
+		        symbol = "";
+		        value = "";
+		        bool = false;
+		    }
+		
+		    if (value === "CE") {
+		        num1 = 0;
+		        num2 = "";
+		        symbol = "";
+		        value = "";
+		        bool = false;
+		        showResult.innerHTML = "0";
+		    }
+		
+		    showCourse.innerHTML=num1+symbol+num2;
+		    // console.log(num1, ",", symbol, ",", num2, ",", result, ",", bool);
+			}
+
+	</script>
+</html>

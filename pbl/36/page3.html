@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/page3.css">
+    <title>Document</title>
+    <!-- cdn引入ElementUI样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!--cdn引入ElementUI组件必须先引入Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- cdn引入ElementUI组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p></p>
+            <!-- <el-button type="primary" @click="dialogVisible = true" icon="el-icon-circle-plus-outline" size="small"></el-button> -->
+        <el-form :inline="true" :model="formInline" class="demo-form-inline">
+            <el-button type="primary" @click="dialogVisible = true" round>添加信息</el-button>
+            <el-form-item >
+              <el-input v-model="value" placeholder="查询"></el-input>
+            </el-form-item>
+            
+            <el-form-item>
+              <el-button type="primary" @click="search">查询</el-button>
+              <el-button type="primary" @click="reset">重置</el-button>
+            </el-form-item>
+          </el-form>
+        <table cellspacing="0" id="table_All">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>专业名</th>
+                    <th>负责人</th>
+                    <th>课程数量</th>
+                    <th>学生数量</th>
+                    <th>师生比</th>
+                    <th>产教匹配度</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in dataList">
+                    <td>{{ index+1 }}</td>
+                    <td v-for="(e,i) in item">{{e}}</td>
+                    <td>
+                        <!-- <el-button @click="mod(index)" type="primary" icon="el-icon-edit"></el-button> -->
+                        <el-button @click="mod(index)" type="primary" icon="el-icon-edit" circle></el-button>
+                        <!-- <el-button @click="del(index)" type="primary" icon="el-icon-delete"></el-button> -->
+                        <el-button @click="del(index)" type="danger" icon="el-icon-delete" circle></el-button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+        <el-dialog :title="dialog_value ? '添加':'编辑'" :visible.sync="dialogVisible" width="30%"
+            :before-close="handleClose">
+            <div class="add_page">
+                <div id="title" class="login_title">
+                </div>
+                <!-- v-modle叫做动态绑定 -->
+                <label for="">专业名:</label><el-input v-model="inputData.major" placeholder="请输入内容"></el-input>
+                <label for="">负责人：</label><el-input v-model="inputData.leader" placeholder="请输入内容"></el-input>
+                <label for="">课程数量：</label><el-input v-model="inputData.courses_number" placeholder="请输入内容"></el-input>
+                <label for="">学生数量：</label><el-input v-model="inputData.student_number" placeholder="请输入内容"></el-input>
+            </div>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="handleClose">取 消</el-button>
+                <el-button type="primary" @click="add">确 定</el-button>
+            </span>
+        </el-dialog>
+        <br>
+        <div class="block">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="currentPage"
+              :page-sizes="[5, 10, 20]"
+              :page-size="10"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="total">
+            </el-pagination>
+          </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="./JS/page3.js"></script>
+<!-- 
+    
+    // var data = [{
+    //     major: "工学1",
+    //     leader: "计算机类1",
+    //     courses_number: "计算机科学与技术1",
+    //     student_number: "计算机科学与技术1",
+    //     Teacher_student_ratio: 123,
+    //     fit_ratio: 0.78
+    // }, {
+    //     major: "工学1",
+    //     leader: "计算机类1",
+    //     courses_number: "计算机科学与技术1",
+    //     student_number: "计算机科学与技术1",
+    //     Teacher_student_ratio: 123,
+    //     fit_ratio: 0.78
+    // }, {
+    //     major: "工学1",
+    //     leader: "计算机类1",
+    //     courses_number: "计算机科学与技术1",
+    //     student_number: "计算机科学与技术1",
+    //     Teacher_student_ratio: 123,
+    //     fit_ratio: 0.78
+    // }, {
+    //     major: "工学1",
+    //     leader: "计算机类1",
+    //     courses_number: "计算机科学与技术1",
+    //     student_number: "计算机科学与技术1",
+    //     Teacher_student_ratio: 123,
+    //     fit_ratio: 0.78
+    // }]
+    // //2.往tbody里面创建行，有几个人，通过数组长度我们就创建几行
+    // var tbody = document.querySelector('tbody')
+    // for (var i = 0; i < data.length; i++) {//外面的for循环管行tr
+    //     //创建tr行
+    //     var tr = document.createElement('tr');
+    //     tbody.appendChild(tr)
+    //     //行里面创建几个单元格 td  (跟数据有关系的6个单元格)单元格的数量取决于每个对象里面的属性个数  ，通过for循环遍历对象
+    //     for (var k in data[i]) {//里面的for循环管理列td
+    //         //创建单元格
+    //         var td = document.createElement('td');
+    //         //把对象里面的属性值给td
+    //         td.innerHTML = data[i][k];
+    //         tr.appendChild(td);
+    //         // console.log(data[i][k]);
+    //     }
+    //     // 3.删除有删除2个字的单元格
+    //     var td = document.createElement('td');
+    //     td.innerHTML = '<button id="delete"><img src="./icon/删除.png" alt="" width="17px" height="17px"></button>';
+    //     tr.appendChild(td)
+    // }
+
+    // // 4.从删除操作开始
+    // var as = document.querySelectorAll('button');
+    // for (var i = 0; i < as.length; i++) {
+    //     as[i].onclick = function () {
+    //         //点击a删除当前a所在的行(链接父子)node.removeChild(child)
+    //         tbody.removeChild(this.parentNode.parentNode)
+    //     }
+
+    // }
+    // // 5.添加人员信息的功能
+    // // 点击按钮以后，将人员的信息添加到表格中
+    // // 为提交按钮绑定一个单击响应函数
+    // var add = document.getElementById("add_element");
+    // add.onclick = function () {
+    //     //
+    // } -->
+
+
+
+
+
+<!-- <tr>
+    <td>工学</td>
+    <td>计算机类</td>
+    <td>计算机科学与技术</td>
+</tr> -->
+<!-- <tr>
+    <td>工学</td>
+    <td>计算机类</td>
+    <td>软件工程</td>
+</tr>
+<tr>
+    <td>工学</td>
+    <td>计算机类</td>
+    <td>网络工程</td> 
+</tr>
+<tr>
+    <td>工学</td>
+    <td>计算机类</td>
+    <td>信息安全</td> 
+</tr>
+<tr>
+    <td>工学</td>
+    <td>计算机类</td>
+    <td>物联网工程</td> 
+</tr> -->

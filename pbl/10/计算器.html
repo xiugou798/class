@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <style>
+        .da {
+            position: absolute;
+            height: 380px;
+            width: 300px;
+            border: black 1px solid;
+        }
+
+        input {
+            position: absolute;
+            top: 10px;
+            left: 22px;
+            width: 243px;
+            height: 25px;
+        }
+
+        table {
+            position: relative;
+            top: 55px;
+            left: 20px;
+        }
+
+        button {
+            background-color: rgb(133, 168, 158);
+            width: 60px;
+            height: 59px;
+            border: 0.5px solid black;
+            font-size: 20px;
+        }
+
+        #qing {
+            width: 125px;
+        }
+
+        button:hover {
+            background-color: rgb(163, 125, 125);
+        }
+
+        .yuan {
+            height: 180px;
+            width: 150px;
+            border-radius: 0%;
+        }
+        .his{
+            position: relative;
+            left: 310px;
+            width: 250px;
+            height: 380px;
+            overflow-y:scroll;
+            background-color: antiquewhite;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var biao = []
+        var op = []
+        var answer = []
+        var zhi = ""
+        function get(a) {
+            var txt = a.innerText;
+            biao.push(txt)
+            document.getElementById("wxl").value = txt
+        }
+        function getfu(a) {
+            var yellowdiv = document.getElementById("wxl");
+            var va = yellowdiv.value
+            if (va != "）") {
+                biao.push(parseInt(va))
+            }
+            var txt = a.innerText;
+            biao.push(txt)
+            document.getElementById("wxl").value = txt
+            zhi = ""
+        }
+        function getzhi(a) {
+            var txt = document.getElementById("wxl")
+            var txt1 = a.innerText
+            zhi = zhi + txt1
+            txt.value = zhi
+        }
+        function jisuan() {
+            var yellowdiv = document.getElementById("wxl");
+            var va = yellowdiv.value
+            var a
+            if (isNaN(va)==false) {
+                biao.push(parseInt(va))
+            }else if(va=="）"){
+                biao.push(va)
+            }
+            for (var i = 0; i < biao.length; i++) {
+                if (isNaN(biao[i]) == false) {
+                    answer.push(biao[i])
+                } else {
+                    if (op.length == 0 || biao[i] == '（') {
+                        op.push(biao[i])
+                    } else {
+                        if (biao[i] == '）') {
+                            while (op[op.length - 1] != '（') {
+                                a = op[op.length - 1]
+                                op.pop()
+                                answer.push(a)
+                            } op.pop()
+                        } else if ((biao[i] == '+' || biao[i] == '-') && (op[op.length - 1] == '×' || op[op.length - 1] == '÷')) {
+                            while (op.length != 0) {
+                                a = op[op.length - 1]
+                                op.pop()
+                                answer.push(a)
+                                if (op[op.length - 1] == '（') {
+                                    break
+                                }
+                            } op.push(biao[i])
+                        } else if ((biao[i] == '+' || biao[i] == '-') && (op[op.length - 1] == '+' || op[op.length - 1] == '-')) {
+                            a = op[op.length - 1]
+                            op.pop()
+                            answer.push(a)
+                            op.push(biao[i])
+                        } else if ((biao[i] == '×' || biao[i] == '÷') && (op[op.length - 1] == '+' || op[op.length - 1] == '-')) {
+                            op.push(biao[i])
+                        } else {
+                            op.push(biao[i])
+                        }
+                    }
+                }
+            }
+            while (op.length != 0) {
+                var b = op[op.length - 1]
+                op.pop()
+                answer.push(b)
+            }
+            jieguo()
+        }
+        function jieguo() {
+            //后缀表达式的计算
+            let jie = [];
+            for (let item of answer) {
+                if (isNaN(item)==false) {//数字入栈
+                    jie.push(item);
+                } else {
+                    //pop出两个数，并运算，再入栈
+                    let num2 = jie[jie.length-1];
+                    let num1 = jie[jie.length-2];
+                    jie.pop()
+                    jie.pop()
+                    let res = 0;
+                    if (item === '+') {
+                        res = num1 + num2
+                    } else if (item === '-') {
+                        res = num1 - num2
+                    } else if (item === '×') {
+                        res = num1 * num2
+                    } else if (item === '÷') {
+                        res = num1 / num2
+                    }
+                    jie.push(res)
+                }
+            }
+            //最后留的数据就是运算结果
+            var yellowdiv = document.getElementById("wxl");
+            yellowdiv.value = jie[jie.length-1]
+            console.log(biao)
+            var p=document.createElement('p')
+            var l
+            l=biao.join("")
+            p.innerHTML=`${l}=${jie[jie.length-1]}`
+           document.getElementsByClassName('his')[0].append(p)
+        }
+        function clear1() {
+            var yellowdiv = document.getElementById("wxl");
+            yellowdiv.value = ""
+            zhi = ""
+            answer=[]
+            op=[]
+            biao=[]
+        }
+    </script>
+</head>
+
+<body>
+    <div class="da">
+        <input type="text" id="wxl">
+        <table>
+            <tr>
+                <td><button onclick="get(this)">（</button></td>
+                <td><button onclick="getfu(this)">）</button></td>
+                <td colspan="2"><button id="qing" onclick="clear1()">清除</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="getzhi(this)">1</button></td>
+                <td><button onclick="getzhi(this)">2</button></td>
+                <td><button onclick="getzhi(this)">3</button></td>
+                <td><button onclick="getfu(this)">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="getzhi(this)">4</button></td>
+                <td><button onclick="getzhi(this)">5</button></td>
+                <td><button onclick="getzhi(this)">6</button></td>
+                <td><button onclick="getfu(this)">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="getzhi(this)">7</button></td>
+                <td><button onclick="getzhi(this)">8</button></td>
+                <td><button onclick="getzhi(this)">9</button></td>
+                <td><button onclick="getfu(this)">×</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="getzhi(this)">0</button></td>
+                <td><button onclick="getzhi(this)">.</button></td>
+                <td><button onclick="jisuan()">=</button></td>
+                <td><button onclick="getfu(this)">÷</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="his">
+        <h3>历史记录</h3>
+    </div>
+</body>
+
+</html>

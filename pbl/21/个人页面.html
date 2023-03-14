@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/bds.js"></script>
+    <script src="./js/jquery.rotate.js"></script>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            position: relative;
+            display: flex;
+            background-color: rgb(234, 234, 234);
+            background: url("./图片/bg1.jpg") no-repeat center center fixed;
+            
+        }
+        .bod{
+            display: flex;
+            position: absolute;
+            width: 800px;
+            height: 734px;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        }
+        .one,.tow,.whree{
+            float: left;
+            width: 255px;
+            height: 734px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            overflow: hidden;
+        }
+        .tow,.whree{
+            margin-left: 14.5px;
+        }
+        .shenti{
+            width: 255px;
+            height:686px;
+            background-color: rgb(255, 220, 108);
+            border-top: 1px solid rgb(255, 220, 108);
+            margin-top: 48px;
+            border-radius: 50% 50% 0 0 /50px ;
+            position: relative;
+        }
+        .yankuang{
+            margin-top: 30px;
+            width: 284px;
+            height: 284px;
+            border: 1px solid rgb(244, 239, 235);
+            position:relative;
+            right: 15px;
+            border-radius: 284px 284px 284px 284px;
+            background-color: rgb(244, 239, 235);
+        }
+        .neiyankuang{
+            width: 217px;
+            height: 217px;
+            border: 1px solid rgb(244, 239, 235);
+            border-radius: 217px 217px 217px 217px;
+            margin-top: 35px;
+            margin-left: 31px;
+            background-color: rgb(255, 220, 108);
+        }
+        .yanpi{
+            background-color: white;
+            width: 217px;
+            height: 150px;
+            border-radius: 50% 50% 50% 50%;
+            margin-top: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .syp{
+            position: absolute;
+            width: 217px;
+            height: 75px;
+            background-color: rgb(255, 220, 108);
+            top: -75px;
+            z-index: 2;
+        }
+        .xyp{
+            position: absolute;
+            width: 217px;
+            height: 75px;
+            background-color: rgb(255, 220, 108);
+            top: 150px;
+            z-index: 2;
+        }
+        .tong{
+            position: relative;
+            width: 91px;
+            height: 91px;
+            border-radius: 91px 91px 91px 91px;
+            background-color: rgb(134,66,19);
+            margin: auto;
+            top: 32px;
+            z-index: 1;
+        }
+        .tongkong{
+            position: relative;
+            width: 41px;
+            height: 41px;
+            margin: auto;
+            top: 23px;
+            border-radius: 41px 41px 41px 41px;
+            background-color: black;
+            box-shadow: -16px -16px 0 -16px white;
+            
+        }
+        .zb{
+            position: relative;
+            background-color: black;
+            top: 80px;
+            width: 145px;
+            height: 73px;
+            border-radius: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .zb_1{
+            background-color: rgb(255, 220, 108);
+            width: 148px;
+            height: 49px;
+            border-radius: 50% 50% 50% 50%/16px ;
+            margin-top: 32px;
+            margin-left: 53px;
+            position: absolute;
+        }
+        .yc_1{
+            background-color: white;
+            width: 54px;
+            height: 54px;
+            margin-left: 20px;
+            margin-top: -40px;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 54px 0 0 0 white,-52px 66px 0 0 white,100px 66px 0 0 white;
+        }
+        .yf{
+            width: 255px;
+            height: 216px;
+            margin-top: 80px;
+            position: relative;
+        }
+        .yf_1{
+            width: 255px;
+            height: 54px;
+        }
+        .uu{background-color: rgb(77,75, 76);}
+        .yy{background-color: rgb(198, 197, 193);}
+        .kd{
+            position: absolute;
+            border: 5px double black;
+            width: 131px;
+            height: 93px;
+            top: 43px;
+            left: 85px;
+            border-radius: 0 0 50% 50%;
+            background-color: white;
+            opacity: 0.2;
+        }
+        .st3{
+            width: 255px;
+            height: 681px;
+            margin-top: 53px;
+            background-color: rgb(255, 220, 108);
+            border-radius: 50% 50% 0 0/50px;
+            position: relative;
+        }
+        .yk3{
+            width: 210px;
+            height: 210px;
+            background-color: rgb(244, 239, 235);
+            border-radius: 210px;
+            margin-top: 100px;
+            position: absolute;
+            right: 87px;
+        }
+        .ykn3{
+            width: 160px;
+            height: 160px;
+            border-radius: 160px;
+            background-color: rgb(255, 220, 108);
+            margin: auto;
+            margin-top: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .yk3_1{
+            width: 210px;
+            height: 210px;
+            background-color: rgb(244, 239, 235);
+            border-radius: 210px;
+            margin-top: 100px;
+            left: 154px;
+            position: absolute;
+        }
+        .yb3{
+            position: absolute;
+            width: 163px;
+            height: 73px;
+            background-color: white;
+            margin: auto;
+            top: 20px;
+            border-radius: 70px 70px 0 0;
+            overflow: hidden;
+        }
+        .tong3_1{
+            width: 50px;
+            height: 65px;
+            border-radius: 100%;
+            background-color: rgb(134,66,19);
+            margin-top: 30px;
+            margin-left: 1px;
+            position: relative;
+        }
+        .tong3{
+            width: 50px;
+            height: 70px;
+            border-radius: 100%;
+            background-color: rgb(134,66,19);
+            margin-top: 20px;
+            margin-left: 1px;
+            position: relative;
+        }
+        .tk3{
+            position: absolute;
+            background-color: black;
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+            top: 17px;
+            border-radius: 100%;
+            box-shadow: 10px -5px 0 -7px white;
+        }
+        .zb3{
+            background-color: black;
+            width: 139px;
+            height: 80px;
+            border-radius: 50%;
+            top: 325px;
+            left: 115px;
+            position: absolute;
+            overflow: hidden;
+        }
+        .zb3_1{
+            background-color:rgb(255, 220, 108);
+            width: 250px;
+            height: 75px;
+            border-radius: 50%;
+            top: 310px;
+            left: 5px;
+            position: absolute;
+        }
+        .yc3{
+            background-color: white;
+            width: 65px;
+            height: 50px;
+            border-radius: 15px 15px 15px 15px;
+            margin-top: 18px;
+            margin-left: 45px;
+            box-shadow: 65px 0 0 0 white,-65px 0 0 0 white,0 45px 0 0 white,-60px 45px 0 0 white,60px 45px 0 0 white; 
+
+        }
+        .yf3{
+            position: absolute;
+            width: 255px;
+            height: 236px;
+            top: 443px;
+            position: relative;
+        }
+        .yf3_1{
+            width: 255px;
+            height: 59px;
+        }
+        .kd3{
+            position: absolute;
+            border: 5px double black;
+            width: 131px;
+            height: 93px;
+            top: 43px;
+            left: 85px;
+            border-radius: 0 0 50% 50%;
+            background-color: white;
+            opacity: 0.2;
+        }
+        .one{
+            overflow: hidden;
+        }
+        .st1{
+            width: 255px;
+            height: 681px;
+            margin-top: 53px;
+            background-color: rgb(255, 220, 108);
+            border-radius: 80% 0 0 0/200px;
+            position: relative;
+        }
+        .yk1{
+            background-color: rgb(244, 239, 235);
+            width: 182px;
+            height: 189px;
+            border-radius: 100%;
+            position: absolute; 
+            top: 90px;
+            right:100px ;
+        }
+        .yk1_1{
+            background-color: rgb(244, 239, 235);
+            width: 174px;
+            height: 184px;
+            border-radius: 100%;
+            position: absolute;
+            left: 133px;
+            top: 120px;
+        }
+        .ykn1{
+            background-color: rgb(255, 220, 108);
+            width: 140px;
+            height: 140px;
+            border-radius: 100%;
+            margin: auto;
+            margin-top: 23px;
+            position: relative;
+        }
+        .yb1{
+            background-color: white;
+            width: 140px;
+            height: 70px;
+            border-radius: 0 0 70px 70px;
+            position: absolute;
+            top: 70px;
+            left: -6px;
+            transform: rotate(10deg);
+        }
+        .tong1{
+            background-color: rgb(134,66,19); 
+            width: 50px;
+            height: 30px;
+            border-radius: 0 0 30px 30px;
+            margin-left: 56px;
+            position: relative;
+            overflow: hidden;
+        }
+        .tk1{
+            position: absolute;
+            top: -12.5px;
+            background-color: black;
+            width: 25px;
+            height: 25px;
+            border-radius: 100%;
+            margin-left: 14px;
+            box-shadow: -20px 5px 0 -10px white;
+        }
+        .zb1{
+            background-color: rgb(255, 220, 108);
+            border: 2px solid;
+            border-bottom-style: none;
+            border-left-style: none;
+            border-right-style: none;
+            width: 80px;
+            height: 50px;
+            position: absolute;
+            top: 400px;
+            left: 90px;
+            border-radius: 100% 100% 0 0 /40px;
+            transform: rotate(10deg);
+        }
+        .yf1{
+            width: 255px;
+            height: 216px;
+            top: 465px;
+            position: absolute;
+        }
+        .yf1_1{
+            width: 255px;
+            height: 54px;
+        }
+        .kd1{
+            position: absolute;
+            border: 5px double black;
+            width: 131px;
+            height: 93px;
+            top: 43px;
+            left: 85px;
+            border-radius: 0 0 50% 50%;
+            background-color: white;
+            opacity: 0.2;
+        }
+        .tf1{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;
+            width: 30px;
+            left: 60px;
+            border-radius: 50%/60px 30px 0 0;
+            position: absolute;
+        }
+        .tf2{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 30px;left: 30px;position: absolute;top: 35px;
+            border-radius: 50%/60px 30px 0 0;
+        }
+        .tf3{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 30px;left: 90px;position: absolute;
+            border-radius: 50%/60px 30px 0 0;
+        }
+        .tf4{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 60px;width: 30px;left: 120px;position: absolute;top: -20px;
+            border-radius: 50%/60px 30px 0 0;
+        }
+        .tf5{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 30px;left: 150px;position: absolute;top: 35px;
+            border-radius: 50%/60px 30px 0 0;
+        }
+        .tf6{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 30px;left: 180px;position: absolute;top: -40px;
+            border-radius: 50%/60px 30px 0 0;
+        }
+        .tf7{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 30px;left: 210px;position: absolute;top: -20px;
+            border-radius: 50%/60px 30px 0 0;
+        }
+        .tff1{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 60px;left: 210px;position: absolute;top: -30px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tff2{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 60px;left: 180px;position: absolute;top: -30px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tff3{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 60px;left: 240px;position: absolute;top: -30px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tff4{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 60px;width: 60px;left: 150px;position: absolute;top: -50px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tff5{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 60px;width: 60px;left:-30px;position: absolute;top: -30px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tff6{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 60px;width: 60px;left: 0px;position: absolute;top: -40px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tff7{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 60px;width: 60px;left: 30px;position: absolute;top: -50px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tff8{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 60px;width: 60px;left: 60px;position: absolute;top: -50px;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .tfff1{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 100px;width: 100px;left: 150px;position: absolute;top: -5px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(80deg);
+        }
+        .tfff2{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 100px;width: 100px;left: 150px;position: absolute;top: -3px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(70deg);
+        }
+        .tfff3{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 100px;width: 100px;left: 150px;position: absolute;top: -10px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(75deg);
+        }
+        .tfff4{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-right-style: none;
+            height: 100px;width: 100px;left: 150px;position: absolute;top: -1px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(65deg);
+        }
+        .tfff5{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 100px;width: 100px;left: 0px;position: absolute;top: -4px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(-65deg);
+        }
+        .tfff6{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 100px;width: 100px;left: 0px;position: absolute;top: -7px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(-70deg);
+        }
+        .tfff7{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 100px;width: 100px;left: 0px;position: absolute;top: -2px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(-75deg);
+        }
+        .tfff8{
+            border: 2px solid black;
+            border-top-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            height: 100px;width: 100px;left: 0px;position: absolute;top: 3px;
+            border-radius: 50%/100px 100px 0 0;
+            transform: rotate(-80deg);
+        }
+        .grjs{
+            height: 734px;
+            margin-left: 10px;
+        }
+        .shang{
+            width: 100%;
+            height: 40%;
+            border-bottom: 1px solid red;
+            display: flex;
+        }
+        .xia{
+            width: 100%;
+            height: 60%;
+        }
+        .zhuo{
+            height: 100%;
+            width: 20%;
+        }
+        .you{
+            height: 100%;
+            width: 80%;
+        }
+        .you p{
+            line-height: 30px;
+            color: white;
+        }
+        .x1{
+            margin: auto;
+            margin-top: 20px;
+            width: 500px;
+            height: 350px;
+        }
+        .x1 img{
+            width: 500px;
+            height: 350px;
+        }
+        .bu{
+            margin-left: 46%;
+            width: 70px;
+            height: 40px;
+            
+        }
+        .xh1{
+            margin-left: 0px;
+            margin-top: 40px;
+        }
+        .wai{
+
+            position: absolute;
+            width: 250px;
+            height: 430px;
+            background-color: white;
+            left: 250px;
+            top: 100px;
+            opacity: 0.7;
+        }
+        .tou{
+            display: flex;
+        }
+        .tou input{
+            width: 245px;
+            height: 40px;
+            font-size: 20px;
+        }
+        .anjian{
+            display: flex;
+            height: 90%;
+            flex-direction: column;
+        }
+        table{
+            text-align: center;
+            height: 100%;
+            width: 100%;
+        }
+        td{
+            border: 1px solid black;
+            width: 20%;
+        }
+        .ht{
+            width: 120px;
+            height: 120px;
+            background-color: rgba(120, 195, 227,0.1);
+        }
+        h2{
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<script>
+    $(document).ready(function(){
+        var png=1
+        $(".bod").fadeOut(0)
+        $(".wai").fadeOut(0)
+        $(".ht").rotate({
+                animateTo:16000,
+                duration:3000000
+            })
+        $(".bu").click(function(){
+            if(png<7){
+                png=png+1
+            }
+            if(png==7){
+                png=1
+            }
+            $(".png img").attr("src",`./图片/${png}.PNG`)
+            console.log(png)
+        })
+        $("body").ready(function aa(){
+            $(".tong").animate({
+                left:"15px",
+            },1500);
+            $(".tong").animate({
+                left:"-15px",
+            },1500);
+            $(".tong1").animate({
+                left:"15px"
+            },1500)
+            $(".tong1").animate({
+                left:"-15px"
+            },1500)
+            $(".zb3").animate({
+                marginTop:"3px"
+            },200)
+            $(".zb3").animate({
+                marginTop:"-3px"
+            },200)
+            $(".zb3_1").animate({
+                marginTop:"3px"
+            },200)
+            $(".zb3_1").animate({
+                marginTop:"-3px"
+            },200)
+            aa()
+        })
+        $(".neiyankuang").mousedown(function aa1(){
+            $(".syp").animate({
+                top:"0px"
+            },500)
+            $(".syp").animate({
+                top:"-75px"
+            },500)
+            $(".xyp").animate({
+                top:"75px"
+            },500)
+            $(".xyp").animate({
+                top:"150px"
+            },500)
+            aa1()
+        })
+        $(".xhr").click(function(){
+            $('.grjs').animate({
+                marginLeft:"810px",
+                width:"700px"
+            },1000)
+            $(".wai").fadeOut(1000)
+            $(".bod").fadeIn(2000)
+        })
+        $(".jsj").click(function(){
+            $('.grjs').animate({
+                marginLeft:"810px",
+                width:"700px"
+            },1000)
+            $(".bod").fadeOut(1000)
+            $(".wai").fadeIn(2000)
+            
+        })
+        
+    })
+    let ans=""
+    $(document).ready(function(){
+        $(".ys").click(function(){
+            var tianjia=$(this).text()
+            ans=ans+tianjia
+            $(".wenben").val(`${ans}`)
+        })
+        $(".sc").click(function(){
+            var tihuan=ans.slice(0,ans.length-1)
+            ans=tihuan
+            $(".wenben").val(`${ans}`)
+        })
+        $(".qc").click(function(){
+            ans=""
+            $(".wenben").val(`${ans}`)
+        })
+        $("td").mousedown(function(){
+            $(this).css("background","darkgray")
+        })
+        $("td").mouseup(function(){
+            $(this).css("background","white")
+        })
+        var hzbds=[]
+        var jshzbds=[]
+        var shunxu={'*':2, '/':2, '+':1, '-':1, '(':0}
+        var flag=0
+        var op
+        $(".jg").click(function(){
+            var hzbds=[]
+            var zhan=[]
+            var shunxu={'*':2, '/':2, '+':1, '-':1, '(':0}
+            var flag=0
+            for (i in ans){
+                var a=ans.charAt(i)
+                if ("0"<a && flag==1){
+                    hzbds[hzbds.length-1]=hzbds[hzbds.length-1]+a
+                }
+                else if ("0"<a){
+                    hzbds.push(a)
+                    flag=1
+                }
+                else if (a=="("){
+                    zhan.push(a)
+                    flag=0
+                }
+                else if (a==")"){
+                    op=zhan.pop()
+                    while (op!='('){
+                        hzbds.push(op)
+                        op=zhan.pop()
+                    flag=0
+                    }
+                }
+                else{
+                    while(zhan.length!=0 && shunxu[zhan[zhan.length-1]]>=shunxu[a]){
+                        hzbds.push(zhan.pop())
+                    }
+                    zhan.push(a)
+                    flag=0
+                }
+            }    
+            while(zhan.length!=0){
+                op=zhan.pop()
+                hzbds.push(op)
+            }
+            console.log(hzbds)
+            ans= hzbdsjs(hzbds)
+            // ans=eval(ans)
+            $(".wenben").val(`${ans}`)
+        })
+    })
+</script>
+<body>
+    <div class="bod">
+        <div class="one">
+            <div class="st1">
+                <div class="tf1"></div>
+                <div class="tf2"></div>
+                <div class="tf3"></div>
+                <div class="tf4"></div>
+                <div class="tf5"></div>
+                <div class="tf6"></div>
+                <div class="tf7"></div>
+                <div class="yk1">
+                    <div class="ykn1">
+                        <div class="yb1">
+                            <div class="tong1">
+                                <div class="tk1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="yk1_1">
+                    <div class="ykn1">
+                        <div class="yb1">
+                            <div class="tong1">
+                                <div class="tk1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zb1"></div>
+                <div class="yf1">
+                    <div class="yf1_1 uu"></div>
+                    <div class="yf1_1 yy"></div>
+                    <div class="yf1_1 uu"></div>
+                    <div class="yf1_1 yy"></div>
+                    <div class="kd1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tow">
+            <div class="shenti">
+                <div class="tff1"></div>
+                <div class="tff2"></div>
+                <div class="tff3"></div>
+                <div class="tff4"></div>
+                <div class="tff5"></div>
+                <div class="tff6"></div>
+                <div class="tff7"></div>
+                <div class="tff8"></div>
+                <div class="yankuang">
+                    <div class="neiyankuang">
+                        <div class="yanpi">
+                            <div class="syp"></div>
+                            <div class="tong">
+                                <div class="tongkong"></div>
+                            </div>
+                            <div class="xyp"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zb">
+                    <div class="yc_1"></div>
+                </div>
+                <div class="zb_1"></div>
+                <div class="yf">
+                    <div class="yf_1 uu"></div>
+                    <div class="yf_1 yy"></div>
+                    <div class="yf_1 uu"></div>
+                    <div class="yf_1 yy"></div>
+                    <div class="kd"></div>
+                </div>
+            </div>
+        </div>
+        <div class="whree">
+            <div class="st3">
+                <div class="tfff1"></div>
+                <div class="tfff2"></div>
+                <div class="tfff3"></div>
+                <div class="tfff4"></div>
+                <div class="tfff5"></div>
+                <div class="tfff6"></div>
+                <div class="tfff7"></div>
+                <div class="tfff8"></div>
+                <div class="yk3">
+                    <div class="ykn3">
+                        <div class="yb3">
+                            <div class="tong3">
+                                <div class="tk3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="yk3_1">
+                    <div class="ykn3">
+                        <div class="yb3">
+                            <div class="tong3_1">
+                                <div class="tk3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zb3">
+                    <div class="yc3"></div>
+                </div>
+                <div class="zb3_1"></div>
+                <div class="yf3">
+                    <div class="yf3_1 uu"></div>
+                    <div class="yf3_1 yy"></div>
+                    <div class="yf3_1 uu"></div>
+                    <div class="yf3_1 yy"></div>
+                    <div class="kd3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wai">
+        <div class="tou">
+            <input type="text" class="wenben">
+        </div>
+        <div class="anjian">
+            <table cecellspacing="2" class="t2">
+                <tr>
+                    <td class="qc">C</td>
+                    <td class="ys">/</td>
+                    <td class="ys">*</td>
+                    <td class="sc">删</td>
+                </tr>
+                <tr>
+                    <td class="ys">7</td>
+                    <td class="ys">8</td>
+                    <td class="ys">9</td>
+                    <td class="ys">-</td>
+                </tr>
+                <tr>
+                    <td class="ys">4</td>
+                    <td class="ys">5</td>
+                    <td class="ys">6</td>
+                    <td class="ys">+</td>
+                </tr>
+                <tr>
+                    <td class="ys">1</td>
+                    <td class="ys">2</td>
+                    <td class="ys">3</td>
+                    <td class="ys">0</td>
+                </tr>
+                <tr>
+                    <td class="ys">.</td>
+                    <td class="ys">(</td>
+                    <td class="ys">)</td>
+                    <td class="jg">=</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="grjs">
+        <div class="shang">
+            <div class="zhuo">
+                <h2>成浩宇</h2>
+                <div class="ht">
+                    <canvas id="can"></canvas>
+                </div>
+                <button class="xhr xh1">小黄人</button>
+                <button class="jsj xh1">计算器</button>
+            </div>
+            <div class="you">
+                <p>作为一个大学生，我热爱我的专业并为其投入了巨大的热情和精力。 在学习生活中，我所学习的内容包括了计算机软件和硬件等许多方面。
+                    通过对这些知识的学习，我对这一领域及相关的知识有了一定程度的理解和掌握，此专业是当今祖国都必须的，
+                    而利用此工具的能力是最重要的，在与课程同步进行的各种相关实践和实习中， 具有了一定的实际操作能力和技术。在学校工作中，加强锻炼处世能力。
+                    通过学习，我正确树立了自己的人生观、价值观，我期待在不久的将来能为祖国做出自己应有的贡献！
+                </p>
+            </div>
+        </div>
+        <div class="xia">
+            <div class="x1">
+                <div class="png"><img src="./图片/1.PNG" alt=""></div>
+            </div>
+            <button class="bu">下一张</button>
+        </div>
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById('can');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.moveTo(20, 80);
+        ctx.lineTo(100, 80);
+        ctx.lineTo(60, 10);
+        ctx.fillStyle="aqua";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(20,35);
+        ctx.lineTo(100,35);
+        ctx.lineTo(60,105);
+        ctx.fillStyle="red";
+        ctx.fill();
+    }
+</script>
+</html>

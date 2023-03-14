@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教务系统</title>
+    <link rel="stylesheet" href="css/jiaowuxitong.css">
+</head>
+
+<body>
+    <div class="w">
+        <div class="box1">
+            <!-- 第一部分 -->
+            <div class="one">
+                <div class="gzzy">关注专业</div>
+                <div style="width: 65px; height: 1.5px; background-color: rgb(255, 111, 0);"></div>
+                <select
+                    style="width: 60px; height: 20px; margin-left: 140px; margin-bottom: 5px; background-color: rgb(230, 230, 230);">
+                    <option value="">门类</option>
+                    <option value="">工学</option>
+                    <option value="">理学</option>
+                    <option value="">文学</option>
+                    <option value="">教育学</option>
+                    <option value="">法学</option>
+                </select>
+                <select style="width: 150px; height: 20px; margin-right: 0;background-color: rgb(230, 230, 230)">
+                    <option value="" selected=""></option>
+                    <option value="">计算机类</option>
+                    <option value="">工商管理类</option>
+                    <option value="">电子商务类</option>
+                    <option value="">电子信息类</option>
+                    <option value="">材料类</option>
+                </select>
+                <table border="1" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>门类</th>
+                            <th>专业类</th>
+                            <th>专业名称</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mlxi"></tbody>
+                </table>
+            </div>
+            <!-- 第二部分 -->
+            <div class="two">
+                <div class="cysjtj">产业数据统计</div>
+                <div style="width: 95px; height: 1.5px; background-color: rgb(255, 111, 0);"></div>
+                <select
+                    style="width: 120px; height: 20px; margin-left: 580px; margin-bottom: 5px;background-color: rgb(230, 230, 230)">
+                    <option value="">学校所在地</option>
+                    <option value="">成都</option>
+                    <option value="">北京</option>
+                    <option value="">上海</option>
+                    <option value="">深圳</option>
+                    <option value="">广州</option>
+                </select>
+                <table border="1" cellpadding="0" cellspacing="0" class="tab">
+                    <thead>
+                        <tr>
+                            <th>专业名</th>
+                            <th>企业</th>
+                            <th>岗位</th>
+                            <th>技能</th>
+                            <th>任务</th>
+                            <th>最低薪酬</th>
+                            <th>最高薪酬</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>计算机科学以技术</td>
+                        <td id="qy">300</td>
+                        <td id="gw">5000</td>
+                        <td id="jn">400</td>
+                        <td id="rw">4500</td>
+                        <td>2k</td>
+                        <td>12k</td>
+                    </tr>
+                    <tbody id="sjxi"></tbody>
+                </table>
+                <canvas id="canva1" class="hidden"></canvas>
+                <canvas id="canva2" class="hidden"></canvas>
+                <canvas id="canva3" class="hidden"></canvas>
+                <canvas id="canva4" class="hidden"></canvas>
+            </div>
+        </div>
+        <div class="box2">
+            <!-- 第三部分 -->
+            <div class="three">
+                <div class="bxzy">本校专业现状</div>
+                <div style="width: 95px; height: 1.5px; background-color: rgb(255, 111, 0);"></div>
+                <div style="margin-left: 540px;">
+                    <button id="btnAdd">添加</button>
+                    <button id="delAll" onclick="delAll()"> 全部删除</button>
+                </div>
+                <table border="1" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>专业名</th>
+                            <th>负责人</th>
+                            <th>课程数量</th>
+                            <th>学生数量</th>
+                            <th>师生比</th>
+                            <th>产教匹配度</th>
+                            <th>查询</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbxi"></tbody>
+                </table>
+                <div id="divaddjwxt" class="hidden">
+                    <h2>增加信息</h2>
+                    <form action="#" id="addjwxtForm">
+                        <p>专业名：<input type="text" name="zym" id="zym1"> </p>
+                        <p>负责人：<input type="text" name="fzr" id="fzr1"> </p>
+                        <p>课程数量：<input type="text" name="kcsl" id="kcsl1"> </p>
+                        <p>学生数量：<input type="text" name="xssl" id="xssl1"> </p>
+                        <p>师生比：<input type="text" name="ssb" id="ssb1"> </p>
+                        <p>产教匹配度：<input type="text" name="cjppd" id="cjppd1"> </p>
+                        <p> <button id="btnaddData" type="button">添加</button> <button id="btnCancel1">取消</button></p>
+                    </form>
+                </div>
+                <div id="divxgjwxt" class="hidden">
+                    <h2>修改信息</h2>
+                    <form action="#" id="xgjwxtForm">
+                        <p>专业名：<input type="text" name="zym" id="zym2"> </p>
+                        <p>负责人：<input type="text" name="fzr" id="fzr2"> </p>
+                        <p>课程数量：<input type="text" name="kcsl" id="kcsl2"> </p>
+                        <p>学生数量：<input type="text" name="xssl" id="xssl2"> </p>
+                        <p>师生比：<input type="text" name="ssb" id="ssb2"> </p>
+                        <p>产教匹配度：<input type="text" name="cjppd" id="cjppd2"> </p>
+                        <p> <button id="btnxgData" type="button">确定</button> <button id="btnCancel2">取消</button></p>
+                    </form>
+                </div>
+                <div id="divcxjwxt" class="hidden">
+                    <h2>查询信息</h2>
+                    <form action="#" id="cxjwxtForm">
+                        <p>专业名：<input type="text" name="zym" id="zym3"> </p>
+                        <p>负责人：<input type="text" name="fzr" id="fzr3"> </p>
+                        <p>课程数量：<input type="text" name="kcsl" id="kcsl3"> </p>
+                        <p>学生数量：<input type="text" name="xssl" id="xssl3"> </p>
+                        <p>师生比：<input type="text" name="ssb" id="ssb3"> </p>
+                        <p>产教匹配度：<input type="text" name="cjppd" id="cjppd3"> </p>
+                        <p> <button id="btncxData" type="button">确定</button></p>
+                    </form>
+                </div>
+                <div id="zhezhao" class="hidden"></div>
+            </div>
+            <!-- 第四部分 -->
+            <div class="four">
+                <div class="zyxi_wks">未开设专业信息</div>
+                <div
+                    style="width: 115px; height: 1px; background-color: rgb(255, 111, 0);position: absolute;top: 444px;">
+                </div>
+                <button class="dsbf">数字媒体技术</button>
+                <button class="dsbf">智能科学与技术</button>
+                <button class="dsbf">新媒体技术</button>
+                <button class="dsbf">空间信息与数字技术</button>
+                <button class="dsbf">电影制作</button>
+                <div id="ds_xs" class="hidden">
+                    <a href="">教育部资料></a><br>
+                    <a href="" id="xgcy">相关产业信息></a>
+                </div>
+                <div id="ds_xs2" class="hidden">
+                    <table>
+                        <tr>
+                            <th>企业</th>
+                            <th>岗位</th>
+                            <th>技能</th>
+                            <th>任务</th>
+                            <th>最低薪酬</th>
+                            <th>最高薪酬</th>
+                        </tr>
+                        <tr>
+                            <td>300</td>
+                            <td>5000</td>
+                            <td>400</td>
+                            <td>4500</td>
+                            <td>2k</td>
+                            <td>12k</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jiaowuxitong.js"></script>
+    <script src="js/dybf.js"></script>
+    <script src="js/debf.js"></script>
+    <script src="js/dsbf.js"></script>
+</body>
+
+</html>

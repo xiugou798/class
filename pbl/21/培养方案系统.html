@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <style type="text/css">
+        body{
+            background-color: rgb(242, 242, 242);
+            position: relative;
+        }
+        #zhong{
+            width: 100%;
+            height: 100hv;
+            display: flex;
+            flex-direction: column;
+        }
+        #shang{
+            width: 100%;
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #zong{
+            width: 100%;
+            height: 390px;
+            display: flex;
+            justify-content: space-evenly
+        }
+        #xia{
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .s1-1{
+            background-color: white;
+            height: 25px;
+            width: 120px;
+            border-radius: 20px 20px ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .s1-2{
+            background-color: rgb(20, 128, 255);
+            color: white;
+            height: 25px;
+            width: 85px;
+            border-radius: 20px 20px ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .z1-1-1{
+            display: flex;
+        }
+        .z1-1-1-1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(117, 120, 250);
+            border-bottom:  1px solid rgb(117, 120, 250);
+            width: 90px;
+            height: 30px;
+        }
+        .z1-1-1-2{
+            background-color: rgb(191, 209, 251);
+            height: 30px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 23%;
+            
+        }
+        #z1-1-1-2-1{
+            border-style: none;
+            width: 70px;
+            background-color: rgb(191, 209, 251);
+        }
+        .z1-1-1-3{
+            margin-left: 10px;
+            width: 170px;
+            background-color: rgb(191, 209, 251);
+        }
+        #z1-1-1-3-1{
+            width: 95%;
+            height: 90%;
+            background-color: rgb(191, 209, 251);
+            border-style: none;
+        }
+        .z1-1{
+            height: 380px;
+            width: 450px;
+        }
+        .z1-2{
+            height: 380px;
+            width: 800px;
+        }
+        .z1-2-1-1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(117, 120, 250);
+            border-bottom:  1px solid rgb(117, 120, 250);
+            width: 120px;
+            height: 30px;
+        }
+        .z1-2-1{
+            display: flex;
+            justify-content: space-between;
+        }
+        .z1-2-1-2{
+            background-color: rgb(191, 209, 251);
+            height: 30px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #z1-2-1-2-1{
+            border-style: none;
+            width: 150px;
+            background-color: rgb(191, 209, 251);
+        }
+        .x1-1{
+            width: 750px;
+            height: 300px;
+            position: relative;
+        }
+        .x1-2{
+            width: 500px;
+            height: 300px;
+        }
+        .x1-1-1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(117, 120, 250);
+            border-bottom:  1px solid rgb(117, 120, 250);
+            width: 120px;
+            height: 30px;
+        }
+        .x1-2-1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(117, 120, 250);
+            border-bottom:  1px solid rgb(117, 120, 250);
+            width: 133px;
+            height: 30px;
+        }
+        .x1-2-2{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .xtsz{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            color: white;
+            background-color: rgb(130, 167, 253);
+            height: 30px;
+            border-radius: 20px 20px;
+            font-size: small;
+            margin-left: 1%;
+            margin-top: 1%;
+        }
+        .x1-2-2-1{
+            width: 100px;
+        }
+        .x1-2-2-2{
+            width: 110px;
+        }
+        .x1-2-2-3{
+            width: 150px;
+        }
+        .x1-2-2-4{
+            width: 100px;
+        }
+        .x1-2-2-5{
+            width: 80px;
+        }
+        .x1-1-2{
+            width: 650px;
+            margin-top: 10px;
+            height: 260px;
+            display: flex;
+        }
+        .tddq{
+            background-color: rgb(191, 209, 251);
+            text-align: center;
+        }
+        table{
+            flex-grow: 1;
+        }
+        .z1-1-2{
+            margin-top: 5px;
+            width: 450px;
+            height: 345px;
+            display: flex;
+        }
+        .z1-2-2{
+            margin-top: 5px;
+            width: 800px;
+            height: 345px;
+            display: flex;
+        }
+        .td1{
+            width: 230px;
+            background-color: rgb(191, 209, 251);
+        }
+        .td1 li{
+            list-style-type: circle;
+            font-size: 15px;
+            margin-left: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .x1-1-2-1{
+            height: 90px;
+        }
+        #xg{
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            background-color: aqua;
+            height: 60px;
+            width: 450px;
+            display: none;
+        }
+        #xg table tr td input{
+            width: 63px;
+        }
+        .sousuo{
+            display: flex;
+            position: absolute;
+            left: 55%;
+            bottom: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div id="zhong">
+        <div id="shang">
+            <div class="s1-1">系分院负责人</div>
+            <div class="s1-2"><a href="">退出登录</a></div>
+        </div>
+        <div id="zong">
+            <div class="z1-1">
+                <div class="z1-1-1">
+                    <div class="z1-1-1-1">关注专业</div>
+                    <div class="z1-1-1-2">
+                        <select name="" id="z1-1-1-2-1" onchange="noe()">
+                            <option selected>门类</option>
+                            <option>工学</option>
+                            <option>理学</option>
+                            <option>文学</option>
+                            <option>教育学</option>
+                            <option>法学</option>
+                        </select>
+                    </div>
+                    <div class="z1-1-1-3">
+                        <select name="" id="z1-1-1-3-1" onchange="one1()"></select>
+                    </div>
+                </div>
+                <div class="z1-1-2">
+                    <table cellspacing="2">
+                        <tr>
+                            <td class="tddq">门类</td>
+                            <td class="tddq">专业类</td>
+                            <td class="tddq">专业名称</td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">计算机科学与技术</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">软件工程</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">网络工程</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">信息安全</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">物联网工程</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">数字媒体技术</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">智能科学与技术</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">空间信息与数字技术</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tddq ml">工学</td>
+                            <td class="tddq zyl">计算机类</td>
+                            <td class="td1">
+                                <li class="zy">电子与计算工程</li>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+            <div class="z1-2">
+                <div class="z1-2-1">
+                    <div class="z1-2-1-1">产业数据统计</div>
+                    <div class="z1-2-1-2">
+                        <select name="" id="z1-2-1-2-1" onchange="tow()">
+                            <option>学校所在地</option>
+                            <option>成都</option>
+                            <option>北京</option>
+                            <option>上海</option>
+                            <option>深圳</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="z1-2-2">
+                    <table cellspacing="2" class="z1-2-2-1">
+                        <tr>
+                            <td class="tddq">专业名</td>
+                            <td class="tddq">企业</td>
+                            <td class="tddq">岗位</td>
+                            <td class="tddq">技能</td>
+                            <td class="tddq">任务</td>
+                            <td class="tddq">最低薪酬</td>
+                            <td class="tddq">最高薪酬</td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">计算机科学与技术</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">软件工程</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">网络工程</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">信息安全</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">物联网工程</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">数字媒体技术</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">智能科学与技术</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">空间信息与数字技术</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr>
+                            <td class="tddq">电子与计算工程</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="xia">
+            <div class="x1-1">
+                <div class="x1-1-1">本校专业现状</div>
+                <div class="sousuo">
+                    <input type="text">
+                    <button>搜索</button>
+                </div>
+                <div class="x1-1-2">
+                    <table cellspacing="2" class="x1-1-2-1">
+                        <tr>
+                            <td class="tddq">专业名</td>
+                            <td class="tddq">负责人</td>
+                            <td class="tddq">课程数量</td>
+                            <td class="tddq">学生数量</td>
+                            <td class="tddq">师生比</td>
+                            <td class="tddq">产教匹配度</td>
+                        </tr>
+                        <tr class="shi">
+                            <td class="tddq">计算机科学与技术</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                        <tr class="shi">
+                            <td class="tddq">软件工程</td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                            <td class="tddq"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="x1-2">
+                <div class="x1-2-1">未开设专业信息</div>
+                <div class="x1-2-2">
+                    <div class="x1-2-2-1 xtsz">数字媒体技术</div>
+                    <div class="x1-2-2-2 xtsz">智能科学与技术</div>
+                    <div class="x1-2-2-3 xtsz">空间信息与数字技术</div>
+                    <div class="x1-2-2-4 xtsz">新媒体技术</div>
+                    <div class="x1-2-2-5 xtsz">电影制作</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="xg">
+        <table>
+            <tr>
+                <td><input type="text" placeholder="专业名"></td>
+                <td><input type="text" placeholder="负责人"></td>
+                <td><input type="text" placeholder="课程数量"></td>
+                <td><input type="text" placeholder="学生数量"></td>
+                <td><input type="text" placeholder="师生比"></td>
+                <td><input type="text" placeholder="产教匹配度"></td>
+            </tr>
+        </table>
+        <button id="xiugai">修改</button>
+        <button id="zhengjia">增加</button>
+        <button id="shanchu">删除</button>
+        <button id="quxiao">取消</button>
+    </div>
+</body>
+<script type="text/javascript">
+    var menlei={
+        "工学":["工学专业类1","工学专业类2"],
+        "理学":["理学专业类1","理学专业类2"],
+        "文学":["文学专业类1","文学专业类2"],
+        "教育学":["教育学专业类1","教育学专业类2"],
+        "法学":["法学专业类1","法学专业类2"],
+    }
+    var zhuanyelei={}
+    for(var i in menlei){
+        for(var j=0;j<menlei[i].length;j++){
+            zhuanyelei[menlei[i][j]]=[menlei[i][j]+"专业1",menlei[i][j]+"专业2",menlei[i][j]+"专业3",menlei[i][j]+"专业4",menlei[i][j]+"专业5",menlei[i][j]+"专业6",menlei[i][j]+"专业7",menlei[i][j]+"专业8",menlei[i][j]+"专业9"]
+        }
+    }
+
+    function noe(){
+        var sel=document.getElementById("z1-1-1-2-1").value
+        document.getElementById("z1-1-1-3-1").options.length=0
+
+        for(var i=0;i<menlei[sel].length;i++){
+            var opt=document.createElement("option")
+            opt.innerHTML=menlei[sel][i]
+            document.getElementById("z1-1-1-3-1").appendChild(opt)
+        }
+
+        var xtd=document.getElementsByClassName("ml")
+        for(var i=0;i<xtd.length;i++){
+            xtd[i].innerHTML=sel;
+        }
+    }
+
+    function one1(){
+        var zylei=document.getElementById("z1-1-1-3-1").value
+        var ctd=document.getElementsByClassName("zyl")
+        for(var i=0;i<ctd.length;i++){
+            ctd[i].innerHTML=zylei
+        }
+        var cli=document.getElementsByClassName("zy")
+        for(var i=0;i<zhuanyelei[zylei].length;i++){
+            cli[i].innerHTML=zhuanyelei[zylei][i]
+        }
+        
+    }
+    
+    diqu={
+        "成都":{
+            "成都":["成都专业1","成都专业2","成都专业3"],
+            "成都专业1":[300,5000,400,4500,"2k","12k"],
+            "成都专业2":[400,5100,410,4510,"3k","13k"],
+            "成都专业3":[330,5300,300,4520,"4k","14k"],
+        },
+        "北京":{
+            "北京":["北京专业1","北京专业2","北京专业3"],
+            "北京专业1":[350,5500,450,4550,"3k","15k"],
+            "北京专业2":[340,5300,440,4540,"5k","14k"],
+            "北京专业3":[350,5200,410,4520,"4k","13k"],
+        },
+        "上海":{
+            "上海":["上海专业1","上海专业2","上海专业3"],
+            "上海专业1":[330,5340,420,4530,"5k","15k"],
+            "上海专业2":[320,5430,450,4230,"3k","15k"],
+            "上海专业3":[350,5440,430,4430,"2k","6k"],
+        },
+        "深圳":{
+            "深圳":["深圳专业1","深圳专业2","深圳专业3"],
+            "深圳专业1":[353,5120,444,4523,"5k","12k"],
+            "深圳专业2":[343,5220,555,4534,"3k","15k"],
+            "深圳专业3":[322,5430,666,4554,"4k","14k"],
+        },
+    }
+    function tow(){
+        var dp=document.getElementById("z1-2-1-2-1").value
+        var zyming=document.getElementsByClassName("z1-2-2-1")
+        for(var i=1;i<diqu[dp][dp].length+1;i++){
+            zyming[0].querySelectorAll("tr")[i].querySelectorAll("td")[0].innerHTML=diqu[dp][dp][i-1]
+            for(var j=1;j<7;j++){
+                zyming[0].querySelectorAll("tr")[i].querySelectorAll("td")[j].innerHTML=diqu[dp][zyming[0].querySelectorAll("tr")[i].querySelectorAll("td")[0].innerHTML][j-1]
+            }
+        }
+    }
+
+    $(document).ready(function(){
+        var flag
+        $(document).on("dblclick",".shi",function(){
+            $("#xg").css("display","block")
+            $("#xg table tr td input").val("")
+            flag=this
+        })
+        $("#shanchu").click(function(){
+            flag.remove()
+            $("#xg").css("display","none")
+        })
+        $("#xiugai").click(function(){
+            var inp=document.getElementById("xg").querySelectorAll("input")
+            for(var i=0;i<6;i++){
+                flag.querySelectorAll("td")[i].innerHTML=inp[i].value
+            }
+            $("#xg").css("display","none")
+        })
+        $("#zhengjia").click(function(){
+            var inp=document.getElementById("xg").querySelectorAll("input")
+            var copy=flag.cloneNode(true)
+            for(var i=0;i<6;i++){
+                copy.querySelectorAll("td")[i].innerHTML=inp[i].value
+            }
+            $(copy).insertAfter($(".x1-1-2-1 tr:eq(-1)"))
+            $("#xg").css("display","none")
+        })
+        $("#quxiao").click(function(){
+            $("#xg").css("display","none")
+        })
+        $(document).on("click",".sousuo button",function(){
+            var ss=$(".sousuo input").val()
+            var md=document.getElementsByClassName("x1-1-2-1")[0].querySelectorAll("tr.shi")
+            $(".shi td").css("background","#BFD1FB")
+            for(var i=0;i<md.length;i++){
+                if(md[i].innerText.includes(ss) && ss!=""){
+                    $(md[i].querySelectorAll("td")).css("background","red")
+                   
+                }
+            }
+        })
+        $(".z1-2-2-1 tr:gt(0) td").slice(3,5).dblclick(function(){
+            window.location.href = 'zzt.html'
+        })
+    })
+</script>
+</html>

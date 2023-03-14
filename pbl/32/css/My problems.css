@@ -1,0 +1,96 @@
+@font-face {
+    font-family: font2;
+    src: url(../font/五经楷书西文篇.ttf);
+}
+
+@font-face {
+    font-family: font1;
+    src: url(../font/字制区喜脉体.ttf);
+}
+
+@font-face {
+    font-family: font3;
+    src: url(../font/五经楷书西文篇.ttf);
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    flex-direction: column;
+
+}
+
+.mp4 {
+    width: 80%;
+
+}
+
+.mp4 video {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.bg {
+    width: 137px;
+    left: 471px
+}
+
+.main-pro {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-pro-text {
+    margin: 40px 0;
+    width: 80%;
+    box-shadow: 0px 0px 4px #46af4bdd;
+    border-radius: 20px;
+}
+
+.main-pro-text p {
+    display: block;
+    padding-left: 50px;
+}
+
+.main-pro-text p:nth-child(1) {
+    margin: 2% 0 ;
+    font-size: 50px;
+    font-family: font3;
+    font-weight: bolder;
+}
+
+
+.main-pro-text p:nth-child(1)::before {
+    transition: 1s;
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: black;
+    position: relative;
+    top: 80px;
+    left: 30px;
+    border-radius: 10px;
+}
+
+.main-pro-text p:nth-child(2) {
+    font-size: 20px;
+    padding: 30px;
+    margin: 30px 30px;
+}
+
+.main-pro-text p:nth-child(3) {
+    font-size: 20px;
+    margin: 50px 50px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: lightgrey;
+    margin: 30px 30px;
+}

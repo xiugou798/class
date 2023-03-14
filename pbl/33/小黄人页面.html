@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.stet{
+				width: 800px;
+				height: 740px;
+				border: 1px solid black;
+				position: relative;
+			}
+			.one,.two,.three{
+				width: 250px;
+				height: 740px;
+				background-color: white;
+				position: absolute;
+				border: 1px solid black;
+				border-top-width: 0px;
+			}
+			.one{
+				border-left: 0px;
+				overflow: hidden;
+			}
+			.two{
+				left:275px;
+				
+			}
+			.three{
+				right: 0;
+				border-right: 0px;
+			}
+			.one_body{
+				width: 270px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0;
+				border-radius:  200px 50% 50px 0/90px 30px 0 0;
+				
+				overflow: hidden;
+			}
+			.two_body{
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0;
+				
+				border-radius:  50% 50% 0 0/30px 30px 0 0;
+				
+				overflow: hidden;
+			}
+			.three_body{
+				width: 250px;
+				height: 690px;
+				background-color: #FDE174;
+				position: absolute;
+				bottom: 0;
+				
+				border-radius:  50% 50% 0 0/30px 30px 0 0;
+				
+				overflow: hidden;
+			}
+			.yj{
+				height:240px;
+				width: 280px;
+				background-color: rgb(223,161,57);
+				border-radius: 100%;
+				position: absolute;
+				left: -15px;
+				top: 40px;
+			}
+			.yuank{
+				position: absolute;
+				height: 240px;
+				width: 240px;
+				border-radius: 50%;
+				border: 20px solid slategray;
+				top: -20px;
+			}
+			.yanbai{
+				position: absolute;
+				width: 240px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: aliceblue;
+				top: 45px;
+			}
+			.yanjinwaiquan{
+				position: absolute;
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				background-color: burlywood;
+				top: 30px;
+				left: 85px;
+			}	
+			.yanjinneiyan{
+				position: absolute;
+				width: 45px;
+				height: 45px;
+				background-color: black;
+				border-radius: 50px;
+				top:12.5px;
+				left: 12.5px;
+			}
+			.yangaoguang{
+				position: absolute;
+				width: 12.5px;
+				height: 12.5px;
+				background-color: white;
+				border-radius: 50%;
+				top: 15px;
+				left: 12px;
+			}
+			.yifu{
+				position: absolute;
+				width: 250px;
+				height: 250px;
+				background-color: antiquewhite;
+				top: 450px;
+			}
+			div{
+				width: 250px;
+				height: 62.5px;
+			}
+			.yifu div:nth-child(2n+1){
+				background-color: black;
+			}
+			.koudai{
+				position: absolute;
+				width: 150px;
+				height: 120px;
+				border-radius: 0 0 50% 50%;
+				background-color: black;
+				opacity: 0.4;
+				top:500px;
+				left: 50px;
+				border:2px dashed whitesmoke;
+			}
+			.zuiba{
+				position: absolute;
+				width: 150px;
+				height: 90px;
+				border-radius: 50%;
+				background-color: black;
+				top: 330px;
+				left: 50px;
+				overflow: hidden;
+			}
+			.zuibaxia{
+				position: absolute;
+				width: 200px;
+				height: 75px;
+				border-radius: 45%;
+				background-color: #FDE174;
+				top: 350px;
+				left: 45px;
+				
+			}
+			.yaci{
+				position: absolute;
+				width: 50px;
+				height: 20px;
+				border-radius: 0 0 70% 70%;
+				background-color: aliceblue;
+				left: 10px;
+			}
+			.yaci1{
+				position: absolute;
+				width: 50px;
+				height: 20px;
+				border-radius: 0 0 70% 70%;
+				background-color: aliceblue;
+				left: 60px;
+			}
+			.one_yank{
+				position: absolute;
+				width: 110px;
+				height: 110px;
+				border-radius: 50%;
+				border: 20px solid slategray;
+				top: 90px;
+				background-color: white;
+
+			}
+			.one_yank2{
+				position: absolute;
+				width: 110px;
+				height: 110px;
+				border-radius: 50%;
+				border: 20px solid slategray;
+				top: 90px;
+				left: 140px;
+				
+			}
+			.one_banyuan{
+				position: absolute;
+				width: 110px;
+				height: 55px;
+				border-radius: 55px 55px 0 0;
+				background-color: #FDE174;
+		
+			}
+			.one_banyuan2{
+				position: absolute;
+				width: 110px;
+				height: 55px;
+				border-radius: 100% 100% 0 0;
+				background-color: black;
+				left:140px;
+				opacity: 0;
+			}
+			.one_yanbai{
+				position: absolute;
+				width: 110px;
+				height: 55px;
+				border-radius: 0 0 55px 55px;
+				background-color: white;
+				top: 55px;
+				left: 140px;
+			}
+			.one_zuiba{
+				position: absolute;
+				border: 3px solid black;
+				border-radius: 50%;
+				border-bottom: 0px;
+				border-left: 0px;
+				border-right: 0px;
+				border-top-left: 2px;
+				width: 100px;
+				height: 50px;
+				top:300px;
+				left: 90px;
+			}
+			.one_yanzhu{
+				position: absolute;
+				width: 40px;
+				height: 20px;
+				border-radius: 0 0 20px 20px;
+				background-color: burlywood;
+				top: 55px;
+				left: 35px;
+			}
+			.one_yanzhuhei{
+				position: absolute;
+				width: 20px;
+				height: 10px;
+				border-radius: 0 0 10px 10px;
+				background-color: black;
+				top: 55px;
+				left: 45px;
+			}
+			.one_yanzhuhei2{
+				position: absolute;
+				width: 20px;
+				height: 10px;
+				border-radius: 0 0 10px 10px;
+				background-color: black;
+				top: 55px;
+				left: 180px;
+			}
+			.one_yanzhu2{
+				position: absolute;
+				width: 40px;
+				height: 20px;
+				border-radius: 0 0 20px 20px;
+				background-color: burlywood;
+				top: 55px;
+				left: 170px;
+			}
+			.one_yangaoguang1{
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				background-color: white;
+				border-radius: 50%;
+				top: 55px; 
+				left:42px;
+			}
+			.one_yangaoguang2{
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				background-color: white;
+				border-radius: 50%;
+				top: 55px; 
+				left:177px;
+			}
+			.three_zheba{
+				position: absolute;
+				top: 250px;
+				left: 110px;
+				width: 150px;
+				height: 120px;
+				background-color: black;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+			.three_yaci{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				background-color: white;
+				border-radius: 30%;
+			}
+			.three_zuibashang{
+				position: absolute;
+				top: 240px;
+				left: 90px;
+				width: 160px;
+				height: 100px;
+				background-color: #FDE174;
+				border-radius: 40% 0 40% 35%;
+			}
+			.three_yank{
+				position: absolute;
+				width: 110px;
+				height: 110px;
+				border-radius: 50%;
+				border: 20px solid slategray;
+				top: 90px;
+				background-color: white;
+				
+			}
+			.three_yank2{
+				position: absolute;
+				width: 110px;
+				height: 110px;
+				border-radius: 50%;
+				border: 20px solid slategray;
+				top: 90px;
+				left: 140px;
+				overflow: hidden;
+			}
+			.three_banyuan{
+				position: absolute;
+				width: 110px;
+				height: 55px;
+				border-radius:0 0 55px 55px;
+				background-color: #FDE174;
+				top:55px;
+			}
+			.three_banyuan2{
+				position: absolute;
+				width: 110px;
+				height: 55px;
+				border-radius:0 0 100% 100%;
+				background-color: black;
+				left:140px;
+				opacity: 0;
+				top: 55px;
+			}
+			.three_yanbai{
+				position: absolute;
+				width: 110px;
+				height: 55px;
+				border-radius: 55px 55px 0 0 ;
+				background-color: white;
+				left: 140px;
+			}
+			.three_yanzhu{
+				position: absolute;
+				width: 40px;
+				height: 20px;
+				border-radius:20px 20px 0 0;
+				background-color: burlywood;
+				top: 35px;
+				left: 0px;
+			}
+			.three_yanzhuhei{
+				position: absolute;
+				width: 20px;
+				height: 10px;
+				border-radius:10px 10px 0 0 ;
+				background-color: black;
+				top: 45px;
+				left: 7px;
+			}
+			.three_yanzhuhei2{
+				position: absolute;
+				width: 20px;
+				height: 10px;
+				border-radius:10px 10px 0 0 ;
+				background-color: black;
+				top: 45px;
+				left: 152px;
+			}
+			.three_yanzhu2{
+				position: absolute;
+				width: 40px;
+				height: 20px;
+				border-radius:20px 20px 0 0 ;
+				background-color: burlywood;
+				top: 35px;
+				left: 145px;
+			}
+			.three_yangaoguang1{
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				background-color: white;
+				border-radius: 50%;
+				top: 42px; 
+				left:17px;
+			}
+			.three_yangaoguang2{
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				background-color: white;
+				border-radius: 50%;
+				top: 43px; 
+				left:166px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='stet'>
+			<div class="one">
+				<div class="one_body">
+					<div class="one_yank">
+						<div class="one_banyuan"></div>
+						<div class="one_banyuan2"></div>
+						<div class="one_yanbai"></div>
+						<div class="one_yanzhu"></div>
+						<div class="one_yanzhuhei"></div>
+						<div class="one_yanzhu2"></div>
+						<div class="one_yanzhuhei2"></div>
+						<div class="one_yangaoguang1" style=""></div>
+						<div class="one_yangaoguang2"></div>
+					</div>
+					<div class="one_yank2"></div>
+					<div class="one_zuiba"></div>
+					<div class="yifu">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="koudai"></div>
+				</div>
+			</div>
+			<div class="two">
+				<div class="two_body">
+					<div class="yj">
+						<div class="yuank">
+							<div class="yanbai">
+								<div class="yanjinwaiquan">
+									<div class="yanjinneiyan">
+									</div>
+									<div class="yangaoguang">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zuiba">
+						<div class="yaci"></div>
+						<div class="yaci1"></div>
+					</div>
+					<div class="zuibaxia">
+					</div>
+					<div class="yifu">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="koudai"></div>
+				</div>
+			</div>
+			<div class="three">
+				<div class="three_body">
+					<div class="three_yank">
+						<div class="three_banyuan"></div>
+						<div class="three_banyuan2"></div>
+						<div class="three_yanbai"></div>
+						<div class="three_yanzhu"></div>
+						<div class="three_yanzhuhei"></div>
+						<div class="three_yanzhu2"></div>
+						<div class="three_yanzhuhei2"></div>
+						<div class="three_yangaoguang1" style=""></div>
+						<div class="three_yangaoguang2"></div>
+					</div>
+					<div class="one_yank2"></div>
+					<div class="three_zheba">
+						<div class="three_yaci" style="top: 55px;left: 5px;"></div>
+						<div class="three_yaci" style="top: 55px;left: 50px;"></div>
+						<div class="three_yaci" style="top: 50px;left: 95px;"></div>
+						<div class="three_yaci" style="top: 107px;left: 5px;"></div>
+						<div class="three_yaci" style="top: 107px;left: 55px;"></div>
+						<div class="three_yaci" style="top: 104px;left: 95px;"></div>
+					</div>
+					<div class="three_zuibashang"></div>
+					<div class="yifu">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="koudai"></div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

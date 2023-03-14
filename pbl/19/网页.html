@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            padding: 0%;
+            margin: 0;
+        }
+        div{
+            border: 3px solid black;
+        }
+        .all{
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        .row{
+            width: 800px;
+            height: 100px;
+        }
+        .colum{
+            width: 200px;
+            height: 494px;
+        }
+        .left_1{
+            left: +500px;
+            width: 200px;
+            height: 100px;
+            border: 0ch;
+            position: absolute;
+        }
+        .z_1{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            
+        }
+        .z_1:nth-child(2){
+            left: 100px;
+            border: 0ch;
+            background-color: rgb(182, 169, 220);
+        }
+        .z_1:first-child{
+            border: 0ch;
+            background-color: rgb(241, 207, 237);
+        }
+        b{
+            font-size: 23px; 
+        }
+        
+        .text{
+            border: 0ch;
+            position: absolute;
+            width: 800px;
+            margin-top: 25px;
+            margin-left: 40px;
+            z-index: 20px;
+    
+        }
+        i{
+            margin-left: 540px;
+            font-size: 23px;
+        }
+        .tit_1{
+            left: +40px;
+            width: 100px;
+            height: 25px;
+            position: absolute;
+            margin-top: 20px;
+        }
+        .tit_1:nth-child(2){
+            margin-top: 60px;
+        }
+        .search{
+            width: 200px;
+            height: 20px;
+            border: 2px  ;
+			 background-color: rgb(85, 255, 255);
+            margin-left: 290px;
+            position: absolute;
+            z-index: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="search"></div>
+        <div class="row">
+            <div class="left_1">
+                <div class="z_1">
+
+
+                </div>
+                <div class="z_1">
+                    
+    
+                </div>
+            </div>
+            <div class="text">
+                <b class="b1">秦菲的网页</b>
+                <!-- <div></div> -->
+                <i>秦菲</i>
+                
+            </div>
+            
+        </div>
+        <div class="colum">
+            <div class="tit_1">
+                标题一
+            </div>
+			 <!-- <div></div> -->
+            <div class="tit_1">
+                标题二
+            </div>
+        </div>
+    </div>
+</body>
+</html>
